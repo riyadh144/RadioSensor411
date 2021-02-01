@@ -1,0 +1,899 @@
+ARM GAS  /tmp/ccN8bYxI.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"oled.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text._ZN4oled9OLED_FillENS_12OLED_COLOR_tE,"ax",%progbits
+  18              		.align	1
+  19              		.global	_ZN4oled9OLED_FillENS_12OLED_COLOR_tE
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	_ZN4oled9OLED_FillENS_12OLED_COLOR_tE:
+  27              		.fnstart
+  28              	.LVL0:
+  29              	.LFB133:
+  30              		.file 1 "Core/Src/oled.cpp"
+   1:Core/Src/oled.cpp **** #include "oled.hpp"
+   2:Core/Src/oled.cpp **** 
+   3:Core/Src/oled.cpp **** 
+   4:Core/Src/oled.cpp **** #define OLED_RIGHT_HORIZONTAL_SCROLL              0x26
+   5:Core/Src/oled.cpp **** #define OLED_LEFT_HORIZONTAL_SCROLL               0x27
+   6:Core/Src/oled.cpp **** #define OLED_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29
+   7:Core/Src/oled.cpp **** #define OLED_VERTICAL_AND_LEFT_HORIZONTAL_SCROLL  0x2A
+   8:Core/Src/oled.cpp **** #define OLED_DEACTIVATE_SCROLL                    0x2E // Stop scroll
+   9:Core/Src/oled.cpp **** #define OLED_ACTIVATE_SCROLL                      0x2F // Start scroll
+  10:Core/Src/oled.cpp **** #define OLED_SET_VERTICAL_SCROLL_AREA             0xA3 // Set scroll range
+  11:Core/Src/oled.cpp **** 
+  12:Core/Src/oled.cpp **** #define OLED_NORMALDISPLAY       0xA6
+  13:Core/Src/oled.cpp **** #define OLED_INVERTDISPLAY       0xA7
+  14:Core/Src/oled.cpp **** 
+  15:Core/Src/oled.cpp **** 
+  16:Core/Src/oled.cpp **** #define OLED_WRITECOMMAND(command)      comm[0]=COMMAND; comm[1]=(command); oled_write(comm,2)
+  17:Core/Src/oled.cpp **** 
+  18:Core/Src/oled.cpp **** oled::oled(I2C_HandleTypeDef hi2c, uint8_t address,TIM_HandleTypeDef htim){
+  19:Core/Src/oled.cpp ****     this->hi2c=hi2c;
+  20:Core/Src/oled.cpp **** 	if (HAL_I2C_IsDeviceReady(&this->hi2c, this->address, 1, 20000) != HAL_OK) {
+  21:Core/Src/oled.cpp **** 	}
+  22:Core/Src/oled.cpp ****     
+  23:Core/Src/oled.cpp ****     OLED_WRITECOMMAND(0xAE); //display off
+  24:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //Set Memory Addressing Mode   
+  25:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addre
+  26:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
+  27:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xC8); //Set COM Output Scan Direction
+  28:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //---set low column address
+ARM GAS  /tmp/ccN8bYxI.s 			page 2
+
+
+  29:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //---set high column address
+  30:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x40); //--set start line address
+  31:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x81); //--set contrast control register
+  32:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xFF);
+  33:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA1); //--set segment re-map 0 to 127
+  34:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA6); //--set normal display
+  35:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA8); //--set multiplex ratio(1 to 64)
+  36:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x3F); //
+  37:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA4); //0xa4,Output follows RAM content;0xa5,Output ignores RAM content
+  38:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD3); //-set display offset
+  39:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //-not offset
+  40:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD5); //--set display clock divide ratio/oscillator frequency
+  41:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xF0); //--set divide ratio
+  42:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD9); //--set pre-charge period
+  43:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x22); //
+  44:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDA); //--set com pins hardware configuration
+  45:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x12);
+  46:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDB); //--set vcomh
+  47:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //0x20,0.77xVcc
+  48:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x8D); //--set DC-DC enable
+  49:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x14); //
+  50:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xAF); //--turn on OLED panel
+  51:Core/Src/oled.cpp **** 
+  52:Core/Src/oled.cpp ****     OLED_WRITECOMMAND(OLED_DEACTIVATE_SCROLL); //Deactivate scroll
+  53:Core/Src/oled.cpp **** 
+  54:Core/Src/oled.cpp ****     HAL_TIM_Base_Start_IT(&htim);
+  55:Core/Src/oled.cpp **** 
+  56:Core/Src/oled.cpp **** }
+  57:Core/Src/oled.cpp **** void oled::OLED_Fill(OLED_COLOR_t color) {
+  31              		.loc 1 57 42 view -0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		.loc 1 57 42 is_stmt 0 view .LVU1
+  36 0000 70B5     		push	{r4, r5, r6, lr}
+  37              	.LCFI0:
+  38              		.cfi_def_cfa_offset 16
+  39              		.cfi_offset 4, -16
+  40              		.cfi_offset 5, -12
+  41              		.cfi_offset 6, -8
+  42              		.cfi_offset 14, -4
+  43 0002 0646     		mov	r6, r0
+  44 0004 0D46     		mov	r5, r1
+  58:Core/Src/oled.cpp **** 	/* Set memory */
+  59:Core/Src/oled.cpp ****     for (uint8_t m = 0; m < 8; m++) {
+  45              		.loc 1 59 5 is_stmt 1 view .LVU2
+  46              	.LVL1:
+  47              	.LBB2:
+  48              		.loc 1 59 18 is_stmt 0 view .LVU3
+  49 0006 0024     		movs	r4, #0
+  50 0008 08E0     		b	.L3
+  51              	.LVL2:
+  52              	.L5:
+  60:Core/Src/oled.cpp **** 	memset(&oled_buffer[W * m + 1], (uint8_t)color, W);
+  53              		.loc 1 60 2 is_stmt 1 discriminator 2 view .LVU4
+  54              		.loc 1 60 24 is_stmt 0 discriminator 2 view .LVU5
+  55 000a A001     		lsls	r0, r4, #6
+ARM GAS  /tmp/ccN8bYxI.s 			page 3
+
+
+  56              		.loc 1 60 28 discriminator 2 view .LVU6
+  57 000c 0130     		adds	r0, r0, #1
+  58              		.loc 1 60 8 discriminator 2 view .LVU7
+  59 000e 4022     		movs	r2, #64
+  60 0010 2946     		mov	r1, r5
+  61 0012 3044     		add	r0, r0, r6
+  62 0014 FFF7FEFF 		bl	memset
+  63              	.LVL3:
+  59:Core/Src/oled.cpp **** 	memset(&oled_buffer[W * m + 1], (uint8_t)color, W);
+  64              		.loc 1 59 5 is_stmt 1 discriminator 2 view .LVU8
+  65 0018 0134     		adds	r4, r4, #1
+  66              	.LVL4:
+  59:Core/Src/oled.cpp **** 	memset(&oled_buffer[W * m + 1], (uint8_t)color, W);
+  67              		.loc 1 59 5 is_stmt 0 discriminator 2 view .LVU9
+  68 001a E4B2     		uxtb	r4, r4
+  69              	.LVL5:
+  70              	.L3:
+  59:Core/Src/oled.cpp **** 	memset(&oled_buffer[W * m + 1], (uint8_t)color, W);
+  71              		.loc 1 59 27 is_stmt 1 discriminator 3 view .LVU10
+  72 001c 072C     		cmp	r4, #7
+  73 001e F4D9     		bls	.L5
+  74              	.LBE2:
+  61:Core/Src/oled.cpp ****     }
+  62:Core/Src/oled.cpp **** }
+  75              		.loc 1 62 1 is_stmt 0 view .LVU11
+  76 0020 70BD     		pop	{r4, r5, r6, pc}
+  77              		.loc 1 62 1 view .LVU12
+  78              		.cfi_endproc
+  79              	.LFE133:
+  80              		.cantunwind
+  81              		.fnend
+  83              		.section	.text._ZN4oled10oled_writeEPht,"ax",%progbits
+  84              		.align	1
+  85              		.global	_ZN4oled10oled_writeEPht
+  86              		.syntax unified
+  87              		.thumb
+  88              		.thumb_func
+  89              		.fpu fpv4-sp-d16
+  91              	_ZN4oled10oled_writeEPht:
+  92              		.fnstart
+  93              	.LVL6:
+  94              	.LFB134:
+  63:Core/Src/oled.cpp **** uint8_t oled::oled_write(uint8_t* data, uint16_t count)
+  64:Core/Src/oled.cpp **** {
+  95              		.loc 1 64 1 is_stmt 1 view -0
+  96              		.cfi_startproc
+  97              		@ args = 0, pretend = 0, frame = 0
+  98              		@ frame_needed = 0, uses_anonymous_args = 0
+  99              		.loc 1 64 1 is_stmt 0 view .LVU14
+ 100 0000 00B5     		push	{lr}
+ 101              		.save {lr}
+ 102              	.LCFI1:
+ 103              		.cfi_def_cfa_offset 4
+ 104              		.cfi_offset 14, -4
+ 105              		.pad #12
+ 106 0002 83B0     		sub	sp, sp, #12
+ 107              	.LCFI2:
+ARM GAS  /tmp/ccN8bYxI.s 			page 4
+
+
+ 108              		.cfi_def_cfa_offset 16
+ 109 0004 1346     		mov	r3, r2
+  65:Core/Src/oled.cpp **** 	HAL_I2C_Master_Transmit(&hi2c, address, data, count, 10);
+ 110              		.loc 1 65 2 is_stmt 1 view .LVU15
+ 111              		.loc 1 65 25 is_stmt 0 view .LVU16
+ 112 0006 0A22     		movs	r2, #10
+ 113              	.LVL7:
+ 114              		.loc 1 65 25 view .LVU17
+ 115 0008 0092     		str	r2, [sp]
+ 116 000a 0A46     		mov	r2, r1
+ 117 000c 90F85C14 		ldrb	r1, [r0, #1116]	@ zero_extendqisi2
+ 118              	.LVL8:
+ 119              		.loc 1 65 25 view .LVU18
+ 120 0010 00F58160 		add	r0, r0, #1032
+ 121              	.LVL9:
+ 122              		.loc 1 65 25 view .LVU19
+ 123 0014 FFF7FEFF 		bl	HAL_I2C_Master_Transmit
+ 124              	.LVL10:
+  66:Core/Src/oled.cpp ****     return 1;
+ 125              		.loc 1 66 5 is_stmt 1 view .LVU20
+  67:Core/Src/oled.cpp **** }
+ 126              		.loc 1 67 1 is_stmt 0 view .LVU21
+ 127 0018 0120     		movs	r0, #1
+ 128 001a 03B0     		add	sp, sp, #12
+ 129              	.LCFI3:
+ 130              		.cfi_def_cfa_offset 4
+ 131              		@ sp needed
+ 132 001c 5DF804FB 		ldr	pc, [sp], #4
+ 133              		.cfi_endproc
+ 134              	.LFE134:
+ 135              		.fnend
+ 137              		.section	.text._ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef,"ax",%progbits
+ 138              		.align	1
+ 139              		.global	_ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef
+ 140              		.syntax unified
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.fpu fpv4-sp-d16
+ 145              	_ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef:
+ 146              		.fnstart
+ 147              	.LVL11:
+ 148              	.LFB131:
+  18:Core/Src/oled.cpp ****     this->hi2c=hi2c;
+ 149              		.loc 1 18 1 is_stmt 1 view -0
+ 150              		.cfi_startproc
+ 151              		@ args = 156, pretend = 16, frame = 0
+ 152              		@ frame_needed = 0, uses_anonymous_args = 0
+  18:Core/Src/oled.cpp ****     this->hi2c=hi2c;
+ 153              		.loc 1 18 1 is_stmt 0 view .LVU23
+ 154              		.pad #16
+ 155 0000 84B0     		sub	sp, sp, #16
+ 156              	.LCFI4:
+ 157              		.cfi_def_cfa_offset 16
+ 158 0002 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 159              		.save {r4, r5, r6, r7, r8, lr}
+ 160              	.LCFI5:
+ 161              		.cfi_def_cfa_offset 40
+ARM GAS  /tmp/ccN8bYxI.s 			page 5
+
+
+ 162              		.cfi_offset 4, -40
+ 163              		.cfi_offset 5, -36
+ 164              		.cfi_offset 6, -32
+ 165              		.cfi_offset 7, -28
+ 166              		.cfi_offset 8, -24
+ 167              		.cfi_offset 14, -20
+ 168 0006 0446     		mov	r4, r0
+ 169 0008 07A8     		add	r0, sp, #28
+ 170              	.LVL12:
+  18:Core/Src/oled.cpp ****     this->hi2c=hi2c;
+ 171              		.loc 1 18 1 view .LVU24
+ 172 000a 80E80E00 		stm	r0, {r1, r2, r3}
+ 173              	.LBB3:
+  19:Core/Src/oled.cpp **** 	if (HAL_I2C_IsDeviceReady(&this->hi2c, this->address, 1, 20000) != HAL_OK) {
+ 174              		.loc 1 19 5 is_stmt 1 view .LVU25
+  19:Core/Src/oled.cpp **** 	if (HAL_I2C_IsDeviceReady(&this->hi2c, this->address, 1, 20000) != HAL_OK) {
+ 175              		.loc 1 19 15 is_stmt 0 view .LVU26
+ 176 000e 04F58165 		add	r5, r4, #1032
+ 177 0012 5422     		movs	r2, #84
+ 178 0014 0146     		mov	r1, r0
+ 179 0016 2846     		mov	r0, r5
+ 180 0018 FFF7FEFF 		bl	memcpy
+ 181              	.LVL13:
+  20:Core/Src/oled.cpp **** 	}
+ 182              		.loc 1 20 2 is_stmt 1 view .LVU27
+  20:Core/Src/oled.cpp **** 	}
+ 183              		.loc 1 20 27 is_stmt 0 view .LVU28
+ 184 001c 44F62063 		movw	r3, #20000
+ 185 0020 0122     		movs	r2, #1
+ 186 0022 94F85C14 		ldrb	r1, [r4, #1116]	@ zero_extendqisi2
+ 187 0026 2846     		mov	r0, r5
+ 188 0028 FFF7FEFF 		bl	HAL_I2C_IsDeviceReady
+ 189              	.LVL14:
+  23:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //Set Memory Addressing Mode   
+ 190              		.loc 1 23 5 is_stmt 1 view .LVU29
+ 191 002c 0025     		movs	r5, #0
+ 192 002e 84F85D54 		strb	r5, [r4, #1117]
+  23:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //Set Memory Addressing Mode   
+ 193              		.loc 1 23 5 view .LVU30
+ 194 0032 AE23     		movs	r3, #174
+ 195 0034 84F85E34 		strb	r3, [r4, #1118]
+  23:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //Set Memory Addressing Mode   
+ 196              		.loc 1 23 5 view .LVU31
+ 197 0038 04F25D46 		addw	r6, r4, #1117
+ 198 003c 0222     		movs	r2, #2
+ 199 003e 3146     		mov	r1, r6
+ 200 0040 2046     		mov	r0, r4
+ 201 0042 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 202              	.LVL15:
+  24:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addre
+ 203              		.loc 1 24 2 view .LVU32
+ 204 0046 84F85D54 		strb	r5, [r4, #1117]
+  24:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addre
+ 205              		.loc 1 24 2 view .LVU33
+ 206 004a 2027     		movs	r7, #32
+ 207 004c 84F85E74 		strb	r7, [r4, #1118]
+  24:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addre
+ARM GAS  /tmp/ccN8bYxI.s 			page 6
+
+
+ 208              		.loc 1 24 2 view .LVU34
+ 209 0050 0222     		movs	r2, #2
+ 210 0052 3146     		mov	r1, r6
+ 211 0054 2046     		mov	r0, r4
+ 212 0056 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 213              	.LVL16:
+  25:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
+ 214              		.loc 1 25 2 view .LVU35
+ 215 005a 84F85D54 		strb	r5, [r4, #1117]
+  25:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
+ 216              		.loc 1 25 2 view .LVU36
+ 217 005e 4FF01008 		mov	r8, #16
+ 218 0062 84F85E84 		strb	r8, [r4, #1118]
+  25:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
+ 219              		.loc 1 25 2 view .LVU37
+ 220 0066 0222     		movs	r2, #2
+ 221 0068 3146     		mov	r1, r6
+ 222 006a 2046     		mov	r0, r4
+ 223 006c FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 224              	.LVL17:
+  26:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xC8); //Set COM Output Scan Direction
+ 225              		.loc 1 26 2 view .LVU38
+ 226 0070 84F85D54 		strb	r5, [r4, #1117]
+  26:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xC8); //Set COM Output Scan Direction
+ 227              		.loc 1 26 2 view .LVU39
+ 228 0074 B023     		movs	r3, #176
+ 229 0076 84F85E34 		strb	r3, [r4, #1118]
+  26:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xC8); //Set COM Output Scan Direction
+ 230              		.loc 1 26 2 view .LVU40
+ 231 007a 0222     		movs	r2, #2
+ 232 007c 3146     		mov	r1, r6
+ 233 007e 2046     		mov	r0, r4
+ 234 0080 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 235              	.LVL18:
+  27:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //---set low column address
+ 236              		.loc 1 27 2 view .LVU41
+ 237 0084 84F85D54 		strb	r5, [r4, #1117]
+  27:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //---set low column address
+ 238              		.loc 1 27 2 view .LVU42
+ 239 0088 C823     		movs	r3, #200
+ 240 008a 84F85E34 		strb	r3, [r4, #1118]
+  27:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //---set low column address
+ 241              		.loc 1 27 2 view .LVU43
+ 242 008e 0222     		movs	r2, #2
+ 243 0090 3146     		mov	r1, r6
+ 244 0092 2046     		mov	r0, r4
+ 245 0094 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 246              	.LVL19:
+  28:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //---set high column address
+ 247              		.loc 1 28 2 view .LVU44
+ 248 0098 84F85D54 		strb	r5, [r4, #1117]
+  28:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //---set high column address
+ 249              		.loc 1 28 2 view .LVU45
+ 250 009c 84F85E54 		strb	r5, [r4, #1118]
+  28:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //---set high column address
+ 251              		.loc 1 28 2 view .LVU46
+ 252 00a0 0222     		movs	r2, #2
+ARM GAS  /tmp/ccN8bYxI.s 			page 7
+
+
+ 253 00a2 3146     		mov	r1, r6
+ 254 00a4 2046     		mov	r0, r4
+ 255 00a6 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 256              	.LVL20:
+  29:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x40); //--set start line address
+ 257              		.loc 1 29 2 view .LVU47
+ 258 00aa 84F85D54 		strb	r5, [r4, #1117]
+  29:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x40); //--set start line address
+ 259              		.loc 1 29 2 view .LVU48
+ 260 00ae 84F85E84 		strb	r8, [r4, #1118]
+  29:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x40); //--set start line address
+ 261              		.loc 1 29 2 view .LVU49
+ 262 00b2 0222     		movs	r2, #2
+ 263 00b4 3146     		mov	r1, r6
+ 264 00b6 2046     		mov	r0, r4
+ 265 00b8 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 266              	.LVL21:
+  30:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x81); //--set contrast control register
+ 267              		.loc 1 30 2 view .LVU50
+ 268 00bc 84F85D54 		strb	r5, [r4, #1117]
+  30:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x81); //--set contrast control register
+ 269              		.loc 1 30 2 view .LVU51
+ 270 00c0 4023     		movs	r3, #64
+ 271 00c2 84F85E34 		strb	r3, [r4, #1118]
+  30:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x81); //--set contrast control register
+ 272              		.loc 1 30 2 view .LVU52
+ 273 00c6 0222     		movs	r2, #2
+ 274 00c8 3146     		mov	r1, r6
+ 275 00ca 2046     		mov	r0, r4
+ 276 00cc FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 277              	.LVL22:
+  31:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xFF);
+ 278              		.loc 1 31 2 view .LVU53
+ 279 00d0 84F85D54 		strb	r5, [r4, #1117]
+  31:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xFF);
+ 280              		.loc 1 31 2 view .LVU54
+ 281 00d4 8123     		movs	r3, #129
+ 282 00d6 84F85E34 		strb	r3, [r4, #1118]
+  31:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xFF);
+ 283              		.loc 1 31 2 view .LVU55
+ 284 00da 0222     		movs	r2, #2
+ 285 00dc 3146     		mov	r1, r6
+ 286 00de 2046     		mov	r0, r4
+ 287 00e0 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 288              	.LVL23:
+  32:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA1); //--set segment re-map 0 to 127
+ 289              		.loc 1 32 2 view .LVU56
+ 290 00e4 84F85D54 		strb	r5, [r4, #1117]
+  32:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA1); //--set segment re-map 0 to 127
+ 291              		.loc 1 32 2 view .LVU57
+ 292 00e8 FF23     		movs	r3, #255
+ 293 00ea 84F85E34 		strb	r3, [r4, #1118]
+  32:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA1); //--set segment re-map 0 to 127
+ 294              		.loc 1 32 2 view .LVU58
+ 295 00ee 0222     		movs	r2, #2
+ 296 00f0 3146     		mov	r1, r6
+ 297 00f2 2046     		mov	r0, r4
+ARM GAS  /tmp/ccN8bYxI.s 			page 8
+
+
+ 298 00f4 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 299              	.LVL24:
+  33:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA6); //--set normal display
+ 300              		.loc 1 33 2 view .LVU59
+ 301 00f8 84F85D54 		strb	r5, [r4, #1117]
+  33:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA6); //--set normal display
+ 302              		.loc 1 33 2 view .LVU60
+ 303 00fc A123     		movs	r3, #161
+ 304 00fe 84F85E34 		strb	r3, [r4, #1118]
+  33:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA6); //--set normal display
+ 305              		.loc 1 33 2 view .LVU61
+ 306 0102 0222     		movs	r2, #2
+ 307 0104 3146     		mov	r1, r6
+ 308 0106 2046     		mov	r0, r4
+ 309 0108 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 310              	.LVL25:
+  34:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA8); //--set multiplex ratio(1 to 64)
+ 311              		.loc 1 34 2 view .LVU62
+ 312 010c 84F85D54 		strb	r5, [r4, #1117]
+  34:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA8); //--set multiplex ratio(1 to 64)
+ 313              		.loc 1 34 2 view .LVU63
+ 314 0110 A623     		movs	r3, #166
+ 315 0112 84F85E34 		strb	r3, [r4, #1118]
+  34:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA8); //--set multiplex ratio(1 to 64)
+ 316              		.loc 1 34 2 view .LVU64
+ 317 0116 0222     		movs	r2, #2
+ 318 0118 3146     		mov	r1, r6
+ 319 011a 2046     		mov	r0, r4
+ 320 011c FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 321              	.LVL26:
+  35:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x3F); //
+ 322              		.loc 1 35 2 view .LVU65
+ 323 0120 84F85D54 		strb	r5, [r4, #1117]
+  35:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x3F); //
+ 324              		.loc 1 35 2 view .LVU66
+ 325 0124 A823     		movs	r3, #168
+ 326 0126 84F85E34 		strb	r3, [r4, #1118]
+  35:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x3F); //
+ 327              		.loc 1 35 2 view .LVU67
+ 328 012a 0222     		movs	r2, #2
+ 329 012c 3146     		mov	r1, r6
+ 330 012e 2046     		mov	r0, r4
+ 331 0130 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 332              	.LVL27:
+  36:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA4); //0xa4,Output follows RAM content;0xa5,Output ignores RAM content
+ 333              		.loc 1 36 2 view .LVU68
+ 334 0134 84F85D54 		strb	r5, [r4, #1117]
+  36:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA4); //0xa4,Output follows RAM content;0xa5,Output ignores RAM content
+ 335              		.loc 1 36 2 view .LVU69
+ 336 0138 3F23     		movs	r3, #63
+ 337 013a 84F85E34 		strb	r3, [r4, #1118]
+  36:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xA4); //0xa4,Output follows RAM content;0xa5,Output ignores RAM content
+ 338              		.loc 1 36 2 view .LVU70
+ 339 013e 0222     		movs	r2, #2
+ 340 0140 3146     		mov	r1, r6
+ 341 0142 2046     		mov	r0, r4
+ 342 0144 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ARM GAS  /tmp/ccN8bYxI.s 			page 9
+
+
+ 343              	.LVL28:
+  37:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD3); //-set display offset
+ 344              		.loc 1 37 2 view .LVU71
+ 345 0148 84F85D54 		strb	r5, [r4, #1117]
+  37:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD3); //-set display offset
+ 346              		.loc 1 37 2 view .LVU72
+ 347 014c A423     		movs	r3, #164
+ 348 014e 84F85E34 		strb	r3, [r4, #1118]
+  37:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD3); //-set display offset
+ 349              		.loc 1 37 2 view .LVU73
+ 350 0152 0222     		movs	r2, #2
+ 351 0154 3146     		mov	r1, r6
+ 352 0156 2046     		mov	r0, r4
+ 353 0158 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 354              	.LVL29:
+  38:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //-not offset
+ 355              		.loc 1 38 2 view .LVU74
+ 356 015c 84F85D54 		strb	r5, [r4, #1117]
+  38:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //-not offset
+ 357              		.loc 1 38 2 view .LVU75
+ 358 0160 D323     		movs	r3, #211
+ 359 0162 84F85E34 		strb	r3, [r4, #1118]
+  38:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x00); //-not offset
+ 360              		.loc 1 38 2 view .LVU76
+ 361 0166 0222     		movs	r2, #2
+ 362 0168 3146     		mov	r1, r6
+ 363 016a 2046     		mov	r0, r4
+ 364 016c FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 365              	.LVL30:
+  39:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD5); //--set display clock divide ratio/oscillator frequency
+ 366              		.loc 1 39 2 view .LVU77
+ 367 0170 84F85D54 		strb	r5, [r4, #1117]
+  39:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD5); //--set display clock divide ratio/oscillator frequency
+ 368              		.loc 1 39 2 view .LVU78
+ 369 0174 84F85E54 		strb	r5, [r4, #1118]
+  39:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD5); //--set display clock divide ratio/oscillator frequency
+ 370              		.loc 1 39 2 view .LVU79
+ 371 0178 0222     		movs	r2, #2
+ 372 017a 3146     		mov	r1, r6
+ 373 017c 2046     		mov	r0, r4
+ 374 017e FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 375              	.LVL31:
+  40:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xF0); //--set divide ratio
+ 376              		.loc 1 40 2 view .LVU80
+ 377 0182 84F85D54 		strb	r5, [r4, #1117]
+  40:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xF0); //--set divide ratio
+ 378              		.loc 1 40 2 view .LVU81
+ 379 0186 D523     		movs	r3, #213
+ 380 0188 84F85E34 		strb	r3, [r4, #1118]
+  40:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xF0); //--set divide ratio
+ 381              		.loc 1 40 2 view .LVU82
+ 382 018c 0222     		movs	r2, #2
+ 383 018e 3146     		mov	r1, r6
+ 384 0190 2046     		mov	r0, r4
+ 385 0192 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 386              	.LVL32:
+  41:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD9); //--set pre-charge period
+ARM GAS  /tmp/ccN8bYxI.s 			page 10
+
+
+ 387              		.loc 1 41 2 view .LVU83
+ 388 0196 84F85D54 		strb	r5, [r4, #1117]
+  41:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD9); //--set pre-charge period
+ 389              		.loc 1 41 2 view .LVU84
+ 390 019a F023     		movs	r3, #240
+ 391 019c 84F85E34 		strb	r3, [r4, #1118]
+  41:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xD9); //--set pre-charge period
+ 392              		.loc 1 41 2 view .LVU85
+ 393 01a0 0222     		movs	r2, #2
+ 394 01a2 3146     		mov	r1, r6
+ 395 01a4 2046     		mov	r0, r4
+ 396 01a6 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 397              	.LVL33:
+  42:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x22); //
+ 398              		.loc 1 42 2 view .LVU86
+ 399 01aa 84F85D54 		strb	r5, [r4, #1117]
+  42:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x22); //
+ 400              		.loc 1 42 2 view .LVU87
+ 401 01ae D923     		movs	r3, #217
+ 402 01b0 84F85E34 		strb	r3, [r4, #1118]
+  42:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x22); //
+ 403              		.loc 1 42 2 view .LVU88
+ 404 01b4 0222     		movs	r2, #2
+ 405 01b6 3146     		mov	r1, r6
+ 406 01b8 2046     		mov	r0, r4
+ 407 01ba FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 408              	.LVL34:
+  43:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDA); //--set com pins hardware configuration
+ 409              		.loc 1 43 2 view .LVU89
+ 410 01be 84F85D54 		strb	r5, [r4, #1117]
+  43:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDA); //--set com pins hardware configuration
+ 411              		.loc 1 43 2 view .LVU90
+ 412 01c2 2223     		movs	r3, #34
+ 413 01c4 84F85E34 		strb	r3, [r4, #1118]
+  43:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDA); //--set com pins hardware configuration
+ 414              		.loc 1 43 2 view .LVU91
+ 415 01c8 0222     		movs	r2, #2
+ 416 01ca 3146     		mov	r1, r6
+ 417 01cc 2046     		mov	r0, r4
+ 418 01ce FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 419              	.LVL35:
+  44:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x12);
+ 420              		.loc 1 44 2 view .LVU92
+ 421 01d2 84F85D54 		strb	r5, [r4, #1117]
+  44:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x12);
+ 422              		.loc 1 44 2 view .LVU93
+ 423 01d6 DA23     		movs	r3, #218
+ 424 01d8 84F85E34 		strb	r3, [r4, #1118]
+  44:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x12);
+ 425              		.loc 1 44 2 view .LVU94
+ 426 01dc 0222     		movs	r2, #2
+ 427 01de 3146     		mov	r1, r6
+ 428 01e0 2046     		mov	r0, r4
+ 429 01e2 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 430              	.LVL36:
+  45:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDB); //--set vcomh
+ 431              		.loc 1 45 2 view .LVU95
+ARM GAS  /tmp/ccN8bYxI.s 			page 11
+
+
+ 432 01e6 84F85D54 		strb	r5, [r4, #1117]
+  45:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDB); //--set vcomh
+ 433              		.loc 1 45 2 view .LVU96
+ 434 01ea 1223     		movs	r3, #18
+ 435 01ec 84F85E34 		strb	r3, [r4, #1118]
+  45:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xDB); //--set vcomh
+ 436              		.loc 1 45 2 view .LVU97
+ 437 01f0 0222     		movs	r2, #2
+ 438 01f2 3146     		mov	r1, r6
+ 439 01f4 2046     		mov	r0, r4
+ 440 01f6 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 441              	.LVL37:
+  46:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //0x20,0.77xVcc
+ 442              		.loc 1 46 2 view .LVU98
+ 443 01fa 84F85D54 		strb	r5, [r4, #1117]
+  46:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //0x20,0.77xVcc
+ 444              		.loc 1 46 2 view .LVU99
+ 445 01fe DB23     		movs	r3, #219
+ 446 0200 84F85E34 		strb	r3, [r4, #1118]
+  46:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //0x20,0.77xVcc
+ 447              		.loc 1 46 2 view .LVU100
+ 448 0204 0222     		movs	r2, #2
+ 449 0206 3146     		mov	r1, r6
+ 450 0208 2046     		mov	r0, r4
+ 451 020a FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 452              	.LVL38:
+  47:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x8D); //--set DC-DC enable
+ 453              		.loc 1 47 2 view .LVU101
+ 454 020e 84F85D54 		strb	r5, [r4, #1117]
+  47:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x8D); //--set DC-DC enable
+ 455              		.loc 1 47 2 view .LVU102
+ 456 0212 84F85E74 		strb	r7, [r4, #1118]
+  47:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x8D); //--set DC-DC enable
+ 457              		.loc 1 47 2 view .LVU103
+ 458 0216 0222     		movs	r2, #2
+ 459 0218 3146     		mov	r1, r6
+ 460 021a 2046     		mov	r0, r4
+ 461 021c FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 462              	.LVL39:
+  48:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x14); //
+ 463              		.loc 1 48 2 view .LVU104
+ 464 0220 84F85D54 		strb	r5, [r4, #1117]
+  48:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x14); //
+ 465              		.loc 1 48 2 view .LVU105
+ 466 0224 8D23     		movs	r3, #141
+ 467 0226 84F85E34 		strb	r3, [r4, #1118]
+  48:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x14); //
+ 468              		.loc 1 48 2 view .LVU106
+ 469 022a 0222     		movs	r2, #2
+ 470 022c 3146     		mov	r1, r6
+ 471 022e 2046     		mov	r0, r4
+ 472 0230 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 473              	.LVL40:
+  49:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xAF); //--turn on OLED panel
+ 474              		.loc 1 49 2 view .LVU107
+ 475 0234 84F85D54 		strb	r5, [r4, #1117]
+  49:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xAF); //--turn on OLED panel
+ARM GAS  /tmp/ccN8bYxI.s 			page 12
+
+
+ 476              		.loc 1 49 2 view .LVU108
+ 477 0238 1423     		movs	r3, #20
+ 478 023a 84F85E34 		strb	r3, [r4, #1118]
+  49:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xAF); //--turn on OLED panel
+ 479              		.loc 1 49 2 view .LVU109
+ 480 023e 0222     		movs	r2, #2
+ 481 0240 3146     		mov	r1, r6
+ 482 0242 2046     		mov	r0, r4
+ 483 0244 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 484              	.LVL41:
+  50:Core/Src/oled.cpp **** 
+ 485              		.loc 1 50 2 view .LVU110
+ 486 0248 84F85D54 		strb	r5, [r4, #1117]
+  50:Core/Src/oled.cpp **** 
+ 487              		.loc 1 50 2 view .LVU111
+ 488 024c AF23     		movs	r3, #175
+ 489 024e 84F85E34 		strb	r3, [r4, #1118]
+  50:Core/Src/oled.cpp **** 
+ 490              		.loc 1 50 2 view .LVU112
+ 491 0252 0222     		movs	r2, #2
+ 492 0254 3146     		mov	r1, r6
+ 493 0256 2046     		mov	r0, r4
+ 494 0258 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 495              	.LVL42:
+  52:Core/Src/oled.cpp **** 
+ 496              		.loc 1 52 5 view .LVU113
+ 497 025c 84F85D54 		strb	r5, [r4, #1117]
+  52:Core/Src/oled.cpp **** 
+ 498              		.loc 1 52 5 view .LVU114
+ 499 0260 2E23     		movs	r3, #46
+ 500 0262 84F85E34 		strb	r3, [r4, #1118]
+  52:Core/Src/oled.cpp **** 
+ 501              		.loc 1 52 5 view .LVU115
+ 502 0266 0222     		movs	r2, #2
+ 503 0268 3146     		mov	r1, r6
+ 504 026a 2046     		mov	r0, r4
+ 505 026c FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 506              	.LVL43:
+  54:Core/Src/oled.cpp **** 
+ 507              		.loc 1 54 5 view .LVU116
+  54:Core/Src/oled.cpp **** 
+ 508              		.loc 1 54 26 is_stmt 0 view .LVU117
+ 509 0270 1DA8     		add	r0, sp, #116
+ 510 0272 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+ 511              	.LVL44:
+ 512              	.LBE3:
+  56:Core/Src/oled.cpp **** void oled::OLED_Fill(OLED_COLOR_t color) {
+ 513              		.loc 1 56 1 view .LVU118
+ 514 0276 2046     		mov	r0, r4
+ 515 0278 BDE8F041 		pop	{r4, r5, r6, r7, r8, lr}
+ 516              	.LCFI6:
+ 517              		.cfi_restore 14
+ 518              		.cfi_restore 8
+ 519              		.cfi_restore 7
+ 520              		.cfi_restore 6
+ 521              		.cfi_restore 5
+ 522              		.cfi_restore 4
+ARM GAS  /tmp/ccN8bYxI.s 			page 13
+
+
+ 523              		.cfi_def_cfa_offset 16
+ 524              	.LVL45:
+  56:Core/Src/oled.cpp **** void oled::OLED_Fill(OLED_COLOR_t color) {
+ 525              		.loc 1 56 1 view .LVU119
+ 526 027c 04B0     		add	sp, sp, #16
+ 527              	.LCFI7:
+ 528              		.cfi_def_cfa_offset 0
+ 529 027e 7047     		bx	lr
+ 530              		.cfi_endproc
+ 531              	.LFE131:
+ 532              		.fnend
+ 534              		.global	_ZN4oledC1E17I2C_HandleTypeDefh17TIM_HandleTypeDef
+ 535              		.thumb_set _ZN4oledC1E17I2C_HandleTypeDefh17TIM_HandleTypeDef,_ZN4oledC2E17I2C_HandleTypeDefh17TIM
+ 536              		.section	.text._ZN4oled12oled_refreshEv,"ax",%progbits
+ 537              		.align	1
+ 538              		.global	_ZN4oled12oled_refreshEv
+ 539              		.syntax unified
+ 540              		.thumb
+ 541              		.thumb_func
+ 542              		.fpu fpv4-sp-d16
+ 544              	_ZN4oled12oled_refreshEv:
+ 545              		.fnstart
+ 546              	.LVL46:
+ 547              	.LFB135:
+  68:Core/Src/oled.cpp **** void oled::oled_refresh(void)
+  69:Core/Src/oled.cpp **** {
+ 548              		.loc 1 69 1 is_stmt 1 view -0
+ 549              		.cfi_startproc
+ 550              		@ args = 0, pretend = 0, frame = 0
+ 551              		@ frame_needed = 0, uses_anonymous_args = 0
+ 552              		.loc 1 69 1 is_stmt 0 view .LVU121
+ 553 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 554              		.save {r3, r4, r5, r6, r7, lr}
+ 555              	.LCFI8:
+ 556              		.cfi_def_cfa_offset 24
+ 557              		.cfi_offset 3, -24
+ 558              		.cfi_offset 4, -20
+ 559              		.cfi_offset 5, -16
+ 560              		.cfi_offset 6, -12
+ 561              		.cfi_offset 7, -8
+ 562              		.cfi_offset 14, -4
+ 563 0002 0446     		mov	r4, r0
+  70:Core/Src/oled.cpp **** 	uint8_t m;
+ 564              		.loc 1 70 2 is_stmt 1 view .LVU122
+  71:Core/Src/oled.cpp **** 	
+  72:Core/Src/oled.cpp **** 	for (m = 0; m < 8; m++) {
+ 565              		.loc 1 72 2 view .LVU123
+ 566              	.LVL47:
+ 567              		.loc 1 72 9 is_stmt 0 view .LVU124
+ 568 0004 0025     		movs	r5, #0
+ 569 0006 2AE0     		b	.L12
+ 570              	.LVL48:
+ 571              	.L14:
+  73:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0xB0 + m);
+ 572              		.loc 1 73 3 is_stmt 1 discriminator 2 view .LVU125
+ 573 0008 0027     		movs	r7, #0
+ 574 000a 84F85D74 		strb	r7, [r4, #1117]
+ARM GAS  /tmp/ccN8bYxI.s 			page 14
+
+
+ 575              		.loc 1 73 3 discriminator 2 view .LVU126
+ 576 000e A5F15003 		sub	r3, r5, #80
+ 577 0012 84F85E34 		strb	r3, [r4, #1118]
+ 578              		.loc 1 73 3 discriminator 2 view .LVU127
+ 579 0016 04F25D46 		addw	r6, r4, #1117
+ 580 001a 0222     		movs	r2, #2
+ 581 001c 3146     		mov	r1, r6
+ 582 001e 2046     		mov	r0, r4
+ 583 0020 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 584              	.LVL49:
+  74:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0x00);
+ 585              		.loc 1 74 3 discriminator 2 view .LVU128
+ 586 0024 84F85D74 		strb	r7, [r4, #1117]
+ 587              		.loc 1 74 3 discriminator 2 view .LVU129
+ 588 0028 84F85E74 		strb	r7, [r4, #1118]
+ 589              		.loc 1 74 3 discriminator 2 view .LVU130
+ 590 002c 0222     		movs	r2, #2
+ 591 002e 3146     		mov	r1, r6
+ 592 0030 2046     		mov	r0, r4
+ 593 0032 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 594              	.LVL50:
+  75:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0x10);
+ 595              		.loc 1 75 3 discriminator 2 view .LVU131
+ 596 0036 84F85D74 		strb	r7, [r4, #1117]
+ 597              		.loc 1 75 3 discriminator 2 view .LVU132
+ 598 003a 1023     		movs	r3, #16
+ 599 003c 84F85E34 		strb	r3, [r4, #1118]
+ 600              		.loc 1 75 3 discriminator 2 view .LVU133
+ 601 0040 0222     		movs	r2, #2
+ 602 0042 3146     		mov	r1, r6
+ 603 0044 2046     		mov	r0, r4
+ 604 0046 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 605              	.LVL51:
+  76:Core/Src/oled.cpp ****         oled_buffer[W * m]=0x40;
+ 606              		.loc 1 76 9 discriminator 2 view .LVU134
+ 607              		.loc 1 76 23 is_stmt 0 discriminator 2 view .LVU135
+ 608 004a A901     		lsls	r1, r5, #6
+ 609              		.loc 1 76 27 discriminator 2 view .LVU136
+ 610 004c 4023     		movs	r3, #64
+ 611 004e 6354     		strb	r3, [r4, r1]
+  77:Core/Src/oled.cpp **** 		/* Write multi data */
+  78:Core/Src/oled.cpp **** 		oled_write(&oled_buffer[W * m], W+1);
+ 612              		.loc 1 78 3 is_stmt 1 discriminator 2 view .LVU137
+ 613              		.loc 1 78 13 is_stmt 0 discriminator 2 view .LVU138
+ 614 0050 4122     		movs	r2, #65
+ 615 0052 2144     		add	r1, r1, r4
+ 616 0054 2046     		mov	r0, r4
+ 617 0056 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+ 618              	.LVL52:
+  72:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0xB0 + m);
+ 619              		.loc 1 72 2 is_stmt 1 discriminator 2 view .LVU139
+ 620 005a 0135     		adds	r5, r5, #1
+ 621              	.LVL53:
+  72:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0xB0 + m);
+ 622              		.loc 1 72 2 is_stmt 0 discriminator 2 view .LVU140
+ 623 005c EDB2     		uxtb	r5, r5
+ 624              	.LVL54:
+ARM GAS  /tmp/ccN8bYxI.s 			page 15
+
+
+ 625              	.L12:
+  72:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0xB0 + m);
+ 626              		.loc 1 72 16 is_stmt 1 discriminator 3 view .LVU141
+ 627 005e 072D     		cmp	r5, #7
+ 628 0060 D2D9     		bls	.L14
+  79:Core/Src/oled.cpp **** 	}
+  80:Core/Src/oled.cpp **** }
+ 629              		.loc 1 80 1 is_stmt 0 view .LVU142
+ 630 0062 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 631              		.loc 1 80 1 view .LVU143
+ 632              		.cfi_endproc
+ 633              	.LFE135:
+ 634              		.fnend
+ 636              		.text
+ 637              	.Letext0:
+ 638              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 639              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
+ 640              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 641              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 642              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 643              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 644              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 645              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 646              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 647              		.file 11 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
+ 648              		.file 12 "/usr/include/newlib/sys/_types.h"
+ 649              		.file 13 "/usr/include/newlib/sys/reent.h"
+ 650              		.file 14 "/usr/include/newlib/sys/lock.h"
+ 651              		.file 15 "Core/Inc/oled.hpp"
+ 652              		.file 16 "/usr/include/newlib/string.h"
+ARM GAS  /tmp/ccN8bYxI.s 			page 16
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 oled.cpp
+     /tmp/ccN8bYxI.s:18     .text._ZN4oled9OLED_FillENS_12OLED_COLOR_tE:0000000000000000 $t
+     /tmp/ccN8bYxI.s:26     .text._ZN4oled9OLED_FillENS_12OLED_COLOR_tE:0000000000000000 _ZN4oled9OLED_FillENS_12OLED_COLOR_tE
+.ARM.exidx.text._ZN4oled9OLED_FillENS_12OLED_COLOR_tE:0000000000000000 $d
+     /tmp/ccN8bYxI.s:84     .text._ZN4oled10oled_writeEPht:0000000000000000 $t
+     /tmp/ccN8bYxI.s:91     .text._ZN4oled10oled_writeEPht:0000000000000000 _ZN4oled10oled_writeEPht
+.ARM.exidx.text._ZN4oled10oled_writeEPht:0000000000000000 $d
+     /tmp/ccN8bYxI.s:138    .text._ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef:0000000000000000 $t
+     /tmp/ccN8bYxI.s:145    .text._ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef:0000000000000000 _ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef
+.ARM.exidx.text._ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef:0000000000000000 $d
+     /tmp/ccN8bYxI.s:145    .text._ZN4oledC2E17I2C_HandleTypeDefh17TIM_HandleTypeDef:0000000000000000 _ZN4oledC1E17I2C_HandleTypeDefh17TIM_HandleTypeDef
+     /tmp/ccN8bYxI.s:537    .text._ZN4oled12oled_refreshEv:0000000000000000 $t
+     /tmp/ccN8bYxI.s:544    .text._ZN4oled12oled_refreshEv:0000000000000000 _ZN4oled12oled_refreshEv
+.ARM.exidx.text._ZN4oled12oled_refreshEv:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+memset
+HAL_I2C_Master_Transmit
+__aeabi_unwind_cpp_pr0
+memcpy
+HAL_I2C_IsDeviceReady
+HAL_TIM_Base_Start_IT
