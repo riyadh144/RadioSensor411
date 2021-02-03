@@ -122,7 +122,24 @@ void oled::oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , 
 }
 void oled::oled_update_battery(float voltage)
 {
-char volt [4];
-sprintf(volt,"%.1fv",voltage);
-oled_print(volt,4,Font_7x10,90,0);
+	char volt [4];
+	sprintf(volt,"%.1fv",voltage);
+	oled_print(volt,4,Font_7x10,90,0);
+}
+
+void oled::oled_off()
+{
+	OLED_WRITECOMMAND(0xAE); //display off
+	oledOn=0;
+}
+
+void oled::oled_on()
+{
+	OLED_WRITECOMMAND(0xAF); //display on
+	oledOn=1;
+	oled_reset_timer();
+}
+uint8_t oled::oled_isOledOn()
+{
+	return oledOn;
 }

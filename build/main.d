@@ -37,7 +37,7 @@ build/main.o: Core/Src/main.cpp Core/Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h Core/Inc/oled.h \
- Core/Inc/fonts.h
+ Core/Inc/fonts.h Core/Inc/menu.hpp Core/Inc/oled.h
 
 Core/Inc/main.h:
 
@@ -124,3 +124,7 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
 Core/Inc/oled.h:
 
 Core/Inc/fonts.h:
+
+Core/Inc/menu.hpp:
+
+Core/Inc/oled.h:

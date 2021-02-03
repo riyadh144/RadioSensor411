@@ -22,10 +22,14 @@ uint8_t address;
 
 uint8_t comm[2];
 
+uint16_t tmoCounter=0;
+uint16_t tmoValue=0;
 
+uint8_t oledOn=1;
 
 public:
 uint8_t oled_buffer[W*H/8+8];
+
 
 typedef enum OLED_COLOR_t
 {
@@ -111,15 +115,33 @@ void oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , uint16
  */
 void oled_update_battery(float voltage);
 /**
- * @brief Put the oled to sleep
+ * @brief Put the oled to sleep and kill the timer
  * 
  */
 void oled_off(); //TODO: implement the function to turn of the oled
 /**
- * @brief wake the oled
+ * @brief wake the oled and set the timer
  * 
  */
 void oled_on(); //TODO: implement the fucntion to turn on the oled
+/**
+ * @brief Set the time out so the display sleep in seconds
+ * 
+ * @param time: Time in seconds
+ */
+void oled_set_timer(uint16_t time); 
+/**
+ * @brief Zero the timer;
+ * 
+ */
+void oled_reset_timer();
+/**
+ * @brief Is the OLED on?
+ * 
+ * @return uint8_t 0:Off 1: Onn
+ */
+uint8_t oled_isOledOn();
+
 };
 
 #endif

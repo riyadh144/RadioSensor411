@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "oled.h"
+#include "menu.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -94,6 +95,7 @@ static void MX_TIM9_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 oled oled1(&hi2c3,0x78,&htim10);
+menu menu1(&oled1);
 /* USER CODE END 0 */
 
 /**
@@ -839,7 +841,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin : key_ok_Pin */
   GPIO_InitStruct.Pin = key_ok_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   HAL_GPIO_Init(key_ok_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : keyin_4_Pin keyin_3_Pin keyin_2_Pin keyin_1_Pin
@@ -862,14 +864,42 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+uint8_t ok_debounce=0;
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-  if(htim->Instance==htim10.Instance)
+  //TODO Check on the htime10 setup 
+  if(htim->Instance==htim10.Instance) //htim10 is now setup to refresh 15 times a second 
   {
-    oled1.oled_refresh();
+    //Debounce OK
+    if(HAL_GPIO_ReadPin(key_ok_GPIO_Port,key_ok_Pin))
+    {
+      if(ok_debounce==0||ok_debounce==1){
+        ok_debounce++;
+      }
+      else
+      {
+        if(ok_debounce==2){
+          menu1.menu_ok();
+          ok_debounce=0;
+        }
+      }
+      
+    }else
+    {
+      ok_debounce=0;
+    }
+    
+    if(oled1.oled_isOledOn())
+    {
+      menu1.menu_print();//update the menu portion of the display
+      oled1.oled_refresh();//Send the data to the display
+    }
+
   }
 }
+
+//TODO: Setup the OK interrupt
+
 /* USER CODE END 4 */
 
 /**

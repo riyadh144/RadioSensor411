@@ -5,14 +5,14 @@ menu::menu(oled* oled_)
     oled1=oled_;
 }
 
-void menu::menu_print()
+void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
     char temp [12];
 
     switch (menu_value)
     {
         case MENU_HOME:
-            sprintf(temp, "C:%s SQ:%s", ch,sq);
+            sprintf(temp, "C:%.2s SQ:%.2s", ch,sq);
             oled1->oled_print(temp,12, Font_16x26, 0,19);
             break; 
         case MENU_CH:
@@ -28,15 +28,15 @@ void menu::menu_print()
             oled1->oled_print(temp,12, Font_16x26, 0,19);
             break;
         case MENU_CH_IN:
-            sprintf(temp, "   CH:%s   ",ch);
+            sprintf(temp, "   CH:%.2s   ",ch);
             oled1->oled_print(temp,12, Font_16x26, 0,19);
             break;
         case MENU_SQ_IN:
-            sprintf(temp, "   SQ:%s   ",sq);
+            sprintf(temp, "   SQ:%.2s   ",sq);
             oled1->oled_print(temp,12, Font_16x26, 0,19);
             break;
         case MENU_TMO_IN:
-            sprintf(temp, "   DS:%s   ",tmo);
+            sprintf(temp, "   DS:%.2s   ",tmo);
             oled1->oled_print(temp,12, Font_16x26, 0,19);
             break;
         default:
@@ -48,10 +48,18 @@ void menu::menu_print()
 
 void menu::menu_ok()
 {
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_reset_timer();
+    }
+    else
+    {
+        oled1->oled_on();
+    }
+
     switch (menu_value) //TODO: Maybe we could optimize the performance on this but low priority 
     {
     case MENU_HOME:
-        oled1->oled_on();
         break;
     case MENU_CH:
         menu_value=MENU_CH_IN;
@@ -93,10 +101,16 @@ void menu::menu_ok()
     default:
         break;
     }
+
+    
 }
 
 void menu::menu_next()
 {
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_reset_timer();
+    }
     switch (menu_value)
     {
     case MENU_HOME:
@@ -125,6 +139,10 @@ void menu::menu_next()
 
 void menu::menu_prev()
 {
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_reset_timer();
+    }
     switch (menu_value)
     {
     case MENU_HOME:
@@ -152,6 +170,10 @@ void menu::menu_prev()
 }
 void menu::menu_number(uint8_t num)
 {
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_reset_timer();
+    }
     if(cursorOn) //Only accept an input when the cursor is on
     {
         switch (menu_value)
