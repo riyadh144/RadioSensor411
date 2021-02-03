@@ -143,6 +143,8 @@ int main(void)
   MX_TIM5_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
+  oled1.init();
+  
   float f=3.3;
 
   /* USER CODE END 2 */
