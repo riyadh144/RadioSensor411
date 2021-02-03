@@ -1,4 +1,4 @@
-build/oled.o: Core/Src/oled.cpp Core/Inc/oled.h \
+build/menu.o: Core/Src/menu.cpp Core/Inc/menu.hpp Core/Inc/oled.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h \
  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h \
  Drivers/CMSIS/Include/core_cm4.h Drivers/CMSIS/Include/cmsis_version.h \
@@ -37,6 +37,8 @@ build/oled.o: Core/Src/oled.cpp Core/Inc/oled.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h Core/Inc/fonts.h
+
+Core/Inc/menu.hpp:
 
 Core/Inc/oled.h:
 

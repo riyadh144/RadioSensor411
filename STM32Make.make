@@ -72,7 +72,9 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
 
 CPP_SOURCES = \
 Core/Src/i2c.cpp \
+Core/Src/keyboard.cpp \
 Core/Src/main.cpp \
+Core/Src/menu.cpp \
 Core/Src/oled.cpp
 
 

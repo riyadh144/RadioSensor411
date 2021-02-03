@@ -1,5 +1,5 @@
-#ifndef OLED_H_
-#define OLED_H_H
+#ifndef OLED_H
+#define OLED_H
 #include "stm32f4xx.h"
 
 #include "stm32f4xx_hal_i2c.h"
@@ -12,10 +12,10 @@
 #define H 64
 #define COMMAND 0x00
 #define DATA 0x40
+
 class oled{
 
 private:
-uint8_t oled_buffer[W*H/8+8];
 I2C_HandleTypeDef *hi2c;
 TIM_HandleTypeDef *htim;
 uint8_t address;
@@ -25,6 +25,8 @@ uint8_t comm[2];
 
 
 public:
+uint8_t oled_buffer[W*H/8+8];
+
 typedef enum OLED_COLOR_t
 {
     OLED_BLACK= 0x0,
@@ -91,7 +93,33 @@ uint8_t oled_write(uint8_t* data, uint16_t count);
  */
 void oled_fill(OLED_COLOR_t color);
 
-void oled_print(char* string, uint8_t count, uint8_t size, uint16_t x , uint16_t y);
+/**
+ * @brief Print a line of text on a position
+ * 
+ * @param string: string to be printed
+ * @param count : number of chars in the string //TODO:Eleminate the need
+ * @param size  : Which font FontDef_t
+ * @param x     : x-Loc of the first letter
+ * @param y     : y-Loc of the first letter
+ */
+void oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , uint16_t y);
+/**
+ * @brief Update the battery voltage on the top right of the screen
+ * 
+ * @param voltage Takes the input from the ADC 
+ * @todo  implement a good interrupt routine to do this
+ */
 void oled_update_battery(float voltage);
+/**
+ * @brief Put the oled to sleep
+ * 
+ */
+void oled_off(); //TODO: implement the function to turn of the oled
+/**
+ * @brief wake the oled
+ * 
+ */
+void oled_on(); //TODO: implement the fucntion to turn on the oled
 };
+
 #endif

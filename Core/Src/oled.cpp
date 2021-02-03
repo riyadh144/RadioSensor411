@@ -1,5 +1,4 @@
-#include "oled.hpp"
-
+#include "oled.h"
 
 #define OLED_RIGHT_HORIZONTAL_SCROLL              0x26
 #define OLED_LEFT_HORIZONTAL_SCROLL               0x27
@@ -15,7 +14,8 @@
 
 #define OLED_WRITECOMMAND(command)      comm[0]=COMMAND; comm[1]=(command); oled_write(comm,2)
 
-oled::oled(I2C_HandleTypeDef *hi2c, uint8_t address,TIM_HandleTypeDef *htim){
+oled::oled(I2C_HandleTypeDef *hi2c, uint8_t address,TIM_HandleTypeDef *htim)
+{
     this->hi2c=hi2c;
 	this->address=address;
 	this->htim=htim;
@@ -84,7 +84,7 @@ void oled::oled_refresh(void)
 	}
 }
 
-void oled::oled_print(char* string, uint8_t count, uint8_t size, uint16_t x , uint16_t y)
+void oled::oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , uint16_t y)
 {	
 	uint8_t strItr=0;
 	// //loop through the chars in the string
@@ -93,17 +93,17 @@ void oled::oled_print(char* string, uint8_t count, uint8_t size, uint16_t x , ui
 		int i=0;
 		int j=0;
 		int b;
-		for (i = 0; i < Font_7x10.FontHeight; i++) {
-			for (j = 0; j < Font_7x10.FontWidth; j++) {
+		for (i = 0; i < size.FontHeight; i++) {
+			for (j = 0; j < size.FontWidth; j++) {
 
 					oled_buffer[((y+i) / 8)*W+x+j]=0;
 
 				
 			}
 		}
-		for (i = 0; i < Font_7x10.FontHeight; i++) {
-			b = Font_7x10.data[(*string - 32) * Font_7x10.FontHeight + i];
-			for (j = 0; j < Font_7x10.FontWidth; j++) {
+		for (i = 0; i < size.FontHeight; i++) {
+			b = size.data[(*string - 32) * size.FontHeight + i];
+			for (j = 0; j < size.FontWidth; j++) {
 				if ((b << j) & 0x8000) {
 					oled_buffer[((y+i) / 8)*W+x+j]|=1 << ((y+i) % 8);
 				} else {
@@ -124,5 +124,5 @@ void oled::oled_update_battery(float voltage)
 {
 char volt [4];
 sprintf(volt,"%.1fv",voltage);
-oled_print(volt,4,7,90,0);
+oled_print(volt,4,Font_7x10,90,0);
 }
