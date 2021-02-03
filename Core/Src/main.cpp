@@ -146,7 +146,7 @@ int main(void)
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
   adc_bat.adc_setEquation(3.3*2/4096,0);
-
+  oled1.init();
 
   /* USER CODE END 2 */
 
