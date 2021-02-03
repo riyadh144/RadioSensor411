@@ -137,9 +137,17 @@ void oled::oled_on()
 {
 	OLED_WRITECOMMAND(0xAF); //display on
 	oledOn=1;
-	oled_reset_timer();
+	oled_resetTimer();
 }
 uint8_t oled::oled_isOledOn()
 {
 	return oledOn;
+}
+void oled::oled_resetTimer()
+{
+//TODO: implement the function
+}
+void oled::oled_setTimer(uint16_t time)
+{
+//TODO: implement the function
 }

@@ -2,8 +2,6 @@
 #define OLED_H
 #include "stm32f4xx.h"
 
-#include "stm32f4xx_hal_i2c.h"
-#include "stm32f4xx_hal_tim.h"
 #include "string.h"
 #include "stdint.h"
 #include "fonts.h"
@@ -129,12 +127,12 @@ void oled_on(); //TODO: implement the fucntion to turn on the oled
  * 
  * @param time: Time in seconds
  */
-void oled_set_timer(uint16_t time); 
+void oled_setTimer(uint16_t time); 
 /**
  * @brief Zero the timer;
  * 
  */
-void oled_reset_timer();
+void oled_resetTimer();
 /**
  * @brief Is the OLED on?
  * 

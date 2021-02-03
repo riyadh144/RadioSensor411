@@ -24,6 +24,7 @@
 /* USER CODE BEGIN Includes */
 #include "oled.h"
 #include "menu.hpp"
+#include "adc.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,6 +97,7 @@ static void MX_TIM9_Init(void);
 /* USER CODE BEGIN 0 */
 oled oled1(&hi2c3,0x78,&htim10);
 menu menu1(&oled1);
+adc adc_bat(&hadc1);
 /* USER CODE END 0 */
 
 /**
@@ -143,7 +145,8 @@ int main(void)
   MX_TIM5_Init();
   MX_TIM9_Init();
   /* USER CODE BEGIN 2 */
-  float f=3.3;
+  adc_bat.adc_setEquation(3.3*2/4096,0);
+
 
   /* USER CODE END 2 */
 
@@ -152,16 +155,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    HAL_ADC_Start (&hadc1);
-    HAL_ADC_PollForConversion (&hadc1, 1000);
-    f = HAL_ADC_GetValue (&hadc1)*(3.3*2/4096);
-    HAL_ADC_Stop (&hadc1);
-    oled1.oled_update_battery(f);
-    f=f+.1;
-    HAL_Delay(500);
-    oled1.oled_update_battery(f);
-    f=f+.1;
-    HAL_Delay(500);
+
+    
 
     /* USER CODE BEGIN 3 */
   }
@@ -883,22 +878,25 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
           ok_debounce=0;
         }
       }
-      
-    }else
+    }
+    else
     {
       ok_debounce=0;
     }
     
     if(oled1.oled_isOledOn())
     {
+      oled1.oled_update_battery(adc_bat.adc_getValue()); //Get the battery voltage and print it
       menu1.menu_print();//update the menu portion of the display
       oled1.oled_refresh();//Send the data to the display
+    }
+    {
+      
     }
 
   }
 }
 
-//TODO: Setup the OK interrupt
 
 /* USER CODE END 4 */
 

@@ -50,7 +50,7 @@ void menu::menu_ok()
 {
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
-        oled1->oled_reset_timer();
+        oled1->oled_resetTimer();
     }
     else
     {
@@ -109,7 +109,7 @@ void menu::menu_next()
 {
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
-        oled1->oled_reset_timer();
+        oled1->oled_resetTimer();
     }
     switch (menu_value)
     {
@@ -141,7 +141,7 @@ void menu::menu_prev()
 {
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
-        oled1->oled_reset_timer();
+        oled1->oled_resetTimer();
     }
     switch (menu_value)
     {
@@ -172,7 +172,7 @@ void menu::menu_number(uint8_t num)
 {
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
-        oled1->oled_reset_timer();
+        oled1->oled_resetTimer();
     }
     if(cursorOn) //Only accept an input when the cursor is on
     {
