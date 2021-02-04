@@ -31,7 +31,7 @@ uint8_t oled_buffer[W*H/8+8];
 
 typedef enum OLED_COLOR_t
 {
-    OLED_BLACK= 0x0,
+    OLED_BLACK= 0x00,
     OLED_WHITE= 0xFF
 }OLED_COLOR;
 

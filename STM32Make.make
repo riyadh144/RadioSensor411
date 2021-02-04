@@ -76,7 +76,9 @@ Core/Src/i2c.cpp \
 Core/Src/keyboard.cpp \
 Core/Src/main.cpp \
 Core/Src/menu.cpp \
-Core/Src/oled.cpp
+Core/Src/oled.cpp \
+Core/Src/pin.cpp \
+Core/Src/sa818.cpp
 
 
 # ASM sources

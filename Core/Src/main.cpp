@@ -25,6 +25,7 @@
 #include "oled.h"
 #include "menu.hpp"
 #include "adc.hpp"
+#include "pin.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -98,6 +99,9 @@ static void MX_TIM9_Init(void);
 oled oled1(&hi2c3,0x78,&htim10);
 menu menu1(&oled1);
 adc adc_bat(&hadc1);
+pin radio_ptt(GPIOE,pin::PIN1,pin::out, pin::PullDown, pin::SPEED_LOW);
+pin radio_pd(GPIOE,pin::PIN3,pin::out, pin::PullDown, pin::SPEED_LOW);
+
 /* USER CODE END 0 */
 
 /**
@@ -147,6 +151,8 @@ int main(void)
   /* USER CODE BEGIN 2 */
   adc_bat.adc_setEquation(3.3*2/4096,0);
   oled1.init();
+  radio_pd.init();
+  radio_ptt.init();
 
   /* USER CODE END 2 */
 
