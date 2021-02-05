@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccXOGwzu.s 			page 1
+ARM GAS  /tmp/cc9aRRUQ.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccXOGwzu.s 			page 1
   49              		.loc 1 7 25 is_stmt 0 view .LVU7
   50 0006 8360     		str	r3, [r0, #8]
    8:Core/Src/pin.cpp ****     GPIO_InitStruct.Pull=pull_;
-ARM GAS  /tmp/ccXOGwzu.s 			page 2
+ARM GAS  /tmp/cc9aRRUQ.s 			page 2
 
 
   51              		.loc 1 8 5 is_stmt 1 view .LVU8
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccXOGwzu.s 			page 1
  100              		.loc 1 15 3 is_stmt 1 view .LVU17
  101              		.loc 1 15 16 is_stmt 0 view .LVU18
  102 0002 0146     		mov	r1, r0
-ARM GAS  /tmp/ccXOGwzu.s 			page 3
+ARM GAS  /tmp/cc9aRRUQ.s 			page 3
 
 
  103 0004 51F8040B 		ldr	r0, [r1], #4
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccXOGwzu.s 			page 1
  146 000c 0020     		movs	r0, #0
  147              	.LVL8:
  148              		.loc 1 28 1 view .LVU29
-ARM GAS  /tmp/ccXOGwzu.s 			page 4
+ARM GAS  /tmp/cc9aRRUQ.s 			page 4
 
 
  149 000e 7047     		bx	lr
@@ -225,111 +225,107 @@ ARM GAS  /tmp/ccXOGwzu.s 			page 1
  186              		@ frame_needed = 0, uses_anonymous_args = 0
  187              		@ link register save eliminated.
   31:Core/Src/pin.cpp ****     
-  32:Core/Src/pin.cpp ****     if(gpiox->IDR&GPIO_InitStruct.Pin==0)
+  32:Core/Src/pin.cpp ****     if((gpiox->IDR&GPIO_InitStruct.Pin)==0)
  188              		.loc 1 32 5 view .LVU35
- 189              		.loc 1 32 8 is_stmt 0 view .LVU36
+ 189              		.loc 1 32 9 is_stmt 0 view .LVU36
  190 0000 0368     		ldr	r3, [r0]
- 191              		.loc 1 32 15 view .LVU37
- 192 0002 1B69     		ldr	r3, [r3, #16]
- 193              		.loc 1 32 35 view .LVU38
- 194 0004 4268     		ldr	r2, [r0, #4]
- 195              		.loc 1 32 18 view .LVU39
- 196 0006 002A     		cmp	r2, #0
- 197 0008 14BF     		ite	ne
- 198 000a 0023     		movne	r3, #0
- 199 000c 03F00103 		andeq	r3, r3, #1
-ARM GAS  /tmp/ccXOGwzu.s 			page 5
-
-
- 200              		.loc 1 32 5 view .LVU40
- 201 0010 0BB1     		cbz	r3, .L10
+ 191              		.loc 1 32 16 view .LVU37
+ 192 0002 1A69     		ldr	r2, [r3, #16]
+ 193              		.loc 1 32 36 view .LVU38
+ 194 0004 4368     		ldr	r3, [r0, #4]
+ 195              		.loc 1 32 5 view .LVU39
+ 196 0006 1A42     		tst	r2, r3
+ 197 0008 01D1     		bne	.L10
   33:Core/Src/pin.cpp ****     {
   34:Core/Src/pin.cpp ****         return off;
- 202              		.loc 1 34 16 view .LVU41
- 203 0012 0020     		movs	r0, #0
- 204              	.LVL12:
- 205              		.loc 1 34 16 view .LVU42
- 206 0014 7047     		bx	lr
- 207              	.LVL13:
- 208              	.L10:
+ARM GAS  /tmp/cc9aRRUQ.s 			page 5
+
+
+ 198              		.loc 1 34 16 view .LVU40
+ 199 000a 0020     		movs	r0, #0
+ 200              	.LVL12:
+ 201              		.loc 1 34 16 view .LVU41
+ 202 000c 7047     		bx	lr
+ 203              	.LVL13:
+ 204              	.L10:
   35:Core/Src/pin.cpp ****     }
   36:Core/Src/pin.cpp ****     else
   37:Core/Src/pin.cpp ****     {
   38:Core/Src/pin.cpp ****         return on;
- 209              		.loc 1 38 16 view .LVU43
- 210 0016 0120     		movs	r0, #1
- 211              	.LVL14:
+ 205              		.loc 1 38 16 view .LVU42
+ 206 000e 0120     		movs	r0, #1
+ 207              	.LVL14:
   39:Core/Src/pin.cpp ****     }
   40:Core/Src/pin.cpp ****     
   41:Core/Src/pin.cpp **** }
- 212              		.loc 1 41 1 view .LVU44
- 213 0018 7047     		bx	lr
- 214              		.cfi_endproc
- 215              	.LFE135:
- 216              		.cantunwind
- 217              		.fnend
- 219              		.section	.text._ZN3pinD2Ev,"ax",%progbits
- 220              		.align	1
- 221              		.global	_ZN3pinD2Ev
- 222              		.syntax unified
- 223              		.thumb
- 224              		.thumb_func
- 225              		.fpu fpv4-sp-d16
- 227              	_ZN3pinD2Ev:
- 228              		.fnstart
- 229              	.LVL15:
- 230              	.LFB137:
+ 208              		.loc 1 41 1 view .LVU43
+ 209 0010 7047     		bx	lr
+ 210              		.cfi_endproc
+ 211              	.LFE135:
+ 212              		.cantunwind
+ 213              		.fnend
+ 215              		.section	.text._ZN3pinD2Ev,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	_ZN3pinD2Ev
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 221              		.fpu fpv4-sp-d16
+ 223              	_ZN3pinD2Ev:
+ 224              		.fnstart
+ 225              	.LVL15:
+ 226              	.LFB137:
   42:Core/Src/pin.cpp **** pin::~pin()
- 231              		.loc 1 42 1 is_stmt 1 view -0
- 232              		.cfi_startproc
- 233              		@ args = 0, pretend = 0, frame = 0
- 234              		@ frame_needed = 0, uses_anonymous_args = 0
- 235              		@ link register save eliminated.
+ 227              		.loc 1 42 1 is_stmt 1 view -0
+ 228              		.cfi_startproc
+ 229              		@ args = 0, pretend = 0, frame = 0
+ 230              		@ frame_needed = 0, uses_anonymous_args = 0
+ 231              		@ link register save eliminated.
   43:Core/Src/pin.cpp **** {
   44:Core/Src/pin.cpp **** }
- 236              		.loc 1 44 1 is_stmt 0 view .LVU46
- 237 0000 7047     		bx	lr
- 238              		.cfi_endproc
- 239              	.LFE137:
- 240              		.cantunwind
- 241              		.fnend
- 243              		.global	_ZN3pinD1Ev
- 244              		.thumb_set _ZN3pinD1Ev,_ZN3pinD2Ev
- 245              		.text
- 246              	.Letext0:
- 247              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
-ARM GAS  /tmp/ccXOGwzu.s 			page 6
+ 232              		.loc 1 44 1 is_stmt 0 view .LVU45
+ 233 0000 7047     		bx	lr
+ 234              		.cfi_endproc
+ 235              	.LFE137:
+ 236              		.cantunwind
+ 237              		.fnend
+ 239              		.global	_ZN3pinD1Ev
+ 240              		.thumb_set _ZN3pinD1Ev,_ZN3pinD2Ev
+ 241              		.text
+ 242              	.Letext0:
+ 243              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 244              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
+ 245              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 246              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 247              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ARM GAS  /tmp/cc9aRRUQ.s 			page 6
 
 
- 248              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
- 249              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 250              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
- 251              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 252              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 253              		.file 8 "Core/Inc/pin.hpp"
-ARM GAS  /tmp/ccXOGwzu.s 			page 7
+ 248              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 249              		.file 8 "Core/Inc/pin.hpp"
+ARM GAS  /tmp/cc9aRRUQ.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 pin.cpp
-     /tmp/ccXOGwzu.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
-     /tmp/ccXOGwzu.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+     /tmp/cc9aRRUQ.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
+     /tmp/cc9aRRUQ.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
 .ARM.exidx.text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $d
-     /tmp/ccXOGwzu.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC1EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
-     /tmp/ccXOGwzu.s:78     .text._ZN3pin4initEv:0000000000000000 $t
-     /tmp/ccXOGwzu.s:85     .text._ZN3pin4initEv:0000000000000000 _ZN3pin4initEv
+     /tmp/cc9aRRUQ.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC1EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+     /tmp/cc9aRRUQ.s:78     .text._ZN3pin4initEv:0000000000000000 $t
+     /tmp/cc9aRRUQ.s:85     .text._ZN3pin4initEv:0000000000000000 _ZN3pin4initEv
    .ARM.extab.text._ZN3pin4initEv:0000000000000000 $d
    .ARM.exidx.text._ZN3pin4initEv:0000000000000000 $d
-     /tmp/ccXOGwzu.s:115    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 $t
-     /tmp/ccXOGwzu.s:122    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 _ZN3pin5writeENS_5OnOffE
+     /tmp/cc9aRRUQ.s:115    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 $t
+     /tmp/cc9aRRUQ.s:122    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 _ZN3pin5writeENS_5OnOffE
 .ARM.exidx.text._ZN3pin5writeENS_5OnOffE:0000000000000000 $d
-     /tmp/ccXOGwzu.s:172    .text._ZN3pin4readEv:0000000000000000 $t
-     /tmp/ccXOGwzu.s:179    .text._ZN3pin4readEv:0000000000000000 _ZN3pin4readEv
+     /tmp/cc9aRRUQ.s:172    .text._ZN3pin4readEv:0000000000000000 $t
+     /tmp/cc9aRRUQ.s:179    .text._ZN3pin4readEv:0000000000000000 _ZN3pin4readEv
    .ARM.exidx.text._ZN3pin4readEv:0000000000000000 $d
-     /tmp/ccXOGwzu.s:220    .text._ZN3pinD2Ev:0000000000000000 $t
-     /tmp/ccXOGwzu.s:227    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD2Ev
+     /tmp/cc9aRRUQ.s:216    .text._ZN3pinD2Ev:0000000000000000 $t
+     /tmp/cc9aRRUQ.s:223    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD2Ev
       .ARM.exidx.text._ZN3pinD2Ev:0000000000000000 $d
-     /tmp/ccXOGwzu.s:227    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
+     /tmp/cc9aRRUQ.s:223    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

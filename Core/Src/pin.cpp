@@ -29,7 +29,7 @@ uint8_t pin::write(OnOff onoff)
 pin::OnOff pin::read()
 {
     
-    if(gpiox->IDR&GPIO_InitStruct.Pin==0)
+    if((gpiox->IDR&GPIO_InitStruct.Pin)==0)
     {
         return off;
     }
