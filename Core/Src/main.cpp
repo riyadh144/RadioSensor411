@@ -27,6 +27,7 @@
 #include "adc.hpp"
 #include "stm32f4xx_hal_conf.h"
 #include "pin.hpp"
+#include "sa818.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,7 +103,7 @@ menu menu1(&oled1);
 adc adc_bat(&hadc1);
 pin radio_ptt(GPIOE,pin::PIN1,pin::out, pin::PullDown, pin::SPEED_LOW);
 pin radio_pd(GPIOE,pin::PIN3,pin::out, pin::PullDown, pin::SPEED_LOW);
-
+sa818 sa8181(&huart2, &radio_pd, &radio_ptt);
 /* USER CODE END 0 */
 
 /**

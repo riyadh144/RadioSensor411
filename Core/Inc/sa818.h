@@ -1,7 +1,7 @@
 #ifndef _SA818_H
 #define _SA818_H
-#include "stm32f4xx_hal.h"
-
+#include "stm32f4xx.h"
+#include "pin.hpp"
 class sa818
 {
 private:
@@ -12,6 +12,8 @@ uint8_t locked; //Look on sending the next command
 unsigned char tx_len;
 unsigned char rx_len;
 
+pin *pin_pd;
+pin *pin_ptt;
 public:
 
 typedef enum  {
@@ -45,7 +47,7 @@ void sa818_txrx_mode(TxRx mode);
  * @param  usart: USART HAL handle, specifies which UART interface to use
  * @retval None
  */
-sa818 (UART_HandleTypeDef usart);
+sa818 (UART_HandleTypeDef* usart, pin* pin_pd_, pin* pin_ptt_);
 
 /**
  * @brief  Configure the parameters of transmission.
