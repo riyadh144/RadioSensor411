@@ -25,6 +25,7 @@
 #include "oled.h"
 #include "menu.hpp"
 #include "adc.hpp"
+#include "stm32f4xx_hal_conf.h"
 #include "pin.hpp"
 /* USER CODE END Includes */
 
