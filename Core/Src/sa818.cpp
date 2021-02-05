@@ -24,11 +24,11 @@ UART_HandleTypeDef huart2;
 
 void sa818::sa818_power(OnOff on)
 {
-    HAL_GPIO_WritePin(GPIOB, SA818_PD_Pin,on);
+    HAL_GPIO_WritePin(GPIOB, SA818_PD_Pin,GPIO_PIN_SET);
 }
 void sa818::sa818_txrx_mode(TxRx mode)
 {
-    HAL_GPIO_WritePin(GPIOB, SA818_PTT_Pin,mode);
+    HAL_GPIO_WritePin(GPIOB, SA818_PTT_Pin,(GPIO_PinState)mode);
 }
 
 sa818::sa818(UART_HandleTypeDef usart)
