@@ -151,12 +151,7 @@ void oled::oled_resetTimer()
 }
 void oled::oled_setTimer(uint16_t time)
 {
-	HAL_Init();
-    HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);   
-    HAL_IncTick();
-    HAL_GetTick();
-	// we multiply by 1000 because function argument is in ms
-	HAL_Delay(time*1000);
-	// turn the display off after delay
+
+	// turn the display off after
 	oled_off();
 }

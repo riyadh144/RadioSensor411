@@ -16,7 +16,7 @@ void pin::init()
 }
 uint8_t pin::write(OnOff onoff)
 {
-    if(gpiox->IDR != 0)
+    if((gpiox->IDR & GPIO_InitStruct.Pin) != 0)
         return -1; // recheck or switch the pin state ....
     if(onoff)
     {
@@ -31,7 +31,7 @@ uint8_t pin::write(OnOff onoff)
 pin::OnOff pin::read()
 {
     
-    if((gpiox->IDR&GPIO_InitStruct.Pin)==0)
+    if(!(gpiox->IDR & GPIO_InitStruct.Pin))
     {
         return off;
     }
