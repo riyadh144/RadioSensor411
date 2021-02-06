@@ -104,7 +104,7 @@ void oled_fill(OLED_COLOR_t color);
  * @param x     : x-Loc of the first letter
  * @param y     : y-Loc of the first letter
  */
-void oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , uint16_t y);
+void oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y);
 /**
  * @brief Update the battery voltage on the top right of the screen
  * 

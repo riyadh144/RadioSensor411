@@ -1,5 +1,6 @@
 #include "oled.h"
 
+
 #define OLED_RIGHT_HORIZONTAL_SCROLL              0x26
 #define OLED_LEFT_HORIZONTAL_SCROLL               0x27
 #define OLED_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29
@@ -84,11 +85,11 @@ void oled::oled_refresh(void)
 	}
 }
 
-void oled::oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , uint16_t y)
+void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 {	
 	uint8_t strItr=0;
 	// //loop through the chars in the string
-	while(strItr<count)
+	while(strItr<strlen(string))
 	{
 		int i=0;
 		int j=0;
