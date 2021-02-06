@@ -125,7 +125,7 @@ void oled::oled_update_battery(float voltage)
 {
 	char volt [4];
 	sprintf(volt,"%.1fv",voltage);
-	oled_print(volt,4,Font_7x10,90,0);
+	oled_print(volt,Font_7x10,90,0);
 }
 
 void oled::oled_off()
@@ -146,9 +146,16 @@ uint8_t oled::oled_isOledOn()
 }
 void oled::oled_resetTimer()
 {
-//TODO: implement the function
+	if(htim != 0)
+		htim = 0;
 }
 void oled::oled_setTimer(uint16_t time)
 {
-//TODO: implement the function
+	HAL_Init();
+    HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);   
+    HAL_IncTick();
+    HAL_GetTick();
+	HAL_Delay(time*1000);
+
+	oled_off();
 }
