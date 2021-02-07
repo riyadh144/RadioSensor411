@@ -1,5 +1,6 @@
 #include "oled.h"
 
+
 #define OLED_RIGHT_HORIZONTAL_SCROLL              0x26
 #define OLED_LEFT_HORIZONTAL_SCROLL               0x27
 #define OLED_VERTICAL_AND_RIGHT_HORIZONTAL_SCROLL 0x29
@@ -84,11 +85,11 @@ void oled::oled_refresh(void)
 	}
 }
 
-void oled::oled_print(char* string, uint8_t count, FontDef_t size, uint16_t x , uint16_t y)
+void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 {	
 	uint8_t strItr=0;
 	// //loop through the chars in the string
-	while(strItr<count)
+	while(strItr<strlen(string))
 	{
 		int i=0;
 		int j=0;
@@ -124,7 +125,7 @@ void oled::oled_update_battery(float voltage)
 {
 	char volt [4];
 	sprintf(volt,"%.1fv",voltage);
-	oled_print(volt,4,Font_7x10,90,0);
+	oled_print(volt,Font_7x10,90,0);
 }
 
 void oled::oled_off()
@@ -145,9 +146,25 @@ uint8_t oled::oled_isOledOn()
 }
 void oled::oled_resetTimer()
 {
-//TODO: implement the function
+	if(htim != 0)
+	{
+		htim = 0;
+		Refresh_Counter = true;
+	}
 }
 void oled::oled_setTimer(uint16_t time)
 {
-//TODO: implement the function
+
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+  	TIM2->CR1 |= TIM_CR1_CEN;
+	
+	while(TIM2->CNT < ((time*1000)/66))
+	{
+		if(Refresh_Counter)
+		{
+			TIM2->CNT = 0; // reset the counter
+		}
+	}
+	
+	oled_off();
 }
