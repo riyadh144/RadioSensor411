@@ -8,6 +8,7 @@ class keyboard
 
 keyboard();
 uint8_t keyboard_poll();
+uint8_t Keyboard_ok();
 
 };
 

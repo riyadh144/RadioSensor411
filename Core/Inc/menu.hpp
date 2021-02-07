@@ -13,13 +13,13 @@ private:
 
 enum menu_state
 {
-MENU_HOME=0,
-MENU_CH=1,
-MENU_SQ=2,
-MENU_TMO=3,
-MENU_CH_IN=1<<3,
-MENU_SQ_IN=2<<3,
-MENU_TMO_IN=3<<3
+    MENU_HOME=0, //Home screen
+    MENU_CH=1, //Menu itself
+    MENU_SQ=2,
+    MENU_TMO=3,
+    MENU_CH_IN=1<<3,
+    MENU_SQ_IN=2<<3,
+    MENU_TMO_IN=3<<3
 
 };
 
@@ -114,7 +114,7 @@ void menu_prev();
  * 
  * @param num:the number pressed
  */
-void menu_number(uint8_t num);
+void menu_number(char num);
 
 /**
  * @brief  Handles the press of ok
@@ -140,7 +140,7 @@ void menu_back();
  * @param  None
  * @retval None
  */
-void menu_up();
+void menu_up();//TODO:Implement
 
 /**
  * @brief  Handles the press of down
@@ -158,6 +158,8 @@ void menu_down();
  * @retval None
  */
 void menu_update();
+
+void keyboard_poll();
 
 };
 

@@ -83,6 +83,7 @@ void oled::oled_refresh(void)
 		/* Write multi data */
 		oled_write(&oled_buffer[W * m], W+1 );
 	}
+	Counter_increment();
 }
 
 void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
@@ -146,25 +147,20 @@ uint8_t oled::oled_isOledOn()
 }
 void oled::oled_resetTimer()
 {
-	if(htim != 0)
-	{
-		htim = 0;
-		Refresh_Counter = true;
-	}
+	tmoCounter = 0;
 }
-void oled::oled_setTimer(uint16_t time)
-{
 
-	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
-  	TIM2->CR1 |= TIM_CR1_CEN;
+void oled::oled_setTimer(uint32_t time)
+{
+	tmoValue = ((time*1000)/66);
 	
-	while(TIM2->CNT < ((time*1000)/66))
+}
+
+void oled::Counter_increment(void)
+{
+	tmoCounter++;
+	if(tmoValue == tmoCounter)
 	{
-		if(Refresh_Counter)
-		{
-			TIM2->CNT = 0; // reset the counter
-		}
+		oled_off();
 	}
-	
-	oled_off();
 }
