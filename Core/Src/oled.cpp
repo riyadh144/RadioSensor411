@@ -162,7 +162,7 @@ void oled::oled_setTimer(uint16_t time)
 	{
 		if(Refresh_Counter)
 		{
-			oled_resetTimer();
+			TIM2->CNT = 0; // reset the counter
 		}
 	}
 	
