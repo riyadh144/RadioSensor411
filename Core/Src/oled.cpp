@@ -147,11 +147,24 @@ uint8_t oled::oled_isOledOn()
 void oled::oled_resetTimer()
 {
 	if(htim != 0)
+	{
 		htim = 0;
+		Refresh_Counter = true;
+	}
 }
 void oled::oled_setTimer(uint16_t time)
 {
 
-	// turn the display off after
+	RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+  	TIM2->CR1 |= TIM_CR1_CEN;
+	
+	while(TIM2->CNT < ((time*1000)/66))
+	{
+		if(Refresh_Counter)
+		{
+			oled_resetTimer();
+		}
+	}
+	
 	oled_off();
 }

@@ -23,6 +23,8 @@ uint8_t comm[2];
 uint16_t tmoCounter=0;
 uint16_t tmoValue=0;
 
+bool Refresh_Counter = false;
+
 uint8_t oledOn=1;
 
 public:
@@ -40,6 +42,7 @@ typedef enum OLED_COLOR_t
  * @param  hi2c: I2C interface it should be initialized to 400Khz
  * @param  address: I2C address of the display
  * @param  htim: timer handle to be used for refresh
+ * @param  Refresh_Counter : if 1 its calling for a referesh otherwise it put system to sleep
  * @retval Initialization status:
  *           - 0: LCD was not detected on I2C port
  *           - > 0: LCD initialized OK and ready to use
@@ -99,7 +102,6 @@ void oled_fill(OLED_COLOR_t color);
  * @brief Print a line of text on a position
  * 
  * @param string: string to be printed
- * @param count : number of chars in the string //TODO:Eleminate the need
  * @param size  : Which font FontDef_t
  * @param x     : x-Loc of the first letter
  * @param y     : y-Loc of the first letter
