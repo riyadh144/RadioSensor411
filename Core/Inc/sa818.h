@@ -88,6 +88,15 @@ void sa818_get_version();
 
 void sa818_set_tail(uint8_t x);
 
+/**
+ * @brief send a message over the module.
+ * 
+ * @param string 
+ */
+void sa818_send_message(char* string);
+
+char* sa818_recieve_message();
+
 };
 
 #endif

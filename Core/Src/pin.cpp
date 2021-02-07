@@ -14,6 +14,7 @@ void pin::init()
 {
   HAL_GPIO_Init(gpiox, &GPIO_InitStruct);
 }
+
 uint8_t pin::write(OnOff onoff)
 {
     if(onoff)
@@ -26,6 +27,7 @@ uint8_t pin::write(OnOff onoff)
     }
     return 0;//TODO: write the error code if the pin isn't an output
 }
+
 pin::OnOff pin::read()
 {
     

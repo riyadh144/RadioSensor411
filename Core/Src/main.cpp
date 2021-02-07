@@ -69,7 +69,8 @@ UART_HandleTypeDef huart6;
 PCD_HandleTypeDef hpcd_USB_OTG_FS;
 
 /* USER CODE BEGIN PV */
-
+DMA_HandleTypeDef hdma_usart2_rx;
+DMA_HandleTypeDef hdma_usart2_tx;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -170,7 +171,7 @@ int main(void)
   /* USER CODE END 3 */
 }
 
-/**
+/**x
   * @brief System Clock Configuration
   * @retval None
   */
