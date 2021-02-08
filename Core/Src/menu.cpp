@@ -217,6 +217,52 @@ void menu::menu_number(char num)
         }
     }
 }
+void menu::menu_up()
+{
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_resetTimer();
+    }
+    switch (menu_value)
+    {
+    case MENU_CH_IN:
+        chVal++;
+        break;
+    case MENU_SQ_IN:
+        sqVal++;
+        break;   
+    default:
+    if(volVal < 100)
+    {
+        volVal++;
+    }
+        break;
+    }
+}
+
+void menu::menu_down()
+{
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_resetTimer();
+    }
+    switch (menu_value)
+    {
+    case MENU_CH_IN:
+        chVal--;
+        break;
+    case MENU_SQ_IN:
+        sqVal--;
+        break;   
+    default:
+        if(volVal > 0)
+        {
+            volVal--;
+        }
+        break;
+    }
+
+}
 
 
 void menu::keyboard_poll()
