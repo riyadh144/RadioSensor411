@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/ccbylgQC.s 			page 1
+=======
+ARM GAS  /tmp/ccZvSkrc.s 			page 1
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
    1              		.cpu cortex-m4
@@ -17,6 +21,7 @@ ARM GAS  /tmp/ccbylgQC.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
+<<<<<<< HEAD
   17              		.section	.text._ZN8keyboard13keyboard_pollEv,"ax",%progbits
   18              		.align	1
   19              		.global	_ZN8keyboard13keyboard_pollEv
@@ -433,13 +438,24 @@ ARM GAS  /tmp/ccbylgQC.s 			page 1
  284              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  285              		.file 7 "Core/Inc/keyboard.hpp"
 ARM GAS  /tmp/ccbylgQC.s 			page 9
+=======
+  17              	.Letext0:
+  18              		.file 1 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+  19              		.file 2 "Drivers/CMSIS/Include/core_cm4.h"
+  20              		.file 3 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+  21              		.file 4 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ARM GAS  /tmp/ccZvSkrc.s 			page 2
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 keyboard.cpp
+<<<<<<< HEAD
      /tmp/ccbylgQC.s:18     .text._ZN8keyboard13keyboard_pollEv:0000000000000000 $t
      /tmp/ccbylgQC.s:26     .text._ZN8keyboard13keyboard_pollEv:0000000000000000 _ZN8keyboard13keyboard_pollEv
      /tmp/ccbylgQC.s:272    .text._ZN8keyboard13keyboard_pollEv:000000000000010c $d
 .ARM.exidx.text._ZN8keyboard13keyboard_pollEv:0000000000000000 $d
+=======
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 NO UNDEFINED SYMBOLS

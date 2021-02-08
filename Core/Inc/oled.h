@@ -20,8 +20,10 @@ uint8_t address;
 
 uint8_t comm[2];
 
-uint16_t tmoCounter=0;
-uint16_t tmoValue=0;
+uint32_t tmoCounter=0;
+uint32_t tmoValue=0; // max
+
+
 
 bool Refresh_Counter = false;
 
@@ -129,7 +131,7 @@ void oled_on(); //TODO: implement the fucntion to turn on the oled
  * 
  * @param time: Time in seconds
  */
-void oled_setTimer(uint16_t time); 
+void oled_setTimer(uint32_t time); 
 /**
  * @brief Zero the timer;
  * 
@@ -142,6 +144,13 @@ void oled_resetTimer();
  */
 uint8_t oled_isOledOn();
 
+/**
+ * @brief increments the counter and checks if timeout 
+ * 
+ */
+void Counter_increment();
+
 };
+
 
 #endif

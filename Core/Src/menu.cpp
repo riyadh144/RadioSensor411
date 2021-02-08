@@ -7,7 +7,7 @@ menu::menu(oled* oled_)
 
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
-    char temp [12];
+    char temp [13];
 
     switch (menu_value)
     {
@@ -55,6 +55,7 @@ void menu::menu_ok()
     else
     {
         oled1->oled_on();
+        oled1->oled_resetTimer();
     }
 
     switch (menu_value) //TODO: Maybe we could optimize the performance on this but low priority 
@@ -137,6 +138,24 @@ void menu::menu_next()
     }
 }
 
+void menu::menu_menu()
+{
+    if(oled1->oled_isOledOn())
+    {
+        oled1->oled_resetTimer();
+    }
+    menu_value = MENU_CH;
+}
+
+void menu::menu_back()
+{
+    if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+    {
+        oled1->oled_resetTimer();
+    }
+    menu_value = (enum menu_state)(menu_value >> 3);
+}
+
 void menu::menu_prev()
 {
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
@@ -152,8 +171,10 @@ void menu::menu_prev()
         break;
     case MENU_SQ:
         menu_value=MENU_CH;
+        break;
     case MENU_TMO:
         menu_value=MENU_SQ;
+        break;
     case MENU_CH_IN:
         cursorPos^=cursorOn; 
         break;
@@ -168,7 +189,7 @@ void menu::menu_prev()
         break;
     }
 }
-void menu::menu_number(uint8_t num)
+void menu::menu_number(char num)
 {
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
@@ -195,4 +216,103 @@ void menu::menu_number(uint8_t num)
             break;
         }
     }
+}
+
+
+void menu::keyboard_poll()
+{
+    uint16_t pin = GPIO_PIN_11;
+    //Set The KEY1(PD11) One on
+
+    GPIOD->ODR|=pin;
+        //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+    switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+    {
+        case GPIO_PIN_15:
+            menu_next();//R
+            break;
+        case GPIO_PIN_10:
+            menu_number('6');
+            break;
+        case GPIO_PIN_9:
+            menu_number('5');
+            break;
+        case GPIO_PIN_8:
+            menu_number('4');
+            break;
+        default:
+            break;
+    }
+    GPIOD->ODR&=(~pin);
+
+    pin = GPIO_PIN_12;//PD12
+    GPIOD->ODR|=pin;
+        //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+    switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+    {
+        case GPIO_PIN_15:
+            menu_prev();//L
+            break;
+        case GPIO_PIN_10:
+            menu_number('8');
+            break;
+        case GPIO_PIN_9:
+            menu_number('7');
+            break;
+        case GPIO_PIN_8:
+            menu_number('9');
+            break;
+        default:
+            break;
+
+    }
+    GPIOD->ODR&=(~pin);
+
+
+    pin = GPIO_PIN_13;//PD13
+    GPIOD->ODR|=pin;
+        //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+    switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+    {
+        case GPIO_PIN_15:
+            menu_down();//D
+            break;
+        case GPIO_PIN_10:
+            menu_menu();//M
+            break;
+        case GPIO_PIN_9:
+            menu_number('0');
+            break;
+        case GPIO_PIN_8:
+            menu_back();//B
+            break;
+        default:
+            break;
+
+    }
+    GPIOD->ODR&=(~pin);
+
+    pin = GPIO_PIN_14;//PD14
+    GPIOD->ODR|=pin;
+        //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+    switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+    {
+        case GPIO_PIN_15:
+            menu_up();//U
+            break;
+        case GPIO_PIN_10:
+            menu_number('3');
+            break;
+        case GPIO_PIN_9:
+            menu_number('2');
+            break;
+        case GPIO_PIN_8:
+            menu_number('1');
+            break;
+        default:
+            break;
+
+    }
+    GPIOD->ODR&=(~pin);
+
 }

@@ -788,8 +788,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       ok_debounce=0;
     }
     
+
     if(oled1.oled_isOledOn())
     {
+      menu1.keyboard_poll();
       oled1.oled_update_battery(adc_bat.adc_getValue()); //Get the battery voltage and print it
       menu1.menu_print();//update the menu portion of the display
       oled1.oled_refresh();//Send the data to the display

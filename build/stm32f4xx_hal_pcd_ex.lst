@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 1
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 1
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
    1              		.cpu cortex-m4
@@ -58,7 +62,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
   27:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** /** @addtogroup STM32F4xx_HAL_Driver
   28:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   * @{
   29:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   */
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 2
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 2
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
   30:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** 
@@ -118,7 +126,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
   73:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   uint8_t i;
   41              		.loc 1 73 3 is_stmt 1 view .LVU2
   74:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   uint32_t Tx_Offset;
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 3
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 3
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
   42              		.loc 1 74 3 view .LVU3
@@ -178,7 +190,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
   75              		.loc 1 95 28 is_stmt 0 discriminator 1 view .LVU19
   76 001a 691E     		subs	r1, r5, #1
   77              		.loc 1 95 5 discriminator 1 view .LVU20
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 4
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 4
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
   78 001c 8B42     		cmp	r3, r1
@@ -238,7 +254,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  118              	.LFE130:
  120              		.section	.text.HAL_PCDEx_SetRxFiFo,"ax",%progbits
  121              		.align	1
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 5
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 5
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
  122              		.global	HAL_PCDEx_SetRxFiFo
@@ -298,7 +318,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  124:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   */
  125:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** HAL_StatusTypeDef HAL_PCDEx_ActivateLPM(PCD_HandleTypeDef *hpcd)
  126:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** {
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 6
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 6
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
  127:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   USB_OTG_GlobalTypeDef *USBx = hpcd->Instance;
@@ -358,7 +382,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  181:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   }
  182:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** 
  183:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   /* Right response got */
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 7
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 7
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
  184:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   HAL_Delay(200U);
@@ -418,7 +446,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  238:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****     }
  239:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   }
  240:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** 
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 8
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 8
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
  241:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   /* Battery Charging capability discovery finished */
@@ -478,7 +510,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  295:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** 
  296:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** /**
  297:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   * @brief  Send LPM message to user layer callback.
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 9
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 9
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
  298:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   * @param  hpcd PCD handle
@@ -538,7 +574,11 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  324:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c **** 
  325:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****   /* NOTE : This function should not be modified, when the callback is needed,
  326:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****             the HAL_PCDEx_BCD_Callback could be implemented in the user file
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 10
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 10
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
  327:Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c ****    */
@@ -557,11 +597,16 @@ ARM GAS  /tmp/ccMrgDXP.s 			page 1
  203              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h"
  204              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h"
  205              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccMrgDXP.s 			page 11
+=======
+ARM GAS  /tmp/ccmdrrkQ.s 			page 11
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 stm32f4xx_hal_pcd_ex.c
+<<<<<<< HEAD
      /tmp/ccMrgDXP.s:18     .text.HAL_PCDEx_SetTxFiFo:0000000000000000 $t
      /tmp/ccMrgDXP.s:26     .text.HAL_PCDEx_SetTxFiFo:0000000000000000 HAL_PCDEx_SetTxFiFo
      /tmp/ccMrgDXP.s:121    .text.HAL_PCDEx_SetRxFiFo:0000000000000000 $t
@@ -570,5 +615,15 @@ DEFINED SYMBOLS
      /tmp/ccMrgDXP.s:158    .text.HAL_PCDEx_LPM_Callback:0000000000000000 HAL_PCDEx_LPM_Callback
      /tmp/ccMrgDXP.s:174    .text.HAL_PCDEx_BCD_Callback:0000000000000000 $t
      /tmp/ccMrgDXP.s:181    .text.HAL_PCDEx_BCD_Callback:0000000000000000 HAL_PCDEx_BCD_Callback
+=======
+     /tmp/ccmdrrkQ.s:18     .text.HAL_PCDEx_SetTxFiFo:0000000000000000 $t
+     /tmp/ccmdrrkQ.s:26     .text.HAL_PCDEx_SetTxFiFo:0000000000000000 HAL_PCDEx_SetTxFiFo
+     /tmp/ccmdrrkQ.s:121    .text.HAL_PCDEx_SetRxFiFo:0000000000000000 $t
+     /tmp/ccmdrrkQ.s:128    .text.HAL_PCDEx_SetRxFiFo:0000000000000000 HAL_PCDEx_SetRxFiFo
+     /tmp/ccmdrrkQ.s:151    .text.HAL_PCDEx_LPM_Callback:0000000000000000 $t
+     /tmp/ccmdrrkQ.s:158    .text.HAL_PCDEx_LPM_Callback:0000000000000000 HAL_PCDEx_LPM_Callback
+     /tmp/ccmdrrkQ.s:174    .text.HAL_PCDEx_BCD_Callback:0000000000000000 $t
+     /tmp/ccmdrrkQ.s:181    .text.HAL_PCDEx_BCD_Callback:0000000000000000 HAL_PCDEx_BCD_Callback
+>>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
 
 NO UNDEFINED SYMBOLS
