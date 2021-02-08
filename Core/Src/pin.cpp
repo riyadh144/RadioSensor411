@@ -26,7 +26,7 @@ uint8_t pin::write(OnOff onoff)
     {
         gpiox->ODR &= (!GPIO_InitStruct.Pin);
     }
-    return 0;//TODO: write the error code if the pin isn't an output
+    return 0;
 }
 pin::OnOff pin::read()
 {

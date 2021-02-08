@@ -120,12 +120,12 @@ void oled_update_battery(float voltage);
  * @brief Put the oled to sleep and kill the timer
  * 
  */
-void oled_off(); //TODO: implement the function to turn of the oled
+void oled_off(); 
 /**
  * @brief wake the oled and set the timer
  * 
  */
-void oled_on(); //TODO: implement the fucntion to turn on the oled
+void oled_on(); 
 /**
  * @brief Set the time out so the display sleep in seconds
  * 

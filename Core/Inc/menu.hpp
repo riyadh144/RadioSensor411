@@ -140,7 +140,7 @@ void menu_back();
  * @param  None
  * @retval None
  */
-void menu_up();//TODO:Implement
+void menu_up();
 
 /**
  * @brief  Handles the press of down
@@ -149,8 +149,7 @@ void menu_up();//TODO:Implement
  * @param  None
  * @retval None
  */
-void menu_down();//TODO:Implement
-
+void menu_down();
 
 /**
  * @brief  Will be tied to an interrupt to update the menu
