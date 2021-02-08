@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc6SbD6H.s 			page 1
+ARM GAS  /tmp/ccy8n4Nl.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
   51 000e 0161     		str	r1, [r0, #16]
   52              	.LBE2:
    6:Core/Src/menu.cpp **** }
-ARM GAS  /tmp/cc6SbD6H.s 			page 2
+ARM GAS  /tmp/ccy8n4Nl.s 			page 2
 
 
   53              		.loc 1 6 1 view .LVU5
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
   88 006a 0000     		.align	2
   89              	.LC7:
   90 006c 6D656E75 		.ascii	"menu  back\000"
-ARM GAS  /tmp/cc6SbD6H.s 			page 3
+ARM GAS  /tmp/ccy8n4Nl.s 			page 3
 
 
   90      20206261 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  138 001a 1D       		.byte	(.L4-.L6)/2
  139 001b 1D       		.byte	(.L4-.L6)/2
  140 001c 1D       		.byte	(.L4-.L6)/2
-ARM GAS  /tmp/cc6SbD6H.s 			page 4
+ARM GAS  /tmp/ccy8n4Nl.s 			page 4
 
 
  141 001d 1D       		.byte	(.L4-.L6)/2
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
   29:Core/Src/menu.cpp ****             break;
   30:Core/Src/menu.cpp ****         case MENU_CH_IN:
   31:Core/Src/menu.cpp ****             sprintf(temp, "   CH:%.2s   ",ch);
-ARM GAS  /tmp/cc6SbD6H.s 			page 5
+ARM GAS  /tmp/ccy8n4Nl.s 			page 5
 
 
   32:Core/Src/menu.cpp ****             oled1->oled_print(temp,Font_16x26, 0,19);
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  212              		.loc 1 20 13 is_stmt 1 view .LVU24
   20:Core/Src/menu.cpp ****             break;
  213              		.loc 1 20 30 is_stmt 0 view .LVU25
-ARM GAS  /tmp/cc6SbD6H.s 			page 6
+ARM GAS  /tmp/ccy8n4Nl.s 			page 6
 
 
  214 006c 304B     		ldr	r3, .L14+4
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
   27:Core/Src/menu.cpp ****             oled1->oled_print(temp, Font_16x26, 0,19);
  259              		.loc 1 27 20 view .LVU35
  260 00a8 03C3     		stmia	r3!, {r0, r1}
-ARM GAS  /tmp/cc6SbD6H.s 			page 7
+ARM GAS  /tmp/ccy8n4Nl.s 			page 7
 
 
  261 00aa 23F8022B 		strh	r2, [r3], #2	@ movhi
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  305              		.loc 1 35 13 view .LVU45
   35:Core/Src/menu.cpp ****             oled1->oled_print(temp, Font_16x26, 0,19);
  306              		.loc 1 35 20 is_stmt 0 view .LVU46
-ARM GAS  /tmp/cc6SbD6H.s 			page 8
+ARM GAS  /tmp/ccy8n4Nl.s 			page 8
 
 
  307 00e8 821C     		adds	r2, r0, #2
@@ -478,7 +478,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  352              	.L15:
  353 012a 00BF     		.align	2
  354              	.L14:
-ARM GAS  /tmp/cc6SbD6H.s 			page 9
+ARM GAS  /tmp/ccy8n4Nl.s 			page 9
 
 
  355 012c 00000000 		.word	.LC0
@@ -538,7 +538,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  405              		.loc 1 53 31 is_stmt 0 view .LVU63
  406 000c 2069     		ldr	r0, [r4, #16]
  407 000e FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
-ARM GAS  /tmp/cc6SbD6H.s 			page 10
+ARM GAS  /tmp/ccy8n4Nl.s 			page 10
 
 
  408              	.LVL30:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  450              		.loc 1 58 31 is_stmt 0 view .LVU69
  451 003c 2069     		ldr	r0, [r4, #16]
  452 003e FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
-ARM GAS  /tmp/cc6SbD6H.s 			page 11
+ARM GAS  /tmp/ccy8n4Nl.s 			page 11
 
 
  453              	.LVL32:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  106:Core/Src/menu.cpp ****     
  107:Core/Src/menu.cpp **** }
  463              		.loc 1 107 1 is_stmt 0 view .LVU74
-ARM GAS  /tmp/cc6SbD6H.s 			page 12
+ARM GAS  /tmp/ccy8n4Nl.s 			page 12
 
 
  464 0048 38BD     		pop	{r3, r4, r5, pc}
@@ -718,7 +718,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  501 006a 0023     		movs	r3, #0
  502 006c A373     		strb	r3, [r4, #14]
  503 006e EBE7     		b	.L16
-ARM GAS  /tmp/cc6SbD6H.s 			page 13
+ARM GAS  /tmp/ccy8n4Nl.s 			page 13
 
 
  504              	.L22:
@@ -778,7 +778,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
   97:Core/Src/menu.cpp ****             //TODO:Implement the display timer and use tmoVal to modify the prescaler
  541              		.loc 1 97 22 is_stmt 0 view .LVU109
  542 0098 A573     		strb	r5, [r4, #14]
-ARM GAS  /tmp/cc6SbD6H.s 			page 14
+ARM GAS  /tmp/ccy8n4Nl.s 			page 14
 
 
  543              		.loc 1 107 1 view .LVU110
@@ -838,7 +838,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  591 0018 10       		.byte	(.L36-.L32)/2
  592 0019 13       		.byte	(.L35-.L32)/2
  593 001a 13       		.byte	(.L35-.L32)/2
-ARM GAS  /tmp/cc6SbD6H.s 			page 15
+ARM GAS  /tmp/ccy8n4Nl.s 			page 15
 
 
  594 001b 19       		.byte	(.L28-.L32)/2
@@ -898,7 +898,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  636 0040 2370     		strb	r3, [r4]
  637              	.L34:
  126:Core/Src/menu.cpp ****     case MENU_CH_IN:
-ARM GAS  /tmp/cc6SbD6H.s 			page 16
+ARM GAS  /tmp/ccy8n4Nl.s 			page 16
 
 
  638              		.loc 1 126 5 is_stmt 1 view .LVU128
@@ -958,7 +958,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  670 005c A373     		strb	r3, [r4, #14]
  134:Core/Src/menu.cpp **** 
  671              		.loc 1 134 9 is_stmt 1 view .LVU143
-ARM GAS  /tmp/cc6SbD6H.s 			page 17
+ARM GAS  /tmp/ccy8n4Nl.s 			page 17
 
 
  672              		.loc 1 139 1 is_stmt 0 view .LVU144
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  719              	.L42:
  145:Core/Src/menu.cpp ****     }
  720              		.loc 1 145 9 is_stmt 1 view .LVU154
-ARM GAS  /tmp/cc6SbD6H.s 			page 18
+ARM GAS  /tmp/ccy8n4Nl.s 			page 18
 
 
  145:Core/Src/menu.cpp ****     }
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  768 000e DB08     		lsrs	r3, r3, #3
  769              		.loc 1 156 16 view .LVU165
  770 0010 2370     		strb	r3, [r4]
-ARM GAS  /tmp/cc6SbD6H.s 			page 19
+ARM GAS  /tmp/ccy8n4Nl.s 			page 19
 
 
  157:Core/Src/menu.cpp **** }
@@ -1138,7 +1138,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  163:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
  164:Core/Src/menu.cpp ****     }
  165:Core/Src/menu.cpp ****     switch (menu_value)
-ARM GAS  /tmp/cc6SbD6H.s 			page 20
+ARM GAS  /tmp/ccy8n4Nl.s 			page 20
 
 
  819              		.loc 1 165 5 is_stmt 1 view .LVU175
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  865              		.loc 1 171 9 is_stmt 1 view .LVU182
  866              	.L47:
  172:Core/Src/menu.cpp ****     case MENU_SQ:
-ARM GAS  /tmp/cc6SbD6H.s 			page 21
+ARM GAS  /tmp/ccy8n4Nl.s 			page 21
 
 
  173:Core/Src/menu.cpp ****         menu_value=MENU_CH;
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  179:Core/Src/menu.cpp ****         break;
  891              		.loc 1 179 18 view .LVU195
  892 004c A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
-ARM GAS  /tmp/cc6SbD6H.s 			page 22
+ARM GAS  /tmp/ccy8n4Nl.s 			page 22
 
 
  893 004e 5340     		eors	r3, r3, r2
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  936              		.loc 1 193 1 is_stmt 1 view -0
  937              		.cfi_startproc
  938              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  /tmp/cc6SbD6H.s 			page 23
+ARM GAS  /tmp/ccy8n4Nl.s 			page 23
 
 
  939              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  210:Core/Src/menu.cpp ****         case MENU_TMO_IN:
  211:Core/Src/menu.cpp ****             tmo[cursorPos]=num;
  212:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
-ARM GAS  /tmp/cc6SbD6H.s 			page 24
+ARM GAS  /tmp/ccy8n4Nl.s 			page 24
 
 
  213:Core/Src/menu.cpp ****             break;
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  208:Core/Src/menu.cpp ****             break;
  1010              		.loc 1 208 22 is_stmt 0 view .LVU235
  1011 003c 5340     		eors	r3, r3, r2
-ARM GAS  /tmp/cc6SbD6H.s 			page 25
+ARM GAS  /tmp/ccy8n4Nl.s 			page 25
 
 
  1012 003e A373     		strb	r3, [r4, #14]
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1056              		.cfi_offset 14, -4
  1057 0002 0446     		mov	r4, r0
  224:Core/Src/menu.cpp ****     uint16_t pin = GPIO_PIN_11;
-ARM GAS  /tmp/cc6SbD6H.s 			page 26
+ARM GAS  /tmp/ccy8n4Nl.s 			page 26
 
 
  1058              		.loc 1 224 5 is_stmt 1 view .LVU247
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  232:Core/Src/menu.cpp ****             break;
  1094              		.loc 1 232 22 is_stmt 0 view .LVU261
  1095 0036 FFF7FEFF 		bl	_ZN4menu9menu_nextEv
-ARM GAS  /tmp/cc6SbD6H.s 			page 27
+ARM GAS  /tmp/ccy8n4Nl.s 			page 27
 
 
  1096              	.LVL66:
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1128 0066 3721     		movs	r1, #55
  1129 0068 2046     		mov	r0, r4
  1130 006a FFF7FEFF 		bl	_ZN4menu11menu_numberEc
-ARM GAS  /tmp/cc6SbD6H.s 			page 28
+ARM GAS  /tmp/ccy8n4Nl.s 			page 28
 
 
  1131              	.LVL68:
@@ -1678,7 +1678,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  266:Core/Src/menu.cpp ****             break;
  267:Core/Src/menu.cpp **** 
  268:Core/Src/menu.cpp ****     }
-ARM GAS  /tmp/cc6SbD6H.s 			page 29
+ARM GAS  /tmp/ccy8n4Nl.s 			page 29
 
 
  269:Core/Src/menu.cpp ****     GPIOD->ODR&=(~pin);
@@ -1738,7 +1738,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1196 00b8 5A69     		ldr	r2, [r3, #20]
  1197 00ba 22F40052 		bic	r2, r2, #8192
  1198 00be 5A61     		str	r2, [r3, #20]
-ARM GAS  /tmp/cc6SbD6H.s 			page 30
+ARM GAS  /tmp/ccy8n4Nl.s 			page 30
 
 
  294:Core/Src/menu.cpp **** 
@@ -1798,7 +1798,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1228              	.L73:
  256:Core/Src/menu.cpp ****             menu_number('8');
  1229              		.loc 1 256 9 is_stmt 1 view .LVU310
-ARM GAS  /tmp/cc6SbD6H.s 			page 31
+ARM GAS  /tmp/ccy8n4Nl.s 			page 31
 
 
  257:Core/Src/menu.cpp ****             break;
@@ -1858,7 +1858,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  286:Core/Src/menu.cpp ****             menu_back();//B
  1269              		.loc 1 286 9 view .LVU326
  287:Core/Src/menu.cpp ****             break;
-ARM GAS  /tmp/cc6SbD6H.s 			page 32
+ARM GAS  /tmp/ccy8n4Nl.s 			page 32
 
 
  1270              		.loc 1 287 13 view .LVU327
@@ -1918,7 +1918,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1310              	.L89:
  1311 0138 000C0240 		.word	1073875968
  1312              		.cfi_endproc
-ARM GAS  /tmp/cc6SbD6H.s 			page 33
+ARM GAS  /tmp/ccy8n4Nl.s 			page 33
 
 
  1313              	.LFE148:
@@ -1978,7 +1978,7 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1362              		.fnend
  1364              		.text
  1365              	.Letext0:
-ARM GAS  /tmp/cc6SbD6H.s 			page 34
+ARM GAS  /tmp/ccy8n4Nl.s 			page 34
 
 
  1366              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
@@ -2004,57 +2004,57 @@ ARM GAS  /tmp/cc6SbD6H.s 			page 1
  1386              		.file 22 "Core/Inc/menu.hpp"
  1387              		.file 23 "<built-in>"
  1388              		.file 24 "/usr/include/newlib/stdio.h"
-ARM GAS  /tmp/cc6SbD6H.s 			page 35
+ARM GAS  /tmp/ccy8n4Nl.s 			page 35
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 menu.cpp
-     /tmp/cc6SbD6H.s:18     .text._ZN4menuC2EP4oled:0000000000000000 $t
-     /tmp/cc6SbD6H.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC2EP4oled
+     /tmp/ccy8n4Nl.s:18     .text._ZN4menuC2EP4oled:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC2EP4oled
 .ARM.exidx.text._ZN4menuC2EP4oled:0000000000000000 $d
-     /tmp/cc6SbD6H.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC1EP4oled
-     /tmp/cc6SbD6H.s:67     .rodata._ZN4menu10menu_printEv.str1.4:0000000000000000 $d
-     /tmp/cc6SbD6H.s:92     .text._ZN4menu10menu_printEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:99     .text._ZN4menu10menu_printEv:0000000000000000 _ZN4menu10menu_printEv
-     /tmp/cc6SbD6H.s:128    .text._ZN4menu10menu_printEv:0000000000000010 $d
-     /tmp/cc6SbD6H.s:355    .text._ZN4menu10menu_printEv:000000000000012c $d
+     /tmp/ccy8n4Nl.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC1EP4oled
+     /tmp/ccy8n4Nl.s:67     .rodata._ZN4menu10menu_printEv.str1.4:0000000000000000 $d
+     /tmp/ccy8n4Nl.s:92     .text._ZN4menu10menu_printEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:99     .text._ZN4menu10menu_printEv:0000000000000000 _ZN4menu10menu_printEv
+     /tmp/ccy8n4Nl.s:128    .text._ZN4menu10menu_printEv:0000000000000010 $d
+     /tmp/ccy8n4Nl.s:355    .text._ZN4menu10menu_printEv:000000000000012c $d
 .ARM.exidx.text._ZN4menu10menu_printEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:370    .text._ZN4menu7menu_okEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:377    .text._ZN4menu7menu_okEv:0000000000000000 _ZN4menu7menu_okEv
-     /tmp/cc6SbD6H.s:418    .text._ZN4menu7menu_okEv:000000000000001e $d
-     /tmp/cc6SbD6H.s:442    .text._ZN4menu7menu_okEv:0000000000000036 $t
+     /tmp/ccy8n4Nl.s:370    .text._ZN4menu7menu_okEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:377    .text._ZN4menu7menu_okEv:0000000000000000 _ZN4menu7menu_okEv
+     /tmp/ccy8n4Nl.s:418    .text._ZN4menu7menu_okEv:000000000000001e $d
+     /tmp/ccy8n4Nl.s:442    .text._ZN4menu7menu_okEv:0000000000000036 $t
 .ARM.exidx.text._ZN4menu7menu_okEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:550    .text._ZN4menu9menu_nextEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:557    .text._ZN4menu9menu_nextEv:0000000000000000 _ZN4menu9menu_nextEv
-     /tmp/cc6SbD6H.s:591    .text._ZN4menu9menu_nextEv:0000000000000018 $d
-     /tmp/cc6SbD6H.s:615    .text._ZN4menu9menu_nextEv:0000000000000030 $t
+     /tmp/ccy8n4Nl.s:550    .text._ZN4menu9menu_nextEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:557    .text._ZN4menu9menu_nextEv:0000000000000000 _ZN4menu9menu_nextEv
+     /tmp/ccy8n4Nl.s:591    .text._ZN4menu9menu_nextEv:0000000000000018 $d
+     /tmp/ccy8n4Nl.s:615    .text._ZN4menu9menu_nextEv:0000000000000030 $t
 .ARM.exidx.text._ZN4menu9menu_nextEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:679    .text._ZN4menu9menu_menuEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:686    .text._ZN4menu9menu_menuEv:0000000000000000 _ZN4menu9menu_menuEv
+     /tmp/ccy8n4Nl.s:679    .text._ZN4menu9menu_menuEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:686    .text._ZN4menu9menu_menuEv:0000000000000000 _ZN4menu9menu_menuEv
 .ARM.exidx.text._ZN4menu9menu_menuEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:731    .text._ZN4menu9menu_backEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:738    .text._ZN4menu9menu_backEv:0000000000000000 _ZN4menu9menu_backEv
+     /tmp/ccy8n4Nl.s:731    .text._ZN4menu9menu_backEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:738    .text._ZN4menu9menu_backEv:0000000000000000 _ZN4menu9menu_backEv
 .ARM.exidx.text._ZN4menu9menu_backEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:786    .text._ZN4menu9menu_prevEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:793    .text._ZN4menu9menu_prevEv:0000000000000000 _ZN4menu9menu_prevEv
-     /tmp/cc6SbD6H.s:827    .text._ZN4menu9menu_prevEv:0000000000000018 $d
-     /tmp/cc6SbD6H.s:851    .text._ZN4menu9menu_prevEv:0000000000000030 $t
+     /tmp/ccy8n4Nl.s:786    .text._ZN4menu9menu_prevEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:793    .text._ZN4menu9menu_prevEv:0000000000000000 _ZN4menu9menu_prevEv
+     /tmp/ccy8n4Nl.s:827    .text._ZN4menu9menu_prevEv:0000000000000018 $d
+     /tmp/ccy8n4Nl.s:851    .text._ZN4menu9menu_prevEv:0000000000000030 $t
 .ARM.exidx.text._ZN4menu9menu_prevEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:925    .text._ZN4menu11menu_numberEc:0000000000000000 $t
-     /tmp/cc6SbD6H.s:932    .text._ZN4menu11menu_numberEc:0000000000000000 _ZN4menu11menu_numberEc
+     /tmp/ccy8n4Nl.s:925    .text._ZN4menu11menu_numberEc:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:932    .text._ZN4menu11menu_numberEc:0000000000000000 _ZN4menu11menu_numberEc
 .ARM.exidx.text._ZN4menu11menu_numberEc:0000000000000000 $d
-     /tmp/cc6SbD6H.s:1035   .text._ZN4menu13keyboard_pollEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:1042   .text._ZN4menu13keyboard_pollEv:0000000000000000 _ZN4menu13keyboard_pollEv
-     /tmp/cc6SbD6H.s:1311   .text._ZN4menu13keyboard_pollEv:0000000000000138 $d
+     /tmp/ccy8n4Nl.s:1035   .text._ZN4menu13keyboard_pollEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:1042   .text._ZN4menu13keyboard_pollEv:0000000000000000 _ZN4menu13keyboard_pollEv
+     /tmp/ccy8n4Nl.s:1311   .text._ZN4menu13keyboard_pollEv:0000000000000138 $d
 .ARM.exidx.text._ZN4menu13keyboard_pollEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:1317   .text._ZN4menu7menu_upEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:1324   .text._ZN4menu7menu_upEv:0000000000000000 _ZN4menu7menu_upEv
+     /tmp/ccy8n4Nl.s:1317   .text._ZN4menu7menu_upEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:1324   .text._ZN4menu7menu_upEv:0000000000000000 _ZN4menu7menu_upEv
 .ARM.exidx.text._ZN4menu7menu_upEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:1341   .text._ZN4menu9menu_downEv:0000000000000000 $t
-     /tmp/cc6SbD6H.s:1348   .text._ZN4menu9menu_downEv:0000000000000000 _ZN4menu9menu_downEv
+     /tmp/ccy8n4Nl.s:1341   .text._ZN4menu9menu_downEv:0000000000000000 $t
+     /tmp/ccy8n4Nl.s:1348   .text._ZN4menu9menu_downEv:0000000000000000 _ZN4menu9menu_downEv
 .ARM.exidx.text._ZN4menu9menu_downEv:0000000000000000 $d
-     /tmp/cc6SbD6H.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
-     /tmp/cc6SbD6H.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
+     /tmp/ccy8n4Nl.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
+     /tmp/ccy8n4Nl.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
 
 UNDEFINED SYMBOLS
 sprintf
@@ -2064,7 +2064,7 @@ Font_11x18
 __aeabi_unwind_cpp_pr0
 _ZN4oled13oled_isOledOnEv
 _ZN4oled15oled_resetTimerEv
-ARM GAS  /tmp/cc6SbD6H.s 			page 36
+ARM GAS  /tmp/ccy8n4Nl.s 			page 36
 
 
 _ZN4oled7oled_onEv

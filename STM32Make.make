@@ -67,7 +67,14 @@ Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c \
 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c \
-Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c
+Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c \
+FATFS/App/fatfs.c \
+FATFS/Target/bsp_driver_sd.c \
+FATFS/Target/sd_diskio.c \
+Middlewares/Third_Party/FatFs/src/diskio.c \
+Middlewares/Third_Party/FatFs/src/ff.c \
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.c \
+Middlewares/Third_Party/FatFs/src/option/syscall.c
 
 
 CPP_SOURCES = \
@@ -145,7 +152,10 @@ C_INCLUDES =  \
 -IDrivers/CMSIS/Device/ST/STM32F4xx/Include \
 -IDrivers/CMSIS/Include \
 -IDrivers/STM32F4xx_HAL_Driver/Inc \
--IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy
+-IDrivers/STM32F4xx_HAL_Driver/Inc/Legacy \
+-IFATFS/App \
+-IFATFS/Target \
+-IMiddlewares/Third_Party/FatFs/src
 
 
 
