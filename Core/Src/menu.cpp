@@ -226,16 +226,22 @@ void menu::menu_up()
     switch (menu_value)
     {
     case MENU_CH_IN:
-        chVal++;
+        if(chVal < 22) // Current max for ch is 22
+        {
+            chVal++;
+        }
         break;
     case MENU_SQ_IN:
-        sqVal++;
+        if(sqVal < 9) // Current max for Sq is 9
+        {
+            sqVal++;
+        }
         break;   
     default:
-    if(volVal < 100)
-    {
-        volVal++;
-    }
+        if(volVal < 8) // Current max for volume is 8
+        {
+            volVal++;
+        }
         break;
     }
 }
@@ -249,10 +255,16 @@ void menu::menu_down()
     switch (menu_value)
     {
     case MENU_CH_IN:
+        if(chVal > 0)
+        {
         chVal--;
+        }
         break;
     case MENU_SQ_IN:
+        if(sqVal > 0)
+        {
         sqVal--;
+        }
         break;   
     default:
         if(volVal > 0)
@@ -361,13 +373,4 @@ void menu::keyboard_poll()
     }
     GPIOD->ODR&=(~pin);
 
-}
-
-void menu::menu_up()//TOOD:implement up button
-{
-
-}
-void menu::menu_down()//TODO:implement down button
-{
-    
 }
