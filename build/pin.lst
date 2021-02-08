@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccRkjOQe.s 			page 1
+ARM GAS  /tmp/ccc1J8iv.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
   49              		.loc 1 7 25 is_stmt 0 view .LVU7
   50 0006 8360     		str	r3, [r0, #8]
    8:Core/Src/pin.cpp ****     GPIO_InitStruct.Pull=pull_;
-ARM GAS  /tmp/ccRkjOQe.s 			page 2
+ARM GAS  /tmp/ccc1J8iv.s 			page 2
 
 
   51              		.loc 1 8 5 is_stmt 1 view .LVU8
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  100              		.loc 1 15 3 is_stmt 1 view .LVU17
  101              		.loc 1 15 16 is_stmt 0 view .LVU18
  102 0002 0146     		mov	r1, r0
-ARM GAS  /tmp/ccRkjOQe.s 			page 3
+ARM GAS  /tmp/ccc1J8iv.s 			page 3
 
 
  103 0004 51F8040B 		ldr	r0, [r1], #4
@@ -143,57 +143,58 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  123              		.fnstart
  124              	.LVL6:
  125              	.LFB134:
-  17:Core/Src/pin.cpp **** uint8_t pin::write(OnOff onoff)
-  18:Core/Src/pin.cpp **** {
- 126              		.loc 1 18 1 is_stmt 1 view -0
+  17:Core/Src/pin.cpp **** 
+  18:Core/Src/pin.cpp **** uint8_t pin::write(OnOff onoff)
+  19:Core/Src/pin.cpp **** {
+ 126              		.loc 1 19 1 is_stmt 1 view -0
  127              		.cfi_startproc
  128              		@ args = 0, pretend = 0, frame = 0
  129              		@ frame_needed = 0, uses_anonymous_args = 0
  130              		@ link register save eliminated.
- 131              		.loc 1 18 1 is_stmt 0 view .LVU22
+ 131              		.loc 1 19 1 is_stmt 0 view .LVU22
  132 0000 10B4     		push	{r4}
  133              	.LCFI3:
  134              		.cfi_def_cfa_offset 4
  135              		.cfi_offset 4, -4
-  19:Core/Src/pin.cpp ****     if((gpiox->IDR & GPIO_InitStruct.Pin) != 0)
- 136              		.loc 1 19 5 is_stmt 1 view .LVU23
- 137              		.loc 1 19 9 is_stmt 0 view .LVU24
+  20:Core/Src/pin.cpp ****     if((gpiox->IDR & GPIO_InitStruct.Pin) != 0)
+ 136              		.loc 1 20 5 is_stmt 1 view .LVU23
+ 137              		.loc 1 20 9 is_stmt 0 view .LVU24
  138 0002 0368     		ldr	r3, [r0]
- 139              		.loc 1 19 16 view .LVU25
+ 139              		.loc 1 20 16 view .LVU25
  140 0004 1C69     		ldr	r4, [r3, #16]
- 141              		.loc 1 19 38 view .LVU26
+ 141              		.loc 1 20 38 view .LVU26
  142 0006 4268     		ldr	r2, [r0, #4]
- 143              		.loc 1 19 5 view .LVU27
+ 143              		.loc 1 20 5 view .LVU27
  144 0008 1442     		tst	r4, r2
  145 000a 10D1     		bne	.L8
-  20:Core/Src/pin.cpp ****         return -1; // recheck or switch the pin state ....
-  21:Core/Src/pin.cpp ****     if(onoff)
- 146              		.loc 1 21 5 is_stmt 1 view .LVU28
+  21:Core/Src/pin.cpp ****         return -1; // recheck or switch the pin state ....
+  22:Core/Src/pin.cpp ****     if(onoff)
+ 146              		.loc 1 22 5 is_stmt 1 view .LVU28
  147 000c 31B1     		cbz	r1, .L7
-  22:Core/Src/pin.cpp ****     {
-  23:Core/Src/pin.cpp ****         gpiox->ODR |= (GPIO_InitStruct.Pin);
- 148              		.loc 1 23 9 view .LVU29
- 149              		.loc 1 23 20 is_stmt 0 view .LVU30
+  23:Core/Src/pin.cpp ****     {
+  24:Core/Src/pin.cpp ****         gpiox->ODR |= (GPIO_InitStruct.Pin);
+ 148              		.loc 1 24 9 view .LVU29
+ 149              		.loc 1 24 20 is_stmt 0 view .LVU30
  150 000e 5969     		ldr	r1, [r3, #20]
  151              	.LVL7:
- 152              		.loc 1 23 20 view .LVU31
+ 152              		.loc 1 24 20 view .LVU31
+ARM GAS  /tmp/ccc1J8iv.s 			page 4
+
+
  153 0010 0A43     		orrs	r2, r2, r1
-ARM GAS  /tmp/ccRkjOQe.s 			page 4
-
-
  154 0012 5A61     		str	r2, [r3, #20]
-  24:Core/Src/pin.cpp ****     }
-  25:Core/Src/pin.cpp ****     else
-  26:Core/Src/pin.cpp ****     {
-  27:Core/Src/pin.cpp ****         gpiox->ODR &= (!GPIO_InitStruct.Pin);
-  28:Core/Src/pin.cpp ****     }
-  29:Core/Src/pin.cpp ****     return 0;//TODO: write the error code if the pin isn't an output
- 155              		.loc 1 29 12 view .LVU32
+  25:Core/Src/pin.cpp ****     }
+  26:Core/Src/pin.cpp ****     else
+  27:Core/Src/pin.cpp ****     {
+  28:Core/Src/pin.cpp ****         gpiox->ODR &= (!GPIO_InitStruct.Pin);
+  29:Core/Src/pin.cpp ****     }
+  30:Core/Src/pin.cpp ****     return 0;//TODO: write the error code if the pin isn't an output
+ 155              		.loc 1 30 12 view .LVU32
  156 0014 0020     		movs	r0, #0
  157              	.LVL8:
  158              	.L6:
-  30:Core/Src/pin.cpp **** }
- 159              		.loc 1 30 1 view .LVU33
+  31:Core/Src/pin.cpp **** }
+ 159              		.loc 1 31 1 view .LVU33
  160 0016 5DF8044B 		ldr	r4, [sp], #4
  161              	.LCFI4:
  162              		.cfi_remember_state
@@ -204,31 +205,31 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  167              	.L7:
  168              	.LCFI5:
  169              		.cfi_restore_state
-  27:Core/Src/pin.cpp ****     }
- 170              		.loc 1 27 9 is_stmt 1 view .LVU34
-  27:Core/Src/pin.cpp ****     }
- 171              		.loc 1 27 20 is_stmt 0 view .LVU35
+  28:Core/Src/pin.cpp ****     }
+ 170              		.loc 1 28 9 is_stmt 1 view .LVU34
+  28:Core/Src/pin.cpp ****     }
+ 171              		.loc 1 28 20 is_stmt 0 view .LVU35
  172 001c 5869     		ldr	r0, [r3, #20]
  173              	.LVL10:
-  27:Core/Src/pin.cpp ****     }
- 174              		.loc 1 27 20 view .LVU36
+  28:Core/Src/pin.cpp ****     }
+ 174              		.loc 1 28 20 view .LVU36
  175 001e 002A     		cmp	r2, #0
  176 0020 14BF     		ite	ne
  177 0022 0022     		movne	r2, #0
  178 0024 00F00102 		andeq	r2, r0, #1
  179 0028 5A61     		str	r2, [r3, #20]
-  29:Core/Src/pin.cpp **** }
- 180              		.loc 1 29 12 view .LVU37
+  30:Core/Src/pin.cpp **** }
+ 180              		.loc 1 30 12 view .LVU37
  181 002a 0846     		mov	r0, r1
  182 002c F3E7     		b	.L6
  183              	.LVL11:
  184              	.L8:
-  20:Core/Src/pin.cpp ****     if(onoff)
- 185              		.loc 1 20 17 view .LVU38
+  21:Core/Src/pin.cpp ****     if(onoff)
+ 185              		.loc 1 21 17 view .LVU38
  186 002e FF20     		movs	r0, #255
  187              	.LVL12:
-  20:Core/Src/pin.cpp ****     if(onoff)
- 188              		.loc 1 20 17 view .LVU39
+  21:Core/Src/pin.cpp ****     if(onoff)
+ 188              		.loc 1 21 17 view .LVU39
  189 0030 F1E7     		b	.L6
  190              		.cfi_endproc
  191              	.LFE134:
@@ -237,10 +238,10 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  195              		.section	.text._ZN3pin4readEv,"ax",%progbits
  196              		.align	1
  197              		.global	_ZN3pin4readEv
+ARM GAS  /tmp/ccc1J8iv.s 			page 5
+
+
  198              		.syntax unified
-ARM GAS  /tmp/ccRkjOQe.s 			page 5
-
-
  199              		.thumb
  200              		.thumb_func
  201              		.fpu fpv4-sp-d16
@@ -248,45 +249,46 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  204              		.fnstart
  205              	.LVL13:
  206              	.LFB135:
-  31:Core/Src/pin.cpp **** pin::OnOff pin::read()
-  32:Core/Src/pin.cpp **** {
- 207              		.loc 1 32 1 is_stmt 1 view -0
+  32:Core/Src/pin.cpp **** 
+  33:Core/Src/pin.cpp **** pin::OnOff pin::read()
+  34:Core/Src/pin.cpp **** {
+ 207              		.loc 1 34 1 is_stmt 1 view -0
  208              		.cfi_startproc
  209              		@ args = 0, pretend = 0, frame = 0
  210              		@ frame_needed = 0, uses_anonymous_args = 0
  211              		@ link register save eliminated.
-  33:Core/Src/pin.cpp ****     
-  34:Core/Src/pin.cpp ****     if(!(gpiox->IDR & GPIO_InitStruct.Pin))
- 212              		.loc 1 34 5 view .LVU41
- 213              		.loc 1 34 10 is_stmt 0 view .LVU42
+  35:Core/Src/pin.cpp ****     
+  36:Core/Src/pin.cpp ****     if(!(gpiox->IDR & GPIO_InitStruct.Pin))
+ 212              		.loc 1 36 5 view .LVU41
+ 213              		.loc 1 36 10 is_stmt 0 view .LVU42
  214 0000 0368     		ldr	r3, [r0]
- 215              		.loc 1 34 17 view .LVU43
+ 215              		.loc 1 36 17 view .LVU43
  216 0002 1A69     		ldr	r2, [r3, #16]
- 217              		.loc 1 34 39 view .LVU44
+ 217              		.loc 1 36 39 view .LVU44
  218 0004 4368     		ldr	r3, [r0, #4]
- 219              		.loc 1 34 5 view .LVU45
+ 219              		.loc 1 36 5 view .LVU45
  220 0006 1A42     		tst	r2, r3
  221 0008 01D1     		bne	.L12
-  35:Core/Src/pin.cpp ****     {
-  36:Core/Src/pin.cpp ****         return off;
- 222              		.loc 1 36 16 view .LVU46
+  37:Core/Src/pin.cpp ****     {
+  38:Core/Src/pin.cpp ****         return off;
+ 222              		.loc 1 38 16 view .LVU46
  223 000a 0020     		movs	r0, #0
  224              	.LVL14:
- 225              		.loc 1 36 16 view .LVU47
+ 225              		.loc 1 38 16 view .LVU47
  226 000c 7047     		bx	lr
  227              	.LVL15:
  228              	.L12:
-  37:Core/Src/pin.cpp ****     }
-  38:Core/Src/pin.cpp ****     else
-  39:Core/Src/pin.cpp ****     {
-  40:Core/Src/pin.cpp ****         return on;
- 229              		.loc 1 40 16 view .LVU48
+  39:Core/Src/pin.cpp ****     }
+  40:Core/Src/pin.cpp ****     else
+  41:Core/Src/pin.cpp ****     {
+  42:Core/Src/pin.cpp ****         return on;
+ 229              		.loc 1 42 16 view .LVU48
  230 000e 0120     		movs	r0, #1
  231              	.LVL16:
-  41:Core/Src/pin.cpp ****     }
-  42:Core/Src/pin.cpp ****     
-  43:Core/Src/pin.cpp **** }
- 232              		.loc 1 43 1 view .LVU49
+  43:Core/Src/pin.cpp ****     }
+  44:Core/Src/pin.cpp ****     
+  45:Core/Src/pin.cpp **** }
+ 232              		.loc 1 45 1 view .LVU49
  233 0010 7047     		bx	lr
  234              		.cfi_endproc
  235              	.LFE135:
@@ -296,25 +298,25 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  240              		.align	1
  241              		.global	_ZN3pinD2Ev
  242              		.syntax unified
+ARM GAS  /tmp/ccc1J8iv.s 			page 6
+
+
  243              		.thumb
  244              		.thumb_func
-ARM GAS  /tmp/ccRkjOQe.s 			page 6
-
-
  245              		.fpu fpv4-sp-d16
  247              	_ZN3pinD2Ev:
  248              		.fnstart
  249              	.LVL17:
  250              	.LFB137:
-  44:Core/Src/pin.cpp **** pin::~pin()
- 251              		.loc 1 44 1 is_stmt 1 view -0
+  46:Core/Src/pin.cpp **** pin::~pin()
+ 251              		.loc 1 46 1 is_stmt 1 view -0
  252              		.cfi_startproc
  253              		@ args = 0, pretend = 0, frame = 0
  254              		@ frame_needed = 0, uses_anonymous_args = 0
  255              		@ link register save eliminated.
-  45:Core/Src/pin.cpp **** {
-  46:Core/Src/pin.cpp **** }
- 256              		.loc 1 46 1 is_stmt 0 view .LVU51
+  47:Core/Src/pin.cpp **** {
+  48:Core/Src/pin.cpp **** }
+ 256              		.loc 1 48 1 is_stmt 0 view .LVU51
  257 0000 7047     		bx	lr
  258              		.cfi_endproc
  259              	.LFE137:
@@ -331,29 +333,29 @@ ARM GAS  /tmp/ccRkjOQe.s 			page 1
  271              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
  272              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  273              		.file 8 "Core/Inc/pin.hpp"
-ARM GAS  /tmp/ccRkjOQe.s 			page 7
+ARM GAS  /tmp/ccc1J8iv.s 			page 7
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 pin.cpp
-     /tmp/ccRkjOQe.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
-     /tmp/ccRkjOQe.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+     /tmp/ccc1J8iv.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
+     /tmp/ccc1J8iv.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
 .ARM.exidx.text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $d
-     /tmp/ccRkjOQe.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC1EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
-     /tmp/ccRkjOQe.s:78     .text._ZN3pin4initEv:0000000000000000 $t
-     /tmp/ccRkjOQe.s:85     .text._ZN3pin4initEv:0000000000000000 _ZN3pin4initEv
+     /tmp/ccc1J8iv.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC1EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+     /tmp/ccc1J8iv.s:78     .text._ZN3pin4initEv:0000000000000000 $t
+     /tmp/ccc1J8iv.s:85     .text._ZN3pin4initEv:0000000000000000 _ZN3pin4initEv
    .ARM.extab.text._ZN3pin4initEv:0000000000000000 $d
    .ARM.exidx.text._ZN3pin4initEv:0000000000000000 $d
-     /tmp/ccRkjOQe.s:115    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 $t
-     /tmp/ccRkjOQe.s:122    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 _ZN3pin5writeENS_5OnOffE
+     /tmp/ccc1J8iv.s:115    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 $t
+     /tmp/ccc1J8iv.s:122    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 _ZN3pin5writeENS_5OnOffE
 .ARM.exidx.text._ZN3pin5writeENS_5OnOffE:0000000000000000 $d
-     /tmp/ccRkjOQe.s:196    .text._ZN3pin4readEv:0000000000000000 $t
-     /tmp/ccRkjOQe.s:203    .text._ZN3pin4readEv:0000000000000000 _ZN3pin4readEv
+     /tmp/ccc1J8iv.s:196    .text._ZN3pin4readEv:0000000000000000 $t
+     /tmp/ccc1J8iv.s:203    .text._ZN3pin4readEv:0000000000000000 _ZN3pin4readEv
    .ARM.exidx.text._ZN3pin4readEv:0000000000000000 $d
-     /tmp/ccRkjOQe.s:240    .text._ZN3pinD2Ev:0000000000000000 $t
-     /tmp/ccRkjOQe.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD2Ev
+     /tmp/ccc1J8iv.s:240    .text._ZN3pinD2Ev:0000000000000000 $t
+     /tmp/ccc1J8iv.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD2Ev
       .ARM.exidx.text._ZN3pinD2Ev:0000000000000000 $d
-     /tmp/ccRkjOQe.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
+     /tmp/ccc1J8iv.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

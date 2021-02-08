@@ -362,3 +362,12 @@ void menu::keyboard_poll()
     GPIOD->ODR&=(~pin);
 
 }
+
+void menu::menu_up()//TOOD:implement up button
+{
+
+}
+void menu::menu_down()//TODO:implement down button
+{
+    
+}

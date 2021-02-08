@@ -36,26 +36,24 @@ void sa818::sa818_txrx_mode(TxRx mode)
     
 }
 
-sa818::sa818(UART_HandleTypeDef* usart, pin* pin_pd_, pin* pin_ptt_)
+sa818::sa818(uart* uartx_, pin* pin_pd_, pin* pin_ptt_)
 
 {
     pin_pd=pin_pd_;
     pin_ptt=pin_ptt_;
+    uartx=uartx_;
+
     // while(locked!=0);
     // locked=1;
     sa818_power(on);//Power on the module
-    HAL_Delay(1000);
+    HAL_Delay(400);//Delay here is important to give some time for the module to wake up
+    //TODO: maybe use something more efficient in the future.
     sa818_txrx_mode(rx);//Force the module to transmit
-    USART=usart;
 
     sprintf((char *)tx_buf,"AT+DMOCONNECT\r\n");
     tx_len=20;
     rx_len=16;
-    HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
-
-    sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
-    locked=1;
-    HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
+    uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
 
 }
 
@@ -68,12 +66,7 @@ void sa818::sa818_configure(uint8_t bw, char* tx_f, char* rx_f, char* tx_subaudi
     sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_subaudio);
     tx_len=50;
     rx_len=16;
-    HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
-
-
-    sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
-    HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
-
+    uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
 }
 
 void sa818::sa818_set_volume(uint8_t vol)
@@ -83,31 +76,31 @@ void sa818::sa818_set_volume(uint8_t vol)
     sprintf((char *)tx_buf,"AT+DMOSETVOLUME=%i\r\n",vol);
     tx_len=20;
     rx_len=16;
-    HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
 
-    sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
-    HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
+    uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
+
 
 }
 void sa818::sa818_get_RSSI()
 {
-        // while(locked!=0);
-    // locked=1;
+
     sprintf((char *)tx_buf,"RSSI?\r\n");
     tx_len=7;
     rx_len=10;
-    HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
+    uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
 
-    sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
-    HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
 }
 void sa818::sa818_set_tail(uint8_t x)
 {
     sprintf((char *)tx_buf,"AT+SETTAIL=%i\r\n",x);
     tx_len=14;
     rx_len=16;
-    HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
 
-    sprintf((char *)expected_rx,"+DMOSETTAIL: 0\r\n");
-    HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
+    uartx->send_recive((char*) tx_buf,"+DMOSETTAIL: 0\r\n");
+
+}
+//TODO implement the handle to check on the recieved message
+char* sa818::sa818_recieve_message(uint8_t count)
+{
+
 }

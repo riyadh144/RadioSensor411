@@ -14,6 +14,7 @@ void pin::init()
 {
   HAL_GPIO_Init(gpiox, &GPIO_InitStruct);
 }
+
 uint8_t pin::write(OnOff onoff)
 {
     if((gpiox->IDR & GPIO_InitStruct.Pin) != 0)
@@ -28,6 +29,7 @@ uint8_t pin::write(OnOff onoff)
     }
     return 0;
 }
+
 pin::OnOff pin::read()
 {
     

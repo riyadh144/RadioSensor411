@@ -78,7 +78,8 @@ Core/Src/main.cpp \
 Core/Src/menu.cpp \
 Core/Src/oled.cpp \
 Core/Src/pin.cpp \
-Core/Src/sa818.cpp
+Core/Src/sa818.cpp \
+Core/Src/uart.cpp
 
 
 # ASM sources

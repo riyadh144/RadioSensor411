@@ -2,6 +2,7 @@
 #define _SA818_H
 #include "stm32f4xx.h"
 #include "pin.hpp"
+#include "uart.hpp"
 class sa818
 {
 private:
@@ -14,6 +15,8 @@ unsigned char rx_len;
 
 pin *pin_pd;
 pin *pin_ptt;
+uart *uartx;
+
 public:
 
 typedef enum  {
@@ -25,6 +28,7 @@ typedef enum  {
     off=0,
     on=1
 }OnOff;
+
 /**
  * @brief  Power on the module
  * @note   @ref AS it says toggles the PD pin
@@ -47,7 +51,7 @@ void sa818_txrx_mode(TxRx mode);
  * @param  usart: USART HAL handle, specifies which UART interface to use
  * @retval None
  */
-sa818 (UART_HandleTypeDef* usart, pin* pin_pd_, pin* pin_ptt_);
+sa818 (uart* uartx_, pin* pin_pd_, pin* pin_ptt_);
 
 /**
  * @brief  Configure the parameters of transmission.
@@ -87,6 +91,20 @@ void sa818_get_RSSI();
 void sa818_get_version();
 
 void sa818_set_tail(uint8_t x);
+
+/**
+ * @brief send a message over the module.
+ * 
+ * @param string 
+ */
+void sa818_send_message(char* string);
+
+/**
+ * @brief set DMA to recieve 
+ * 
+ * @return char* 
+ */
+char* sa818_recieve_message(uint8_t count);
 
 };
 
