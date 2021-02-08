@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccjMyDgO.s 			page 1
+ARM GAS  /tmp/ccR5LGQi.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
   27:Core/Src/sa818.cpp ****     else
   28:Core/Src/sa818.cpp ****         pin_pd->write(pin::off);
   29:Core/Src/sa818.cpp **** }
-ARM GAS  /tmp/ccjMyDgO.s 			page 2
+ARM GAS  /tmp/ccR5LGQi.s 			page 2
 
 
   30:Core/Src/sa818.cpp **** void sa818::sa818_txrx_mode(TxRx mode)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
   84:Core/Src/sa818.cpp **** void sa818::sa818_get_RSSI()
   85:Core/Src/sa818.cpp **** {
   86:Core/Src/sa818.cpp **** 
-ARM GAS  /tmp/ccjMyDgO.s 			page 3
+ARM GAS  /tmp/ccR5LGQi.s 			page 3
 
 
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
   14:/usr/include/newlib/c++/9.2.1/iostream **** // GNU General Public License for more details.
   15:/usr/include/newlib/c++/9.2.1/iostream **** 
   16:/usr/include/newlib/c++/9.2.1/iostream **** // Under Section 7 of GPL version 3, you are granted additional
-ARM GAS  /tmp/ccjMyDgO.s 			page 4
+ARM GAS  /tmp/ccR5LGQi.s 			page 4
 
 
   17:/usr/include/newlib/c++/9.2.1/iostream **** // permissions described in the GCC Runtime Library Exception, version
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
   71:/usr/include/newlib/c++/9.2.1/iostream ****   //@}
   72:/usr/include/newlib/c++/9.2.1/iostream **** 
   73:/usr/include/newlib/c++/9.2.1/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
-ARM GAS  /tmp/ccjMyDgO.s 			page 5
+ARM GAS  /tmp/ccR5LGQi.s 			page 5
 
 
   74:/usr/include/newlib/c++/9.2.1/iostream ****   static ios_base::Init __ioinit;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  102              		.loc 1 26 9 view .LVU11
   26:Core/Src/sa818.cpp ****         pin_pd->write(pin::on);
  103              		.loc 1 26 22 is_stmt 0 view .LVU12
-ARM GAS  /tmp/ccjMyDgO.s 			page 6
+ARM GAS  /tmp/ccR5LGQi.s 			page 6
 
 
  104 0004 0121     		movs	r1, #1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  150 0000 08B5     		push	{r3, lr}
  151              		.save {r3, lr}
  152              	.LCFI2:
-ARM GAS  /tmp/ccjMyDgO.s 			page 7
+ARM GAS  /tmp/ccR5LGQi.s 			page 7
 
 
  153              		.cfi_def_cfa_offset 8
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  194              	.LC1:
  195 0010 2B444D4F 		.ascii	"+DMOCONNECT:0\015\012\000"
  195      434F4E4E 
-ARM GAS  /tmp/ccjMyDgO.s 			page 8
+ARM GAS  /tmp/ccR5LGQi.s 			page 8
 
 
  195      4543543A 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  238              	.LVL22:
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
  239              		.loc 1 49 5 is_stmt 1 view .LVU45
-ARM GAS  /tmp/ccjMyDgO.s 			page 9
+ARM GAS  /tmp/ccR5LGQi.s 			page 9
 
 
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  281              	.L20:
  282 0048 00000000 		.word	.LC0
  283 004c 10000000 		.word	.LC1
-ARM GAS  /tmp/ccjMyDgO.s 			page 10
+ARM GAS  /tmp/ccR5LGQi.s 			page 10
 
 
  284              		.cfi_endproc
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
   64:Core/Src/sa818.cpp ****     HAL_Delay(1000);
  332              		.loc 1 64 14 view .LVU63
  333 0010 FFF7FEFF 		bl	HAL_Delay
-ARM GAS  /tmp/ccjMyDgO.s 			page 11
+ARM GAS  /tmp/ccR5LGQi.s 			page 11
 
 
  334              	.LVL29:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  378              		.cfi_endproc
  379              	.LFE1989:
  380              		.fnend
-ARM GAS  /tmp/ccjMyDgO.s 			page 12
+ARM GAS  /tmp/ccR5LGQi.s 			page 12
 
 
  382              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  424 0012 1023     		movs	r3, #16
  425 0014 84F85230 		strb	r3, [r4, #82]
   80:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
-ARM GAS  /tmp/ccjMyDgO.s 			page 13
+ARM GAS  /tmp/ccR5LGQi.s 			page 13
 
 
  426              		.loc 1 80 5 is_stmt 1 view .LVU83
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
  475              		.loc 1 87 12 is_stmt 0 view .LVU90
  476 0004 074A     		ldr	r2, .L32
-ARM GAS  /tmp/ccjMyDgO.s 			page 14
+ARM GAS  /tmp/ccR5LGQi.s 			page 14
 
 
  477 0006 03CA     		ldmia	r2!, {r0, r1}
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  517              		.global	_ZN5sa81814sa818_set_tailEh
  518              		.syntax unified
  519              		.thumb
-ARM GAS  /tmp/ccjMyDgO.s 			page 15
+ARM GAS  /tmp/ccR5LGQi.s 			page 15
 
 
  520              		.thumb_func
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  563 0022 10BD     		pop	{r4, pc}
  564              	.LVL45:
  565              	.L37:
-ARM GAS  /tmp/ccjMyDgO.s 			page 16
+ARM GAS  /tmp/ccR5LGQi.s 			page 16
 
 
  101:Core/Src/sa818.cpp **** }
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  621 0008 FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
  622              	.LVL46:
  623 000c 08BD     		pop	{r3, pc}
-ARM GAS  /tmp/ccjMyDgO.s 			page 17
+ARM GAS  /tmp/ccR5LGQi.s 			page 17
 
 
  624              		.cfi_endproc
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  687              	rx_len:
  688 0000 00       		.space	1
  689              		.section	.bss.tx_buf,"aw",%nobits
-ARM GAS  /tmp/ccjMyDgO.s 			page 18
+ARM GAS  /tmp/ccR5LGQi.s 			page 18
 
 
  690              		.align	2
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  744              		.file 28 "/usr/include/newlib/c++/9.2.1/bits/char_traits.h"
  745              		.file 29 "/usr/include/newlib/c++/9.2.1/cstdint"
  746              		.file 30 "/usr/include/newlib/c++/9.2.1/clocale"
-ARM GAS  /tmp/ccjMyDgO.s 			page 19
+ARM GAS  /tmp/ccR5LGQi.s 			page 19
 
 
  747              		.file 31 "/usr/include/newlib/c++/9.2.1/cstdlib"
@@ -1104,84 +1104,84 @@ ARM GAS  /tmp/ccjMyDgO.s 			page 1
  767              		.file 51 "/usr/include/newlib/wctype.h"
  768              		.file 52 "Core/Inc/uart.hpp"
  769              		.file 53 "Core/Inc/sa818.h"
-ARM GAS  /tmp/ccjMyDgO.s 			page 20
+ARM GAS  /tmp/ccR5LGQi.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sa818.cpp
-     /tmp/ccjMyDgO.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
-     /tmp/ccjMyDgO.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/ccjMyDgO.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+     /tmp/ccR5LGQi.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
+     /tmp/ccR5LGQi.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccR5LGQi.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $d
-     /tmp/ccjMyDgO.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
-     /tmp/ccjMyDgO.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
+     /tmp/ccR5LGQi.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
+     /tmp/ccR5LGQi.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
 .ARM.extab.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-     /tmp/ccjMyDgO.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
-     /tmp/ccjMyDgO.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
+     /tmp/ccR5LGQi.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
+     /tmp/ccR5LGQi.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
 .ARM.extab.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-     /tmp/ccjMyDgO.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
-     /tmp/ccjMyDgO.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
-     /tmp/ccjMyDgO.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
-     /tmp/ccjMyDgO.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
+     /tmp/ccR5LGQi.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
+     /tmp/ccR5LGQi.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
+     /tmp/ccR5LGQi.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
+     /tmp/ccR5LGQi.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
 .ARM.exidx.text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $d
-     /tmp/ccjMyDgO.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
-     /tmp/ccjMyDgO.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
-     /tmp/ccjMyDgO.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
-     /tmp/ccjMyDgO.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
-     /tmp/ccjMyDgO.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
+     /tmp/ccR5LGQi.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
+     /tmp/ccR5LGQi.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
+     /tmp/ccR5LGQi.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
+     /tmp/ccR5LGQi.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
+     /tmp/ccR5LGQi.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
 .ARM.exidx.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $d
-     /tmp/ccjMyDgO.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
-     /tmp/ccjMyDgO.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
-     /tmp/ccjMyDgO.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
-     /tmp/ccjMyDgO.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
+     /tmp/ccR5LGQi.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
+     /tmp/ccR5LGQi.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
+     /tmp/ccR5LGQi.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
+     /tmp/ccR5LGQi.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $d
-     /tmp/ccjMyDgO.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
-     /tmp/ccjMyDgO.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
-     /tmp/ccjMyDgO.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
-     /tmp/ccjMyDgO.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
+     /tmp/ccR5LGQi.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
+     /tmp/ccR5LGQi.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
+     /tmp/ccR5LGQi.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
+     /tmp/ccR5LGQi.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
 .ARM.extab.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
-     /tmp/ccjMyDgO.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
-     /tmp/ccjMyDgO.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
-     /tmp/ccjMyDgO.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
-     /tmp/ccjMyDgO.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
+     /tmp/ccR5LGQi.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
+     /tmp/ccR5LGQi.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
+     /tmp/ccR5LGQi.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
+     /tmp/ccR5LGQi.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81814sa818_set_tailEh:0000000000000000 $d
-     /tmp/ccjMyDgO.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
+     /tmp/ccR5LGQi.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
 .ARM.exidx.text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $d
-     /tmp/ccjMyDgO.s:599    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
-     /tmp/ccjMyDgO.s:605    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
+     /tmp/ccR5LGQi.s:599    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
+     /tmp/ccR5LGQi.s:605    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
 .ARM.exidx.text._GLOBAL__sub_I_CMD_SET:0000000000000000 $d
-     /tmp/ccjMyDgO.s:630    .init_array:0000000000000000 $d
-     /tmp/ccjMyDgO.s:687    .bss.rx_len:0000000000000000 rx_len
-     /tmp/ccjMyDgO.s:698    .bss.tx_len:0000000000000000 tx_len
-     /tmp/ccjMyDgO.s:676    .bss.locked:0000000000000000 locked
-     /tmp/ccjMyDgO.s:682    .bss.rx_buf:0000000000000000 rx_buf
-     /tmp/ccjMyDgO.s:693    .bss.tx_buf:0000000000000000 tx_buf
-     /tmp/ccjMyDgO.s:648    .bss.USART:0000000000000000 USART
-     /tmp/ccjMyDgO.s:715    .data.status_cnt:0000000000000000 status_cnt
-     /tmp/ccjMyDgO.s:666    .bss.len_rxnow:0000000000000000 len_rxnow
-     /tmp/ccjMyDgO.s:671    .bss.len_txnow:0000000000000000 len_txnow
-     /tmp/ccjMyDgO.s:661    .bss.expected_rx:0000000000000000 expected_rx
-ARM GAS  /tmp/ccjMyDgO.s 			page 21
+     /tmp/ccR5LGQi.s:630    .init_array:0000000000000000 $d
+     /tmp/ccR5LGQi.s:687    .bss.rx_len:0000000000000000 rx_len
+     /tmp/ccR5LGQi.s:698    .bss.tx_len:0000000000000000 tx_len
+     /tmp/ccR5LGQi.s:676    .bss.locked:0000000000000000 locked
+     /tmp/ccR5LGQi.s:682    .bss.rx_buf:0000000000000000 rx_buf
+     /tmp/ccR5LGQi.s:693    .bss.tx_buf:0000000000000000 tx_buf
+     /tmp/ccR5LGQi.s:648    .bss.USART:0000000000000000 USART
+     /tmp/ccR5LGQi.s:715    .data.status_cnt:0000000000000000 status_cnt
+     /tmp/ccR5LGQi.s:666    .bss.len_rxnow:0000000000000000 len_rxnow
+     /tmp/ccR5LGQi.s:671    .bss.len_txnow:0000000000000000 len_txnow
+     /tmp/ccR5LGQi.s:661    .bss.expected_rx:0000000000000000 expected_rx
+ARM GAS  /tmp/ccR5LGQi.s 			page 21
 
 
-     /tmp/ccjMyDgO.s:710    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
-     /tmp/ccjMyDgO.s:704    .data.CMD_SET:0000000000000000 CMD_SET
-     /tmp/ccjMyDgO.s:645    .bss.USART:0000000000000000 $d
-     /tmp/ccjMyDgO.s:651    .bss._ZStL8__ioinit:0000000000000000 $d
-     /tmp/ccjMyDgO.s:655    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
-     /tmp/ccjMyDgO.s:658    .bss.expected_rx:0000000000000000 $d
-     /tmp/ccjMyDgO.s:667    .bss.len_rxnow:0000000000000000 $d
-     /tmp/ccjMyDgO.s:672    .bss.len_txnow:0000000000000000 $d
-     /tmp/ccjMyDgO.s:677    .bss.locked:0000000000000000 $d
-     /tmp/ccjMyDgO.s:679    .bss.rx_buf:0000000000000000 $d
-     /tmp/ccjMyDgO.s:688    .bss.rx_len:0000000000000000 $d
-     /tmp/ccjMyDgO.s:690    .bss.tx_buf:0000000000000000 $d
-     /tmp/ccjMyDgO.s:699    .bss.tx_len:0000000000000000 $d
-     /tmp/ccjMyDgO.s:701    .data.CMD_SET:0000000000000000 $d
-     /tmp/ccjMyDgO.s:707    .data.CMD_VOLUME:0000000000000000 $d
+     /tmp/ccR5LGQi.s:710    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
+     /tmp/ccR5LGQi.s:704    .data.CMD_SET:0000000000000000 CMD_SET
+     /tmp/ccR5LGQi.s:645    .bss.USART:0000000000000000 $d
+     /tmp/ccR5LGQi.s:651    .bss._ZStL8__ioinit:0000000000000000 $d
+     /tmp/ccR5LGQi.s:655    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
+     /tmp/ccR5LGQi.s:658    .bss.expected_rx:0000000000000000 $d
+     /tmp/ccR5LGQi.s:667    .bss.len_rxnow:0000000000000000 $d
+     /tmp/ccR5LGQi.s:672    .bss.len_txnow:0000000000000000 $d
+     /tmp/ccR5LGQi.s:677    .bss.locked:0000000000000000 $d
+     /tmp/ccR5LGQi.s:679    .bss.rx_buf:0000000000000000 $d
+     /tmp/ccR5LGQi.s:688    .bss.rx_len:0000000000000000 $d
+     /tmp/ccR5LGQi.s:690    .bss.tx_buf:0000000000000000 $d
+     /tmp/ccR5LGQi.s:699    .bss.tx_len:0000000000000000 $d
+     /tmp/ccR5LGQi.s:701    .data.CMD_SET:0000000000000000 $d
+     /tmp/ccR5LGQi.s:707    .data.CMD_VOLUME:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev
