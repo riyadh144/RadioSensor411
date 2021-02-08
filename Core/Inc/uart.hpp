@@ -4,6 +4,7 @@
 #include "stm32f4xx.h"
 #include "iostream"
 #include "functional"
+#include "string.h"
 class uart{
 
     public:
@@ -18,17 +19,32 @@ class uart{
     }uart_num;
 
     private:
-    char* txbuffer[100];
-    char* rxbuffer[100];
+    char txbuffer[100];
+    char rxbuffer[100];
     uint32_t baudrate;
     uart_num uartNum;
     UART_HandleTypeDef uartx;
 
     public:
-
-    
     uart(uart_num uartNum, uint32_t baudrate_);
-    void rx_cplt_callback(__UART_HandleTypeDef* uart_);
+    void send(char * string);
+    /**
+     * @brief set the DMA to recieve
+     * 
+     * @param count 
+     */
+    void set_recieve(uint8_t count);
+
+    /**
+     * @brief send a string and wait for a return
+     * 
+     * @param txString 
+     * @param rxString 
+     * @return uint8_t 1:Done 0:Fail
+     */
+    uint8_t send_recive(char* txString, char* rxString);
+    
+    void rx_cplt_callback();
     void Error_Handler(void);
 
 };

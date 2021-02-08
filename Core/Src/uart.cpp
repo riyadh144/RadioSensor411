@@ -23,18 +23,36 @@ uart::uart(uart_num uartNum_, uint32_t baudrate_) //TODO:Think to add parity and
     uartx.Init.Mode = UART_MODE_TX_RX;
     uartx.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     uartx.Init.OverSampling = UART_OVERSAMPLING_16;
-    uartx.RxCpltCallback=std::bind(&rx_cplt_callback, this);
     if (HAL_UART_Init(&uartx) != HAL_OK)
     {
     Error_Handler();
     }
 }
+uint8_t uart::send_recive(char* txString, char* rxString)
+{
+    HAL_UART_Transmit(&uartx,(uint8_t*)txString, strlen(txString), 100);
+    set_recieve(strlen(rxString)-1); //Here we want to recieve the length of the string without the null char
+    HAL_Delay(100);//Give it some time to reply
+    if(strcmp(rxString, rxbuffer)==0)
+    {
+        return 1;
+    }
+    else
+    {
+        return send_recive(txString, rxString); //In case we get a different message or we get nothing back repeat the message
+    }
+    
+}
 
-void uart::rx_cplt_callback(__UART_HandleTypeDef* uart_)
+void uart::set_recieve(uint8_t count)
+{
+    HAL_UART_Receive_DMA(&uartx, (uint8_t*) rxbuffer,count);
+}
+void uart::rx_cplt_callback()
 {
     
 }
-void Error_Handler(void)
+void uart::Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
   /* User can add his own implementation to report the HAL error return state */
