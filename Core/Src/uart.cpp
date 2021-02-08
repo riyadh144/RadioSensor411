@@ -28,7 +28,7 @@ uart::uart(uart_num uartNum_, uint32_t baudrate_) //TODO:Think to add parity and
     Error_Handler();
     }
 }
-uint8_t uart::send_recive(char* txString, char* rxString)
+uint8_t uart::send_recive(char* txString,const char* rxString)
 {
     HAL_UART_Transmit(&uartx,(uint8_t*)txString, strlen(txString), 100);
     set_recieve(strlen(rxString)-1); //Here we want to recieve the length of the string without the null char

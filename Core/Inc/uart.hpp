@@ -42,7 +42,7 @@ class uart{
      * @param rxString 
      * @return uint8_t 1:Done 0:Fail
      */
-    uint8_t send_recive(char* txString, char* rxString);
+    uint8_t send_recive(char* txString, const char* rxString);
     
     void rx_cplt_callback();
     void Error_Handler(void);

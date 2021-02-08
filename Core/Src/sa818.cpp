@@ -102,5 +102,5 @@ void sa818::sa818_set_tail(uint8_t x)
 //TODO implement the handle to check on the recieved message
 char* sa818::sa818_recieve_message(uint8_t count)
 {
-
+    return 0;
 }

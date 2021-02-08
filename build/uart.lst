@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccGF7Jyy.s 			page 1
+ARM GAS  /tmp/cc09nntS.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,11 +58,11 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
   27:Core/Src/uart.cpp ****     {
   28:Core/Src/uart.cpp ****     Error_Handler();
   29:Core/Src/uart.cpp ****     }
-ARM GAS  /tmp/ccGF7Jyy.s 			page 2
+ARM GAS  /tmp/cc09nntS.s 			page 2
 
 
   30:Core/Src/uart.cpp **** }
-  31:Core/Src/uart.cpp **** uint8_t uart::send_recive(char* txString, char* rxString)
+  31:Core/Src/uart.cpp **** uint8_t uart::send_recive(char* txString,const char* rxString)
   32:Core/Src/uart.cpp **** {
   33:Core/Src/uart.cpp ****     HAL_UART_Transmit(&uartx,(uint8_t*)txString, strlen(txString), 100);
   34:Core/Src/uart.cpp ****     set_recieve(strlen(rxString)-1); //Here we want to recieve the length of the string without the
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
   49              		.cfi_offset 14, -4
   50              		.file 2 "/usr/include/newlib/c++/9.2.1/iostream"
    1:/usr/include/newlib/c++/9.2.1/iostream **** // Standard iostream objects -*- C++ -*-
-ARM GAS  /tmp/ccGF7Jyy.s 			page 3
+ARM GAS  /tmp/cc09nntS.s 			page 3
 
 
    2:/usr/include/newlib/c++/9.2.1/iostream **** 
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
   56:/usr/include/newlib/c++/9.2.1/iostream ****    *  startup and termination. For more information, see the section of the
   57:/usr/include/newlib/c++/9.2.1/iostream ****    *  manual linked to above.
   58:/usr/include/newlib/c++/9.2.1/iostream ****   */
-ARM GAS  /tmp/ccGF7Jyy.s 			page 4
+ARM GAS  /tmp/cc09nntS.s 			page 4
 
 
   59:/usr/include/newlib/c++/9.2.1/iostream ****   //@{
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
   90              		.cfi_startproc
   91              		@ args = 0, pretend = 0, frame = 0
   92              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccGF7Jyy.s 			page 5
+ARM GAS  /tmp/cc09nntS.s 			page 5
 
 
   48:Core/Src/uart.cpp ****     HAL_UART_Receive_DMA(&uartx, (uint8_t*) rxbuffer,count);
@@ -270,14 +270,14 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  113              		.cfi_endproc
  114              	.LFE1988:
  115              		.fnend
- 117              		.section	.text._ZN4uart11send_reciveEPcS0_,"ax",%progbits
+ 117              		.section	.text._ZN4uart11send_reciveEPcPKc,"ax",%progbits
  118              		.align	1
- 119              		.global	_ZN4uart11send_reciveEPcS0_
+ 119              		.global	_ZN4uart11send_reciveEPcPKc
  120              		.syntax unified
  121              		.thumb
  122              		.thumb_func
  123              		.fpu fpv4-sp-d16
- 125              	_ZN4uart11send_reciveEPcS0_:
+ 125              	_ZN4uart11send_reciveEPcPKc:
  126              		.fnstart
  127              	.LVL8:
  128              	.LFB1987:
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  141              		.cfi_offset 14, -4
  142 0002 0446     		mov	r4, r0
  143 0004 0D46     		mov	r5, r1
-ARM GAS  /tmp/ccGF7Jyy.s 			page 6
+ARM GAS  /tmp/cc09nntS.s 			page 6
 
 
  144 0006 1646     		mov	r6, r2
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  185              	.L13:
   45:Core/Src/uart.cpp **** 
  186              		.loc 1 45 1 view .LVU30
-ARM GAS  /tmp/ccGF7Jyy.s 			page 7
+ARM GAS  /tmp/cc09nntS.s 			page 7
 
 
  187 0040 70BD     		pop	{r4, r5, r6, pc}
@@ -371,7 +371,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  192 0042 3246     		mov	r2, r6
  193 0044 2946     		mov	r1, r5
  194 0046 2046     		mov	r0, r4
- 195 0048 FFF7FEFF 		bl	_ZN4uart11send_reciveEPcS0_
+ 195 0048 FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
  196              	.LVL17:
   42:Core/Src/uart.cpp ****     }
  197              		.loc 1 42 46 view .LVU33
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  239              		.loc 1 56 1 is_stmt 1 view -0
  240              		.cfi_startproc
  241              		@ Volatile: function does not return.
-ARM GAS  /tmp/ccGF7Jyy.s 			page 8
+ARM GAS  /tmp/cc09nntS.s 			page 8
 
 
  242              		@ args = 0, pretend = 0, frame = 0
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
   47:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_INLINE                        static inline
   48:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   49:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __STATIC_FORCEINLINE                 
-ARM GAS  /tmp/ccGF7Jyy.s 			page 9
+ARM GAS  /tmp/cc09nntS.s 			page 9
 
 
   50:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __STATIC_FORCEINLINE                   __attribute__((always_inline)) static inline
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  104:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wpacked"
  105:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic ignored "-Wattributes"
  106:Drivers/CMSIS/Include/cmsis_gcc.h ****   __PACKED_STRUCT T_UINT32_READ { uint32_t v; };
-ARM GAS  /tmp/ccGF7Jyy.s 			page 10
+ARM GAS  /tmp/cc09nntS.s 			page 10
 
 
  107:Drivers/CMSIS/Include/cmsis_gcc.h ****   #pragma GCC diagnostic pop
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  265              		.cfi_endproc
  266              	.LFE1990:
  267              		.cantunwind
-ARM GAS  /tmp/ccGF7Jyy.s 			page 11
+ARM GAS  /tmp/cc09nntS.s 			page 11
 
 
  268              		.fnend
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  313              		.loc 1 20 27 is_stmt 0 view .LVU53
  314 001c 0023     		movs	r3, #0
  315 001e C4F89831 		str	r3, [r4, #408]
-ARM GAS  /tmp/ccGF7Jyy.s 			page 12
+ARM GAS  /tmp/cc09nntS.s 			page 12
 
 
   21:Core/Src/uart.cpp ****     uartx.Init.Parity = UART_PARITY_NONE;
@@ -704,7 +704,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  341              		.loc 1 26 5 view .LVU68
  342 0040 68B9     		cbnz	r0, .L27
  343              	.LBE6:
-  30:Core/Src/uart.cpp **** uint8_t uart::send_recive(char* txString, char* rxString)
+  30:Core/Src/uart.cpp **** uint8_t uart::send_recive(char* txString,const char* rxString)
  344              		.loc 1 30 1 view .LVU69
  345 0042 2046     		mov	r0, r4
  346 0044 10BD     		pop	{r4, pc}
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
   10:Core/Src/uart.cpp ****             break;
  352              		.loc 1 10 24 is_stmt 0 view .LVU72
  353 0046 074B     		ldr	r3, .L28
-ARM GAS  /tmp/ccGF7Jyy.s 			page 13
+ARM GAS  /tmp/cc09nntS.s 			page 13
 
 
  354 0048 C0F89031 		str	r3, [r0, #400]
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  398              		.fpu fpv4-sp-d16
  400              	_GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm:
  401              		.fnstart
-ARM GAS  /tmp/ccGF7Jyy.s 			page 14
+ARM GAS  /tmp/cc09nntS.s 			page 14
 
 
  402              	.LFB2471:
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  459              		.file 28 "/usr/include/newlib/c++/9.2.1/cwctype"
  460              		.file 29 "/usr/include/newlib/c++/9.2.1/iosfwd"
  461              		.file 30 "/usr/include/newlib/c++/9.2.1/bits/uses_allocator.h"
-ARM GAS  /tmp/ccGF7Jyy.s 			page 15
+ARM GAS  /tmp/cc09nntS.s 			page 15
 
 
  462              		.file 31 "/usr/include/newlib/c++/9.2.1/tuple"
@@ -861,39 +861,39 @@ ARM GAS  /tmp/ccGF7Jyy.s 			page 1
  479              		.file 48 "/usr/include/newlib/wctype.h"
  480              		.file 49 "Core/Inc/uart.hpp"
  481              		.file 50 "/usr/include/newlib/string.h"
-ARM GAS  /tmp/ccGF7Jyy.s 			page 16
+ARM GAS  /tmp/cc09nntS.s 			page 16
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 uart.cpp
-     /tmp/ccGF7Jyy.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/ccGF7Jyy.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+     /tmp/cc09nntS.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
+     /tmp/cc09nntS.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/cc09nntS.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:78     .text._ZN4uart11set_recieveEh:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:85     .text._ZN4uart11set_recieveEh:0000000000000000 _ZN4uart11set_recieveEh
+     /tmp/cc09nntS.s:78     .text._ZN4uart11set_recieveEh:0000000000000000 $t
+     /tmp/cc09nntS.s:85     .text._ZN4uart11set_recieveEh:0000000000000000 _ZN4uart11set_recieveEh
 .ARM.extab.text._ZN4uart11set_recieveEh:0000000000000000 $d
 .ARM.exidx.text._ZN4uart11set_recieveEh:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:118    .text._ZN4uart11send_reciveEPcS0_:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:125    .text._ZN4uart11send_reciveEPcS0_:0000000000000000 _ZN4uart11send_reciveEPcS0_
-.ARM.exidx.text._ZN4uart11send_reciveEPcS0_:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:204    .text._ZN4uart16rx_cplt_callbackEv:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:211    .text._ZN4uart16rx_cplt_callbackEv:0000000000000000 _ZN4uart16rx_cplt_callbackEv
+     /tmp/cc09nntS.s:118    .text._ZN4uart11send_reciveEPcPKc:0000000000000000 $t
+     /tmp/cc09nntS.s:125    .text._ZN4uart11send_reciveEPcPKc:0000000000000000 _ZN4uart11send_reciveEPcPKc
+.ARM.exidx.text._ZN4uart11send_reciveEPcPKc:0000000000000000 $d
+     /tmp/cc09nntS.s:204    .text._ZN4uart16rx_cplt_callbackEv:0000000000000000 $t
+     /tmp/cc09nntS.s:211    .text._ZN4uart16rx_cplt_callbackEv:0000000000000000 _ZN4uart16rx_cplt_callbackEv
 .ARM.exidx.text._ZN4uart16rx_cplt_callbackEv:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:228    .text._ZN4uart13Error_HandlerEv:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:235    .text._ZN4uart13Error_HandlerEv:0000000000000000 _ZN4uart13Error_HandlerEv
+     /tmp/cc09nntS.s:228    .text._ZN4uart13Error_HandlerEv:0000000000000000 $t
+     /tmp/cc09nntS.s:235    .text._ZN4uart13Error_HandlerEv:0000000000000000 _ZN4uart13Error_HandlerEv
 .ARM.exidx.text._ZN4uart13Error_HandlerEv:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:271    .text._ZN4uartC2ENS_8uart_numEm:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:278    .text._ZN4uartC2ENS_8uart_numEm:0000000000000000 _ZN4uartC2ENS_8uart_numEm
-     /tmp/ccGF7Jyy.s:383    .text._ZN4uartC2ENS_8uart_numEm:0000000000000064 $d
+     /tmp/cc09nntS.s:271    .text._ZN4uartC2ENS_8uart_numEm:0000000000000000 $t
+     /tmp/cc09nntS.s:278    .text._ZN4uartC2ENS_8uart_numEm:0000000000000000 _ZN4uartC2ENS_8uart_numEm
+     /tmp/cc09nntS.s:383    .text._ZN4uartC2ENS_8uart_numEm:0000000000000064 $d
 .ARM.exidx.text._ZN4uartC2ENS_8uart_numEm:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:278    .text._ZN4uartC2ENS_8uart_numEm:0000000000000000 _ZN4uartC1ENS_8uart_numEm
-     /tmp/ccGF7Jyy.s:394    .text._GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm:0000000000000000 $t
-     /tmp/ccGF7Jyy.s:400    .text._GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm:0000000000000000 _GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm
+     /tmp/cc09nntS.s:278    .text._ZN4uartC2ENS_8uart_numEm:0000000000000000 _ZN4uartC1ENS_8uart_numEm
+     /tmp/cc09nntS.s:394    .text._GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm:0000000000000000 $t
+     /tmp/cc09nntS.s:400    .text._GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm:0000000000000000 _GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm
 .ARM.exidx.text._GLOBAL__sub_I__ZN4uartC2ENS_8uart_numEm:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:424    .init_array:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:427    .bss._ZStL8__ioinit:0000000000000000 $d
-     /tmp/ccGF7Jyy.s:431    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
+     /tmp/cc09nntS.s:424    .init_array:0000000000000000 $d
+     /tmp/cc09nntS.s:427    .bss._ZStL8__ioinit:0000000000000000 $d
+     /tmp/cc09nntS.s:431    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev

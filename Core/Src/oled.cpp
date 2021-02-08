@@ -124,7 +124,7 @@ void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 }
 void oled::oled_update_battery(float voltage)
 {
-	char volt [4];
+	char volt [6];
 	sprintf(volt,"%.1fv",voltage);
 	oled_print(volt,Font_7x10,90,0);
 }
