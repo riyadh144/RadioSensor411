@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ARM GAS  /tmp/ccOVKGtc.s 			page 1
-=======
-ARM GAS  /tmp/ccFVAnSv.s 			page 1
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
+ARM GAS  /tmp/ccjMyDgO.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -57,71 +53,14 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   22:Core/Src/sa818.cpp **** 
   23:Core/Src/sa818.cpp **** void sa818::sa818_power(OnOff on)
   24:Core/Src/sa818.cpp **** {
-<<<<<<< HEAD
-=======
-  31              		.loc 1 24 1 view -0
-  32              		.cfi_startproc
-  33              		@ args = 0, pretend = 0, frame = 0
-  34              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  /tmp/ccFVAnSv.s 			page 2
-
-
-  35              		.loc 1 24 1 is_stmt 0 view .LVU1
-  36 0000 08B5     		push	{r3, lr}
-  37              		.save {r3, lr}
-  38              	.LCFI0:
-  39              		.cfi_def_cfa_offset 8
-  40              		.cfi_offset 3, -8
-  41              		.cfi_offset 14, -4
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
   25:Core/Src/sa818.cpp ****     if(on)
   26:Core/Src/sa818.cpp ****         pin_pd->write(pin::on);
   27:Core/Src/sa818.cpp ****     else
   28:Core/Src/sa818.cpp ****         pin_pd->write(pin::off);
   29:Core/Src/sa818.cpp **** }
-<<<<<<< HEAD
-ARM GAS  /tmp/ccOVKGtc.s 			page 2
+ARM GAS  /tmp/ccjMyDgO.s 			page 2
 
 
-=======
-  55              		.loc 1 29 1 view .LVU7
-  56 000c 08BD     		pop	{r3, pc}
-  57              	.LVL4:
-  58              	.L2:
-  28:Core/Src/sa818.cpp **** }
-  59              		.loc 1 28 9 is_stmt 1 view .LVU8
-  28:Core/Src/sa818.cpp **** }
-  60              		.loc 1 28 22 is_stmt 0 view .LVU9
-  61 000e 0021     		movs	r1, #0
-  62              	.LVL5:
-  28:Core/Src/sa818.cpp **** }
-  63              		.loc 1 28 22 view .LVU10
-  64 0010 406D     		ldr	r0, [r0, #84]
-  65              	.LVL6:
-  28:Core/Src/sa818.cpp **** }
-  66              		.loc 1 28 22 view .LVU11
-  67 0012 FFF7FEFF 		bl	_ZN3pin5writeENS_5OnOffE
-  68              	.LVL7:
-  69              		.loc 1 29 1 view .LVU12
-  70 0016 F9E7     		b	.L1
-  71              		.cfi_endproc
-  72              	.LFE131:
-  73              		.fnend
-  75              		.section	.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE,"ax",%progbits
-  76              		.align	1
-  77              		.global	_ZN5sa81815sa818_txrx_modeENS_4TxRxE
-  78              		.syntax unified
-  79              		.thumb
-  80              		.thumb_func
-  81              		.fpu fpv4-sp-d16
-  83              	_ZN5sa81815sa818_txrx_modeENS_4TxRxE:
-  84              		.fnstart
-ARM GAS  /tmp/ccFVAnSv.s 			page 3
-
-
-  85              	.LVL8:
-  86              	.LFB132:
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
   30:Core/Src/sa818.cpp **** void sa818::sa818_txrx_mode(TxRx mode)
   31:Core/Src/sa818.cpp **** {
   32:Core/Src/sa818.cpp ****     if(mode)
@@ -130,66 +69,12 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   35:Core/Src/sa818.cpp ****         pin_ptt->write(pin::off);
   36:Core/Src/sa818.cpp ****     
   37:Core/Src/sa818.cpp **** }
-<<<<<<< HEAD
-=======
- 111              		.loc 1 37 1 view .LVU20
- 112 000c 08BD     		pop	{r3, pc}
- 113              	.LVL12:
- 114              	.L6:
-  35:Core/Src/sa818.cpp ****     
- 115              		.loc 1 35 9 is_stmt 1 view .LVU21
-  35:Core/Src/sa818.cpp ****     
- 116              		.loc 1 35 23 is_stmt 0 view .LVU22
- 117 000e 0021     		movs	r1, #0
- 118              	.LVL13:
-  35:Core/Src/sa818.cpp ****     
- 119              		.loc 1 35 23 view .LVU23
- 120 0010 806D     		ldr	r0, [r0, #88]
- 121              	.LVL14:
-  35:Core/Src/sa818.cpp ****     
- 122              		.loc 1 35 23 view .LVU24
- 123 0012 FFF7FEFF 		bl	_ZN3pin5writeENS_5OnOffE
- 124              	.LVL15:
- 125              		.loc 1 37 1 view .LVU25
- 126 0016 F9E7     		b	.L5
- 127              		.cfi_endproc
- 128              	.LFE132:
- 129              		.fnend
-ARM GAS  /tmp/ccFVAnSv.s 			page 4
-
-
- 131              		.section	.rodata._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_.str1.4,"aMS",%progbits,1
- 132              		.align	2
- 133              	.LC0:
- 134 0000 41542B44 		.ascii	"AT+DMOCONNECT\015\012\000"
- 134      4D4F434F 
- 134      4E4E4543 
- 134      540D0A00 
- 135              		.align	2
- 136              	.LC1:
- 137 0010 2B444D4F 		.ascii	"+DMOCONNECT:0\015\012\000"
- 137      434F4E4E 
- 137      4543543A 
- 137      300D0A00 
- 138              		.section	.text._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_,"ax",%progbits
- 139              		.align	1
- 140              		.global	_ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_
- 141              		.syntax unified
- 142              		.thumb
- 143              		.thumb_func
- 144              		.fpu fpv4-sp-d16
- 146              	_ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_:
- 147              		.fnstart
- 148              	.LVL16:
- 149              	.LFB134:
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
   38:Core/Src/sa818.cpp **** 
   39:Core/Src/sa818.cpp **** sa818::sa818(uart* uartx_, pin* pin_pd_, pin* pin_ptt_)
   40:Core/Src/sa818.cpp **** 
   41:Core/Src/sa818.cpp **** {
   42:Core/Src/sa818.cpp ****     pin_pd=pin_pd_;
   43:Core/Src/sa818.cpp ****     pin_ptt=pin_ptt_;
-<<<<<<< HEAD
   44:Core/Src/sa818.cpp ****     uartx=uartx_;
   45:Core/Src/sa818.cpp **** 
   46:Core/Src/sa818.cpp ****     // while(locked!=0);
@@ -233,7 +118,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   84:Core/Src/sa818.cpp **** void sa818::sa818_get_RSSI()
   85:Core/Src/sa818.cpp **** {
   86:Core/Src/sa818.cpp **** 
-ARM GAS  /tmp/ccOVKGtc.s 			page 3
+ARM GAS  /tmp/ccjMyDgO.s 			page 3
 
 
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
@@ -293,7 +178,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   14:/usr/include/newlib/c++/9.2.1/iostream **** // GNU General Public License for more details.
   15:/usr/include/newlib/c++/9.2.1/iostream **** 
   16:/usr/include/newlib/c++/9.2.1/iostream **** // Under Section 7 of GPL version 3, you are granted additional
-ARM GAS  /tmp/ccOVKGtc.s 			page 4
+ARM GAS  /tmp/ccjMyDgO.s 			page 4
 
 
   17:/usr/include/newlib/c++/9.2.1/iostream **** // permissions described in the GCC Runtime Library Exception, version
@@ -353,7 +238,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   71:/usr/include/newlib/c++/9.2.1/iostream ****   //@}
   72:/usr/include/newlib/c++/9.2.1/iostream **** 
   73:/usr/include/newlib/c++/9.2.1/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
-ARM GAS  /tmp/ccOVKGtc.s 			page 5
+ARM GAS  /tmp/ccjMyDgO.s 			page 5
 
 
   74:/usr/include/newlib/c++/9.2.1/iostream ****   static ios_base::Init __ioinit;
@@ -413,7 +298,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  102              		.loc 1 26 9 view .LVU11
   26:Core/Src/sa818.cpp ****         pin_pd->write(pin::on);
  103              		.loc 1 26 22 is_stmt 0 view .LVU12
-ARM GAS  /tmp/ccOVKGtc.s 			page 6
+ARM GAS  /tmp/ccjMyDgO.s 			page 6
 
 
  104 0004 0121     		movs	r1, #1
@@ -473,7 +358,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  150 0000 08B5     		push	{r3, lr}
  151              		.save {r3, lr}
  152              	.LCFI2:
-ARM GAS  /tmp/ccOVKGtc.s 			page 7
+ARM GAS  /tmp/ccjMyDgO.s 			page 7
 
 
  153              		.cfi_def_cfa_offset 8
@@ -533,7 +418,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  194              	.LC1:
  195 0010 2B444D4F 		.ascii	"+DMOCONNECT:0\015\012\000"
  195      434F4E4E 
-ARM GAS  /tmp/ccOVKGtc.s 			page 8
+ARM GAS  /tmp/ccjMyDgO.s 			page 8
 
 
  195      4543543A 
@@ -593,7 +478,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  238              	.LVL22:
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
  239              		.loc 1 49 5 is_stmt 1 view .LVU45
-ARM GAS  /tmp/ccOVKGtc.s 			page 9
+ARM GAS  /tmp/ccjMyDgO.s 			page 9
 
 
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
@@ -653,7 +538,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  281              	.L20:
  282 0048 00000000 		.word	.LC0
  283 004c 10000000 		.word	.LC1
-ARM GAS  /tmp/ccOVKGtc.s 			page 10
+ARM GAS  /tmp/ccjMyDgO.s 			page 10
 
 
  284              		.cfi_endproc
@@ -713,7 +598,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   64:Core/Src/sa818.cpp ****     HAL_Delay(1000);
  332              		.loc 1 64 14 view .LVU63
  333 0010 FFF7FEFF 		bl	HAL_Delay
-ARM GAS  /tmp/ccOVKGtc.s 			page 11
+ARM GAS  /tmp/ccjMyDgO.s 			page 11
 
 
  334              	.LVL29:
@@ -773,7 +658,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  378              		.cfi_endproc
  379              	.LFE1989:
  380              		.fnend
-ARM GAS  /tmp/ccOVKGtc.s 			page 12
+ARM GAS  /tmp/ccjMyDgO.s 			page 12
 
 
  382              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
@@ -833,7 +718,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  424 0012 1023     		movs	r3, #16
  425 0014 84F85230 		strb	r3, [r4, #82]
   80:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
-ARM GAS  /tmp/ccOVKGtc.s 			page 13
+ARM GAS  /tmp/ccjMyDgO.s 			page 13
 
 
  426              		.loc 1 80 5 is_stmt 1 view .LVU83
@@ -893,7 +778,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
  475              		.loc 1 87 12 is_stmt 0 view .LVU90
  476 0004 074A     		ldr	r2, .L32
-ARM GAS  /tmp/ccOVKGtc.s 			page 14
+ARM GAS  /tmp/ccjMyDgO.s 			page 14
 
 
  477 0006 03CA     		ldmia	r2!, {r0, r1}
@@ -953,7 +838,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  517              		.global	_ZN5sa81814sa818_set_tailEh
  518              		.syntax unified
  519              		.thumb
-ARM GAS  /tmp/ccOVKGtc.s 			page 15
+ARM GAS  /tmp/ccjMyDgO.s 			page 15
 
 
  520              		.thumb_func
@@ -1013,7 +898,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  563 0022 10BD     		pop	{r4, pc}
  564              	.LVL45:
  565              	.L37:
-ARM GAS  /tmp/ccOVKGtc.s 			page 16
+ARM GAS  /tmp/ccjMyDgO.s 			page 16
 
 
  101:Core/Src/sa818.cpp **** }
@@ -1073,7 +958,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  621 0008 FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
  622              	.LVL46:
  623 000c 08BD     		pop	{r3, pc}
-ARM GAS  /tmp/ccOVKGtc.s 			page 17
+ARM GAS  /tmp/ccjMyDgO.s 			page 17
 
 
  624              		.cfi_endproc
@@ -1133,7 +1018,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  687              	rx_len:
  688 0000 00       		.space	1
  689              		.section	.bss.tx_buf,"aw",%nobits
-ARM GAS  /tmp/ccOVKGtc.s 			page 18
+ARM GAS  /tmp/ccjMyDgO.s 			page 18
 
 
  690              		.align	2
@@ -1193,7 +1078,7 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  744              		.file 28 "/usr/include/newlib/c++/9.2.1/bits/char_traits.h"
  745              		.file 29 "/usr/include/newlib/c++/9.2.1/cstdint"
  746              		.file 30 "/usr/include/newlib/c++/9.2.1/clocale"
-ARM GAS  /tmp/ccOVKGtc.s 			page 19
+ARM GAS  /tmp/ccjMyDgO.s 			page 19
 
 
  747              		.file 31 "/usr/include/newlib/c++/9.2.1/cstdlib"
@@ -1219,804 +1104,84 @@ ARM GAS  /tmp/ccFVAnSv.s 			page 1
  767              		.file 51 "/usr/include/newlib/wctype.h"
  768              		.file 52 "Core/Inc/uart.hpp"
  769              		.file 53 "Core/Inc/sa818.h"
-ARM GAS  /tmp/ccOVKGtc.s 			page 20
-=======
- 169              		.loc 1 43 5 is_stmt 1 view .LVU30
- 170              		.loc 1 43 12 is_stmt 0 view .LVU31
- 171 0008 8365     		str	r3, [r0, #88]
-  44:Core/Src/sa818.cpp ****     // while(locked!=0);
-  45:Core/Src/sa818.cpp ****     // locked=1;
-  46:Core/Src/sa818.cpp ****     sa818_power(on);//Power on the module
- 172              		.loc 1 46 5 is_stmt 1 view .LVU32
- 173              		.loc 1 46 16 is_stmt 0 view .LVU33
-ARM GAS  /tmp/ccFVAnSv.s 			page 5
-
-
- 174 000a 0121     		movs	r1, #1
- 175              	.LVL17:
- 176              		.loc 1 46 16 view .LVU34
- 177 000c FFF7FEFF 		bl	_ZN5sa81811sa818_powerENS_5OnOffE
- 178              	.LVL18:
-  47:Core/Src/sa818.cpp ****     HAL_Delay(1000);
- 179              		.loc 1 47 5 is_stmt 1 view .LVU35
- 180              		.loc 1 47 14 is_stmt 0 view .LVU36
- 181 0010 4FF47A70 		mov	r0, #1000
- 182 0014 FFF7FEFF 		bl	HAL_Delay
- 183              	.LVL19:
-  48:Core/Src/sa818.cpp ****     sa818_txrx_mode(rx);//Force the module to transmit
- 184              		.loc 1 48 5 is_stmt 1 view .LVU37
- 185              		.loc 1 48 20 is_stmt 0 view .LVU38
- 186 0018 0121     		movs	r1, #1
- 187 001a 2046     		mov	r0, r4
- 188 001c FFF7FEFF 		bl	_ZN5sa81815sa818_txrx_modeENS_4TxRxE
- 189              	.LVL20:
-  49:Core/Src/sa818.cpp ****     USART=usart;
- 190              		.loc 1 49 5 is_stmt 1 view .LVU39
- 191              		.loc 1 49 10 is_stmt 0 view .LVU40
- 192 0020 114E     		ldr	r6, .L11
- 193 0022 3560     		str	r5, [r6]
-  50:Core/Src/sa818.cpp **** 
-  51:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOCONNECT\r\n");
- 194              		.loc 1 51 5 is_stmt 1 view .LVU41
- 195              		.loc 1 51 12 is_stmt 0 view .LVU42
- 196 0024 114D     		ldr	r5, .L11+4
- 197              	.LVL21:
- 198              		.loc 1 51 12 view .LVU43
- 199 0026 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 200 0028 2060     		str	r0, [r4]	@ unaligned
- 201              	.LVL22:
- 202              		.loc 1 51 12 view .LVU44
- 203 002a 6160     		str	r1, [r4, #4]	@ unaligned
- 204 002c A260     		str	r2, [r4, #8]	@ unaligned
- 205 002e E360     		str	r3, [r4, #12]	@ unaligned
-  52:Core/Src/sa818.cpp ****     tx_len=20;
- 206              		.loc 1 52 5 is_stmt 1 view .LVU45
- 207              		.loc 1 52 11 is_stmt 0 view .LVU46
- 208 0030 1422     		movs	r2, #20
- 209 0032 84F85120 		strb	r2, [r4, #81]
-  53:Core/Src/sa818.cpp ****     rx_len=16;
- 210              		.loc 1 53 5 is_stmt 1 view .LVU47
- 211              		.loc 1 53 11 is_stmt 0 view .LVU48
- 212 0036 1023     		movs	r3, #16
- 213 0038 84F85230 		strb	r3, [r4, #82]
-  54:Core/Src/sa818.cpp ****     HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
- 214              		.loc 1 54 5 is_stmt 1 view .LVU49
- 215              		.loc 1 54 22 is_stmt 0 view .LVU50
- 216 003c 6423     		movs	r3, #100
- 217 003e 2146     		mov	r1, r4
- 218 0040 3068     		ldr	r0, [r6]
- 219 0042 FFF7FEFF 		bl	HAL_UART_Transmit
- 220              	.LVL23:
-  55:Core/Src/sa818.cpp **** 
-  56:Core/Src/sa818.cpp ****     sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
-ARM GAS  /tmp/ccFVAnSv.s 			page 6
-
-
- 221              		.loc 1 56 5 is_stmt 1 view .LVU51
- 222              		.loc 1 56 12 is_stmt 0 view .LVU52
- 223 0046 0A4D     		ldr	r5, .L11+8
- 224 0048 0A4B     		ldr	r3, .L11+12
- 225 004a 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 226 004c 85E80F00 		stm	r5, {r0, r1, r2, r3}
-  57:Core/Src/sa818.cpp ****     locked=1;
- 227              		.loc 1 57 5 is_stmt 1 view .LVU53
- 228              		.loc 1 57 11 is_stmt 0 view .LVU54
- 229 0050 0123     		movs	r3, #1
- 230 0052 84F85030 		strb	r3, [r4, #80]
-  58:Core/Src/sa818.cpp ****     HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
- 231              		.loc 1 58 5 is_stmt 1 view .LVU55
- 232              		.loc 1 58 25 is_stmt 0 view .LVU56
- 233 0056 94F85220 		ldrb	r2, [r4, #82]	@ zero_extendqisi2
- 234 005a 04F13201 		add	r1, r4, #50
- 235 005e 3068     		ldr	r0, [r6]
- 236 0060 FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 237              	.LVL24:
- 238              	.LBE2:
-  59:Core/Src/sa818.cpp **** 
-  60:Core/Src/sa818.cpp **** }
- 239              		.loc 1 60 1 view .LVU57
- 240 0064 2046     		mov	r0, r4
- 241 0066 70BD     		pop	{r4, r5, r6, pc}
- 242              	.LVL25:
- 243              	.L12:
- 244              		.loc 1 60 1 view .LVU58
- 245              		.align	2
- 246              	.L11:
- 247 0068 00000000 		.word	.LANCHOR0
- 248 006c 00000000 		.word	.LC0
- 249 0070 00000000 		.word	.LANCHOR1
- 250 0074 10000000 		.word	.LC1
- 251              		.cfi_endproc
- 252              	.LFE134:
- 253              		.fnend
- 255              		.global	_ZN5sa818C1EP20__UART_HandleTypeDefP3pinS3_
- 256              		.thumb_set _ZN5sa818C1EP20__UART_HandleTypeDefP3pinS3_,_ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_
- 257              		.section	.rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4,"aMS",%progbits,1
- 258              		.align	2
- 259              	.LC2:
- 260 0000 41542B44 		.ascii	"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\015\012\000"
- 260      4D4F5345 
- 260      5447524F 
- 260      55503D25 
- 260      692C2573 
- 261              		.section	.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_,"ax",%progbits
- 262              		.align	1
- 263              		.global	_ZN5sa81815sa818_configureEhPcS0_S0_hS0_
- 264              		.syntax unified
- 265              		.thumb
- 266              		.thumb_func
- 267              		.fpu fpv4-sp-d16
- 269              	_ZN5sa81815sa818_configureEhPcS0_S0_hS0_:
- 270              		.fnstart
- 271              	.LVL26:
-ARM GAS  /tmp/ccFVAnSv.s 			page 7
-
-
- 272              	.LFB136:
-  61:Core/Src/sa818.cpp **** 
-  62:Core/Src/sa818.cpp **** void sa818::sa818_configure(uint8_t bw, char* tx_f, char* rx_f, char* tx_subaudio, uint8_t SQ, char
-  63:Core/Src/sa818.cpp **** {
- 273              		.loc 1 63 1 is_stmt 1 view -0
- 274              		.cfi_startproc
- 275              		@ args = 12, pretend = 0, frame = 0
- 276              		@ frame_needed = 0, uses_anonymous_args = 0
- 277              		.loc 1 63 1 is_stmt 0 view .LVU60
- 278 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 279              		.save {r4, r5, r6, r7, lr}
- 280              	.LCFI3:
- 281              		.cfi_def_cfa_offset 20
- 282              		.cfi_offset 4, -20
- 283              		.cfi_offset 5, -16
- 284              		.cfi_offset 6, -12
- 285              		.cfi_offset 7, -8
- 286              		.cfi_offset 14, -4
- 287              		.pad #20
- 288 0002 85B0     		sub	sp, sp, #20
- 289              	.LCFI4:
- 290              		.cfi_def_cfa_offset 40
- 291 0004 0446     		mov	r4, r0
- 292 0006 0D46     		mov	r5, r1
- 293 0008 1646     		mov	r6, r2
- 294 000a 1F46     		mov	r7, r3
-  64:Core/Src/sa818.cpp ****     // while(locked!=0);
-  65:Core/Src/sa818.cpp ****     // locked=1;
-  66:Core/Src/sa818.cpp ****     HAL_Delay(1000);
- 295              		.loc 1 66 5 is_stmt 1 view .LVU61
- 296              		.loc 1 66 14 is_stmt 0 view .LVU62
- 297 000c 4FF47A70 		mov	r0, #1000
- 298              	.LVL27:
- 299              		.loc 1 66 14 view .LVU63
- 300 0010 FFF7FEFF 		bl	HAL_Delay
- 301              	.LVL28:
-  67:Core/Src/sa818.cpp **** 
-  68:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_s
- 302              		.loc 1 68 5 is_stmt 1 view .LVU64
- 303              		.loc 1 68 12 is_stmt 0 view .LVU65
- 304 0014 0C9B     		ldr	r3, [sp, #48]
- 305 0016 0393     		str	r3, [sp, #12]
- 306 0018 9DF82C30 		ldrb	r3, [sp, #44]	@ zero_extendqisi2
- 307 001c 0293     		str	r3, [sp, #8]
- 308 001e 0A9B     		ldr	r3, [sp, #40]
- 309 0020 0193     		str	r3, [sp, #4]
- 310 0022 0097     		str	r7, [sp]
- 311 0024 3346     		mov	r3, r6
- 312 0026 2A46     		mov	r2, r5
- 313 0028 0E49     		ldr	r1, .L15
- 314 002a 2046     		mov	r0, r4
- 315 002c FFF7FEFF 		bl	sprintf
- 316              	.LVL29:
-  69:Core/Src/sa818.cpp ****     tx_len=50;
- 317              		.loc 1 69 5 is_stmt 1 view .LVU66
- 318              		.loc 1 69 11 is_stmt 0 view .LVU67
- 319 0030 3222     		movs	r2, #50
-ARM GAS  /tmp/ccFVAnSv.s 			page 8
-
-
- 320 0032 84F85120 		strb	r2, [r4, #81]
-  70:Core/Src/sa818.cpp ****     rx_len=16;
- 321              		.loc 1 70 5 is_stmt 1 view .LVU68
- 322              		.loc 1 70 11 is_stmt 0 view .LVU69
- 323 0036 1023     		movs	r3, #16
- 324 0038 84F85230 		strb	r3, [r4, #82]
-  71:Core/Src/sa818.cpp ****     HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
- 325              		.loc 1 71 5 is_stmt 1 view .LVU70
- 326              		.loc 1 71 22 is_stmt 0 view .LVU71
- 327 003c 0A4E     		ldr	r6, .L15+4
- 328              	.LVL30:
- 329              		.loc 1 71 22 view .LVU72
- 330 003e 6423     		movs	r3, #100
- 331 0040 2146     		mov	r1, r4
- 332 0042 3068     		ldr	r0, [r6]
- 333 0044 FFF7FEFF 		bl	HAL_UART_Transmit
- 334              	.LVL31:
-  72:Core/Src/sa818.cpp **** 
-  73:Core/Src/sa818.cpp **** 
-  74:Core/Src/sa818.cpp ****     sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
- 335              		.loc 1 74 5 is_stmt 1 view .LVU73
- 336              		.loc 1 74 12 is_stmt 0 view .LVU74
- 337 0048 084D     		ldr	r5, .L15+8
- 338 004a 094B     		ldr	r3, .L15+12
- 339 004c 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 340 004e 85E80F00 		stm	r5, {r0, r1, r2, r3}
-  75:Core/Src/sa818.cpp ****     HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
- 341              		.loc 1 75 5 is_stmt 1 view .LVU75
- 342              		.loc 1 75 25 is_stmt 0 view .LVU76
- 343 0052 94F85220 		ldrb	r2, [r4, #82]	@ zero_extendqisi2
- 344 0056 04F13201 		add	r1, r4, #50
- 345 005a 3068     		ldr	r0, [r6]
- 346 005c FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 347              	.LVL32:
-  76:Core/Src/sa818.cpp **** 
-  77:Core/Src/sa818.cpp **** }
- 348              		.loc 1 77 1 view .LVU77
- 349 0060 05B0     		add	sp, sp, #20
- 350              	.LCFI5:
- 351              		.cfi_def_cfa_offset 20
- 352              		@ sp needed
- 353 0062 F0BD     		pop	{r4, r5, r6, r7, pc}
- 354              	.LVL33:
- 355              	.L16:
- 356              		.loc 1 77 1 view .LVU78
- 357              		.align	2
- 358              	.L15:
- 359 0064 00000000 		.word	.LC2
- 360 0068 00000000 		.word	.LANCHOR0
- 361 006c 00000000 		.word	.LANCHOR1
- 362 0070 10000000 		.word	.LC1
- 363              		.cfi_endproc
- 364              	.LFE136:
- 365              		.fnend
- 367              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
- 368              		.align	2
- 369              	.LC3:
-ARM GAS  /tmp/ccFVAnSv.s 			page 9
-
-
- 370 0000 41542B44 		.ascii	"AT+DMOSETVOLUME=%i\015\012\000"
- 370      4D4F5345 
- 370      54564F4C 
- 370      554D453D 
- 370      25690D0A 
- 371              		.section	.text._ZN5sa81816sa818_set_volumeEh,"ax",%progbits
- 372              		.align	1
- 373              		.global	_ZN5sa81816sa818_set_volumeEh
- 374              		.syntax unified
- 375              		.thumb
- 376              		.thumb_func
- 377              		.fpu fpv4-sp-d16
- 379              	_ZN5sa81816sa818_set_volumeEh:
- 380              		.fnstart
- 381              	.LVL34:
- 382              	.LFB137:
-  78:Core/Src/sa818.cpp **** 
-  79:Core/Src/sa818.cpp **** void sa818::sa818_set_volume(uint8_t vol)
-  80:Core/Src/sa818.cpp **** {
- 383              		.loc 1 80 1 is_stmt 1 view -0
- 384              		.cfi_startproc
- 385              		@ args = 0, pretend = 0, frame = 0
- 386              		@ frame_needed = 0, uses_anonymous_args = 0
- 387              		.loc 1 80 1 is_stmt 0 view .LVU80
- 388 0000 70B5     		push	{r4, r5, r6, lr}
- 389              		.save {r4, r5, r6, lr}
- 390              	.LCFI6:
- 391              		.cfi_def_cfa_offset 16
- 392              		.cfi_offset 4, -16
- 393              		.cfi_offset 5, -12
- 394              		.cfi_offset 6, -8
- 395              		.cfi_offset 14, -4
- 396 0002 0446     		mov	r4, r0
- 397 0004 0A46     		mov	r2, r1
-  81:Core/Src/sa818.cpp ****     // while(locked!=0);
-  82:Core/Src/sa818.cpp ****     // locked=1;
-  83:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETVOLUME=%i\r\n",vol);
- 398              		.loc 1 83 5 is_stmt 1 view .LVU81
- 399              		.loc 1 83 12 is_stmt 0 view .LVU82
- 400 0006 0E49     		ldr	r1, .L19
- 401              	.LVL35:
- 402              		.loc 1 83 12 view .LVU83
- 403 0008 FFF7FEFF 		bl	sprintf
- 404              	.LVL36:
-  84:Core/Src/sa818.cpp ****     tx_len=20;
- 405              		.loc 1 84 5 is_stmt 1 view .LVU84
- 406              		.loc 1 84 11 is_stmt 0 view .LVU85
- 407 000c 1422     		movs	r2, #20
- 408 000e 84F85120 		strb	r2, [r4, #81]
-  85:Core/Src/sa818.cpp ****     rx_len=16;
- 409              		.loc 1 85 5 is_stmt 1 view .LVU86
- 410              		.loc 1 85 11 is_stmt 0 view .LVU87
- 411 0012 1023     		movs	r3, #16
- 412 0014 84F85230 		strb	r3, [r4, #82]
-  86:Core/Src/sa818.cpp ****     HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
- 413              		.loc 1 86 5 is_stmt 1 view .LVU88
- 414              		.loc 1 86 22 is_stmt 0 view .LVU89
-ARM GAS  /tmp/ccFVAnSv.s 			page 10
-
-
- 415 0018 0A4E     		ldr	r6, .L19+4
- 416 001a 6423     		movs	r3, #100
- 417 001c 2146     		mov	r1, r4
- 418 001e 3068     		ldr	r0, [r6]
- 419 0020 FFF7FEFF 		bl	HAL_UART_Transmit
- 420              	.LVL37:
-  87:Core/Src/sa818.cpp **** 
-  88:Core/Src/sa818.cpp ****     sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
- 421              		.loc 1 88 5 is_stmt 1 view .LVU90
- 422              		.loc 1 88 12 is_stmt 0 view .LVU91
- 423 0024 084D     		ldr	r5, .L19+8
- 424 0026 094B     		ldr	r3, .L19+12
- 425 0028 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 426 002a 85E80F00 		stm	r5, {r0, r1, r2, r3}
-  89:Core/Src/sa818.cpp ****     HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
- 427              		.loc 1 89 5 is_stmt 1 view .LVU92
- 428              		.loc 1 89 25 is_stmt 0 view .LVU93
- 429 002e 94F85220 		ldrb	r2, [r4, #82]	@ zero_extendqisi2
- 430 0032 04F13201 		add	r1, r4, #50
- 431 0036 3068     		ldr	r0, [r6]
- 432 0038 FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 433              	.LVL38:
-  90:Core/Src/sa818.cpp **** 
-  91:Core/Src/sa818.cpp **** }
- 434              		.loc 1 91 1 view .LVU94
- 435 003c 70BD     		pop	{r4, r5, r6, pc}
- 436              	.LVL39:
- 437              	.L20:
- 438              		.loc 1 91 1 view .LVU95
- 439 003e 00BF     		.align	2
- 440              	.L19:
- 441 0040 00000000 		.word	.LC3
- 442 0044 00000000 		.word	.LANCHOR0
- 443 0048 00000000 		.word	.LANCHOR1
- 444 004c 10000000 		.word	.LC1
- 445              		.cfi_endproc
- 446              	.LFE137:
- 447              		.fnend
- 449              		.section	.rodata._ZN5sa81814sa818_get_RSSIEv.str1.4,"aMS",%progbits,1
- 450              		.align	2
- 451              	.LC4:
- 452 0000 52535349 		.ascii	"RSSI?\015\012\000"
- 452      3F0D0A00 
- 453              		.section	.text._ZN5sa81814sa818_get_RSSIEv,"ax",%progbits
- 454              		.align	1
- 455              		.global	_ZN5sa81814sa818_get_RSSIEv
- 456              		.syntax unified
- 457              		.thumb
- 458              		.thumb_func
- 459              		.fpu fpv4-sp-d16
- 461              	_ZN5sa81814sa818_get_RSSIEv:
- 462              		.fnstart
- 463              	.LVL40:
- 464              	.LFB138:
-  92:Core/Src/sa818.cpp **** void sa818::sa818_get_RSSI()
-  93:Core/Src/sa818.cpp **** {
- 465              		.loc 1 93 1 is_stmt 1 view -0
-ARM GAS  /tmp/ccFVAnSv.s 			page 11
-
-
- 466              		.cfi_startproc
- 467              		@ args = 0, pretend = 0, frame = 0
- 468              		@ frame_needed = 0, uses_anonymous_args = 0
- 469              		.loc 1 93 1 is_stmt 0 view .LVU97
- 470 0000 70B5     		push	{r4, r5, r6, lr}
- 471              		.save {r4, r5, r6, lr}
- 472              	.LCFI7:
- 473              		.cfi_def_cfa_offset 16
- 474              		.cfi_offset 4, -16
- 475              		.cfi_offset 5, -12
- 476              		.cfi_offset 6, -8
- 477              		.cfi_offset 14, -4
- 478 0002 0446     		mov	r4, r0
-  94:Core/Src/sa818.cpp ****         // while(locked!=0);
-  95:Core/Src/sa818.cpp ****     // locked=1;
-  96:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
- 479              		.loc 1 96 5 is_stmt 1 view .LVU98
- 480              		.loc 1 96 12 is_stmt 0 view .LVU99
- 481 0004 0E4B     		ldr	r3, .L23
- 482 0006 03CB     		ldmia	r3!, {r0, r1}
- 483              	.LVL41:
- 484              		.loc 1 96 12 view .LVU100
- 485 0008 2060     		str	r0, [r4]	@ unaligned
- 486 000a 6160     		str	r1, [r4, #4]	@ unaligned
-  97:Core/Src/sa818.cpp ****     tx_len=7;
- 487              		.loc 1 97 5 is_stmt 1 view .LVU101
- 488              		.loc 1 97 11 is_stmt 0 view .LVU102
- 489 000c 0722     		movs	r2, #7
- 490 000e 84F85120 		strb	r2, [r4, #81]
-  98:Core/Src/sa818.cpp ****     rx_len=10;
- 491              		.loc 1 98 5 is_stmt 1 view .LVU103
- 492              		.loc 1 98 11 is_stmt 0 view .LVU104
- 493 0012 0A23     		movs	r3, #10
- 494 0014 84F85230 		strb	r3, [r4, #82]
-  99:Core/Src/sa818.cpp ****     HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
- 495              		.loc 1 99 5 is_stmt 1 view .LVU105
- 496              		.loc 1 99 22 is_stmt 0 view .LVU106
- 497 0018 0A4E     		ldr	r6, .L23+4
- 498 001a 6423     		movs	r3, #100
- 499 001c 2146     		mov	r1, r4
- 500 001e 3068     		ldr	r0, [r6]
- 501 0020 FFF7FEFF 		bl	HAL_UART_Transmit
- 502              	.LVL42:
- 100:Core/Src/sa818.cpp **** 
- 101:Core/Src/sa818.cpp ****     sprintf((char *)expected_rx,"+DMOCONNECT:0\r\n");
- 503              		.loc 1 101 5 is_stmt 1 view .LVU107
- 504              		.loc 1 101 12 is_stmt 0 view .LVU108
- 505 0024 084D     		ldr	r5, .L23+8
- 506 0026 094B     		ldr	r3, .L23+12
- 507 0028 0FCB     		ldm	r3, {r0, r1, r2, r3}
- 508 002a 85E80F00 		stm	r5, {r0, r1, r2, r3}
- 102:Core/Src/sa818.cpp ****     HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
- 509              		.loc 1 102 5 is_stmt 1 view .LVU109
- 510              		.loc 1 102 25 is_stmt 0 view .LVU110
- 511 002e 94F85220 		ldrb	r2, [r4, #82]	@ zero_extendqisi2
- 512 0032 04F13201 		add	r1, r4, #50
- 513 0036 3068     		ldr	r0, [r6]
-ARM GAS  /tmp/ccFVAnSv.s 			page 12
-
-
- 514 0038 FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 515              	.LVL43:
- 103:Core/Src/sa818.cpp **** }
- 516              		.loc 1 103 1 view .LVU111
- 517 003c 70BD     		pop	{r4, r5, r6, pc}
- 518              	.LVL44:
- 519              	.L24:
- 520              		.loc 1 103 1 view .LVU112
- 521 003e 00BF     		.align	2
- 522              	.L23:
- 523 0040 00000000 		.word	.LC4
- 524 0044 00000000 		.word	.LANCHOR0
- 525 0048 00000000 		.word	.LANCHOR1
- 526 004c 10000000 		.word	.LC1
- 527              		.cfi_endproc
- 528              	.LFE138:
- 529              		.fnend
- 531              		.section	.rodata._ZN5sa81814sa818_set_tailEh.str1.4,"aMS",%progbits,1
- 532              		.align	2
- 533              	.LC5:
- 534 0000 41542B53 		.ascii	"AT+SETTAIL=%i\015\012\000"
- 534      45545441 
- 534      494C3D25 
- 534      690D0A00 
- 535              		.align	2
- 536              	.LC6:
- 537 0010 2B444D4F 		.ascii	"+DMOSETTAIL: 0\015\012\000"
- 537      53455454 
- 537      41494C3A 
- 537      20300D0A 
- 537      00
- 538              		.section	.text._ZN5sa81814sa818_set_tailEh,"ax",%progbits
- 539              		.align	1
- 540              		.global	_ZN5sa81814sa818_set_tailEh
- 541              		.syntax unified
- 542              		.thumb
- 543              		.thumb_func
- 544              		.fpu fpv4-sp-d16
- 546              	_ZN5sa81814sa818_set_tailEh:
- 547              		.fnstart
- 548              	.LVL45:
- 549              	.LFB139:
- 104:Core/Src/sa818.cpp **** void sa818::sa818_set_tail(uint8_t x)
- 105:Core/Src/sa818.cpp **** {
- 550              		.loc 1 105 1 is_stmt 1 view -0
- 551              		.cfi_startproc
- 552              		@ args = 0, pretend = 0, frame = 0
- 553              		@ frame_needed = 0, uses_anonymous_args = 0
- 554              		.loc 1 105 1 is_stmt 0 view .LVU114
- 555 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
- 556              		.save {r3, r4, r5, r6, r7, lr}
- 557              	.LCFI8:
- 558              		.cfi_def_cfa_offset 24
- 559              		.cfi_offset 3, -24
- 560              		.cfi_offset 4, -20
- 561              		.cfi_offset 5, -16
- 562              		.cfi_offset 6, -12
-ARM GAS  /tmp/ccFVAnSv.s 			page 13
-
-
- 563              		.cfi_offset 7, -8
- 564              		.cfi_offset 14, -4
- 565 0002 0446     		mov	r4, r0
- 566 0004 0A46     		mov	r2, r1
- 106:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+SETTAIL=%i\r\n",x);
- 567              		.loc 1 106 5 is_stmt 1 view .LVU115
- 568              		.loc 1 106 12 is_stmt 0 view .LVU116
- 569 0006 0E49     		ldr	r1, .L27
- 570              	.LVL46:
- 571              		.loc 1 106 12 view .LVU117
- 572 0008 FFF7FEFF 		bl	sprintf
- 573              	.LVL47:
- 107:Core/Src/sa818.cpp ****     tx_len=14;
- 574              		.loc 1 107 5 is_stmt 1 view .LVU118
- 575              		.loc 1 107 11 is_stmt 0 view .LVU119
- 576 000c 0E22     		movs	r2, #14
- 577 000e 84F85120 		strb	r2, [r4, #81]
- 108:Core/Src/sa818.cpp ****     rx_len=16;
- 578              		.loc 1 108 5 is_stmt 1 view .LVU120
- 579              		.loc 1 108 11 is_stmt 0 view .LVU121
- 580 0012 1023     		movs	r3, #16
- 581 0014 84F85230 		strb	r3, [r4, #82]
- 109:Core/Src/sa818.cpp ****     HAL_UART_Transmit(USART, (uint8_t*)tx_buf, tx_len, (uint8_t)100);
- 582              		.loc 1 109 5 is_stmt 1 view .LVU122
- 583              		.loc 1 109 22 is_stmt 0 view .LVU123
- 584 0018 0A4F     		ldr	r7, .L27+4
- 585 001a 6423     		movs	r3, #100
- 586 001c 2146     		mov	r1, r4
- 587 001e 3868     		ldr	r0, [r7]
- 588 0020 FFF7FEFF 		bl	HAL_UART_Transmit
- 589              	.LVL48:
- 110:Core/Src/sa818.cpp **** 
- 111:Core/Src/sa818.cpp ****     sprintf((char *)expected_rx,"+DMOSETTAIL: 0\r\n");
- 590              		.loc 1 111 5 is_stmt 1 view .LVU124
- 591              		.loc 1 111 12 is_stmt 0 view .LVU125
- 592 0024 084D     		ldr	r5, .L27+8
- 593 0026 094E     		ldr	r6, .L27+12
- 594 0028 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
- 595 002a 0FC5     		stmia	r5!, {r0, r1, r2, r3}
- 596 002c 3368     		ldr	r3, [r6]
- 597 002e 2B70     		strb	r3, [r5]
- 112:Core/Src/sa818.cpp ****     HAL_UART_Receive_DMA(USART, rx_buf,rx_len);
- 598              		.loc 1 112 5 is_stmt 1 view .LVU126
- 599              		.loc 1 112 25 is_stmt 0 view .LVU127
- 600 0030 94F85220 		ldrb	r2, [r4, #82]	@ zero_extendqisi2
- 601 0034 04F13201 		add	r1, r4, #50
- 602 0038 3868     		ldr	r0, [r7]
- 603 003a FFF7FEFF 		bl	HAL_UART_Receive_DMA
- 604              	.LVL49:
- 113:Core/Src/sa818.cpp **** }...
- 605              		.loc 1 113 1 view .LVU128
- 606 003e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 607              	.LVL50:
- 608              	.L28:
- 609              		.loc 1 113 1 view .LVU129
- 610              		.align	2
- 611              	.L27:
-ARM GAS  /tmp/ccFVAnSv.s 			page 14
-
-
- 612 0040 00000000 		.word	.LC5
- 613 0044 00000000 		.word	.LANCHOR0
- 614 0048 00000000 		.word	.LANCHOR1
- 615 004c 10000000 		.word	.LC6
- 616              		.cfi_endproc
- 617              	.LFE139:
- 618              		.fnend
- 620              		.global	rx_len
- 621              		.global	tx_len
- 622              		.global	locked
- 623              		.global	rx_buf
- 624              		.global	tx_buf
- 625              		.global	USART
- 626              		.global	status_cnt
- 627              		.global	len_rxnow
- 628              		.global	len_txnow
- 629              		.global	expected_rx
- 630              		.global	CMD_VOLUME
- 631              		.global	CMD_SET
- 632              		.section	.bss.USART,"aw",%nobits
- 633              		.align	2
- 634              		.set	.LANCHOR0,. + 0
- 637              	USART:
- 638 0000 00000000 		.space	4
- 639              		.section	.bss.expected_rx,"aw",%nobits
- 640              		.align	2
- 641              		.set	.LANCHOR1,. + 0
- 644              	expected_rx:
- 645 0000 00000000 		.space	30
- 645      00000000 
- 645      00000000 
- 645      00000000 
- 645      00000000 
- 646              		.section	.bss.len_rxnow,"aw",%nobits
- 649              	len_rxnow:
- 650 0000 00       		.space	1
- 651              		.section	.bss.len_txnow,"aw",%nobits
- 654              	len_txnow:
- 655 0000 00       		.space	1
- 656              		.section	.bss.locked,"aw",%nobits
- 659              	locked:
- 660 0000 00       		.space	1
- 661              		.section	.bss.rx_buf,"aw",%nobits
- 662              		.align	2
- 665              	rx_buf:
- 666 0000 00000000 		.space	30
- 666      00000000 
- 666      00000000 
- 666      00000000 
- 666      00000000 
- 667              		.section	.bss.rx_len,"aw",%nobits
- 670              	rx_len:
- 671 0000 00       		.space	1
- 672              		.section	.bss.tx_buf,"aw",%nobits
- 673              		.align	2
- 676              	tx_buf:
- 677 0000 00000000 		.space	50
-ARM GAS  /tmp/ccFVAnSv.s 			page 15
-
-
- 677      00000000 
- 677      00000000 
- 677      00000000 
- 677      00000000 
- 678              		.section	.bss.tx_len,"aw",%nobits
- 681              	tx_len:
- 682 0000 00       		.space	1
- 683              		.section	.data.CMD_SET,"aw"
- 684              		.align	2
- 687              	CMD_SET:
- 688 0000 41542B44 		.ascii	"AT+DMOSETGROUP="
- 688      4D4F5345 
- 688      5447524F 
- 688      55503D
- 689              		.section	.data.CMD_VOLUME,"aw"
- 690              		.align	2
- 693              	CMD_VOLUME:
- 694 0000 41542B44 		.ascii	"AT+DMOSETVOLUME="
- 694      4D4F5345 
- 694      54564F4C 
- 694      554D453D 
- 695              		.section	.data.status_cnt,"aw"
- 698              	status_cnt:
- 699 0000 02       		.byte	2
- 700              		.text
- 701              	.Letext0:
- 702              		.file 2 "/usr/include/newlib/machine/_default_types.h"
- 703              		.file 3 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
- 704              		.file 4 "/usr/include/newlib/sys/_types.h"
- 705              		.file 5 "/usr/include/newlib/sys/reent.h"
- 706              		.file 6 "/usr/include/newlib/sys/lock.h"
- 707              		.file 7 "/usr/include/newlib/sys/_stdint.h"
- 708              		.file 8 "Drivers/CMSIS/Include/core_cm4.h"
- 709              		.file 9 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 710              		.file 10 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
- 711              		.file 11 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 712              		.file 12 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 713              		.file 13 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 714              		.file 14 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 715              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 716              		.file 16 "Core/Inc/pin.hpp"
- 717              		.file 17 "Core/Inc/sa818.h"
- 718              		.file 18 "/usr/include/newlib/stdio.h"
-ARM GAS  /tmp/ccFVAnSv.s 			page 16
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
+ARM GAS  /tmp/ccjMyDgO.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sa818.cpp
-<<<<<<< HEAD
-     /tmp/ccOVKGtc.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
-     /tmp/ccOVKGtc.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/ccOVKGtc.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+     /tmp/ccjMyDgO.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
+     /tmp/ccjMyDgO.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccjMyDgO.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $d
-     /tmp/ccOVKGtc.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
-     /tmp/ccOVKGtc.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
+     /tmp/ccjMyDgO.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
+     /tmp/ccjMyDgO.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
 .ARM.extab.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-     /tmp/ccOVKGtc.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
-     /tmp/ccOVKGtc.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
+     /tmp/ccjMyDgO.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
+     /tmp/ccjMyDgO.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
 .ARM.extab.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-     /tmp/ccOVKGtc.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
-     /tmp/ccOVKGtc.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
-     /tmp/ccOVKGtc.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
-     /tmp/ccOVKGtc.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
+     /tmp/ccjMyDgO.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
+     /tmp/ccjMyDgO.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
+     /tmp/ccjMyDgO.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
+     /tmp/ccjMyDgO.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
 .ARM.exidx.text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $d
-     /tmp/ccOVKGtc.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
-     /tmp/ccOVKGtc.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
-     /tmp/ccOVKGtc.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
-     /tmp/ccOVKGtc.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
-     /tmp/ccOVKGtc.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
+     /tmp/ccjMyDgO.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
+     /tmp/ccjMyDgO.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
+     /tmp/ccjMyDgO.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
+     /tmp/ccjMyDgO.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
+     /tmp/ccjMyDgO.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
 .ARM.exidx.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $d
-     /tmp/ccOVKGtc.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
-     /tmp/ccOVKGtc.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
-     /tmp/ccOVKGtc.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
-     /tmp/ccOVKGtc.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
+     /tmp/ccjMyDgO.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
+     /tmp/ccjMyDgO.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
+     /tmp/ccjMyDgO.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
+     /tmp/ccjMyDgO.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $d
-     /tmp/ccOVKGtc.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
-     /tmp/ccOVKGtc.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
-     /tmp/ccOVKGtc.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
-     /tmp/ccOVKGtc.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
+     /tmp/ccjMyDgO.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
+     /tmp/ccjMyDgO.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
+     /tmp/ccjMyDgO.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
+     /tmp/ccjMyDgO.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
 .ARM.extab.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
-     /tmp/ccOVKGtc.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
-     /tmp/ccOVKGtc.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
-     /tmp/ccOVKGtc.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
-     /tmp/ccOVKGtc.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
+     /tmp/ccjMyDgO.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
+     /tmp/ccjMyDgO.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
+     /tmp/ccjMyDgO.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
+     /tmp/ccjMyDgO.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81814sa818_set_tailEh:0000000000000000 $d
-     /tmp/ccOVKGtc.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
+     /tmp/ccjMyDgO.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
 .ARM.exidx.text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $d
-     /tmp/ccOVKGtc.s:599    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
-     /tmp/ccOVKGtc.s:605    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
+     /tmp/ccjMyDgO.s:599    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
+     /tmp/ccjMyDgO.s:605    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
 .ARM.exidx.text._GLOBAL__sub_I_CMD_SET:0000000000000000 $d
-     /tmp/ccOVKGtc.s:630    .init_array:0000000000000000 $d
-     /tmp/ccOVKGtc.s:687    .bss.rx_len:0000000000000000 rx_len
-     /tmp/ccOVKGtc.s:698    .bss.tx_len:0000000000000000 tx_len
-     /tmp/ccOVKGtc.s:676    .bss.locked:0000000000000000 locked
-     /tmp/ccOVKGtc.s:682    .bss.rx_buf:0000000000000000 rx_buf
-     /tmp/ccOVKGtc.s:693    .bss.tx_buf:0000000000000000 tx_buf
-     /tmp/ccOVKGtc.s:648    .bss.USART:0000000000000000 USART
-     /tmp/ccOVKGtc.s:715    .data.status_cnt:0000000000000000 status_cnt
-     /tmp/ccOVKGtc.s:666    .bss.len_rxnow:0000000000000000 len_rxnow
-     /tmp/ccOVKGtc.s:671    .bss.len_txnow:0000000000000000 len_txnow
-     /tmp/ccOVKGtc.s:661    .bss.expected_rx:0000000000000000 expected_rx
-ARM GAS  /tmp/ccOVKGtc.s 			page 21
+     /tmp/ccjMyDgO.s:630    .init_array:0000000000000000 $d
+     /tmp/ccjMyDgO.s:687    .bss.rx_len:0000000000000000 rx_len
+     /tmp/ccjMyDgO.s:698    .bss.tx_len:0000000000000000 tx_len
+     /tmp/ccjMyDgO.s:676    .bss.locked:0000000000000000 locked
+     /tmp/ccjMyDgO.s:682    .bss.rx_buf:0000000000000000 rx_buf
+     /tmp/ccjMyDgO.s:693    .bss.tx_buf:0000000000000000 tx_buf
+     /tmp/ccjMyDgO.s:648    .bss.USART:0000000000000000 USART
+     /tmp/ccjMyDgO.s:715    .data.status_cnt:0000000000000000 status_cnt
+     /tmp/ccjMyDgO.s:666    .bss.len_rxnow:0000000000000000 len_rxnow
+     /tmp/ccjMyDgO.s:671    .bss.len_txnow:0000000000000000 len_txnow
+     /tmp/ccjMyDgO.s:661    .bss.expected_rx:0000000000000000 expected_rx
+ARM GAS  /tmp/ccjMyDgO.s 			page 21
 
 
-     /tmp/ccOVKGtc.s:710    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
-     /tmp/ccOVKGtc.s:704    .data.CMD_SET:0000000000000000 CMD_SET
-     /tmp/ccOVKGtc.s:645    .bss.USART:0000000000000000 $d
-     /tmp/ccOVKGtc.s:651    .bss._ZStL8__ioinit:0000000000000000 $d
-     /tmp/ccOVKGtc.s:655    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
-     /tmp/ccOVKGtc.s:658    .bss.expected_rx:0000000000000000 $d
-     /tmp/ccOVKGtc.s:667    .bss.len_rxnow:0000000000000000 $d
-     /tmp/ccOVKGtc.s:672    .bss.len_txnow:0000000000000000 $d
-     /tmp/ccOVKGtc.s:677    .bss.locked:0000000000000000 $d
-     /tmp/ccOVKGtc.s:679    .bss.rx_buf:0000000000000000 $d
-     /tmp/ccOVKGtc.s:688    .bss.rx_len:0000000000000000 $d
-     /tmp/ccOVKGtc.s:690    .bss.tx_buf:0000000000000000 $d
-     /tmp/ccOVKGtc.s:699    .bss.tx_len:0000000000000000 $d
-     /tmp/ccOVKGtc.s:701    .data.CMD_SET:0000000000000000 $d
-     /tmp/ccOVKGtc.s:707    .data.CMD_VOLUME:0000000000000000 $d
-=======
-     /tmp/ccFVAnSv.s:18     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
-     /tmp/ccFVAnSv.s:26     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
-.ARM.extab.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-.ARM.exidx.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-     /tmp/ccFVAnSv.s:76     .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
-     /tmp/ccFVAnSv.s:83     .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
-.ARM.extab.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-.ARM.exidx.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-     /tmp/ccFVAnSv.s:132    .rodata._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_.str1.4:0000000000000000 $d
-     /tmp/ccFVAnSv.s:139    .text._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_:0000000000000000 $t
-     /tmp/ccFVAnSv.s:146    .text._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_:0000000000000000 _ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_
-     /tmp/ccFVAnSv.s:247    .text._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_:0000000000000068 $d
-.ARM.exidx.text._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_:0000000000000000 $d
-     /tmp/ccFVAnSv.s:146    .text._ZN5sa818C2EP20__UART_HandleTypeDefP3pinS3_:0000000000000000 _ZN5sa818C1EP20__UART_HandleTypeDefP3pinS3_
-     /tmp/ccFVAnSv.s:258    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
-     /tmp/ccFVAnSv.s:262    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
-     /tmp/ccFVAnSv.s:269    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
-     /tmp/ccFVAnSv.s:359    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000064 $d
-.ARM.exidx.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $d
-     /tmp/ccFVAnSv.s:368    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
-     /tmp/ccFVAnSv.s:372    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
-     /tmp/ccFVAnSv.s:379    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
-     /tmp/ccFVAnSv.s:441    .text._ZN5sa81816sa818_set_volumeEh:0000000000000040 $d
-.ARM.exidx.text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $d
-     /tmp/ccFVAnSv.s:450    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
-     /tmp/ccFVAnSv.s:454    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
-     /tmp/ccFVAnSv.s:461    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
-     /tmp/ccFVAnSv.s:523    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000040 $d
-.ARM.exidx.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
-     /tmp/ccFVAnSv.s:532    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
-     /tmp/ccFVAnSv.s:539    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
-     /tmp/ccFVAnSv.s:546    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
-     /tmp/ccFVAnSv.s:612    .text._ZN5sa81814sa818_set_tailEh:0000000000000040 $d
-.ARM.exidx.text._ZN5sa81814sa818_set_tailEh:0000000000000000 $d
-     /tmp/ccFVAnSv.s:670    .bss.rx_len:0000000000000000 rx_len
-     /tmp/ccFVAnSv.s:681    .bss.tx_len:0000000000000000 tx_len
-     /tmp/ccFVAnSv.s:659    .bss.locked:0000000000000000 locked
-     /tmp/ccFVAnSv.s:665    .bss.rx_buf:0000000000000000 rx_buf
-     /tmp/ccFVAnSv.s:676    .bss.tx_buf:0000000000000000 tx_buf
-     /tmp/ccFVAnSv.s:637    .bss.USART:0000000000000000 USART
-     /tmp/ccFVAnSv.s:698    .data.status_cnt:0000000000000000 status_cnt
-     /tmp/ccFVAnSv.s:649    .bss.len_rxnow:0000000000000000 len_rxnow
-     /tmp/ccFVAnSv.s:654    .bss.len_txnow:0000000000000000 len_txnow
-     /tmp/ccFVAnSv.s:644    .bss.expected_rx:0000000000000000 expected_rx
-     /tmp/ccFVAnSv.s:693    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
-     /tmp/ccFVAnSv.s:687    .data.CMD_SET:0000000000000000 CMD_SET
-     /tmp/ccFVAnSv.s:633    .bss.USART:0000000000000000 $d
-     /tmp/ccFVAnSv.s:640    .bss.expected_rx:0000000000000000 $d
-     /tmp/ccFVAnSv.s:650    .bss.len_rxnow:0000000000000000 $d
-     /tmp/ccFVAnSv.s:655    .bss.len_txnow:0000000000000000 $d
-     /tmp/ccFVAnSv.s:660    .bss.locked:0000000000000000 $d
-     /tmp/ccFVAnSv.s:662    .bss.rx_buf:0000000000000000 $d
-     /tmp/ccFVAnSv.s:671    .bss.rx_len:0000000000000000 $d
-     /tmp/ccFVAnSv.s:673    .bss.tx_buf:0000000000000000 $d
-     /tmp/ccFVAnSv.s:682    .bss.tx_len:0000000000000000 $d
-ARM GAS  /tmp/ccFVAnSv.s 			page 17
-
-
-     /tmp/ccFVAnSv.s:684    .data.CMD_SET:0000000000000000 $d
-     /tmp/ccFVAnSv.s:690    .data.CMD_VOLUME:0000000000000000 $d
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
+     /tmp/ccjMyDgO.s:710    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
+     /tmp/ccjMyDgO.s:704    .data.CMD_SET:0000000000000000 CMD_SET
+     /tmp/ccjMyDgO.s:645    .bss.USART:0000000000000000 $d
+     /tmp/ccjMyDgO.s:651    .bss._ZStL8__ioinit:0000000000000000 $d
+     /tmp/ccjMyDgO.s:655    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
+     /tmp/ccjMyDgO.s:658    .bss.expected_rx:0000000000000000 $d
+     /tmp/ccjMyDgO.s:667    .bss.len_rxnow:0000000000000000 $d
+     /tmp/ccjMyDgO.s:672    .bss.len_txnow:0000000000000000 $d
+     /tmp/ccjMyDgO.s:677    .bss.locked:0000000000000000 $d
+     /tmp/ccjMyDgO.s:679    .bss.rx_buf:0000000000000000 $d
+     /tmp/ccjMyDgO.s:688    .bss.rx_len:0000000000000000 $d
+     /tmp/ccjMyDgO.s:690    .bss.tx_buf:0000000000000000 $d
+     /tmp/ccjMyDgO.s:699    .bss.tx_len:0000000000000000 $d
+     /tmp/ccjMyDgO.s:701    .data.CMD_SET:0000000000000000 $d
+     /tmp/ccjMyDgO.s:707    .data.CMD_VOLUME:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev

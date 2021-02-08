@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ARM GAS  /tmp/ccMDpEok.s 			page 1
-=======
-ARM GAS  /tmp/ccXV17SI.s 			page 1
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
+ARM GAS  /tmp/ccuD4IIP.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -22,11 +18,7 @@ ARM GAS  /tmp/ccXV17SI.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              	.Letext0:
-<<<<<<< HEAD
-ARM GAS  /tmp/ccMDpEok.s 			page 2
-=======
-ARM GAS  /tmp/ccXV17SI.s 			page 2
->>>>>>> be8668d82f9a91f9c7cf49c0b695bf949c3f221a
+ARM GAS  /tmp/ccuD4IIP.s 			page 2
 
 
 DEFINED SYMBOLS
