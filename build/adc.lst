@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/cchJydDH.s 			page 1
+=======
+ARM GAS  /tmp/ccsAXns2.s 			page 1
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
    1              		.cpu cortex-m4
@@ -58,7 +62,11 @@ ARM GAS  /tmp/cchJydDH.s 			page 1
   50              	.L2:
   51 000c 3333D33A 		.word	986919731
   52              		.cfi_endproc
+<<<<<<< HEAD
 ARM GAS  /tmp/cchJydDH.s 			page 2
+=======
+ARM GAS  /tmp/ccsAXns2.s 			page 2
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
   53              	.LFE131:
@@ -118,7 +126,11 @@ ARM GAS  /tmp/cchJydDH.s 			page 1
  103              		.loc 1 12 5 is_stmt 1 view .LVU13
  104              		.loc 1 12 9 is_stmt 0 view .LVU14
  105 0018 D4ED018A 		vldr.32	s17, [r4, #4]
+<<<<<<< HEAD
 ARM GAS  /tmp/cchJydDH.s 			page 3
+=======
+ARM GAS  /tmp/ccsAXns2.s 			page 3
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  106              		.loc 1 12 31 view .LVU15
@@ -178,7 +190,11 @@ ARM GAS  /tmp/cchJydDH.s 			page 1
   18:Core/Src/adc.cpp ****     eq_a=a;
  157              		.loc 1 18 5 view .LVU26
  158              		.loc 1 18 9 is_stmt 0 view .LVU27
+<<<<<<< HEAD
 ARM GAS  /tmp/cchJydDH.s 			page 4
+=======
+ARM GAS  /tmp/ccsAXns2.s 			page 4
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  159 0000 80ED010A 		vstr.32	s0, [r0, #4]
@@ -205,11 +221,16 @@ ARM GAS  /tmp/cchJydDH.s 			page 1
  179              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"
  180              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  181              		.file 11 "Core/Inc/adc.hpp"
+<<<<<<< HEAD
 ARM GAS  /tmp/cchJydDH.s 			page 5
+=======
+ARM GAS  /tmp/ccsAXns2.s 			page 5
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 adc.cpp
+<<<<<<< HEAD
      /tmp/cchJydDH.s:18     .text._ZN3adcC2EP17ADC_HandleTypeDef:0000000000000000 $t
      /tmp/cchJydDH.s:26     .text._ZN3adcC2EP17ADC_HandleTypeDef:0000000000000000 _ZN3adcC2EP17ADC_HandleTypeDef
      /tmp/cchJydDH.s:51     .text._ZN3adcC2EP17ADC_HandleTypeDef:000000000000000c $d
@@ -220,6 +241,18 @@ DEFINED SYMBOLS
 .ARM.exidx.text._ZN3adc12adc_getValueEv:0000000000000000 $d
      /tmp/cchJydDH.s:141    .text._ZN3adc15adc_setEquationEff:0000000000000000 $t
      /tmp/cchJydDH.s:148    .text._ZN3adc15adc_setEquationEff:0000000000000000 _ZN3adc15adc_setEquationEff
+=======
+     /tmp/ccsAXns2.s:18     .text._ZN3adcC2EP17ADC_HandleTypeDef:0000000000000000 $t
+     /tmp/ccsAXns2.s:26     .text._ZN3adcC2EP17ADC_HandleTypeDef:0000000000000000 _ZN3adcC2EP17ADC_HandleTypeDef
+     /tmp/ccsAXns2.s:51     .text._ZN3adcC2EP17ADC_HandleTypeDef:000000000000000c $d
+.ARM.exidx.text._ZN3adcC2EP17ADC_HandleTypeDef:0000000000000000 $d
+     /tmp/ccsAXns2.s:26     .text._ZN3adcC2EP17ADC_HandleTypeDef:0000000000000000 _ZN3adcC1EP17ADC_HandleTypeDef
+     /tmp/ccsAXns2.s:60     .text._ZN3adc12adc_getValueEv:0000000000000000 $t
+     /tmp/ccsAXns2.s:67     .text._ZN3adc12adc_getValueEv:0000000000000000 _ZN3adc12adc_getValueEv
+.ARM.exidx.text._ZN3adc12adc_getValueEv:0000000000000000 $d
+     /tmp/ccsAXns2.s:141    .text._ZN3adc15adc_setEquationEff:0000000000000000 $t
+     /tmp/ccsAXns2.s:148    .text._ZN3adc15adc_setEquationEff:0000000000000000 _ZN3adc15adc_setEquationEff
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 .ARM.exidx.text._ZN3adc15adc_setEquationEff:0000000000000000 $d
 
 UNDEFINED SYMBOLS

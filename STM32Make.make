@@ -80,13 +80,15 @@ Middlewares/Third_Party/FatFs/src/option/syscall.c
 CPP_SOURCES = \
 Core/Src/adc.cpp \
 Core/Src/i2c.cpp \
+Core/Src/i2s.cpp \
 Core/Src/keyboard.cpp \
 Core/Src/main.cpp \
 Core/Src/menu.cpp \
 Core/Src/oled.cpp \
 Core/Src/pin.cpp \
 Core/Src/sa818.cpp \
-Core/Src/uart.cpp
+Core/Src/uart.cpp \
+Core/Src/wav_player.cpp
 
 
 # ASM sources

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/ccaCYUh1.s 			page 1
+=======
+ARM GAS  /tmp/cc1h2XmD.s 			page 1
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
    1              		.cpu cortex-m4
@@ -18,7 +22,11 @@ ARM GAS  /tmp/ccaCYUh1.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              	.Letext0:
+<<<<<<< HEAD
 ARM GAS  /tmp/ccaCYUh1.s 			page 2
+=======
+ARM GAS  /tmp/cc1h2XmD.s 			page 2
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
 DEFINED SYMBOLS

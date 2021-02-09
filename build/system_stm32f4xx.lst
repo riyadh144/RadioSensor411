@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 1
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 1
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
    1              		.cpu cortex-m4
@@ -58,7 +62,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
   28:Core/Src/system_stm32f4xx.c ****   * This software component is licensed by ST under BSD 3-Clause license,
   29:Core/Src/system_stm32f4xx.c ****   * the "License"; You may not use this file except in compliance with the
   30:Core/Src/system_stm32f4xx.c ****   * License. You may obtain a copy of the License at:
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 2
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 2
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
   31:Core/Src/system_stm32f4xx.c ****   *                        opensource.org/licenses/BSD-3-Clause
@@ -118,7 +126,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
   85:Core/Src/system_stm32f4xx.c ****  || defined(STM32F446xx) || defined(STM32F469xx) || defined(STM32F479xx)
   86:Core/Src/system_stm32f4xx.c **** /* #define DATA_IN_ExtSDRAM */
   87:Core/Src/system_stm32f4xx.c **** #endif /* STM32F427xx || STM32F437xx || STM32F429xx || STM32F439xx || STM32F446xx || STM32F469xx ||
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 3
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 3
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
   88:Core/Src/system_stm32f4xx.c ****           STM32F479xx */
@@ -178,7 +190,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
  142:Core/Src/system_stm32f4xx.c **** 
  143:Core/Src/system_stm32f4xx.c **** /**
  144:Core/Src/system_stm32f4xx.c ****   * @brief  Setup the microcontroller system
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 4
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 4
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  145:Core/Src/system_stm32f4xx.c ****   *         Initialize the FPU setting, vector table location and External memory 
@@ -238,7 +254,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
   62              	.LFB131:
  168:Core/Src/system_stm32f4xx.c **** 
  169:Core/Src/system_stm32f4xx.c **** /**
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 5
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 5
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  170:Core/Src/system_stm32f4xx.c ****    * @brief  Update SystemCoreClock variable according to Clock Register Values.
@@ -298,7 +318,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
   76              	.LVL1:
  211:Core/Src/system_stm32f4xx.c **** 
  212:Core/Src/system_stm32f4xx.c ****   switch (tmp)
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 6
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 6
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
   77              		.loc 1 212 3 is_stmt 1 view .LVU11
@@ -358,7 +382,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
   97              	.LVL4:
  215:Core/Src/system_stm32f4xx.c ****       break;
   98              		.loc 1 215 23 view .LVU18
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 7
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 7
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
   99 001c 1D4A     		ldr	r2, .L12+8
@@ -418,7 +446,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
  225:Core/Src/system_stm32f4xx.c ****       pllm = RCC->PLLCFGR & RCC_PLLCFGR_PLLM;
  139              		.loc 1 225 23 view .LVU33
  140 0040 5A68     		ldr	r2, [r3, #4]
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 8
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 8
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  141              	.LVL11:
@@ -478,7 +510,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
  178 006a 5200     		lsls	r2, r2, #1
  179              	.LVL16:
  240:Core/Src/system_stm32f4xx.c ****       break;
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 9
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 9
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  180              		.loc 1 240 7 is_stmt 1 view .LVU51
@@ -538,7 +574,11 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
  223              		.global	AHBPrescTable
  224              		.global	SystemCoreClock
  225              		.section	.data.SystemCoreClock,"aw"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 10
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 10
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
  226              		.align	2
@@ -566,11 +606,16 @@ ARM GAS  /tmp/ccHOeIOT.s 			page 1
  250              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  251              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
  252              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccHOeIOT.s 			page 11
+=======
+ARM GAS  /tmp/cc1JkXez.s 			page 11
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 system_stm32f4xx.c
+<<<<<<< HEAD
      /tmp/ccHOeIOT.s:18     .text.SystemInit:0000000000000000 $t
      /tmp/ccHOeIOT.s:26     .text.SystemInit:0000000000000000 SystemInit
      /tmp/ccHOeIOT.s:49     .text.SystemInit:0000000000000018 $d
@@ -583,5 +628,19 @@ DEFINED SYMBOLS
      /tmp/ccHOeIOT.s:226    .data.SystemCoreClock:0000000000000000 $d
      /tmp/ccHOeIOT.s:233    .rodata.AHBPrescTable:0000000000000000 $d
      /tmp/ccHOeIOT.s:241    .rodata.APBPrescTable:0000000000000000 $d
+=======
+     /tmp/cc1JkXez.s:18     .text.SystemInit:0000000000000000 $t
+     /tmp/cc1JkXez.s:26     .text.SystemInit:0000000000000000 SystemInit
+     /tmp/cc1JkXez.s:49     .text.SystemInit:0000000000000018 $d
+     /tmp/cc1JkXez.s:54     .text.SystemCoreClockUpdate:0000000000000000 $t
+     /tmp/cc1JkXez.s:61     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
+     /tmp/cc1JkXez.s:214    .text.SystemCoreClockUpdate:000000000000008c $d
+     /tmp/cc1JkXez.s:244    .rodata.APBPrescTable:0000000000000000 APBPrescTable
+     /tmp/cc1JkXez.s:237    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
+     /tmp/cc1JkXez.s:230    .data.SystemCoreClock:0000000000000000 SystemCoreClock
+     /tmp/cc1JkXez.s:226    .data.SystemCoreClock:0000000000000000 $d
+     /tmp/cc1JkXez.s:233    .rodata.AHBPrescTable:0000000000000000 $d
+     /tmp/cc1JkXez.s:241    .rodata.APBPrescTable:0000000000000000 $d
+>>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
 
 NO UNDEFINED SYMBOLS
