@@ -98,7 +98,7 @@ static void MX_TIM9_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-oled oled1(hi2c3,0x78,htim10);
+//oled oled1(hi2c3,0x78,htim10);
 /* USER CODE END 0 */
 
 /**
@@ -871,7 +871,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
   if(htim->Instance==htim10.Instance)
   {
-    oled1.oled_refresh();
+  //  oled1.oled_refresh();
   }
 }
 /* USER CODE END 4 */

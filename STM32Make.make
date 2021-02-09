@@ -87,6 +87,7 @@ Core/Src/menu.cpp \
 Core/Src/oled.cpp \
 Core/Src/pin.cpp \
 Core/Src/sa818.cpp \
+Core/Src/trigger.cpp \
 Core/Src/uart.cpp \
 Core/Src/wav_player.cpp
 

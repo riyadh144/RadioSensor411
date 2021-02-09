@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 1
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 1
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 1
+>>>>>>> 1baf717... built the trigger class
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/ccHfju9H.s 			page 1
   50 0006 8360     		str	r3, [r0, #8]
    8:Core/Src/pin.cpp ****     GPIO_InitStruct.Pull=pull_;
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 2
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 2
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 2
+>>>>>>> 1baf717... built the trigger class
 
 
   51              		.loc 1 8 5 is_stmt 1 view .LVU8
@@ -127,10 +135,14 @@ ARM GAS  /tmp/ccHfju9H.s 			page 1
  101              		.loc 1 15 16 is_stmt 0 view .LVU18
  102 0002 0146     		mov	r1, r0
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 3
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 3
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 3
+>>>>>>> 1baf717... built the trigger class
 
 
  103 0004 51F8040B 		ldr	r0, [r1], #4
@@ -191,10 +203,14 @@ ARM GAS  /tmp/ccHfju9H.s 			page 1
  151              	.LVL7:
  152              		.loc 1 24 20 view .LVU31
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 4
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 4
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 4
+>>>>>>> 1baf717... built the trigger class
 
 
  153 0010 0A43     		orrs	r2, r2, r1
@@ -255,10 +271,14 @@ ARM GAS  /tmp/ccHfju9H.s 			page 1
  196              		.align	1
  197              		.global	_ZN3pin4readEv
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 5
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 5
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 5
+>>>>>>> 1baf717... built the trigger class
 
 
  198              		.syntax unified
@@ -319,10 +339,14 @@ ARM GAS  /tmp/ccHfju9H.s 			page 1
  241              		.global	_ZN3pinD2Ev
  242              		.syntax unified
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 6
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 6
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 6
+>>>>>>> 1baf717... built the trigger class
 
 
  243              		.thumb
@@ -358,32 +382,42 @@ ARM GAS  /tmp/ccHfju9H.s 			page 1
  272              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  273              		.file 8 "Core/Inc/pin.hpp"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccReVi7u.s 			page 7
 =======
 ARM GAS  /tmp/ccHfju9H.s 			page 7
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/cc3csPpK.s 			page 7
+>>>>>>> 1baf717... built the trigger class
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 pin.cpp
 <<<<<<< HEAD
+<<<<<<< HEAD
      /tmp/ccReVi7u.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
      /tmp/ccReVi7u.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+=======
+     /tmp/cc3csPpK.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
+     /tmp/cc3csPpK.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+>>>>>>> 1baf717... built the trigger class
 .ARM.exidx.text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $d
-     /tmp/ccReVi7u.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC1EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
-     /tmp/ccReVi7u.s:78     .text._ZN3pin4initEv:0000000000000000 $t
-     /tmp/ccReVi7u.s:85     .text._ZN3pin4initEv:0000000000000000 _ZN3pin4initEv
+     /tmp/cc3csPpK.s:26     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 _ZN3pinC1EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE
+     /tmp/cc3csPpK.s:78     .text._ZN3pin4initEv:0000000000000000 $t
+     /tmp/cc3csPpK.s:85     .text._ZN3pin4initEv:0000000000000000 _ZN3pin4initEv
    .ARM.extab.text._ZN3pin4initEv:0000000000000000 $d
    .ARM.exidx.text._ZN3pin4initEv:0000000000000000 $d
-     /tmp/ccReVi7u.s:115    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 $t
-     /tmp/ccReVi7u.s:122    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 _ZN3pin5writeENS_5OnOffE
+     /tmp/cc3csPpK.s:115    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 $t
+     /tmp/cc3csPpK.s:122    .text._ZN3pin5writeENS_5OnOffE:0000000000000000 _ZN3pin5writeENS_5OnOffE
 .ARM.exidx.text._ZN3pin5writeENS_5OnOffE:0000000000000000 $d
-     /tmp/ccReVi7u.s:196    .text._ZN3pin4readEv:0000000000000000 $t
-     /tmp/ccReVi7u.s:203    .text._ZN3pin4readEv:0000000000000000 _ZN3pin4readEv
+     /tmp/cc3csPpK.s:196    .text._ZN3pin4readEv:0000000000000000 $t
+     /tmp/cc3csPpK.s:203    .text._ZN3pin4readEv:0000000000000000 _ZN3pin4readEv
    .ARM.exidx.text._ZN3pin4readEv:0000000000000000 $d
-     /tmp/ccReVi7u.s:240    .text._ZN3pinD2Ev:0000000000000000 $t
-     /tmp/ccReVi7u.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD2Ev
+     /tmp/cc3csPpK.s:240    .text._ZN3pinD2Ev:0000000000000000 $t
+     /tmp/cc3csPpK.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD2Ev
       .ARM.exidx.text._ZN3pinD2Ev:0000000000000000 $d
+<<<<<<< HEAD
      /tmp/ccReVi7u.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
 =======
      /tmp/ccHfju9H.s:18     .text._ZN3pinC2EP12GPIO_TypeDefNS_9PinNumberENS_5InOutENS_4PullENS_5SpeedE:0000000000000000 $t
@@ -405,6 +439,9 @@ DEFINED SYMBOLS
       .ARM.exidx.text._ZN3pinD2Ev:0000000000000000 $d
      /tmp/ccHfju9H.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+     /tmp/cc3csPpK.s:247    .text._ZN3pinD2Ev:0000000000000000 _ZN3pinD1Ev
+>>>>>>> 1baf717... built the trigger class
 
 UNDEFINED SYMBOLS
 HAL_GPIO_Init

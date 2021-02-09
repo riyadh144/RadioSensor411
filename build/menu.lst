@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 1
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 1
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 1
+>>>>>>> 1baf717... built the trigger class
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
   52              	.LBE2:
    6:Core/Src/menu.cpp **** }
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 2
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 2
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 2
+>>>>>>> 1baf717... built the trigger class
 
 
   53              		.loc 1 6 1 view .LVU5
@@ -127,10 +135,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
   89              	.LC7:
   90 006c 6D656E75 		.ascii	"menu  back\000"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 3
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 3
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 3
+>>>>>>> 1baf717... built the trigger class
 
 
   90      20206261 
@@ -191,10 +203,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  139 001b 1D       		.byte	(.L4-.L6)/2
  140 001c 1D       		.byte	(.L4-.L6)/2
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 4
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 4
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 4
+>>>>>>> 1baf717... built the trigger class
 
 
  141 001d 1D       		.byte	(.L4-.L6)/2
@@ -255,10 +271,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
   30:Core/Src/menu.cpp ****         case MENU_CH_IN:
   31:Core/Src/menu.cpp ****             sprintf(temp, "   CH:%.2s   ",ch);
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 5
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 5
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 5
+>>>>>>> 1baf717... built the trigger class
 
 
   32:Core/Src/menu.cpp ****             oled1->oled_print(temp,Font_16x26, 0,19);
@@ -319,10 +339,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
   20:Core/Src/menu.cpp ****             break;
  213              		.loc 1 20 30 is_stmt 0 view .LVU25
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 6
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 6
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 6
+>>>>>>> 1baf717... built the trigger class
 
 
  214 006c 304B     		ldr	r3, .L14+4
@@ -383,10 +407,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  259              		.loc 1 27 20 view .LVU35
  260 00a8 03C3     		stmia	r3!, {r0, r1}
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 7
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 7
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 7
+>>>>>>> 1baf717... built the trigger class
 
 
  261 00aa 23F8022B 		strh	r2, [r3], #2	@ movhi
@@ -447,10 +475,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
   35:Core/Src/menu.cpp ****             oled1->oled_print(temp, Font_16x26, 0,19);
  306              		.loc 1 35 20 is_stmt 0 view .LVU46
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 8
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 8
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 8
+>>>>>>> 1baf717... built the trigger class
 
 
  307 00e8 821C     		adds	r2, r0, #2
@@ -511,10 +543,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  353 012a 00BF     		.align	2
  354              	.L14:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 9
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 9
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 9
+>>>>>>> 1baf717... built the trigger class
 
 
  355 012c 00000000 		.word	.LC0
@@ -575,10 +611,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  406 000c 2069     		ldr	r0, [r4, #16]
  407 000e FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 10
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 10
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 10
+>>>>>>> 1baf717... built the trigger class
 
 
  408              	.LVL30:
@@ -639,10 +679,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  451 003c 2069     		ldr	r0, [r4, #16]
  452 003e FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 11
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 11
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 11
+>>>>>>> 1baf717... built the trigger class
 
 
  453              	.LVL32:
@@ -703,10 +747,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  107:Core/Src/menu.cpp **** }
  463              		.loc 1 107 1 is_stmt 0 view .LVU74
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 12
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 12
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 12
+>>>>>>> 1baf717... built the trigger class
 
 
  464 0048 38BD     		pop	{r3, r4, r5, pc}
@@ -767,10 +815,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  502 006c A373     		strb	r3, [r4, #14]
  503 006e EBE7     		b	.L16
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 13
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 13
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 13
+>>>>>>> 1baf717... built the trigger class
 
 
  504              	.L22:
@@ -831,10 +883,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  541              		.loc 1 97 22 is_stmt 0 view .LVU109
  542 0098 A573     		strb	r5, [r4, #14]
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 14
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 14
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 14
+>>>>>>> 1baf717... built the trigger class
 
 
  543              		.loc 1 107 1 view .LVU110
@@ -895,10 +951,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  592 0019 13       		.byte	(.L35-.L32)/2
  593 001a 13       		.byte	(.L35-.L32)/2
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 15
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 15
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 15
+>>>>>>> 1baf717... built the trigger class
 
 
  594 001b 19       		.byte	(.L28-.L32)/2
@@ -959,10 +1019,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  637              	.L34:
  126:Core/Src/menu.cpp ****     case MENU_CH_IN:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 16
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 16
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 16
+>>>>>>> 1baf717... built the trigger class
 
 
  638              		.loc 1 126 5 is_stmt 1 view .LVU128
@@ -1023,10 +1087,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  134:Core/Src/menu.cpp **** 
  671              		.loc 1 134 9 is_stmt 1 view .LVU143
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 17
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 17
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 17
+>>>>>>> 1baf717... built the trigger class
 
 
  672              		.loc 1 139 1 is_stmt 0 view .LVU144
@@ -1087,10 +1155,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  145:Core/Src/menu.cpp ****     }
  720              		.loc 1 145 9 is_stmt 1 view .LVU154
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 18
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 18
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 18
+>>>>>>> 1baf717... built the trigger class
 
 
  145:Core/Src/menu.cpp ****     }
@@ -1151,10 +1223,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  769              		.loc 1 156 16 view .LVU165
  770 0010 2370     		strb	r3, [r4]
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 19
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 19
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 19
+>>>>>>> 1baf717... built the trigger class
 
 
  157:Core/Src/menu.cpp **** }
@@ -1215,10 +1291,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  164:Core/Src/menu.cpp ****     }
  165:Core/Src/menu.cpp ****     switch (menu_value)
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 20
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 20
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 20
+>>>>>>> 1baf717... built the trigger class
 
 
  819              		.loc 1 165 5 is_stmt 1 view .LVU175
@@ -1279,10 +1359,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  866              	.L47:
  172:Core/Src/menu.cpp ****     case MENU_SQ:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 21
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 21
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 21
+>>>>>>> 1baf717... built the trigger class
 
 
  173:Core/Src/menu.cpp ****         menu_value=MENU_CH;
@@ -1343,10 +1427,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  891              		.loc 1 179 18 view .LVU195
  892 004c A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 22
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 22
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 22
+>>>>>>> 1baf717... built the trigger class
 
 
  893 004e 5340     		eors	r3, r3, r2
@@ -1407,10 +1495,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  937              		.cfi_startproc
  938              		@ args = 0, pretend = 0, frame = 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 23
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 23
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 23
+>>>>>>> 1baf717... built the trigger class
 
 
  939              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -1471,10 +1563,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  211:Core/Src/menu.cpp ****             tmo[cursorPos]=num;
  212:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 24
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 24
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 24
+>>>>>>> 1baf717... built the trigger class
 
 
  213:Core/Src/menu.cpp ****             break;
@@ -1535,10 +1631,14 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1010              		.loc 1 208 22 is_stmt 0 view .LVU235
  1011 003c 5340     		eors	r3, r3, r2
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 25
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 25
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 25
+>>>>>>> 1baf717... built the trigger class
 
 
  1012 003e A373     		strb	r3, [r4, #14]
@@ -1599,7 +1699,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  222:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
  1058              		.loc 1 222 5 is_stmt 1 view .LVU247
  1059              		.loc 1 222 28 is_stmt 0 view .LVU248
-ARM GAS  /tmp/ccgsVnXR.s 			page 26
+ARM GAS  /tmp/ccxnKtb9.s 			page 26
 
 
  1060 0004 0069     		ldr	r0, [r0, #16]
@@ -1659,7 +1759,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1089              	.L75:
  224:Core/Src/menu.cpp ****     }
  1090              		.loc 1 224 9 is_stmt 1 view .LVU261
-ARM GAS  /tmp/ccgsVnXR.s 			page 27
+ARM GAS  /tmp/ccxnKtb9.s 			page 27
 
 
  224:Core/Src/menu.cpp ****     }
@@ -1719,7 +1819,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1133              		.thumb
  1134              		.thumb_func
  1135              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccgsVnXR.s 			page 28
+ARM GAS  /tmp/ccxnKtb9.s 			page 28
 
 
  1137              	_ZN4menu9menu_downEv:
@@ -1779,7 +1879,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  268:Core/Src/menu.cpp ****         break;   
  269:Core/Src/menu.cpp ****     default:
  1171              		.loc 1 269 5 is_stmt 1 view .LVU285
-ARM GAS  /tmp/ccgsVnXR.s 			page 29
+ARM GAS  /tmp/ccxnKtb9.s 			page 29
 
 
  270:Core/Src/menu.cpp ****         if(volVal > 0)
@@ -1839,7 +1939,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  264:Core/Src/menu.cpp ****         {
  1208              		.loc 1 264 12 is_stmt 0 view .LVU303
  1209 0032 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
-ARM GAS  /tmp/ccgsVnXR.s 			page 30
+ARM GAS  /tmp/ccxnKtb9.s 			page 30
 
 
  264:Core/Src/menu.cpp ****         {
@@ -1899,7 +1999,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  287:Core/Src/menu.cpp ****     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
  1254              		.loc 1 287 5 is_stmt 1 view .LVU312
  1255              		.loc 1 287 20 is_stmt 0 view .LVU313
-ARM GAS  /tmp/ccgsVnXR.s 			page 31
+ARM GAS  /tmp/ccxnKtb9.s 			page 31
 
 
  1256 000e 1B69     		ldr	r3, [r3, #16]
@@ -2233,7 +2333,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1288              		.loc 1 304 15 is_stmt 0 view .LVU326
  1289 003a 464B     		ldr	r3, .L107
  1290 003c 5A69     		ldr	r2, [r3, #20]
-ARM GAS  /tmp/ccgsVnXR.s 			page 32
+ARM GAS  /tmp/ccxnKtb9.s 			page 32
 
 
  1291 003e 22F40062 		bic	r2, r2, #2048
@@ -2294,7 +2394,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1327 0070 3621     		movs	r1, #54
  1328 0072 FFF7FEFF 		bl	_ZN4menu11menu_numberEc
  1329              	.LVL80:
-ARM GAS  /tmp/ccgsVnXR.s 			page 33
+ARM GAS  /tmp/ccxnKtb9.s 			page 33
 
 
  294:Core/Src/menu.cpp ****         case GPIO_PIN_9:
@@ -2354,7 +2454,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  331:Core/Src/menu.cpp ****     GPIOD->ODR|=pin;
  1363              		.loc 1 331 5 view .LVU354
  1364              		.loc 1 331 15 is_stmt 0 view .LVU355
-ARM GAS  /tmp/ccgsVnXR.s 			page 34
+ARM GAS  /tmp/ccxnKtb9.s 			page 34
 
 
  1365 0096 5A69     		ldr	r2, [r3, #20]
@@ -2414,7 +2514,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1402              		.loc 1 320 9 view .LVU368
  321:Core/Src/menu.cpp ****             break;
  1403              		.loc 1 321 13 view .LVU369
-ARM GAS  /tmp/ccgsVnXR.s 			page 35
+ARM GAS  /tmp/ccxnKtb9.s 			page 35
 
 
  321:Core/Src/menu.cpp ****             break;
@@ -2474,7 +2574,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1438              		.loc 1 356 20 is_stmt 0 view .LVU383
  1439 00f4 1B69     		ldr	r3, [r3, #16]
  1440              		.loc 1 356 23 view .LVU384
-ARM GAS  /tmp/ccgsVnXR.s 			page 36
+ARM GAS  /tmp/ccxnKtb9.s 			page 36
 
 
  1441 00f6 03F40743 		and	r3, r3, #34560
@@ -2534,7 +2634,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1477 0126 DCE7     		b	.L100
  1478              	.LVL97:
  1479              	.L102:
-ARM GAS  /tmp/ccgsVnXR.s 			page 37
+ARM GAS  /tmp/ccxnKtb9.s 			page 37
 
 
  356:Core/Src/menu.cpp ****     {
@@ -2594,7 +2694,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  368:Core/Src/menu.cpp ****             break;
  1513              		.loc 1 368 24 is_stmt 0 view .LVU412
  1514 014a 3121     		movs	r1, #49
-ARM GAS  /tmp/ccgsVnXR.s 			page 38
+ARM GAS  /tmp/ccxnKtb9.s 			page 38
 
 
  1515 014c 2046     		mov	r0, r4
@@ -2635,6 +2735,7 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1550              		.file 22 "Core/Inc/menu.hpp"
  1551              		.file 23 "<built-in>"
  1552              		.file 24 "/usr/include/newlib/stdio.h"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 39
 =======
  314:Core/Src/menu.cpp **** 
@@ -2862,55 +2963,64 @@ ARM GAS  /tmp/ccv7NRG6.s 			page 1
  1388              		.file 24 "/usr/include/newlib/stdio.h"
 ARM GAS  /tmp/ccv7NRG6.s 			page 35
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 39
+>>>>>>> 1baf717... built the trigger class
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 menu.cpp
 <<<<<<< HEAD
+<<<<<<< HEAD
      /tmp/ccgsVnXR.s:18     .text._ZN4menuC2EP4oled:0000000000000000 $t
      /tmp/ccgsVnXR.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC2EP4oled
+=======
+     /tmp/ccxnKtb9.s:18     .text._ZN4menuC2EP4oled:0000000000000000 $t
+     /tmp/ccxnKtb9.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC2EP4oled
+>>>>>>> 1baf717... built the trigger class
 .ARM.exidx.text._ZN4menuC2EP4oled:0000000000000000 $d
-     /tmp/ccgsVnXR.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC1EP4oled
-     /tmp/ccgsVnXR.s:67     .rodata._ZN4menu10menu_printEv.str1.4:0000000000000000 $d
-     /tmp/ccgsVnXR.s:92     .text._ZN4menu10menu_printEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:99     .text._ZN4menu10menu_printEv:0000000000000000 _ZN4menu10menu_printEv
-     /tmp/ccgsVnXR.s:128    .text._ZN4menu10menu_printEv:0000000000000010 $d
-     /tmp/ccgsVnXR.s:355    .text._ZN4menu10menu_printEv:000000000000012c $d
+     /tmp/ccxnKtb9.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC1EP4oled
+     /tmp/ccxnKtb9.s:67     .rodata._ZN4menu10menu_printEv.str1.4:0000000000000000 $d
+     /tmp/ccxnKtb9.s:92     .text._ZN4menu10menu_printEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:99     .text._ZN4menu10menu_printEv:0000000000000000 _ZN4menu10menu_printEv
+     /tmp/ccxnKtb9.s:128    .text._ZN4menu10menu_printEv:0000000000000010 $d
+     /tmp/ccxnKtb9.s:355    .text._ZN4menu10menu_printEv:000000000000012c $d
 .ARM.exidx.text._ZN4menu10menu_printEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:370    .text._ZN4menu7menu_okEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:377    .text._ZN4menu7menu_okEv:0000000000000000 _ZN4menu7menu_okEv
-     /tmp/ccgsVnXR.s:418    .text._ZN4menu7menu_okEv:000000000000001e $d
-     /tmp/ccgsVnXR.s:442    .text._ZN4menu7menu_okEv:0000000000000036 $t
+     /tmp/ccxnKtb9.s:370    .text._ZN4menu7menu_okEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:377    .text._ZN4menu7menu_okEv:0000000000000000 _ZN4menu7menu_okEv
+     /tmp/ccxnKtb9.s:418    .text._ZN4menu7menu_okEv:000000000000001e $d
+     /tmp/ccxnKtb9.s:442    .text._ZN4menu7menu_okEv:0000000000000036 $t
 .ARM.exidx.text._ZN4menu7menu_okEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:550    .text._ZN4menu9menu_nextEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:557    .text._ZN4menu9menu_nextEv:0000000000000000 _ZN4menu9menu_nextEv
-     /tmp/ccgsVnXR.s:591    .text._ZN4menu9menu_nextEv:0000000000000018 $d
-     /tmp/ccgsVnXR.s:615    .text._ZN4menu9menu_nextEv:0000000000000030 $t
+     /tmp/ccxnKtb9.s:550    .text._ZN4menu9menu_nextEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:557    .text._ZN4menu9menu_nextEv:0000000000000000 _ZN4menu9menu_nextEv
+     /tmp/ccxnKtb9.s:591    .text._ZN4menu9menu_nextEv:0000000000000018 $d
+     /tmp/ccxnKtb9.s:615    .text._ZN4menu9menu_nextEv:0000000000000030 $t
 .ARM.exidx.text._ZN4menu9menu_nextEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:679    .text._ZN4menu9menu_menuEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:686    .text._ZN4menu9menu_menuEv:0000000000000000 _ZN4menu9menu_menuEv
+     /tmp/ccxnKtb9.s:679    .text._ZN4menu9menu_menuEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:686    .text._ZN4menu9menu_menuEv:0000000000000000 _ZN4menu9menu_menuEv
 .ARM.exidx.text._ZN4menu9menu_menuEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:731    .text._ZN4menu9menu_backEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:738    .text._ZN4menu9menu_backEv:0000000000000000 _ZN4menu9menu_backEv
+     /tmp/ccxnKtb9.s:731    .text._ZN4menu9menu_backEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:738    .text._ZN4menu9menu_backEv:0000000000000000 _ZN4menu9menu_backEv
 .ARM.exidx.text._ZN4menu9menu_backEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:786    .text._ZN4menu9menu_prevEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:793    .text._ZN4menu9menu_prevEv:0000000000000000 _ZN4menu9menu_prevEv
-     /tmp/ccgsVnXR.s:827    .text._ZN4menu9menu_prevEv:0000000000000018 $d
-     /tmp/ccgsVnXR.s:851    .text._ZN4menu9menu_prevEv:0000000000000030 $t
+     /tmp/ccxnKtb9.s:786    .text._ZN4menu9menu_prevEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:793    .text._ZN4menu9menu_prevEv:0000000000000000 _ZN4menu9menu_prevEv
+     /tmp/ccxnKtb9.s:827    .text._ZN4menu9menu_prevEv:0000000000000018 $d
+     /tmp/ccxnKtb9.s:851    .text._ZN4menu9menu_prevEv:0000000000000030 $t
 .ARM.exidx.text._ZN4menu9menu_prevEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:925    .text._ZN4menu11menu_numberEc:0000000000000000 $t
-     /tmp/ccgsVnXR.s:932    .text._ZN4menu11menu_numberEc:0000000000000000 _ZN4menu11menu_numberEc
+     /tmp/ccxnKtb9.s:925    .text._ZN4menu11menu_numberEc:0000000000000000 $t
+     /tmp/ccxnKtb9.s:932    .text._ZN4menu11menu_numberEc:0000000000000000 _ZN4menu11menu_numberEc
 .ARM.exidx.text._ZN4menu11menu_numberEc:0000000000000000 $d
-     /tmp/ccgsVnXR.s:1035   .text._ZN4menu7menu_upEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:1042   .text._ZN4menu7menu_upEv:0000000000000000 _ZN4menu7menu_upEv
+     /tmp/ccxnKtb9.s:1035   .text._ZN4menu7menu_upEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:1042   .text._ZN4menu7menu_upEv:0000000000000000 _ZN4menu7menu_upEv
 .ARM.exidx.text._ZN4menu7menu_upEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:1130   .text._ZN4menu9menu_downEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:1137   .text._ZN4menu9menu_downEv:0000000000000000 _ZN4menu9menu_downEv
+     /tmp/ccxnKtb9.s:1130   .text._ZN4menu9menu_downEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:1137   .text._ZN4menu9menu_downEv:0000000000000000 _ZN4menu9menu_downEv
 .ARM.exidx.text._ZN4menu9menu_downEv:0000000000000000 $d
-     /tmp/ccgsVnXR.s:1223   .text._ZN4menu13keyboard_pollEv:0000000000000000 $t
-     /tmp/ccgsVnXR.s:1230   .text._ZN4menu13keyboard_pollEv:0000000000000000 _ZN4menu13keyboard_pollEv
-     /tmp/ccgsVnXR.s:1523   .text._ZN4menu13keyboard_pollEv:0000000000000154 $d
+     /tmp/ccxnKtb9.s:1223   .text._ZN4menu13keyboard_pollEv:0000000000000000 $t
+     /tmp/ccxnKtb9.s:1230   .text._ZN4menu13keyboard_pollEv:0000000000000000 _ZN4menu13keyboard_pollEv
+     /tmp/ccxnKtb9.s:1523   .text._ZN4menu13keyboard_pollEv:0000000000000154 $d
 .ARM.exidx.text._ZN4menu13keyboard_pollEv:0000000000000000 $d
+<<<<<<< HEAD
      /tmp/ccgsVnXR.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
      /tmp/ccgsVnXR.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
 =======
@@ -2961,6 +3071,10 @@ DEFINED SYMBOLS
      /tmp/ccv7NRG6.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
      /tmp/ccv7NRG6.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+     /tmp/ccxnKtb9.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
+     /tmp/ccxnKtb9.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
+>>>>>>> 1baf717... built the trigger class
 
 UNDEFINED SYMBOLS
 sprintf
@@ -2971,10 +3085,14 @@ __aeabi_unwind_cpp_pr0
 _ZN4oled13oled_isOledOnEv
 _ZN4oled15oled_resetTimerEv
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccgsVnXR.s 			page 40
 =======
 ARM GAS  /tmp/ccv7NRG6.s 			page 36
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccxnKtb9.s 			page 40
+>>>>>>> 1baf717... built the trigger class
 
 
 _ZN4oled7oled_onEv

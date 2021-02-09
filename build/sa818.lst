@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 1
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 1
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 1
+>>>>>>> 1baf717... built the trigger class
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
   28:Core/Src/sa818.cpp ****         pin_pd->write(pin::off);
   29:Core/Src/sa818.cpp **** }
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 2
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 2
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 2
+>>>>>>> 1baf717... built the trigger class
 
 
   30:Core/Src/sa818.cpp **** void sa818::sa818_txrx_mode(TxRx mode)
@@ -127,10 +135,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
   85:Core/Src/sa818.cpp **** {
   86:Core/Src/sa818.cpp **** 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 3
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 3
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 3
+>>>>>>> 1baf717... built the trigger class
 
 
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
@@ -191,10 +203,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
   15:/usr/include/newlib/c++/9.2.1/iostream **** 
   16:/usr/include/newlib/c++/9.2.1/iostream **** // Under Section 7 of GPL version 3, you are granted additional
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 4
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 4
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 4
+>>>>>>> 1baf717... built the trigger class
 
 
   17:/usr/include/newlib/c++/9.2.1/iostream **** // permissions described in the GCC Runtime Library Exception, version
@@ -255,10 +271,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
   72:/usr/include/newlib/c++/9.2.1/iostream **** 
   73:/usr/include/newlib/c++/9.2.1/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 5
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 5
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 5
+>>>>>>> 1baf717... built the trigger class
 
 
   74:/usr/include/newlib/c++/9.2.1/iostream ****   static ios_base::Init __ioinit;
@@ -319,10 +339,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
   26:Core/Src/sa818.cpp ****         pin_pd->write(pin::on);
  103              		.loc 1 26 22 is_stmt 0 view .LVU12
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 6
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 6
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 6
+>>>>>>> 1baf717... built the trigger class
 
 
  104 0004 0121     		movs	r1, #1
@@ -383,10 +407,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  151              		.save {r3, lr}
  152              	.LCFI2:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 7
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 7
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 7
+>>>>>>> 1baf717... built the trigger class
 
 
  153              		.cfi_def_cfa_offset 8
@@ -447,10 +475,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  195 0010 2B444D4F 		.ascii	"+DMOCONNECT:0\015\012\000"
  195      434F4E4E 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 8
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 8
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 8
+>>>>>>> 1baf717... built the trigger class
 
 
  195      4543543A 
@@ -511,10 +543,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
  239              		.loc 1 49 5 is_stmt 1 view .LVU45
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 9
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 9
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 9
+>>>>>>> 1baf717... built the trigger class
 
 
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
@@ -575,10 +611,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  282 0048 00000000 		.word	.LC0
  283 004c 10000000 		.word	.LC1
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 10
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 10
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 10
+>>>>>>> 1baf717... built the trigger class
 
 
  284              		.cfi_endproc
@@ -639,10 +679,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  332              		.loc 1 64 14 view .LVU63
  333 0010 FFF7FEFF 		bl	HAL_Delay
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 11
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 11
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 11
+>>>>>>> 1baf717... built the trigger class
 
 
  334              	.LVL29:
@@ -703,10 +747,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  379              	.LFE1989:
  380              		.fnend
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 12
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 12
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 12
+>>>>>>> 1baf717... built the trigger class
 
 
  382              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
@@ -767,10 +815,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  425 0014 84F85230 		strb	r3, [r4, #82]
   80:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 13
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 13
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 13
+>>>>>>> 1baf717... built the trigger class
 
 
  426              		.loc 1 80 5 is_stmt 1 view .LVU83
@@ -831,10 +883,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  475              		.loc 1 87 12 is_stmt 0 view .LVU90
  476 0004 074A     		ldr	r2, .L32
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 14
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 14
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 14
+>>>>>>> 1baf717... built the trigger class
 
 
  477 0006 03CA     		ldmia	r2!, {r0, r1}
@@ -895,10 +951,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  518              		.syntax unified
  519              		.thumb
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 15
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 15
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 15
+>>>>>>> 1baf717... built the trigger class
 
 
  520              		.thumb_func
@@ -959,10 +1019,14 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  564              	.LVL45:
  565              	.L37:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 16
 =======
 ARM GAS  /tmp/cc0Bkjt3.s 			page 16
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 16
+>>>>>>> 1baf717... built the trigger class
 
 
  101:Core/Src/sa818.cpp **** }
@@ -1023,7 +1087,7 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  621              		.cfi_offset 14, -4
  622              		.loc 1 106 1 is_stmt 0 view .LVU117
  623 0002 4FF6FF71 		movw	r1, #65535
-ARM GAS  /tmp/ccPbyD0w.s 			page 17
+ARM GAS  /tmp/ccg2am53.s 			page 17
 
 
  624 0006 0120     		movs	r0, #1
@@ -1083,7 +1147,7 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  687      00000000 
  687      00000000 
  687      00000000 
-ARM GAS  /tmp/ccPbyD0w.s 			page 18
+ARM GAS  /tmp/ccg2am53.s 			page 18
 
 
  688              		.section	.bss.rx_len,"aw",%nobits
@@ -1143,7 +1207,7 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  744              		.file 24 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h"
  745              		.file 25 "/usr/include/newlib/c++/9.2.1/type_traits"
  746              		.file 26 "/usr/include/newlib/c++/9.2.1/bits/stl_pair.h"
-ARM GAS  /tmp/ccPbyD0w.s 			page 19
+ARM GAS  /tmp/ccg2am53.s 			page 19
 
 
  747              		.file 27 "/usr/include/newlib/c++/9.2.1/debug/debug.h"
@@ -1173,6 +1237,7 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  771              		.file 51 "/usr/include/newlib/wctype.h"
  772              		.file 52 "Core/Inc/uart.hpp"
  773              		.file 53 "Core/Inc/sa818.h"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccPbyD0w.s 			page 20
 =======
  104:Core/Src/sa818.cpp **** {
@@ -1354,69 +1419,79 @@ ARM GAS  /tmp/cc0Bkjt3.s 			page 1
  769              		.file 53 "Core/Inc/sa818.h"
 ARM GAS  /tmp/cc0Bkjt3.s 			page 20
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccg2am53.s 			page 20
+>>>>>>> 1baf717... built the trigger class
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sa818.cpp
 <<<<<<< HEAD
+<<<<<<< HEAD
      /tmp/ccPbyD0w.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
      /tmp/ccPbyD0w.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
      /tmp/ccPbyD0w.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+=======
+     /tmp/ccg2am53.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
+     /tmp/ccg2am53.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccg2am53.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+>>>>>>> 1baf717... built the trigger class
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $d
-     /tmp/ccPbyD0w.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
-     /tmp/ccPbyD0w.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
+     /tmp/ccg2am53.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
+     /tmp/ccg2am53.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
 .ARM.extab.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-     /tmp/ccPbyD0w.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
-     /tmp/ccPbyD0w.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
+     /tmp/ccg2am53.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
+     /tmp/ccg2am53.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
 .ARM.extab.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-     /tmp/ccPbyD0w.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
-     /tmp/ccPbyD0w.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
-     /tmp/ccPbyD0w.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
-     /tmp/ccPbyD0w.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
+     /tmp/ccg2am53.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
+     /tmp/ccg2am53.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
+     /tmp/ccg2am53.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
+     /tmp/ccg2am53.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
 .ARM.exidx.text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $d
-     /tmp/ccPbyD0w.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
-     /tmp/ccPbyD0w.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
-     /tmp/ccPbyD0w.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
-     /tmp/ccPbyD0w.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
-     /tmp/ccPbyD0w.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
+     /tmp/ccg2am53.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
+     /tmp/ccg2am53.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
+     /tmp/ccg2am53.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
+     /tmp/ccg2am53.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
+     /tmp/ccg2am53.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
 .ARM.exidx.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $d
-     /tmp/ccPbyD0w.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
-     /tmp/ccPbyD0w.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
-     /tmp/ccPbyD0w.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
-     /tmp/ccPbyD0w.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
+     /tmp/ccg2am53.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
+     /tmp/ccg2am53.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
+     /tmp/ccg2am53.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
+     /tmp/ccg2am53.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $d
-     /tmp/ccPbyD0w.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
-     /tmp/ccPbyD0w.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
-     /tmp/ccPbyD0w.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
-     /tmp/ccPbyD0w.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
+     /tmp/ccg2am53.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
+     /tmp/ccg2am53.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
+     /tmp/ccg2am53.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
+     /tmp/ccg2am53.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
 .ARM.extab.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
-     /tmp/ccPbyD0w.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
-     /tmp/ccPbyD0w.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
-     /tmp/ccPbyD0w.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
-     /tmp/ccPbyD0w.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
+     /tmp/ccg2am53.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
+     /tmp/ccg2am53.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
+     /tmp/ccg2am53.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
+     /tmp/ccg2am53.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81814sa818_set_tailEh:0000000000000000 $d
-     /tmp/ccPbyD0w.s:576    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $t
-     /tmp/ccPbyD0w.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
+     /tmp/ccg2am53.s:576    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $t
+     /tmp/ccg2am53.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
 .ARM.exidx.text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $d
-     /tmp/ccPbyD0w.s:604    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
-     /tmp/ccPbyD0w.s:610    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
+     /tmp/ccg2am53.s:604    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
+     /tmp/ccg2am53.s:610    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
 .ARM.exidx.text._GLOBAL__sub_I_CMD_SET:0000000000000000 $d
-     /tmp/ccPbyD0w.s:634    .init_array:0000000000000000 $d
-     /tmp/ccPbyD0w.s:691    .bss.rx_len:0000000000000000 rx_len
-     /tmp/ccPbyD0w.s:702    .bss.tx_len:0000000000000000 tx_len
-     /tmp/ccPbyD0w.s:680    .bss.locked:0000000000000000 locked
-     /tmp/ccPbyD0w.s:686    .bss.rx_buf:0000000000000000 rx_buf
-     /tmp/ccPbyD0w.s:697    .bss.tx_buf:0000000000000000 tx_buf
-     /tmp/ccPbyD0w.s:652    .bss.USART:0000000000000000 USART
-     /tmp/ccPbyD0w.s:719    .data.status_cnt:0000000000000000 status_cnt
-     /tmp/ccPbyD0w.s:670    .bss.len_rxnow:0000000000000000 len_rxnow
-     /tmp/ccPbyD0w.s:675    .bss.len_txnow:0000000000000000 len_txnow
-ARM GAS  /tmp/ccPbyD0w.s 			page 21
+     /tmp/ccg2am53.s:634    .init_array:0000000000000000 $d
+     /tmp/ccg2am53.s:691    .bss.rx_len:0000000000000000 rx_len
+     /tmp/ccg2am53.s:702    .bss.tx_len:0000000000000000 tx_len
+     /tmp/ccg2am53.s:680    .bss.locked:0000000000000000 locked
+     /tmp/ccg2am53.s:686    .bss.rx_buf:0000000000000000 rx_buf
+     /tmp/ccg2am53.s:697    .bss.tx_buf:0000000000000000 tx_buf
+     /tmp/ccg2am53.s:652    .bss.USART:0000000000000000 USART
+     /tmp/ccg2am53.s:719    .data.status_cnt:0000000000000000 status_cnt
+     /tmp/ccg2am53.s:670    .bss.len_rxnow:0000000000000000 len_rxnow
+     /tmp/ccg2am53.s:675    .bss.len_txnow:0000000000000000 len_txnow
+ARM GAS  /tmp/ccg2am53.s 			page 21
 
 
+<<<<<<< HEAD
      /tmp/ccPbyD0w.s:665    .bss.expected_rx:0000000000000000 expected_rx
      /tmp/ccPbyD0w.s:714    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
      /tmp/ccPbyD0w.s:708    .data.CMD_SET:0000000000000000 CMD_SET
@@ -1508,6 +1583,24 @@ DEFINED SYMBOLS
      /tmp/cc0Bkjt3.s:701    .data.CMD_SET:0000000000000000 $d
      /tmp/cc0Bkjt3.s:707    .data.CMD_VOLUME:0000000000000000 $d
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+     /tmp/ccg2am53.s:665    .bss.expected_rx:0000000000000000 expected_rx
+     /tmp/ccg2am53.s:714    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
+     /tmp/ccg2am53.s:708    .data.CMD_SET:0000000000000000 CMD_SET
+     /tmp/ccg2am53.s:649    .bss.USART:0000000000000000 $d
+     /tmp/ccg2am53.s:655    .bss._ZStL8__ioinit:0000000000000000 $d
+     /tmp/ccg2am53.s:659    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
+     /tmp/ccg2am53.s:662    .bss.expected_rx:0000000000000000 $d
+     /tmp/ccg2am53.s:671    .bss.len_rxnow:0000000000000000 $d
+     /tmp/ccg2am53.s:676    .bss.len_txnow:0000000000000000 $d
+     /tmp/ccg2am53.s:681    .bss.locked:0000000000000000 $d
+     /tmp/ccg2am53.s:683    .bss.rx_buf:0000000000000000 $d
+     /tmp/ccg2am53.s:692    .bss.rx_len:0000000000000000 $d
+     /tmp/ccg2am53.s:694    .bss.tx_buf:0000000000000000 $d
+     /tmp/ccg2am53.s:703    .bss.tx_len:0000000000000000 $d
+     /tmp/ccg2am53.s:705    .data.CMD_SET:0000000000000000 $d
+     /tmp/ccg2am53.s:711    .data.CMD_VOLUME:0000000000000000 $d
+>>>>>>> 1baf717... built the trigger class
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev

@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccbLw6lk.s 			page 1
 =======
 ARM GAS  /tmp/cco5bvUQ.s 			page 1
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccUvwpLx.s 			page 1
+>>>>>>> 1baf717... built the trigger class
 
 
    1              		.cpu cortex-m4
@@ -27,10 +31,14 @@ ARM GAS  /tmp/cco5bvUQ.s 			page 1
   20              		.file 3 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
   21              		.file 4 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccbLw6lk.s 			page 2
 =======
 ARM GAS  /tmp/cco5bvUQ.s 			page 2
 >>>>>>> 95cf05023e1d9b29fdb44ad1eded81d30a5a29e8
+=======
+ARM GAS  /tmp/ccUvwpLx.s 			page 2
+>>>>>>> 1baf717... built the trigger class
 
 
 DEFINED SYMBOLS
