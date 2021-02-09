@@ -1,6 +1,6 @@
 #include "i2s.hpp"
 
-i2s::i2s(uint8_t i2sNum, uint32_t audioFreq)
+void i2s::set_handle(i2s_num i2sNum)
 {
     switch(i2sNum)
     {
@@ -14,7 +14,11 @@ i2s::i2s(uint8_t i2sNum, uint32_t audioFreq)
             i2sx.Instance = SPI4;
             break;
     }
-    __HAL_I2S_DISABLE(&i2sx);
+
+}
+
+void i2s::init(uint32_t audioFreq)
+{
     set_audiofreq(audioFreq);
 
     config_pll_clock(audioFreq);
@@ -114,3 +118,5 @@ void i2s::error_handler()
 {
     
 }
+
+

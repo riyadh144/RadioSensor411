@@ -30,6 +30,8 @@
 #include "sa818.h"
 #include "uart.hpp"
 #include "trigger.hpp"
+#include "fatfs.h"
+#include "wav_player.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -103,7 +105,8 @@ uart uart_sa818(uart::uart2,9600);
 uart uart_pc(uart::uart1,115200);
 sa818 sa8181(&uart_sa818, &radio_pd, &radio_ptt);
 trigger triggerPB2(GPIOE,trigger::PIN2,trigger::NoPull);
-
+wav_player wav_player1(i2s::I2S2); //codec to module is hoked up here
+trigger button(GPIOD, trigger::PIN3, trigger::PullDown);
 /* USER CODE END 0 */
 
 /**
@@ -825,10 +828,43 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  //Swithc for the pin that you are expecting the interrupt form
- __NOP();
+  //Fatfs object
+	FATFS FatFs;
+	//File object
+	FIL fil;
+  //Mount drive
+	if (f_mount(&FatFs, "", 1) == FR_OK) {
+		//Mounted OK, turn on RED LED
+		
+		wav_player1.file_select("human.wav");
+    wav_player1.play();
+    while(!wav_player1.isEndOfFile())
+    {
+    wav_player1.process();
+    }
+		//Unmount drive, don't forget this!
+		f_mount(0, "", 1);
+	}
+	
+
+}
+//I2S callback
+
+void HAL_I2S_TxCpltCallback(I2S_HandleTypeDef *hi2s)
+{
+  if(hi2s->Instance == SPI2)
+  {
+    wav_player1.cplt_transfer_callback();
+  }
 }
 
+void HAL_I2S_TxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
+{
+  if(hi2s->Instance == SPI2)
+  {
+    wav_player1.half_transfer_callback();
+  }
+}
 /* USER CODE END 4 */
 
 /**

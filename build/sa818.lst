@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccBry1vc.s 			page 1
+ARM GAS  /tmp/cc820aCN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
   27:Core/Src/sa818.cpp ****     else
   28:Core/Src/sa818.cpp ****         pin_pd->write(pin::off);
   29:Core/Src/sa818.cpp **** }
-ARM GAS  /tmp/ccBry1vc.s 			page 2
+ARM GAS  /tmp/cc820aCN.s 			page 2
 
 
   30:Core/Src/sa818.cpp **** void sa818::sa818_txrx_mode(TxRx mode)
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
   84:Core/Src/sa818.cpp **** void sa818::sa818_get_RSSI()
   85:Core/Src/sa818.cpp **** {
   86:Core/Src/sa818.cpp **** 
-ARM GAS  /tmp/ccBry1vc.s 			page 3
+ARM GAS  /tmp/cc820aCN.s 			page 3
 
 
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
   14:/usr/include/newlib/c++/9.2.1/iostream **** // GNU General Public License for more details.
   15:/usr/include/newlib/c++/9.2.1/iostream **** 
   16:/usr/include/newlib/c++/9.2.1/iostream **** // Under Section 7 of GPL version 3, you are granted additional
-ARM GAS  /tmp/ccBry1vc.s 			page 4
+ARM GAS  /tmp/cc820aCN.s 			page 4
 
 
   17:/usr/include/newlib/c++/9.2.1/iostream **** // permissions described in the GCC Runtime Library Exception, version
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
   71:/usr/include/newlib/c++/9.2.1/iostream ****   //@}
   72:/usr/include/newlib/c++/9.2.1/iostream **** 
   73:/usr/include/newlib/c++/9.2.1/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
-ARM GAS  /tmp/ccBry1vc.s 			page 5
+ARM GAS  /tmp/cc820aCN.s 			page 5
 
 
   74:/usr/include/newlib/c++/9.2.1/iostream ****   static ios_base::Init __ioinit;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  102              		.loc 1 26 9 view .LVU11
   26:Core/Src/sa818.cpp ****         pin_pd->write(pin::on);
  103              		.loc 1 26 22 is_stmt 0 view .LVU12
-ARM GAS  /tmp/ccBry1vc.s 			page 6
+ARM GAS  /tmp/cc820aCN.s 			page 6
 
 
  104 0004 0121     		movs	r1, #1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  150 0000 08B5     		push	{r3, lr}
  151              		.save {r3, lr}
  152              	.LCFI2:
-ARM GAS  /tmp/ccBry1vc.s 			page 7
+ARM GAS  /tmp/cc820aCN.s 			page 7
 
 
  153              		.cfi_def_cfa_offset 8
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  194              	.LC1:
  195 0010 2B444D4F 		.ascii	"+DMOCONNECT:0\015\012\000"
  195      434F4E4E 
-ARM GAS  /tmp/ccBry1vc.s 			page 8
+ARM GAS  /tmp/cc820aCN.s 			page 8
 
 
  195      4543543A 
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  238              	.LVL22:
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
  239              		.loc 1 49 5 is_stmt 1 view .LVU45
-ARM GAS  /tmp/ccBry1vc.s 			page 9
+ARM GAS  /tmp/cc820aCN.s 			page 9
 
 
   49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  281              	.L20:
  282 0048 00000000 		.word	.LC0
  283 004c 10000000 		.word	.LC1
-ARM GAS  /tmp/ccBry1vc.s 			page 10
+ARM GAS  /tmp/cc820aCN.s 			page 10
 
 
  284              		.cfi_endproc
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
   64:Core/Src/sa818.cpp ****     HAL_Delay(1000);
  332              		.loc 1 64 14 view .LVU63
  333 0010 FFF7FEFF 		bl	HAL_Delay
-ARM GAS  /tmp/ccBry1vc.s 			page 11
+ARM GAS  /tmp/cc820aCN.s 			page 11
 
 
  334              	.LVL29:
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  378              		.cfi_endproc
  379              	.LFE1989:
  380              		.fnend
-ARM GAS  /tmp/ccBry1vc.s 			page 12
+ARM GAS  /tmp/cc820aCN.s 			page 12
 
 
  382              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  424 0012 1023     		movs	r3, #16
  425 0014 84F85230 		strb	r3, [r4, #82]
   80:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
-ARM GAS  /tmp/ccBry1vc.s 			page 13
+ARM GAS  /tmp/cc820aCN.s 			page 13
 
 
  426              		.loc 1 80 5 is_stmt 1 view .LVU83
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
  475              		.loc 1 87 12 is_stmt 0 view .LVU90
  476 0004 074A     		ldr	r2, .L32
-ARM GAS  /tmp/ccBry1vc.s 			page 14
+ARM GAS  /tmp/cc820aCN.s 			page 14
 
 
  477 0006 03CA     		ldmia	r2!, {r0, r1}
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  517              		.global	_ZN5sa81814sa818_set_tailEh
  518              		.syntax unified
  519              		.thumb
-ARM GAS  /tmp/ccBry1vc.s 			page 15
+ARM GAS  /tmp/cc820aCN.s 			page 15
 
 
  520              		.thumb_func
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  563 0022 10BD     		pop	{r4, pc}
  564              	.LVL45:
  565              	.L37:
-ARM GAS  /tmp/ccBry1vc.s 			page 16
+ARM GAS  /tmp/cc820aCN.s 			page 16
 
 
  101:Core/Src/sa818.cpp **** }
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  621              		.cfi_offset 14, -4
  622              		.loc 1 106 1 is_stmt 0 view .LVU117
  623 0002 4FF6FF71 		movw	r1, #65535
-ARM GAS  /tmp/ccBry1vc.s 			page 17
+ARM GAS  /tmp/cc820aCN.s 			page 17
 
 
  624 0006 0120     		movs	r0, #1
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  687      00000000 
  687      00000000 
  687      00000000 
-ARM GAS  /tmp/ccBry1vc.s 			page 18
+ARM GAS  /tmp/cc820aCN.s 			page 18
 
 
  688              		.section	.bss.rx_len,"aw",%nobits
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  744              		.file 24 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h"
  745              		.file 25 "/usr/include/newlib/c++/9.2.1/type_traits"
  746              		.file 26 "/usr/include/newlib/c++/9.2.1/bits/stl_pair.h"
-ARM GAS  /tmp/ccBry1vc.s 			page 19
+ARM GAS  /tmp/cc820aCN.s 			page 19
 
 
  747              		.file 27 "/usr/include/newlib/c++/9.2.1/debug/debug.h"
@@ -1108,85 +1108,85 @@ ARM GAS  /tmp/ccBry1vc.s 			page 1
  771              		.file 51 "/usr/include/newlib/wctype.h"
  772              		.file 52 "Core/Inc/uart.hpp"
  773              		.file 53 "Core/Inc/sa818.h"
-ARM GAS  /tmp/ccBry1vc.s 			page 20
+ARM GAS  /tmp/cc820aCN.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sa818.cpp
-     /tmp/ccBry1vc.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
-     /tmp/ccBry1vc.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/ccBry1vc.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+     /tmp/cc820aCN.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
+     /tmp/cc820aCN.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/cc820aCN.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $d
-     /tmp/ccBry1vc.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
-     /tmp/ccBry1vc.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
+     /tmp/cc820aCN.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
+     /tmp/cc820aCN.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
 .ARM.extab.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-     /tmp/ccBry1vc.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
-     /tmp/ccBry1vc.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
+     /tmp/cc820aCN.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
+     /tmp/cc820aCN.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
 .ARM.extab.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-     /tmp/ccBry1vc.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
-     /tmp/ccBry1vc.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
-     /tmp/ccBry1vc.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
-     /tmp/ccBry1vc.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
+     /tmp/cc820aCN.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
+     /tmp/cc820aCN.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
+     /tmp/cc820aCN.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
+     /tmp/cc820aCN.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
 .ARM.exidx.text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $d
-     /tmp/ccBry1vc.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
-     /tmp/ccBry1vc.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
-     /tmp/ccBry1vc.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
-     /tmp/ccBry1vc.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
-     /tmp/ccBry1vc.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
+     /tmp/cc820aCN.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
+     /tmp/cc820aCN.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
+     /tmp/cc820aCN.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
+     /tmp/cc820aCN.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
+     /tmp/cc820aCN.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
 .ARM.exidx.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $d
-     /tmp/ccBry1vc.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
-     /tmp/ccBry1vc.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
-     /tmp/ccBry1vc.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
-     /tmp/ccBry1vc.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
+     /tmp/cc820aCN.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
+     /tmp/cc820aCN.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
+     /tmp/cc820aCN.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
+     /tmp/cc820aCN.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $d
-     /tmp/ccBry1vc.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
-     /tmp/ccBry1vc.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
-     /tmp/ccBry1vc.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
-     /tmp/ccBry1vc.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
+     /tmp/cc820aCN.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
+     /tmp/cc820aCN.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
+     /tmp/cc820aCN.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
+     /tmp/cc820aCN.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
 .ARM.extab.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
-     /tmp/ccBry1vc.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
-     /tmp/ccBry1vc.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
-     /tmp/ccBry1vc.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
-     /tmp/ccBry1vc.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
+     /tmp/cc820aCN.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
+     /tmp/cc820aCN.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
+     /tmp/cc820aCN.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
+     /tmp/cc820aCN.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81814sa818_set_tailEh:0000000000000000 $d
-     /tmp/ccBry1vc.s:576    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $t
-     /tmp/ccBry1vc.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
+     /tmp/cc820aCN.s:576    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $t
+     /tmp/cc820aCN.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
 .ARM.exidx.text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $d
-     /tmp/ccBry1vc.s:604    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
-     /tmp/ccBry1vc.s:610    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
+     /tmp/cc820aCN.s:604    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
+     /tmp/cc820aCN.s:610    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
 .ARM.exidx.text._GLOBAL__sub_I_CMD_SET:0000000000000000 $d
-     /tmp/ccBry1vc.s:634    .init_array:0000000000000000 $d
-     /tmp/ccBry1vc.s:691    .bss.rx_len:0000000000000000 rx_len
-     /tmp/ccBry1vc.s:702    .bss.tx_len:0000000000000000 tx_len
-     /tmp/ccBry1vc.s:680    .bss.locked:0000000000000000 locked
-     /tmp/ccBry1vc.s:686    .bss.rx_buf:0000000000000000 rx_buf
-     /tmp/ccBry1vc.s:697    .bss.tx_buf:0000000000000000 tx_buf
-     /tmp/ccBry1vc.s:652    .bss.USART:0000000000000000 USART
-     /tmp/ccBry1vc.s:719    .data.status_cnt:0000000000000000 status_cnt
-     /tmp/ccBry1vc.s:670    .bss.len_rxnow:0000000000000000 len_rxnow
-     /tmp/ccBry1vc.s:675    .bss.len_txnow:0000000000000000 len_txnow
-ARM GAS  /tmp/ccBry1vc.s 			page 21
+     /tmp/cc820aCN.s:634    .init_array:0000000000000000 $d
+     /tmp/cc820aCN.s:691    .bss.rx_len:0000000000000000 rx_len
+     /tmp/cc820aCN.s:702    .bss.tx_len:0000000000000000 tx_len
+     /tmp/cc820aCN.s:680    .bss.locked:0000000000000000 locked
+     /tmp/cc820aCN.s:686    .bss.rx_buf:0000000000000000 rx_buf
+     /tmp/cc820aCN.s:697    .bss.tx_buf:0000000000000000 tx_buf
+     /tmp/cc820aCN.s:652    .bss.USART:0000000000000000 USART
+     /tmp/cc820aCN.s:719    .data.status_cnt:0000000000000000 status_cnt
+     /tmp/cc820aCN.s:670    .bss.len_rxnow:0000000000000000 len_rxnow
+     /tmp/cc820aCN.s:675    .bss.len_txnow:0000000000000000 len_txnow
+ARM GAS  /tmp/cc820aCN.s 			page 21
 
 
-     /tmp/ccBry1vc.s:665    .bss.expected_rx:0000000000000000 expected_rx
-     /tmp/ccBry1vc.s:714    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
-     /tmp/ccBry1vc.s:708    .data.CMD_SET:0000000000000000 CMD_SET
-     /tmp/ccBry1vc.s:649    .bss.USART:0000000000000000 $d
-     /tmp/ccBry1vc.s:655    .bss._ZStL8__ioinit:0000000000000000 $d
-     /tmp/ccBry1vc.s:659    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
-     /tmp/ccBry1vc.s:662    .bss.expected_rx:0000000000000000 $d
-     /tmp/ccBry1vc.s:671    .bss.len_rxnow:0000000000000000 $d
-     /tmp/ccBry1vc.s:676    .bss.len_txnow:0000000000000000 $d
-     /tmp/ccBry1vc.s:681    .bss.locked:0000000000000000 $d
-     /tmp/ccBry1vc.s:683    .bss.rx_buf:0000000000000000 $d
-     /tmp/ccBry1vc.s:692    .bss.rx_len:0000000000000000 $d
-     /tmp/ccBry1vc.s:694    .bss.tx_buf:0000000000000000 $d
-     /tmp/ccBry1vc.s:703    .bss.tx_len:0000000000000000 $d
-     /tmp/ccBry1vc.s:705    .data.CMD_SET:0000000000000000 $d
-     /tmp/ccBry1vc.s:711    .data.CMD_VOLUME:0000000000000000 $d
+     /tmp/cc820aCN.s:665    .bss.expected_rx:0000000000000000 expected_rx
+     /tmp/cc820aCN.s:714    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
+     /tmp/cc820aCN.s:708    .data.CMD_SET:0000000000000000 CMD_SET
+     /tmp/cc820aCN.s:649    .bss.USART:0000000000000000 $d
+     /tmp/cc820aCN.s:655    .bss._ZStL8__ioinit:0000000000000000 $d
+     /tmp/cc820aCN.s:659    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
+     /tmp/cc820aCN.s:662    .bss.expected_rx:0000000000000000 $d
+     /tmp/cc820aCN.s:671    .bss.len_rxnow:0000000000000000 $d
+     /tmp/cc820aCN.s:676    .bss.len_txnow:0000000000000000 $d
+     /tmp/cc820aCN.s:681    .bss.locked:0000000000000000 $d
+     /tmp/cc820aCN.s:683    .bss.rx_buf:0000000000000000 $d
+     /tmp/cc820aCN.s:692    .bss.rx_len:0000000000000000 $d
+     /tmp/cc820aCN.s:694    .bss.tx_buf:0000000000000000 $d
+     /tmp/cc820aCN.s:703    .bss.tx_len:0000000000000000 $d
+     /tmp/cc820aCN.s:705    .data.CMD_SET:0000000000000000 $d
+     /tmp/cc820aCN.s:711    .data.CMD_VOLUME:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev
