@@ -421,7 +421,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   }
 }
 
-
 /**
  * @brief This function turns off the trigger
  * 
@@ -449,6 +448,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 	
 
 // }
+void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+{
+  /* EXTI line interrupt detected */
+  if (__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != 0x00u)
+  {
+    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // Clears The Interrupt Flag
+    HAL_GPIO_EXTI_Callback(GPIO_Pin);   // Calls The ISR Handler CallBack Function
+  }
+}
+
 /* USER CODE END 4 */
 
 /**

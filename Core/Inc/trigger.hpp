@@ -30,13 +30,12 @@ public:
         PIN15=0x0001<<15
     }PinNumber;
 
-
-    typedef enum Trigger_state
+    typedef enum Pull
     {
-        Rise_T,
-        Fall_T
-    }state;
-
+        NoPull,
+        PullUp,
+        PullDown
+    }Pull;
 
     /**
      * @brief Construct a new trigger object
@@ -46,7 +45,7 @@ public:
      * 
      * @note This class is responsible for initalising a pin as an external trigger  
      */
-    trigger(GPIO_TypeDef * gpiox_,PinNumber pinx_,state Pinstatus_);
+    trigger(GPIO_TypeDef * gpiox_,PinNumber pinx_,Pull pull_);
 
     /**
      * @brief PIN Initaliser
@@ -64,14 +63,16 @@ public:
      * @brief this function switches the state of the pin
      * 
      */
-    void Switch_State(state rise);
+    void SetEdge(uint8_t rise);
+
 
     /**
-     * @brief This function reades the status of the pin and returns it
+     * @brief It sets the pin pull status
      * 
-     * @return uint8_t 
+     * @param Pull type
      */
-    uint8_t read_State(void);
+    void SetPull(uint8_t Pull);
+
 
 ~trigger();
 
