@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccldipgm.s 			page 1
+ARM GAS  /tmp/ccJbasMF.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
   49 001a 7047     		bx	lr
   50              		.cfi_endproc
   51              	.LFE138:
-ARM GAS  /tmp/ccldipgm.s 			page 2
+ARM GAS  /tmp/ccJbasMF.s 			page 2
 
 
   52              		.cantunwind
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
   99              	.L3:
   17:Core/Src/wav_player.cpp ****   }
   18:Core/Src/wav_player.cpp ****   //Read WAV file Header
-ARM GAS  /tmp/ccldipgm.s 			page 3
+ARM GAS  /tmp/ccJbasMF.s 			page 3
 
 
   19:Core/Src/wav_player.cpp ****   f_read(&wavFile, &wavHeader, sizeof(wavHeader), &readBytes);
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  139              		.global	_ZN10wav_player4stopEv
  140              		.syntax unified
  141              		.thumb
-ARM GAS  /tmp/ccldipgm.s 			page 4
+ARM GAS  /tmp/ccJbasMF.s 			page 4
 
 
  142              		.thumb_func
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
   75:Core/Src/wav_player.cpp **** }
   76:Core/Src/wav_player.cpp **** 
   77:Core/Src/wav_player.cpp **** /**
-ARM GAS  /tmp/ccldipgm.s 			page 5
+ARM GAS  /tmp/ccJbasMF.s 			page 5
 
 
   78:Core/Src/wav_player.cpp ****  * @brief WAV stop
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  194              		@ frame_needed = 0, uses_anonymous_args = 0
  195              		.loc 1 88 1 is_stmt 0 view .LVU31
  196 0000 08B5     		push	{r3, lr}
-ARM GAS  /tmp/ccldipgm.s 			page 6
+ARM GAS  /tmp/ccJbasMF.s 			page 6
 
 
  197              	.LCFI5:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  247              		.global	_ZN10wav_player11isEndOfFileEv
  248              		.syntax unified
  249              		.thumb
-ARM GAS  /tmp/ccldipgm.s 			page 7
+ARM GAS  /tmp/ccJbasMF.s 			page 7
 
 
  250              		.thumb_func
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  296              		.loc 1 106 3 view .LVU46
  297              		.loc 1 106 19 is_stmt 0 view .LVU47
  298 0000 0023     		movs	r3, #0
-ARM GAS  /tmp/ccldipgm.s 			page 8
+ARM GAS  /tmp/ccJbasMF.s 			page 8
 
 
  299 0002 42F23402 		movw	r2, #8244
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  348              	.LVL17:
  349              	.L15:
   75:Core/Src/wav_player.cpp **** }
-ARM GAS  /tmp/ccldipgm.s 			page 9
+ARM GAS  /tmp/ccJbasMF.s 			page 9
 
 
  350              		.loc 1 75 1 view .LVU56
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  390              	.L19:
   45:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
  391              		.loc 1 45 7 is_stmt 1 view .LVU71
-ARM GAS  /tmp/ccldipgm.s 			page 10
+ARM GAS  /tmp/ccJbasMF.s 			page 10
 
 
   45:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  431 0092 42F23402 		movw	r2, #8244
  432 0096 A358     		ldr	r3, [r4, r2]
   59:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
-ARM GAS  /tmp/ccldipgm.s 			page 11
+ARM GAS  /tmp/ccJbasMF.s 			page 11
 
 
  433              		.loc 1 59 26 view .LVU87
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  473 00ce E254     		strb	r2, [r4, r3]
   73:Core/Src/wav_player.cpp ****     break;
  474              		.loc 1 73 5 is_stmt 1 view .LVU102
-ARM GAS  /tmp/ccldipgm.s 			page 12
+ARM GAS  /tmp/ccJbasMF.s 			page 12
 
 
   75:Core/Src/wav_player.cpp **** }
@@ -690,35 +690,35 @@ ARM GAS  /tmp/ccldipgm.s 			page 1
  501              		.file 20 "FATFS/App/fatfs.h"
  502              		.file 21 "Core/Inc/wav_player.hpp"
  503              		.file 22 "<built-in>"
-ARM GAS  /tmp/ccldipgm.s 			page 13
+ARM GAS  /tmp/ccJbasMF.s 			page 13
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 wav_player.cpp
-     /tmp/ccldipgm.s:18     .text._ZN10wav_playerC2Ev:0000000000000000 $t
-     /tmp/ccldipgm.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC2Ev
+     /tmp/ccJbasMF.s:18     .text._ZN10wav_playerC2Ev:0000000000000000 $t
+     /tmp/ccJbasMF.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC2Ev
 .ARM.exidx.text._ZN10wav_playerC2Ev:0000000000000000 $d
-     /tmp/ccldipgm.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC1Ev
-     /tmp/ccldipgm.s:58     .text._ZN10wav_player11file_selectEPc:0000000000000000 $t
-     /tmp/ccldipgm.s:65     .text._ZN10wav_player11file_selectEPc:0000000000000000 _ZN10wav_player11file_selectEPc
+     /tmp/ccJbasMF.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC1Ev
+     /tmp/ccJbasMF.s:58     .text._ZN10wav_player11file_selectEPc:0000000000000000 $t
+     /tmp/ccJbasMF.s:65     .text._ZN10wav_player11file_selectEPc:0000000000000000 _ZN10wav_player11file_selectEPc
 .ARM.exidx.text._ZN10wav_player11file_selectEPc:0000000000000000 $d
-     /tmp/ccldipgm.s:138    .text._ZN10wav_player4stopEv:0000000000000000 $t
-     /tmp/ccldipgm.s:145    .text._ZN10wav_player4stopEv:0000000000000000 _ZN10wav_player4stopEv
+     /tmp/ccJbasMF.s:138    .text._ZN10wav_player4stopEv:0000000000000000 $t
+     /tmp/ccJbasMF.s:145    .text._ZN10wav_player4stopEv:0000000000000000 _ZN10wav_player4stopEv
 .ARM.exidx.text._ZN10wav_player4stopEv:0000000000000000 $d
-     /tmp/ccldipgm.s:180    .text._ZN10wav_player5pauseEv:0000000000000000 $t
-     /tmp/ccldipgm.s:187    .text._ZN10wav_player5pauseEv:0000000000000000 _ZN10wav_player5pauseEv
+     /tmp/ccJbasMF.s:180    .text._ZN10wav_player5pauseEv:0000000000000000 $t
+     /tmp/ccJbasMF.s:187    .text._ZN10wav_player5pauseEv:0000000000000000 _ZN10wav_player5pauseEv
 .ARM.exidx.text._ZN10wav_player5pauseEv:0000000000000000 $d
-     /tmp/ccldipgm.s:213    .text._ZN10wav_player6resumeEv:0000000000000000 $t
-     /tmp/ccldipgm.s:220    .text._ZN10wav_player6resumeEv:0000000000000000 _ZN10wav_player6resumeEv
+     /tmp/ccJbasMF.s:213    .text._ZN10wav_player6resumeEv:0000000000000000 $t
+     /tmp/ccJbasMF.s:220    .text._ZN10wav_player6resumeEv:0000000000000000 _ZN10wav_player6resumeEv
 .ARM.exidx.text._ZN10wav_player6resumeEv:0000000000000000 $d
-     /tmp/ccldipgm.s:246    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 $t
-     /tmp/ccldipgm.s:253    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 _ZN10wav_player11isEndOfFileEv
+     /tmp/ccJbasMF.s:246    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 $t
+     /tmp/ccJbasMF.s:253    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 _ZN10wav_player11isEndOfFileEv
 .ARM.exidx.text._ZN10wav_player11isEndOfFileEv:0000000000000000 $d
-     /tmp/ccldipgm.s:280    .text._ZN10wav_player5resetEv:0000000000000000 $t
-     /tmp/ccldipgm.s:287    .text._ZN10wav_player5resetEv:0000000000000000 _ZN10wav_player5resetEv
+     /tmp/ccJbasMF.s:280    .text._ZN10wav_player5resetEv:0000000000000000 $t
+     /tmp/ccJbasMF.s:287    .text._ZN10wav_player5resetEv:0000000000000000 _ZN10wav_player5resetEv
 .ARM.exidx.text._ZN10wav_player5resetEv:0000000000000000 $d
-     /tmp/ccldipgm.s:313    .text._ZN10wav_player7processEv:0000000000000000 $t
-     /tmp/ccldipgm.s:320    .text._ZN10wav_player7processEv:0000000000000000 _ZN10wav_player7processEv
+     /tmp/ccJbasMF.s:313    .text._ZN10wav_player7processEv:0000000000000000 $t
+     /tmp/ccJbasMF.s:320    .text._ZN10wav_player7processEv:0000000000000000 _ZN10wav_player7processEv
 .ARM.exidx.text._ZN10wav_player7processEv:0000000000000000 $d
 
 UNDEFINED SYMBOLS
