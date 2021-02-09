@@ -80,6 +80,7 @@ Middlewares/Third_Party/FatFs/src/option/syscall.c
 CPP_SOURCES = \
 Core/Src/adc.cpp \
 Core/Src/i2c.cpp \
+Core/Src/i2s.cpp \
 Core/Src/keyboard.cpp \
 Core/Src/main.cpp \
 Core/Src/menu.cpp \
