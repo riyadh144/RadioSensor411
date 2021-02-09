@@ -29,6 +29,7 @@
 #include "pin.hpp"
 #include "sa818.h"
 #include "uart.hpp"
+#include "trigger.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -101,6 +102,7 @@ pin radio_pd(GPIOE,pin::PIN3,pin::out, pin::PullDown, pin::SPEED_LOW);
 uart uart_sa818(uart::uart2,9600);
 uart uart_pc(uart::uart1,115200);
 sa818 sa8181(&uart_sa818, &radio_pd, &radio_ptt);
+trigger triggerPB2(GPIOE,trigger::PIN2,trigger::NoPull);
 
 /* USER CODE END 0 */
 
@@ -814,6 +816,21 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 
   }
 
+}
+
+/**
+ * @brief This function turns off the trigger
+ * 
+ * @param GPIO_Pin 
+ */
+void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+{
+  /* EXTI line interrupt detected */
+  if (__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != 0x00u)
+  {
+    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // Clears The Interrupt Flag
+    HAL_GPIO_EXTI_Callback(GPIO_Pin);   // Calls The ISR Handler CallBack Function
+  }
 }
 
 /* USER CODE END 4 */

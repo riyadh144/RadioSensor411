@@ -1,7 +1,14 @@
 #include "trigger.hpp"
 
-trigger::trigger(GPIO_TypeDef * gpiox_ ,PinNumber pinx_,state PinStatus_)
+/*
+    the function to turn off the trigger is 
+    void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+    in main
+    */
+
+trigger::trigger(GPIO_TypeDef * gpiox_ ,PinNumber pinx_,Pull pull_)
 {
+
       /* EXTI interrupt init  on pin PB2 */
       /* These two lines are pin specific : TODO: find a way to make them general */
     HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
@@ -19,22 +26,13 @@ void trigger::Init()
     HAL_GPIO_Init(gpiox, &GPIO_InitStruct);
 }
 
-void trigger::clear_trigger(uint16_t GPIO_Pin)
-{   
-     /* EXTI line interrupt detected */
-    if (__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != 0x00u)
-    {
-        __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // Clears The Interrupt Flag
-        HAL_GPIO_EXTI_Callback(GPIO_Pin);   // Calls The ISR Handler CallBack Function
-    }
+void trigger::SetEdge(uint8_t Rise)
+{
+    gpiox->MODER = Rise;
 }
 
-void trigger::Switch_State(state rise)
+void trigger::SetPull(uint8_t Pull)
 {
-    PinStatus_ = rise;
+    gpiox->PUPDR = Pull;
 }
 
-uint8_t trigger::read_State(void)
-{
-    return PinStatus_;
-} 
