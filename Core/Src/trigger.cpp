@@ -1,19 +1,38 @@
 #include "trigger.hpp"
 
-trigger::trigger(GPIO_TypeDef * gpiox_,T_status status)
-{
-    gpiox = gpiox_;
-    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
-    //TODO : choose the trigger pin
+/*
+    the function to turn off the trigger is 
+    void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+    in main
+    */
 
+trigger::trigger(GPIO_TypeDef * gpiox_ ,PinNumber pinx_,Pull pull_)
+{
+
+      /* EXTI interrupt init  on pin PB2 */
+      /* These two lines are pin specific : TODO: find a way to make them general */
+    HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+
+    gpiox = gpiox_;
+      /*Configure GPIO pin : x */
+    GPIO_InitStruct.Pin = pinx_;
+    GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
 }
 
 void trigger::Init()
 {
-    HAL_GPIO_Init(gpiox,&GPIO_InitStruct);
+    HAL_GPIO_Init(gpiox, &GPIO_InitStruct);
 }
 
-void trigger::change_rise(T_status rise)
+void trigger::SetEdge(uint8_t Rise)
 {
-    //status = rise; //TODO:FIX THIS
+    gpiox->MODER = Rise;
 }
+
+void trigger::SetPull(uint8_t Pull)
+{
+    gpiox->PUPDR = Pull;
+}
+
