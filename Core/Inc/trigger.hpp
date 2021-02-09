@@ -4,18 +4,13 @@
 
 class trigger
 {
-    
-typedef enum T_status
-{
-    Fall_E,
-    Rise_E
-}T_status;
-
+  
 
 private:
-    GPIO_TypeDef * gpiox;
 
+    GPIO_TypeDef * gpiox;
     GPIO_InitTypeDef GPIO_InitStruct;
+
 public:
     /**
      * @brief Construct a new trigger object
@@ -25,7 +20,7 @@ public:
      * 
      * @note This class is responsible for initalising a pin as an external trigger  
      */
-    trigger(GPIO_TypeDef * gpiox,T_status status);
+    trigger(GPIO_TypeDef * gpiox);
 
     /**
      * @brief PIN Initaliser
@@ -34,13 +29,11 @@ public:
     void Init();
 
     /**
-     * @brief a function to change the trigger status of the pin
+     * @brief this function clears the triggers after its happening
      * 
-     * @param new status
-     * 
+     * @param GPIO_Pin 
      */
-    void change_rise(T_status rise);
-
+    void clear_trigger(uint16_t GPIO_Pin);
 
 };
 
