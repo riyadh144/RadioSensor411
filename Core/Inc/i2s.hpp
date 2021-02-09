@@ -1,3 +1,6 @@
+#ifndef I2S_HPP
+#define I2S_HPP
+
 #include "stm32f4xx.h"
 
 #define AUDIODATA_SIZE 2 // 2 bytes for 16 bit audio
@@ -95,3 +98,5 @@ void error_handler();
 void half_transfer_callback(void);
 void cplt_transfer_callback(void);
 };
+
+#endif

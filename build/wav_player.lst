@@ -1,0 +1,728 @@
+ARM GAS  /tmp/ccldipgm.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"wav_player.cpp"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text._ZN10wav_playerC2Ev,"ax",%progbits
+  18              		.align	1
+  19              		.global	_ZN10wav_playerC2Ev
+  20              		.arch armv7e-m
+  21              		.syntax unified
+  22              		.thumb
+  23              		.thumb_func
+  24              		.fpu fpv4-sp-d16
+  26              	_ZN10wav_playerC2Ev:
+  27              		.fnstart
+  28              	.LVL0:
+  29              	.LFB138:
+  30              		.file 1 "Core/Src/wav_player.cpp"
+   1:Core/Src/wav_player.cpp **** #include "wav_player.hpp"
+   2:Core/Src/wav_player.cpp **** 
+   3:Core/Src/wav_player.cpp **** wav_player::wav_player()
+  31              		.loc 1 3 1 view -0
+  32              		.cfi_startproc
+  33              		@ args = 0, pretend = 0, frame = 0
+  34              		@ frame_needed = 0, uses_anonymous_args = 0
+  35              		@ link register save eliminated.
+  36              	.LBB2:
+  37              		.loc 1 3 24 is_stmt 0 view .LVU1
+  38 0000 0022     		movs	r2, #0
+  39 0002 42F23401 		movw	r1, #8244
+  40 0006 4250     		str	r2, [r0, r1]
+  41 0008 42F23C01 		movw	r1, #8252
+  42 000c 4250     		str	r2, [r0, r1]
+  43 000e 00F50151 		add	r1, r0, #8256
+  44 0012 0A70     		strb	r2, [r1]
+  45 0014 42F24101 		movw	r1, #8257
+  46 0018 4254     		strb	r2, [r0, r1]
+  47              	.LBE2:
+   4:Core/Src/wav_player.cpp **** {
+   5:Core/Src/wav_player.cpp ****     //Constructor for now there is nothing special to pass on
+   6:Core/Src/wav_player.cpp ****     //In the future if we manage to make a FATFS in C++ we pass that on
+   7:Core/Src/wav_player.cpp **** }
+  48              		.loc 1 7 1 view .LVU2
+  49 001a 7047     		bx	lr
+  50              		.cfi_endproc
+  51              	.LFE138:
+ARM GAS  /tmp/ccldipgm.s 			page 2
+
+
+  52              		.cantunwind
+  53              		.fnend
+  55              		.global	_ZN10wav_playerC1Ev
+  56              		.thumb_set _ZN10wav_playerC1Ev,_ZN10wav_playerC2Ev
+  57              		.section	.text._ZN10wav_player11file_selectEPc,"ax",%progbits
+  58              		.align	1
+  59              		.global	_ZN10wav_player11file_selectEPc
+  60              		.syntax unified
+  61              		.thumb
+  62              		.thumb_func
+  63              		.fpu fpv4-sp-d16
+  65              	_ZN10wav_player11file_selectEPc:
+  66              		.fnstart
+  67              	.LVL1:
+  68              	.LFB140:
+   8:Core/Src/wav_player.cpp **** uint8_t wav_player::file_select(char * filePath)
+   9:Core/Src/wav_player.cpp **** {
+  69              		.loc 1 9 1 is_stmt 1 view -0
+  70              		.cfi_startproc
+  71              		@ args = 0, pretend = 0, frame = 48
+  72              		@ frame_needed = 0, uses_anonymous_args = 0
+  73              		.loc 1 9 1 is_stmt 0 view .LVU4
+  74 0000 10B5     		push	{r4, lr}
+  75              		.save {r4, lr}
+  76              	.LCFI0:
+  77              		.cfi_def_cfa_offset 8
+  78              		.cfi_offset 4, -8
+  79              		.cfi_offset 14, -4
+  80              		.pad #48
+  81 0002 8CB0     		sub	sp, sp, #48
+  82              	.LCFI1:
+  83              		.cfi_def_cfa_offset 56
+  84 0004 0446     		mov	r4, r0
+  10:Core/Src/wav_player.cpp **** 
+  11:Core/Src/wav_player.cpp ****   WAV_HeaderTypeDef wavHeader;
+  85              		.loc 1 11 3 is_stmt 1 view .LVU5
+  12:Core/Src/wav_player.cpp ****   UINT readBytes = 0;
+  86              		.loc 1 12 3 view .LVU6
+  87              		.loc 1 12 8 is_stmt 0 view .LVU7
+  88 0006 0023     		movs	r3, #0
+  89 0008 0093     		str	r3, [sp]
+  13:Core/Src/wav_player.cpp ****   //Open WAV file
+  14:Core/Src/wav_player.cpp ****   if(f_open(&wavFile, filePath, FA_READ) != FR_OK)
+  90              		.loc 1 14 3 is_stmt 1 view .LVU8
+  91              		.loc 1 14 12 is_stmt 0 view .LVU9
+  92 000a 0122     		movs	r2, #1
+  93 000c FFF7FEFF 		bl	f_open
+  94              	.LVL2:
+  95              		.loc 1 14 3 view .LVU10
+  96 0010 10B1     		cbz	r0, .L6
+  15:Core/Src/wav_player.cpp ****   {
+  16:Core/Src/wav_player.cpp ****     return 0;
+  97              		.loc 1 16 12 view .LVU11
+  98 0012 0020     		movs	r0, #0
+  99              	.L3:
+  17:Core/Src/wav_player.cpp ****   }
+  18:Core/Src/wav_player.cpp ****   //Read WAV file Header
+ARM GAS  /tmp/ccldipgm.s 			page 3
+
+
+  19:Core/Src/wav_player.cpp ****   f_read(&wavFile, &wavHeader, sizeof(wavHeader), &readBytes);
+  20:Core/Src/wav_player.cpp ****   //Get audio data size
+  21:Core/Src/wav_player.cpp ****   fileLength = wavHeader.FileSize;
+  22:Core/Src/wav_player.cpp ****   //Play the WAV file with frequency specified in header
+  23:Core/Src/wav_player.cpp ****   samplingFreq = wavHeader.SampleRate;
+  24:Core/Src/wav_player.cpp ****   return 1;
+  25:Core/Src/wav_player.cpp **** 
+  26:Core/Src/wav_player.cpp **** }
+ 100              		.loc 1 26 1 view .LVU12
+ 101 0014 0CB0     		add	sp, sp, #48
+ 102              	.LCFI2:
+ 103              		.cfi_remember_state
+ 104              		.cfi_def_cfa_offset 8
+ 105              		@ sp needed
+ 106 0016 10BD     		pop	{r4, pc}
+ 107              	.LVL3:
+ 108              	.L6:
+ 109              	.LCFI3:
+ 110              		.cfi_restore_state
+  19:Core/Src/wav_player.cpp ****   //Get audio data size
+ 111              		.loc 1 19 3 is_stmt 1 view .LVU13
+  19:Core/Src/wav_player.cpp ****   //Get audio data size
+ 112              		.loc 1 19 9 is_stmt 0 view .LVU14
+ 113 0018 6B46     		mov	r3, sp
+ 114 001a 2C22     		movs	r2, #44
+ 115 001c 01A9     		add	r1, sp, #4
+ 116 001e 2046     		mov	r0, r4
+ 117 0020 FFF7FEFF 		bl	f_read
+ 118              	.LVL4:
+  21:Core/Src/wav_player.cpp ****   //Play the WAV file with frequency specified in header
+ 119              		.loc 1 21 3 is_stmt 1 view .LVU15
+  21:Core/Src/wav_player.cpp ****   //Play the WAV file with frequency specified in header
+ 120              		.loc 1 21 14 is_stmt 0 view .LVU16
+ 121 0024 029A     		ldr	r2, [sp, #8]
+ 122 0026 41F23003 		movw	r3, #4144
+ 123 002a E250     		str	r2, [r4, r3]
+  23:Core/Src/wav_player.cpp ****   return 1;
+ 124              		.loc 1 23 3 is_stmt 1 view .LVU17
+  23:Core/Src/wav_player.cpp ****   return 1;
+ 125              		.loc 1 23 16 is_stmt 0 view .LVU18
+ 126 002c 079A     		ldr	r2, [sp, #28]
+ 127 002e 42F23803 		movw	r3, #8248
+ 128 0032 E250     		str	r2, [r4, r3]
+  24:Core/Src/wav_player.cpp **** 
+ 129              		.loc 1 24 3 is_stmt 1 view .LVU19
+  24:Core/Src/wav_player.cpp **** 
+ 130              		.loc 1 24 10 is_stmt 0 view .LVU20
+ 131 0034 0120     		movs	r0, #1
+ 132 0036 EDE7     		b	.L3
+ 133              		.cfi_endproc
+ 134              	.LFE140:
+ 135              		.fnend
+ 137              		.section	.text._ZN10wav_player4stopEv,"ax",%progbits
+ 138              		.align	1
+ 139              		.global	_ZN10wav_player4stopEv
+ 140              		.syntax unified
+ 141              		.thumb
+ARM GAS  /tmp/ccldipgm.s 			page 4
+
+
+ 142              		.thumb_func
+ 143              		.fpu fpv4-sp-d16
+ 145              	_ZN10wav_player4stopEv:
+ 146              		.fnstart
+ 147              	.LVL5:
+ 148              	.LFB142:
+  27:Core/Src/wav_player.cpp **** 
+  28:Core/Src/wav_player.cpp **** void wav_player::process()
+  29:Core/Src/wav_player.cpp **** {
+  30:Core/Src/wav_player.cpp ****   switch(playerControlSM)
+  31:Core/Src/wav_player.cpp ****   {
+  32:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_Idle:
+  33:Core/Src/wav_player.cpp ****     break;
+  34:Core/Src/wav_player.cpp **** 
+  35:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_HalfBuffer:
+  36:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
+  37:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+  38:Core/Src/wav_player.cpp ****     f_read (&wavFile, &audioBuffer[0], AUDIO_BUFFER_SIZE/2, &playerReadBytes);
+  39:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+  40:Core/Src/wav_player.cpp ****     {
+  41:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+  42:Core/Src/wav_player.cpp ****     }
+  43:Core/Src/wav_player.cpp ****     else
+  44:Core/Src/wav_player.cpp ****     {
+  45:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
+  46:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
+  47:Core/Src/wav_player.cpp ****     }
+  48:Core/Src/wav_player.cpp ****     break;
+  49:Core/Src/wav_player.cpp **** 
+  50:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_FullBuffer:
+  51:Core/Src/wav_player.cpp ****     //audioI2S_resume();
+  52:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
+  53:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+  54:Core/Src/wav_player.cpp ****     f_read (&wavFile, &audioBuffer[AUDIO_BUFFER_SIZE/2], AUDIO_BUFFER_SIZE/2, &playerReadBytes);
+  55:Core/Src/wav_player.cpp ****     //myprintf1("File Select Done %s",audioBuffer);
+  56:Core/Src/wav_player.cpp **** 
+  57:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+  58:Core/Src/wav_player.cpp ****     {
+  59:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+  60:Core/Src/wav_player.cpp ****     }
+  61:Core/Src/wav_player.cpp ****     else
+  62:Core/Src/wav_player.cpp ****     {
+  63:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
+  64:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
+  65:Core/Src/wav_player.cpp ****     }
+  66:Core/Src/wav_player.cpp ****     break;
+  67:Core/Src/wav_player.cpp **** 
+  68:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_EndOfFile:
+  69:Core/Src/wav_player.cpp ****     f_close(&wavFile);
+  70:Core/Src/wav_player.cpp ****     reset();
+  71:Core/Src/wav_player.cpp ****     isFinished = 1;
+  72:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+  73:Core/Src/wav_player.cpp ****     break;
+  74:Core/Src/wav_player.cpp ****   }
+  75:Core/Src/wav_player.cpp **** }
+  76:Core/Src/wav_player.cpp **** 
+  77:Core/Src/wav_player.cpp **** /**
+ARM GAS  /tmp/ccldipgm.s 			page 5
+
+
+  78:Core/Src/wav_player.cpp ****  * @brief WAV stop
+  79:Core/Src/wav_player.cpp ****  */
+  80:Core/Src/wav_player.cpp **** void wav_player::stop(void)
+  81:Core/Src/wav_player.cpp **** {
+ 149              		.loc 1 81 1 is_stmt 1 view -0
+ 150              		.cfi_startproc
+ 151              		@ args = 0, pretend = 0, frame = 0
+ 152              		@ frame_needed = 0, uses_anonymous_args = 0
+ 153              		.loc 1 81 1 is_stmt 0 view .LVU22
+ 154 0000 10B5     		push	{r4, lr}
+ 155              	.LCFI4:
+ 156              		.cfi_def_cfa_offset 8
+ 157              		.cfi_offset 4, -8
+ 158              		.cfi_offset 14, -4
+ 159 0002 0446     		mov	r4, r0
+  82:Core/Src/wav_player.cpp ****   stop();
+ 160              		.loc 1 82 3 is_stmt 1 view .LVU23
+ 161              		.loc 1 82 7 is_stmt 0 view .LVU24
+ 162 0004 FFF7FEFF 		bl	_ZN10wav_player4stopEv
+ 163              	.LVL6:
+  83:Core/Src/wav_player.cpp ****   isFinished = true;
+ 164              		.loc 1 83 3 is_stmt 1 view .LVU25
+ 165              		.loc 1 83 14 is_stmt 0 view .LVU26
+ 166 0008 04F50154 		add	r4, r4, #8256
+ 167              	.LVL7:
+ 168              		.loc 1 83 14 view .LVU27
+ 169 000c 0123     		movs	r3, #1
+ 170 000e 2370     		strb	r3, [r4]
+  84:Core/Src/wav_player.cpp **** }
+ 171              		.loc 1 84 1 view .LVU28
+ 172 0010 10BD     		pop	{r4, pc}
+ 173              		.loc 1 84 1 view .LVU29
+ 174              		.cfi_endproc
+ 175              	.LFE142:
+ 176              		.cantunwind
+ 177              		.fnend
+ 179              		.section	.text._ZN10wav_player5pauseEv,"ax",%progbits
+ 180              		.align	1
+ 181              		.global	_ZN10wav_player5pauseEv
+ 182              		.syntax unified
+ 183              		.thumb
+ 184              		.thumb_func
+ 185              		.fpu fpv4-sp-d16
+ 187              	_ZN10wav_player5pauseEv:
+ 188              		.fnstart
+ 189              	.LVL8:
+ 190              	.LFB143:
+  85:Core/Src/wav_player.cpp **** 
+  86:Core/Src/wav_player.cpp **** 
+  87:Core/Src/wav_player.cpp **** void wav_player::pause(void)
+  88:Core/Src/wav_player.cpp **** {
+ 191              		.loc 1 88 1 is_stmt 1 view -0
+ 192              		.cfi_startproc
+ 193              		@ args = 0, pretend = 0, frame = 0
+ 194              		@ frame_needed = 0, uses_anonymous_args = 0
+ 195              		.loc 1 88 1 is_stmt 0 view .LVU31
+ 196 0000 08B5     		push	{r3, lr}
+ARM GAS  /tmp/ccldipgm.s 			page 6
+
+
+ 197              	.LCFI5:
+ 198              		.cfi_def_cfa_offset 8
+ 199              		.cfi_offset 3, -8
+ 200              		.cfi_offset 14, -4
+  89:Core/Src/wav_player.cpp ****   pause();
+ 201              		.loc 1 89 3 is_stmt 1 view .LVU32
+ 202              		.loc 1 89 8 is_stmt 0 view .LVU33
+ 203 0002 FFF7FEFF 		bl	_ZN10wav_player5pauseEv
+ 204              	.LVL9:
+  90:Core/Src/wav_player.cpp **** }
+ 205              		.loc 1 90 1 view .LVU34
+ 206 0006 08BD     		pop	{r3, pc}
+ 207              		.cfi_endproc
+ 208              	.LFE143:
+ 209              		.cantunwind
+ 210              		.fnend
+ 212              		.section	.text._ZN10wav_player6resumeEv,"ax",%progbits
+ 213              		.align	1
+ 214              		.global	_ZN10wav_player6resumeEv
+ 215              		.syntax unified
+ 216              		.thumb
+ 217              		.thumb_func
+ 218              		.fpu fpv4-sp-d16
+ 220              	_ZN10wav_player6resumeEv:
+ 221              		.fnstart
+ 222              	.LVL10:
+ 223              	.LFB144:
+  91:Core/Src/wav_player.cpp **** 
+  92:Core/Src/wav_player.cpp **** void wav_player::resume(void)
+  93:Core/Src/wav_player.cpp **** {
+ 224              		.loc 1 93 1 is_stmt 1 view -0
+ 225              		.cfi_startproc
+ 226              		@ args = 0, pretend = 0, frame = 0
+ 227              		@ frame_needed = 0, uses_anonymous_args = 0
+ 228              		.loc 1 93 1 is_stmt 0 view .LVU36
+ 229 0000 08B5     		push	{r3, lr}
+ 230              	.LCFI6:
+ 231              		.cfi_def_cfa_offset 8
+ 232              		.cfi_offset 3, -8
+ 233              		.cfi_offset 14, -4
+  94:Core/Src/wav_player.cpp ****   resume();
+ 234              		.loc 1 94 3 is_stmt 1 view .LVU37
+ 235              		.loc 1 94 9 is_stmt 0 view .LVU38
+ 236 0002 FFF7FEFF 		bl	_ZN10wav_player6resumeEv
+ 237              	.LVL11:
+  95:Core/Src/wav_player.cpp **** }
+ 238              		.loc 1 95 1 view .LVU39
+ 239 0006 08BD     		pop	{r3, pc}
+ 240              		.cfi_endproc
+ 241              	.LFE144:
+ 242              		.cantunwind
+ 243              		.fnend
+ 245              		.section	.text._ZN10wav_player11isEndOfFileEv,"ax",%progbits
+ 246              		.align	1
+ 247              		.global	_ZN10wav_player11isEndOfFileEv
+ 248              		.syntax unified
+ 249              		.thumb
+ARM GAS  /tmp/ccldipgm.s 			page 7
+
+
+ 250              		.thumb_func
+ 251              		.fpu fpv4-sp-d16
+ 253              	_ZN10wav_player11isEndOfFileEv:
+ 254              		.fnstart
+ 255              	.LVL12:
+ 256              	.LFB145:
+  96:Core/Src/wav_player.cpp **** 
+  97:Core/Src/wav_player.cpp **** 
+  98:Core/Src/wav_player.cpp **** bool wav_player::isEndOfFile(void)
+  99:Core/Src/wav_player.cpp **** {
+ 257              		.loc 1 99 1 is_stmt 1 view -0
+ 258              		.cfi_startproc
+ 259              		@ args = 0, pretend = 0, frame = 0
+ 260              		@ frame_needed = 0, uses_anonymous_args = 0
+ 261              		@ link register save eliminated.
+ 100:Core/Src/wav_player.cpp ****   return isFinished;
+ 262              		.loc 1 100 3 view .LVU41
+ 263              		.loc 1 100 10 is_stmt 0 view .LVU42
+ 264 0000 00F50150 		add	r0, r0, #8256
+ 265              	.LVL13:
+ 266              		.loc 1 100 10 view .LVU43
+ 267 0004 0078     		ldrb	r0, [r0]	@ zero_extendqisi2
+ 268              	.LVL14:
+ 101:Core/Src/wav_player.cpp **** }
+ 269              		.loc 1 101 1 view .LVU44
+ 270 0006 0038     		subs	r0, r0, #0
+ 271 0008 18BF     		it	ne
+ 272 000a 0120     		movne	r0, #1
+ 273 000c 7047     		bx	lr
+ 274              		.cfi_endproc
+ 275              	.LFE145:
+ 276              		.cantunwind
+ 277              		.fnend
+ 279              		.section	.text._ZN10wav_player5resetEv,"ax",%progbits
+ 280              		.align	1
+ 281              		.global	_ZN10wav_player5resetEv
+ 282              		.syntax unified
+ 283              		.thumb
+ 284              		.thumb_func
+ 285              		.fpu fpv4-sp-d16
+ 287              	_ZN10wav_player5resetEv:
+ 288              		.fnstart
+ 289              	.LVL15:
+ 290              	.LFB146:
+ 102:Core/Src/wav_player.cpp **** 
+ 103:Core/Src/wav_player.cpp **** 
+ 104:Core/Src/wav_player.cpp **** void wav_player::reset(void)
+ 105:Core/Src/wav_player.cpp **** {
+ 291              		.loc 1 105 1 is_stmt 1 view -0
+ 292              		.cfi_startproc
+ 293              		@ args = 0, pretend = 0, frame = 0
+ 294              		@ frame_needed = 0, uses_anonymous_args = 0
+ 295              		@ link register save eliminated.
+ 106:Core/Src/wav_player.cpp ****   audioRemainSize = 0;
+ 296              		.loc 1 106 3 view .LVU46
+ 297              		.loc 1 106 19 is_stmt 0 view .LVU47
+ 298 0000 0023     		movs	r3, #0
+ARM GAS  /tmp/ccldipgm.s 			page 8
+
+
+ 299 0002 42F23402 		movw	r2, #8244
+ 300 0006 8350     		str	r3, [r0, r2]
+ 107:Core/Src/wav_player.cpp ****   playerReadBytes = 0;
+ 301              		.loc 1 107 3 is_stmt 1 view .LVU48
+ 302              		.loc 1 107 19 is_stmt 0 view .LVU49
+ 303 0008 42F23C02 		movw	r2, #8252
+ 304 000c 8350     		str	r3, [r0, r2]
+ 108:Core/Src/wav_player.cpp **** }...
+ 305              		.loc 1 108 1 view .LVU50
+ 306 000e 7047     		bx	lr
+ 307              		.cfi_endproc
+ 308              	.LFE146:
+ 309              		.cantunwind
+ 310              		.fnend
+ 312              		.section	.text._ZN10wav_player7processEv,"ax",%progbits
+ 313              		.align	1
+ 314              		.global	_ZN10wav_player7processEv
+ 315              		.syntax unified
+ 316              		.thumb
+ 317              		.thumb_func
+ 318              		.fpu fpv4-sp-d16
+ 320              	_ZN10wav_player7processEv:
+ 321              		.fnstart
+ 322              	.LVL16:
+ 323              	.LFB141:
+  29:Core/Src/wav_player.cpp **** {
+ 324              		.loc 1 29 1 is_stmt 1 view -0
+ 325              		.cfi_startproc
+ 326              		@ args = 0, pretend = 0, frame = 0
+ 327              		@ frame_needed = 0, uses_anonymous_args = 0
+  29:Core/Src/wav_player.cpp **** {
+ 328              		.loc 1 29 1 is_stmt 0 view .LVU52
+ 329 0000 10B5     		push	{r4, lr}
+ 330              		.save {r4, lr}
+ 331              	.LCFI7:
+ 332              		.cfi_def_cfa_offset 8
+ 333              		.cfi_offset 4, -8
+ 334              		.cfi_offset 14, -4
+ 335 0002 0446     		mov	r4, r0
+  30:Core/Src/wav_player.cpp ****   switch(playerControlSM)
+ 336              		.loc 1 30 3 is_stmt 1 view .LVU53
+  30:Core/Src/wav_player.cpp ****   switch(playerControlSM)
+ 337              		.loc 1 30 10 is_stmt 0 view .LVU54
+ 338 0004 42F24103 		movw	r3, #8257
+ 339 0008 C35C     		ldrb	r3, [r0, r3]	@ zero_extendqisi2
+ 340 000a DBB2     		uxtb	r3, r3
+  30:Core/Src/wav_player.cpp ****   switch(playerControlSM)
+ 341              		.loc 1 30 3 view .LVU55
+ 342 000c 022B     		cmp	r3, #2
+ 343 000e 2BD0     		beq	.L16
+ 344 0010 032B     		cmp	r3, #3
+ 345 0012 50D0     		beq	.L17
+ 346 0014 012B     		cmp	r3, #1
+ 347 0016 00D0     		beq	.L22
+ 348              	.LVL17:
+ 349              	.L15:
+  75:Core/Src/wav_player.cpp **** }
+ARM GAS  /tmp/ccldipgm.s 			page 9
+
+
+ 350              		.loc 1 75 1 view .LVU56
+ 351 0018 10BD     		pop	{r4, pc}
+ 352              	.LVL18:
+ 353              	.L22:
+  35:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_HalfBuffer:
+ 354              		.loc 1 35 3 is_stmt 1 view .LVU57
+  36:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
+ 355              		.loc 1 36 5 view .LVU58
+  36:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
+ 356              		.loc 1 36 21 is_stmt 0 view .LVU59
+ 357 001a 42F23C03 		movw	r3, #8252
+ 358 001e 0022     		movs	r2, #0
+ 359 0020 C250     		str	r2, [r0, r3]
+  37:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+ 360              		.loc 1 37 5 is_stmt 1 view .LVU60
+  37:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+ 361              		.loc 1 37 21 is_stmt 0 view .LVU61
+ 362 0022 42F24101 		movw	r1, #8257
+ 363 0026 4254     		strb	r2, [r0, r1]
+  38:Core/Src/wav_player.cpp ****     f_read (&wavFile, &audioBuffer[0], AUDIO_BUFFER_SIZE/2, &playerReadBytes);
+ 364              		.loc 1 38 5 is_stmt 1 view .LVU62
+  38:Core/Src/wav_player.cpp ****     f_read (&wavFile, &audioBuffer[0], AUDIO_BUFFER_SIZE/2, &playerReadBytes);
+ 365              		.loc 1 38 12 is_stmt 0 view .LVU63
+ 366 0028 0344     		add	r3, r3, r0
+ 367 002a 4FF40062 		mov	r2, #2048
+ 368 002e 00F58151 		add	r1, r0, #4128
+ 369 0032 1431     		adds	r1, r1, #20
+ 370 0034 FFF7FEFF 		bl	f_read
+ 371              	.LVL19:
+  39:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+ 372              		.loc 1 39 5 is_stmt 1 view .LVU64
+  39:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+ 373              		.loc 1 39 8 is_stmt 0 view .LVU65
+ 374 0038 42F23403 		movw	r3, #8244
+ 375 003c E358     		ldr	r3, [r4, r3]
+  39:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+ 376              		.loc 1 39 5 view .LVU66
+ 377 003e B3F5006F 		cmp	r3, #2048
+ 378 0042 08D9     		bls	.L19
+  41:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 379              		.loc 1 41 7 is_stmt 1 view .LVU67
+  41:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 380              		.loc 1 41 23 is_stmt 0 view .LVU68
+ 381 0044 42F23402 		movw	r2, #8244
+ 382 0048 A358     		ldr	r3, [r4, r2]
+  41:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 383              		.loc 1 41 26 view .LVU69
+ 384 004a 42F23C01 		movw	r1, #8252
+ 385 004e 6158     		ldr	r1, [r4, r1]
+  41:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 386              		.loc 1 41 23 view .LVU70
+ 387 0050 5B1A     		subs	r3, r3, r1
+ 388 0052 A350     		str	r3, [r4, r2]
+ 389 0054 E0E7     		b	.L15
+ 390              	.L19:
+  45:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
+ 391              		.loc 1 45 7 is_stmt 1 view .LVU71
+ARM GAS  /tmp/ccldipgm.s 			page 10
+
+
+  45:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
+ 392              		.loc 1 45 23 is_stmt 0 view .LVU72
+ 393 0056 42F23403 		movw	r3, #8244
+ 394 005a 0022     		movs	r2, #0
+ 395 005c E250     		str	r2, [r4, r3]
+  46:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
+ 396              		.loc 1 46 7 is_stmt 1 view .LVU73
+  46:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
+ 397              		.loc 1 46 23 is_stmt 0 view .LVU74
+ 398 005e 42F24103 		movw	r3, #8257
+ 399 0062 0322     		movs	r2, #3
+ 400 0064 E254     		strb	r2, [r4, r3]
+ 401 0066 D7E7     		b	.L15
+ 402              	.LVL20:
+ 403              	.L16:
+  50:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_FullBuffer:
+ 404              		.loc 1 50 3 is_stmt 1 view .LVU75
+  52:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
+ 405              		.loc 1 52 5 view .LVU76
+  52:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
+ 406              		.loc 1 52 21 is_stmt 0 view .LVU77
+ 407 0068 42F23C03 		movw	r3, #8252
+ 408 006c 0022     		movs	r2, #0
+ 409 006e C250     		str	r2, [r0, r3]
+  53:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+ 410              		.loc 1 53 5 is_stmt 1 view .LVU78
+  53:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+ 411              		.loc 1 53 21 is_stmt 0 view .LVU79
+ 412 0070 42F24101 		movw	r1, #8257
+ 413 0074 4254     		strb	r2, [r0, r1]
+  54:Core/Src/wav_player.cpp ****     f_read (&wavFile, &audioBuffer[AUDIO_BUFFER_SIZE/2], AUDIO_BUFFER_SIZE/2, &playerReadBytes);
+ 414              		.loc 1 54 5 is_stmt 1 view .LVU80
+  54:Core/Src/wav_player.cpp ****     f_read (&wavFile, &audioBuffer[AUDIO_BUFFER_SIZE/2], AUDIO_BUFFER_SIZE/2, &playerReadBytes);
+ 415              		.loc 1 54 12 is_stmt 0 view .LVU81
+ 416 0076 0344     		add	r3, r3, r0
+ 417 0078 4FF40062 		mov	r2, #2048
+ 418 007c 00F5C151 		add	r1, r0, #6176
+ 419 0080 1431     		adds	r1, r1, #20
+ 420 0082 FFF7FEFF 		bl	f_read
+ 421              	.LVL21:
+  57:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+ 422              		.loc 1 57 5 is_stmt 1 view .LVU82
+  57:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+ 423              		.loc 1 57 8 is_stmt 0 view .LVU83
+ 424 0086 42F23403 		movw	r3, #8244
+ 425 008a E358     		ldr	r3, [r4, r3]
+  57:Core/Src/wav_player.cpp ****     if(audioRemainSize > (AUDIO_BUFFER_SIZE / 2))
+ 426              		.loc 1 57 5 view .LVU84
+ 427 008c B3F5006F 		cmp	r3, #2048
+ 428 0090 08D9     		bls	.L20
+  59:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 429              		.loc 1 59 7 is_stmt 1 view .LVU85
+  59:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 430              		.loc 1 59 23 is_stmt 0 view .LVU86
+ 431 0092 42F23402 		movw	r2, #8244
+ 432 0096 A358     		ldr	r3, [r4, r2]
+  59:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ARM GAS  /tmp/ccldipgm.s 			page 11
+
+
+ 433              		.loc 1 59 26 view .LVU87
+ 434 0098 42F23C01 		movw	r1, #8252
+ 435 009c 6158     		ldr	r1, [r4, r1]
+  59:Core/Src/wav_player.cpp ****       audioRemainSize -= playerReadBytes;
+ 436              		.loc 1 59 23 view .LVU88
+ 437 009e 5B1A     		subs	r3, r3, r1
+ 438 00a0 A350     		str	r3, [r4, r2]
+ 439 00a2 B9E7     		b	.L15
+ 440              	.L20:
+  63:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
+ 441              		.loc 1 63 7 is_stmt 1 view .LVU89
+  63:Core/Src/wav_player.cpp ****       audioRemainSize = 0;
+ 442              		.loc 1 63 23 is_stmt 0 view .LVU90
+ 443 00a4 42F23403 		movw	r3, #8244
+ 444 00a8 0022     		movs	r2, #0
+ 445 00aa E250     		str	r2, [r4, r3]
+  64:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
+ 446              		.loc 1 64 7 is_stmt 1 view .LVU91
+  64:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
+ 447              		.loc 1 64 23 is_stmt 0 view .LVU92
+ 448 00ac 42F24103 		movw	r3, #8257
+ 449 00b0 0322     		movs	r2, #3
+ 450 00b2 E254     		strb	r2, [r4, r3]
+ 451 00b4 B0E7     		b	.L15
+ 452              	.LVL22:
+ 453              	.L17:
+  68:Core/Src/wav_player.cpp ****   case PLAYER_CONTROL_EndOfFile:
+ 454              		.loc 1 68 3 is_stmt 1 view .LVU93
+  69:Core/Src/wav_player.cpp ****     f_close(&wavFile);
+ 455              		.loc 1 69 5 view .LVU94
+  69:Core/Src/wav_player.cpp ****     f_close(&wavFile);
+ 456              		.loc 1 69 12 is_stmt 0 view .LVU95
+ 457 00b6 FFF7FEFF 		bl	f_close
+ 458              	.LVL23:
+  70:Core/Src/wav_player.cpp ****     reset();
+ 459              		.loc 1 70 5 is_stmt 1 view .LVU96
+  70:Core/Src/wav_player.cpp ****     reset();
+ 460              		.loc 1 70 10 is_stmt 0 view .LVU97
+ 461 00ba 2046     		mov	r0, r4
+ 462 00bc FFF7FEFF 		bl	_ZN10wav_player5resetEv
+ 463              	.LVL24:
+  71:Core/Src/wav_player.cpp ****     isFinished = 1;
+ 464              		.loc 1 71 5 is_stmt 1 view .LVU98
+  71:Core/Src/wav_player.cpp ****     isFinished = 1;
+ 465              		.loc 1 71 16 is_stmt 0 view .LVU99
+ 466 00c0 04F50153 		add	r3, r4, #8256
+ 467 00c4 0122     		movs	r2, #1
+ 468 00c6 1A70     		strb	r2, [r3]
+  72:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+ 469              		.loc 1 72 5 is_stmt 1 view .LVU100
+  72:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
+ 470              		.loc 1 72 21 is_stmt 0 view .LVU101
+ 471 00c8 42F24103 		movw	r3, #8257
+ 472 00cc 0022     		movs	r2, #0
+ 473 00ce E254     		strb	r2, [r4, r3]
+  73:Core/Src/wav_player.cpp ****     break;
+ 474              		.loc 1 73 5 is_stmt 1 view .LVU102
+ARM GAS  /tmp/ccldipgm.s 			page 12
+
+
+  75:Core/Src/wav_player.cpp **** }
+ 475              		.loc 1 75 1 is_stmt 0 view .LVU103
+ 476 00d0 A2E7     		b	.L15
+ 477              		.cfi_endproc
+ 478              	.LFE141:
+ 479              		.fnend
+ 481              		.text
+ 482              	.Letext0:
+ 483              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 484              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
+ 485              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 486              		.file 5 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
+ 487              		.file 6 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 488              		.file 7 "Middlewares/Third_Party/FatFs/src/integer.h"
+ 489              		.file 8 "/usr/include/newlib/c++/9.2.1/cstdlib"
+ 490              		.file 9 "/usr/include/newlib/c++/9.2.1/bits/std_abs.h"
+ 491              		.file 10 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h"
+ 492              		.file 11 "/usr/include/newlib/sys/_types.h"
+ 493              		.file 12 "/usr/include/newlib/sys/reent.h"
+ 494              		.file 13 "/usr/include/newlib/sys/lock.h"
+ 495              		.file 14 "/usr/include/newlib/stdlib.h"
+ 496              		.file 15 "/usr/include/newlib/c++/9.2.1/stdlib.h"
+ 497              		.file 16 "Middlewares/Third_Party/FatFs/src/ff.h"
+ 498              		.file 17 "Middlewares/Third_Party/FatFs/src/diskio.h"
+ 499              		.file 18 "Middlewares/Third_Party/FatFs/src/ff_gen_drv.h"
+ 500              		.file 19 "FATFS/Target/sd_diskio.h"
+ 501              		.file 20 "FATFS/App/fatfs.h"
+ 502              		.file 21 "Core/Inc/wav_player.hpp"
+ 503              		.file 22 "<built-in>"
+ARM GAS  /tmp/ccldipgm.s 			page 13
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 wav_player.cpp
+     /tmp/ccldipgm.s:18     .text._ZN10wav_playerC2Ev:0000000000000000 $t
+     /tmp/ccldipgm.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC2Ev
+.ARM.exidx.text._ZN10wav_playerC2Ev:0000000000000000 $d
+     /tmp/ccldipgm.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC1Ev
+     /tmp/ccldipgm.s:58     .text._ZN10wav_player11file_selectEPc:0000000000000000 $t
+     /tmp/ccldipgm.s:65     .text._ZN10wav_player11file_selectEPc:0000000000000000 _ZN10wav_player11file_selectEPc
+.ARM.exidx.text._ZN10wav_player11file_selectEPc:0000000000000000 $d
+     /tmp/ccldipgm.s:138    .text._ZN10wav_player4stopEv:0000000000000000 $t
+     /tmp/ccldipgm.s:145    .text._ZN10wav_player4stopEv:0000000000000000 _ZN10wav_player4stopEv
+.ARM.exidx.text._ZN10wav_player4stopEv:0000000000000000 $d
+     /tmp/ccldipgm.s:180    .text._ZN10wav_player5pauseEv:0000000000000000 $t
+     /tmp/ccldipgm.s:187    .text._ZN10wav_player5pauseEv:0000000000000000 _ZN10wav_player5pauseEv
+.ARM.exidx.text._ZN10wav_player5pauseEv:0000000000000000 $d
+     /tmp/ccldipgm.s:213    .text._ZN10wav_player6resumeEv:0000000000000000 $t
+     /tmp/ccldipgm.s:220    .text._ZN10wav_player6resumeEv:0000000000000000 _ZN10wav_player6resumeEv
+.ARM.exidx.text._ZN10wav_player6resumeEv:0000000000000000 $d
+     /tmp/ccldipgm.s:246    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 $t
+     /tmp/ccldipgm.s:253    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 _ZN10wav_player11isEndOfFileEv
+.ARM.exidx.text._ZN10wav_player11isEndOfFileEv:0000000000000000 $d
+     /tmp/ccldipgm.s:280    .text._ZN10wav_player5resetEv:0000000000000000 $t
+     /tmp/ccldipgm.s:287    .text._ZN10wav_player5resetEv:0000000000000000 _ZN10wav_player5resetEv
+.ARM.exidx.text._ZN10wav_player5resetEv:0000000000000000 $d
+     /tmp/ccldipgm.s:313    .text._ZN10wav_player7processEv:0000000000000000 $t
+     /tmp/ccldipgm.s:320    .text._ZN10wav_player7processEv:0000000000000000 _ZN10wav_player7processEv
+.ARM.exidx.text._ZN10wav_player7processEv:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+f_open
+f_read
+__aeabi_unwind_cpp_pr0
+f_close
