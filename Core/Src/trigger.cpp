@@ -6,7 +6,7 @@
     in main
     */
 
-trigger::trigger(GPIO_TypeDef * gpiox_ ,PinNumber pinx_,Pull pull_)
+trigger::trigger(GPIO_TypeDef *gpiox_, PinNumber pinx, Pull pull_)
 {
 
       /* EXTI interrupt init  on pin PB2 */

@@ -4,7 +4,6 @@
 class trigger
 {
 
-
 private:
 
     GPIO_TypeDef * gpiox;
