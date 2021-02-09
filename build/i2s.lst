@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccmAe2lg.s 			page 1
+ARM GAS  /tmp/cc3R8ZGp.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
   26:Core/Src/i2s.cpp **** 
   27:Core/Src/i2s.cpp **** uint8_t i2s::set_audiofreq(uint32_t audioFreq)
   28:Core/Src/i2s.cpp **** {
-ARM GAS  /tmp/ccmAe2lg.s 			page 2
+ARM GAS  /tmp/cc3R8ZGp.s 			page 2
 
 
   31              		.loc 1 28 1 view -0
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
   42:Core/Src/i2s.cpp ****   
   43:Core/Src/i2s.cpp ****   /* Initialize the I2S peripheral with the structure above */
   44:Core/Src/i2s.cpp ****   if(HAL_I2S_Init(&i2sx) != HAL_OK)
-ARM GAS  /tmp/ccmAe2lg.s 			page 3
+ARM GAS  /tmp/cc3R8ZGp.s 			page 3
 
 
   72              		.loc 1 44 3 is_stmt 1 view .LVU18
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  116 0002 87B0     		sub	sp, sp, #28
  117              	.LCFI2:
  118              		.cfi_def_cfa_offset 40
-ARM GAS  /tmp/ccmAe2lg.s 			page 4
+ARM GAS  /tmp/cc3R8ZGp.s 			page 4
 
 
  119 0004 0446     		mov	r4, r0
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  159              		.loc 1 68 33 view .LVU41
  160 0026 FFF7FEFF 		bl	HAL_RCCEx_GetPeriphCLKConfig
  161              	.LVL11:
-ARM GAS  /tmp/ccmAe2lg.s 			page 5
+ARM GAS  /tmp/cc3R8ZGp.s 			page 5
 
 
   69:Core/Src/i2s.cpp ****     /* PLLI2S_VCO Input = HSE_VALUE/PLL_M = 2 Mhz */
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  193              		.cfi_def_cfa_offset 12
  194              		@ sp needed
  195 004e 30BD     		pop	{r4, r5, pc}
-ARM GAS  /tmp/ccmAe2lg.s 			page 6
+ARM GAS  /tmp/cc3R8ZGp.s 			page 6
 
 
  196              	.LVL14:
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  242              	.LCFI5:
  243              		.cfi_def_cfa_offset 24
  244              		.cfi_offset 4, -24
-ARM GAS  /tmp/ccmAe2lg.s 			page 7
+ARM GAS  /tmp/cc3R8ZGp.s 			page 7
 
 
  245              		.cfi_offset 5, -20
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  293 0064 FFF7FEFF 		bl	_ZN3i2s13set_audiofreqEm
  294              	.LVL18:
   20:Core/Src/i2s.cpp ****     if (HAL_I2S_Init(&i2sx) != HAL_OK)
-ARM GAS  /tmp/ccmAe2lg.s 			page 8
+ARM GAS  /tmp/cc3R8ZGp.s 			page 8
 
 
  295              		.loc 1 20 5 is_stmt 1 view .LVU72
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
   15:Core/Src/i2s.cpp ****     }
  334              		.loc 1 15 13 is_stmt 1 view .LVU88
  335 008c E3E7     		b	.L16
-ARM GAS  /tmp/ccmAe2lg.s 			page 9
+ARM GAS  /tmp/cc3R8ZGp.s 			page 9
 
 
  336              	.L20:
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  387              	.L23:
   95:Core/Src/i2s.cpp ****     HAL_I2S_Transmit_DMA(&i2sx, audioBuffer, DMA_MAX(len/AUDIODATA_SIZE));
  388              		.loc 1 95 25 view .LVU96
-ARM GAS  /tmp/ccmAe2lg.s 			page 10
+ARM GAS  /tmp/cc3R8ZGp.s 			page 10
 
 
  389 0012 4FF6FF72 		movw	r2, #65535
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  438              		.align	1
  439              		.global	_ZN3i2s5pauseEv
  440              		.syntax unified
-ARM GAS  /tmp/ccmAe2lg.s 			page 11
+ARM GAS  /tmp/cc3R8ZGp.s 			page 11
 
 
  441              		.thumb
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  491              		.cfi_offset 3, -8
  492              		.cfi_offset 14, -4
  111:Core/Src/i2s.cpp ****     HAL_I2S_DMAStop(&i2sx);
-ARM GAS  /tmp/ccmAe2lg.s 			page 12
+ARM GAS  /tmp/cc3R8ZGp.s 			page 12
 
 
  493              		.loc 1 111 5 is_stmt 1 view .LVU111
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  545 0034 0F010000 		.word	271
  546 0038 02010000 		.word	258
  547 003c 58010000 		.word	344
-ARM GAS  /tmp/ccmAe2lg.s 			page 13
+ARM GAS  /tmp/cc3R8ZGp.s 			page 13
 
 
  548              	.LC2:
@@ -742,42 +742,42 @@ ARM GAS  /tmp/ccmAe2lg.s 			page 1
  566              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h"
  567              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  568              		.file 11 "Core/Inc/i2s.hpp"
-ARM GAS  /tmp/ccmAe2lg.s 			page 14
+ARM GAS  /tmp/cc3R8ZGp.s 			page 14
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 i2s.cpp
-     /tmp/ccmAe2lg.s:18     .text._ZN3i2s13set_audiofreqEm:0000000000000000 $t
-     /tmp/ccmAe2lg.s:26     .text._ZN3i2s13set_audiofreqEm:0000000000000000 _ZN3i2s13set_audiofreqEm
+     /tmp/cc3R8ZGp.s:18     .text._ZN3i2s13set_audiofreqEm:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:26     .text._ZN3i2s13set_audiofreqEm:0000000000000000 _ZN3i2s13set_audiofreqEm
 .ARM.exidx.text._ZN3i2s13set_audiofreqEm:0000000000000000 $d
-     /tmp/ccmAe2lg.s:92     .text._ZN3i2s16config_pll_clockEm:0000000000000000 $t
-     /tmp/ccmAe2lg.s:99     .text._ZN3i2s16config_pll_clockEm:0000000000000000 _ZN3i2s16config_pll_clockEm
+     /tmp/cc3R8ZGp.s:92     .text._ZN3i2s16config_pll_clockEm:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:99     .text._ZN3i2s16config_pll_clockEm:0000000000000000 _ZN3i2s16config_pll_clockEm
 .ARM.exidx.text._ZN3i2s16config_pll_clockEm:0000000000000000 $d
-     /tmp/ccmAe2lg.s:224    .text._ZN3i2sC2Ehm:0000000000000000 $t
-     /tmp/ccmAe2lg.s:231    .text._ZN3i2sC2Ehm:0000000000000000 _ZN3i2sC2Ehm
-     /tmp/ccmAe2lg.s:339    .text._ZN3i2sC2Ehm:0000000000000090 $d
+     /tmp/cc3R8ZGp.s:224    .text._ZN3i2sC2Ehm:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:231    .text._ZN3i2sC2Ehm:0000000000000000 _ZN3i2sC2Ehm
+     /tmp/cc3R8ZGp.s:339    .text._ZN3i2sC2Ehm:0000000000000090 $d
      .ARM.exidx.text._ZN3i2sC2Ehm:0000000000000000 $d
-     /tmp/ccmAe2lg.s:231    .text._ZN3i2sC2Ehm:0000000000000000 _ZN3i2sC1Ehm
-     /tmp/ccmAe2lg.s:351    .text._ZN3i2s4playEPtm:0000000000000000 $t
-     /tmp/ccmAe2lg.s:358    .text._ZN3i2s4playEPtm:0000000000000000 _ZN3i2s4playEPtm
+     /tmp/cc3R8ZGp.s:231    .text._ZN3i2sC2Ehm:0000000000000000 _ZN3i2sC1Ehm
+     /tmp/cc3R8ZGp.s:351    .text._ZN3i2s4playEPtm:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:358    .text._ZN3i2s4playEPtm:0000000000000000 _ZN3i2s4playEPtm
  .ARM.extab.text._ZN3i2s4playEPtm:0000000000000000 $d
  .ARM.exidx.text._ZN3i2s4playEPtm:0000000000000000 $d
-     /tmp/ccmAe2lg.s:398    .text._ZN3i2s13change_bufferEPtm:0000000000000000 $t
-     /tmp/ccmAe2lg.s:405    .text._ZN3i2s13change_bufferEPtm:0000000000000000 _ZN3i2s13change_bufferEPtm
+     /tmp/cc3R8ZGp.s:398    .text._ZN3i2s13change_bufferEPtm:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:405    .text._ZN3i2s13change_bufferEPtm:0000000000000000 _ZN3i2s13change_bufferEPtm
 .ARM.extab.text._ZN3i2s13change_bufferEPtm:0000000000000000 $d
 .ARM.exidx.text._ZN3i2s13change_bufferEPtm:0000000000000000 $d
-     /tmp/ccmAe2lg.s:438    .text._ZN3i2s5pauseEv:0000000000000000 $t
-     /tmp/ccmAe2lg.s:445    .text._ZN3i2s5pauseEv:0000000000000000 _ZN3i2s5pauseEv
+     /tmp/cc3R8ZGp.s:438    .text._ZN3i2s5pauseEv:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:445    .text._ZN3i2s5pauseEv:0000000000000000 _ZN3i2s5pauseEv
   .ARM.extab.text._ZN3i2s5pauseEv:0000000000000000 $d
   .ARM.exidx.text._ZN3i2s5pauseEv:0000000000000000 $d
-     /tmp/ccmAe2lg.s:471    .text._ZN3i2s4stopEv:0000000000000000 $t
-     /tmp/ccmAe2lg.s:478    .text._ZN3i2s4stopEv:0000000000000000 _ZN3i2s4stopEv
+     /tmp/cc3R8ZGp.s:471    .text._ZN3i2s4stopEv:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:478    .text._ZN3i2s4stopEv:0000000000000000 _ZN3i2s4stopEv
    .ARM.extab.text._ZN3i2s4stopEv:0000000000000000 $d
    .ARM.exidx.text._ZN3i2s4stopEv:0000000000000000 $d
-     /tmp/ccmAe2lg.s:504    .text._ZN3i2s13error_handlerEv:0000000000000000 $t
-     /tmp/ccmAe2lg.s:511    .text._ZN3i2s13error_handlerEv:0000000000000000 _ZN3i2s13error_handlerEv
+     /tmp/cc3R8ZGp.s:504    .text._ZN3i2s13error_handlerEv:0000000000000000 $t
+     /tmp/cc3R8ZGp.s:511    .text._ZN3i2s13error_handlerEv:0000000000000000 _ZN3i2s13error_handlerEv
 .ARM.exidx.text._ZN3i2s13error_handlerEv:0000000000000000 $d
-     /tmp/ccmAe2lg.s:528    .rodata:0000000000000000 $d
+     /tmp/cc3R8ZGp.s:528    .rodata:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_I2S_Init

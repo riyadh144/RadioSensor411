@@ -70,7 +70,6 @@ public:
     void SetPull(uint8_t Pull);
 
 
-~trigger();
 
 };
 
