@@ -71,6 +71,8 @@ void menu::menu_ok()
     case MENU_TMO:
         menu_value=MENU_TMO_IN;
         break;
+    case MENU_MIC:
+        menu_value = MENU_MIC_IN;
     case MENU_CH_IN:
         cursorOn^=1;//switch the state of the cursor
         if(!cursorOn)
@@ -98,7 +100,25 @@ void menu::menu_ok()
             //TODO:Implement the display timer and use tmoVal to modify the prescaler
         }
         break;
-
+    case MENU_MIC_IN:
+        switch(menu_value)
+        {
+            case MENU_MIC_IN_PLAY:
+                menu_value = MENU_MIC_IN_PLAY;
+                break;
+            case MENU_MIC_IN_REC:
+                menu_value = MENU_MIC_IN_REC;
+                break;
+        }
+        break;
+    case MENU_MIC_IN_PLAY:
+         oled1->oled_print("Choose track to play", Font_16x26, 0,19);
+         //TODO: call track list from SD card
+         break;
+    case MENU_MIC_IN_REC:
+        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_16x26,0,19);
+        //TODO : call record function to start recording
+        break;
     default:
         break;
     }
