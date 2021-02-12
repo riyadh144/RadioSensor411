@@ -1,0 +1,1995 @@
+ARM GAS  /tmp/ccmXvSLv.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 27, 1
+   3              		.eabi_attribute 28, 1
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"wave_recorder.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.WaveRecorder_GPIO_Init,"ax",%progbits
+  18              		.align	1
+  19              		.arch armv7e-m
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	WaveRecorder_GPIO_Init:
+  26              	.LFB136:
+  27              		.file 1 "Core/Src/wave_recorder.c"
+   1:Core/Src/wave_recorder.c **** /**
+   2:Core/Src/wave_recorder.c ****   ******************************************************************************
+   3:Core/Src/wave_recorder.c ****   * @file    Audio_playback_and_record/src/waverecorder.c 
+   4:Core/Src/wave_recorder.c ****   * @author  MCD Application Team
+   5:Core/Src/wave_recorder.c ****   * @version V1.0.0
+   6:Core/Src/wave_recorder.c ****   * @date    28-October-2011
+   7:Core/Src/wave_recorder.c ****   * @brief   I2S audio program 
+   8:Core/Src/wave_recorder.c ****   ******************************************************************************
+   9:Core/Src/wave_recorder.c ****   * @attention
+  10:Core/Src/wave_recorder.c ****   *
+  11:Core/Src/wave_recorder.c ****   * THE PRESENT FIRMWARE WHICH IS FOR GUIDANCE ONLY AIMS AT PROVIDING CUSTOMERS
+  12:Core/Src/wave_recorder.c ****   * WITH CODING INFORMATION REGARDING THEIR PRODUCTS IN ORDER FOR THEM TO SAVE
+  13:Core/Src/wave_recorder.c ****   * TIME. AS A RESULT, STMICROELECTRONICS SHALL NOT BE HELD LIABLE FOR ANY
+  14:Core/Src/wave_recorder.c ****   * DIRECT, INDIRECT OR CONSEQUENTIAL DAMAGES WITH RESPECT TO ANY CLAIMS ARISING
+  15:Core/Src/wave_recorder.c ****   * FROM THE CONTENT OF SUCH FIRMWARE AND/OR THE USE MADE BY CUSTOMERS OF THE
+  16:Core/Src/wave_recorder.c ****   * CODING INFORMATION CONTAINED HEREIN IN CONNECTION WITH THEIR PRODUCTS.
+  17:Core/Src/wave_recorder.c ****   *
+  18:Core/Src/wave_recorder.c ****   * <h2><center>&copy; COPYRIGHT 2011 STMicroelectronics</center></h2>
+  19:Core/Src/wave_recorder.c ****   ******************************************************************************
+  20:Core/Src/wave_recorder.c ****   */ 
+  21:Core/Src/wave_recorder.c **** 
+  22:Core/Src/wave_recorder.c **** /* Includes ------------------------------------------------------------------*/
+  23:Core/Src/wave_recorder.c **** #include "main.h"
+  24:Core/Src/wave_recorder.c **** #include "pdm_filter.h"
+  25:Core/Src/wave_recorder.c **** #include "waverecorder.h" 
+  26:Core/Src/wave_recorder.c **** 
+  27:Core/Src/wave_recorder.c **** /** @addtogroup STM32F4-Discovery_Audio_Player_Recorder
+  28:Core/Src/wave_recorder.c **** * @{
+  29:Core/Src/wave_recorder.c **** */ 
+  30:Core/Src/wave_recorder.c **** 
+  31:Core/Src/wave_recorder.c **** /* Private typedef -----------------------------------------------------------*/
+ARM GAS  /tmp/ccmXvSLv.s 			page 2
+
+
+  32:Core/Src/wave_recorder.c **** /* Private define ------------------------------------------------------------*/
+  33:Core/Src/wave_recorder.c **** /* SPI Configuration defines */
+  34:Core/Src/wave_recorder.c **** #define SPI_SCK_PIN                       GPIO_PIN_10
+  35:Core/Src/wave_recorder.c **** #define SPI_SCK_GPIO_PORT                 GPIOB
+  36:Core/Src/wave_recorder.c **** #define SPI_SCK_GPIO_CLK                  RCC_AHB1Periph_GPIOB
+  37:Core/Src/wave_recorder.c **** #define SPI_SCK_SOURCE                    GPIO_PinSource10
+  38:Core/Src/wave_recorder.c **** #define SPI_SCK_AF                        GPIO_AF_SPI2
+  39:Core/Src/wave_recorder.c **** 
+  40:Core/Src/wave_recorder.c **** #define SPI_MOSI_PIN                      GPIO_PIN_3
+  41:Core/Src/wave_recorder.c **** #define SPI_MOSI_GPIO_PORT                GPIOC
+  42:Core/Src/wave_recorder.c **** #define SPI_MOSI_GPIO_CLK                 RCC_AHB1Periph_GPIOC
+  43:Core/Src/wave_recorder.c **** #define SPI_MOSI_AF                       GPIO_AF_SPI2
+  44:Core/Src/wave_recorder.c **** 
+  45:Core/Src/wave_recorder.c **** #define AUDIO_REC_SPI_IRQHANDLER          SPI2_IRQHandler
+  46:Core/Src/wave_recorder.c **** 
+  47:Core/Src/wave_recorder.c **** /* Audio recording frequency in Hz */
+  48:Core/Src/wave_recorder.c **** #define REC_FREQ                          8000  
+  49:Core/Src/wave_recorder.c **** 
+  50:Core/Src/wave_recorder.c **** /* PDM buffer input size */
+  51:Core/Src/wave_recorder.c **** #define INTERNAL_BUFF_SIZE      64
+  52:Core/Src/wave_recorder.c **** #define RAM_BUFFER_SIZE 256
+  53:Core/Src/wave_recorder.c **** 
+  54:Core/Src/wave_recorder.c **** /* PCM buffer output size */
+  55:Core/Src/wave_recorder.c **** #define PCM_OUT_SIZE            16
+  56:Core/Src/wave_recorder.c **** 
+  57:Core/Src/wave_recorder.c **** /* Private macro -------------------------------------------------------------*/
+  58:Core/Src/wave_recorder.c **** /* Private variables ---------------------------------------------------------*/
+  59:Core/Src/wave_recorder.c **** extern __IO uint16_t Time_Rec_Base;
+  60:Core/Src/wave_recorder.c **** extern __IO uint8_t Command_index;
+  61:Core/Src/wave_recorder.c **** extern __IO uint32_t WaveCounter;
+  62:Core/Src/wave_recorder.c **** extern __IO uint8_t LED_Toggle;
+  63:Core/Src/wave_recorder.c **** uint16_t RAM_Buf[RAM_BUFFER_SIZE];
+  64:Core/Src/wave_recorder.c **** uint16_t RAM_Buf1 [RAM_BUFFER_SIZE];
+  65:Core/Src/wave_recorder.c **** uint16_t buf_idx = 0, buf_idx1 =0;
+  66:Core/Src/wave_recorder.c **** uint16_t *writebuffer;
+  67:Core/Src/wave_recorder.c **** uint16_t counter = 0;
+  68:Core/Src/wave_recorder.c **** uint8_t WaveRecStatus = 0;
+  69:Core/Src/wave_recorder.c **** /* Current state of the audio recorder interface intialization */
+  70:Core/Src/wave_recorder.c **** static uint32_t AudioRecInited = 0;
+  71:Core/Src/wave_recorder.c **** PDMFilter_InitStruct Filter;
+  72:Core/Src/wave_recorder.c **** /* Audio recording Samples format (from 8 to 16 bits) */
+  73:Core/Src/wave_recorder.c **** uint32_t AudioRecBitRes = 16; 
+  74:Core/Src/wave_recorder.c **** uint16_t RecBuf[PCM_OUT_SIZE], RecBuf1[PCM_OUT_SIZE];
+  75:Core/Src/wave_recorder.c **** uint8_t RecBufHeader[512], Switch = 0;
+  76:Core/Src/wave_recorder.c **** __IO uint32_t Data_Status =0;
+  77:Core/Src/wave_recorder.c **** /* Audio recording number of channels (1 for Mono or 2 for Stereo) */
+  78:Core/Src/wave_recorder.c **** uint32_t AudioRecChnlNbr = 1;
+  79:Core/Src/wave_recorder.c **** /* Main buffer pointer for the recorded data storing */
+  80:Core/Src/wave_recorder.c **** uint16_t* pAudioRecBuf;
+  81:Core/Src/wave_recorder.c **** /* Current size of the recorded buffer */
+  82:Core/Src/wave_recorder.c **** uint32_t AudioRecCurrSize = 0; 
+  83:Core/Src/wave_recorder.c **** uint16_t bytesWritten;
+  84:Core/Src/wave_recorder.c **** /* Temporary data sample */
+  85:Core/Src/wave_recorder.c **** static uint16_t InternalBuffer[INTERNAL_BUFF_SIZE];
+  86:Core/Src/wave_recorder.c **** static uint32_t InternalBufferSize = 0;
+  87:Core/Src/wave_recorder.c **** 
+  88:Core/Src/wave_recorder.c **** /* Private function prototypes -----------------------------------------------*/
+ARM GAS  /tmp/ccmXvSLv.s 			page 3
+
+
+  89:Core/Src/wave_recorder.c **** static void WaveRecorder_GPIO_Init(void);
+  90:Core/Src/wave_recorder.c **** static void WaveRecorder_SPI_Init(uint32_t Freq);
+  91:Core/Src/wave_recorder.c **** static void WaveRecorder_NVIC_Init(void);
+  92:Core/Src/wave_recorder.c **** 
+  93:Core/Src/wave_recorder.c **** /* Private functions ---------------------------------------------------------*/
+  94:Core/Src/wave_recorder.c **** 
+  95:Core/Src/wave_recorder.c **** /**
+  96:Core/Src/wave_recorder.c ****   * @brief  Initialize wave recording
+  97:Core/Src/wave_recorder.c ****   * @param  AudioFreq: Sampling frequency
+  98:Core/Src/wave_recorder.c ****   *         BitRes: Audio recording Samples format (from 8 to 16 bits)
+  99:Core/Src/wave_recorder.c ****   *         ChnlNbr: Number of input microphone channel
+ 100:Core/Src/wave_recorder.c ****   * @retval None
+ 101:Core/Src/wave_recorder.c ****   */
+ 102:Core/Src/wave_recorder.c **** uint32_t WaveRecorderInit(uint32_t AudioFreq, uint32_t BitRes, uint32_t ChnlNbr)
+ 103:Core/Src/wave_recorder.c **** { 
+ 104:Core/Src/wave_recorder.c ****   /* Check if the interface is already initialized */
+ 105:Core/Src/wave_recorder.c ****   if (AudioRecInited)
+ 106:Core/Src/wave_recorder.c ****   {
+ 107:Core/Src/wave_recorder.c ****     /* No need for initialization */
+ 108:Core/Src/wave_recorder.c ****     return 0;
+ 109:Core/Src/wave_recorder.c ****   }
+ 110:Core/Src/wave_recorder.c ****   else
+ 111:Core/Src/wave_recorder.c ****   {
+ 112:Core/Src/wave_recorder.c ****     /* Enable CRC module */
+ 113:Core/Src/wave_recorder.c ****     RCC->AHB1ENR |= RCC_AHB1ENR_CRCEN;
+ 114:Core/Src/wave_recorder.c ****     
+ 115:Core/Src/wave_recorder.c ****     /* Filter LP & HP Init */
+ 116:Core/Src/wave_recorder.c ****     Filter.LP_HZ = 8000;
+ 117:Core/Src/wave_recorder.c ****     Filter.HP_HZ = 10;
+ 118:Core/Src/wave_recorder.c ****     Filter.Fs = 16000;
+ 119:Core/Src/wave_recorder.c ****     Filter.Out_MicChannels = 1;
+ 120:Core/Src/wave_recorder.c ****     Filter.In_MicChannels = 1;
+ 121:Core/Src/wave_recorder.c ****     
+ 122:Core/Src/wave_recorder.c ****     PDM_Filter_Init((PDMFilter_InitStruct *)&Filter);
+ 123:Core/Src/wave_recorder.c ****     
+ 124:Core/Src/wave_recorder.c ****     /* Configure the GPIOs */
+ 125:Core/Src/wave_recorder.c ****     WaveRecorder_GPIO_Init();
+ 126:Core/Src/wave_recorder.c ****     
+ 127:Core/Src/wave_recorder.c ****     /* Configure the interrupts (for timer) */
+ 128:Core/Src/wave_recorder.c ****     WaveRecorder_NVIC_Init();
+ 129:Core/Src/wave_recorder.c ****     
+ 130:Core/Src/wave_recorder.c ****     /* Configure the SPI */
+ 131:Core/Src/wave_recorder.c ****     WaveRecorder_SPI_Init(AudioFreq);
+ 132:Core/Src/wave_recorder.c ****     
+ 133:Core/Src/wave_recorder.c ****     /* Set the local parameters */
+ 134:Core/Src/wave_recorder.c ****     AudioRecBitRes = BitRes;
+ 135:Core/Src/wave_recorder.c ****     AudioRecChnlNbr = ChnlNbr;
+ 136:Core/Src/wave_recorder.c ****     
+ 137:Core/Src/wave_recorder.c ****     /* Set state of the audio recorder to initialized */
+ 138:Core/Src/wave_recorder.c ****     AudioRecInited = 1;
+ 139:Core/Src/wave_recorder.c ****     
+ 140:Core/Src/wave_recorder.c ****     /* Return 0 if all operations are OK */
+ 141:Core/Src/wave_recorder.c ****     return 0;
+ 142:Core/Src/wave_recorder.c ****   }  
+ 143:Core/Src/wave_recorder.c **** }
+ 144:Core/Src/wave_recorder.c **** 
+ 145:Core/Src/wave_recorder.c **** /**
+ARM GAS  /tmp/ccmXvSLv.s 			page 4
+
+
+ 146:Core/Src/wave_recorder.c ****   * @brief  Start audio recording
+ 147:Core/Src/wave_recorder.c ****   * @param  pbuf: pointer to a buffer
+ 148:Core/Src/wave_recorder.c ****   *         size: Buffer size
+ 149:Core/Src/wave_recorder.c ****   * @retval None
+ 150:Core/Src/wave_recorder.c ****   */
+ 151:Core/Src/wave_recorder.c **** uint8_t WaveRecorderStart(uint16_t* pbuf, uint32_t size)
+ 152:Core/Src/wave_recorder.c **** {
+ 153:Core/Src/wave_recorder.c **** /* Check if the interface has already been initialized */
+ 154:Core/Src/wave_recorder.c ****   if (AudioRecInited)
+ 155:Core/Src/wave_recorder.c ****   {
+ 156:Core/Src/wave_recorder.c ****     /* Store the location and size of the audio buffer */
+ 157:Core/Src/wave_recorder.c ****     pAudioRecBuf = pbuf;
+ 158:Core/Src/wave_recorder.c ****     AudioRecCurrSize = size;
+ 159:Core/Src/wave_recorder.c ****     
+ 160:Core/Src/wave_recorder.c ****     /* Enable the Rx buffer not empty interrupt */
+ 161:Core/Src/wave_recorder.c ****     SPI_I2S_ITConfig(SPI2, SPI_IT_RXNE, ENABLE);
+ 162:Core/Src/wave_recorder.c ****     /* The Data transfer is performed in the SPI interrupt routine */
+ 163:Core/Src/wave_recorder.c ****     /* Enable the SPI peripheral */
+ 164:Core/Src/wave_recorder.c ****     I2S_Cmd(SPI2, ENABLE); 
+ 165:Core/Src/wave_recorder.c ****    
+ 166:Core/Src/wave_recorder.c ****     /* Return 0 if all operations are OK */
+ 167:Core/Src/wave_recorder.c ****     return 0;
+ 168:Core/Src/wave_recorder.c ****   }
+ 169:Core/Src/wave_recorder.c ****   else
+ 170:Core/Src/wave_recorder.c ****   {
+ 171:Core/Src/wave_recorder.c ****     /* Cannot perform operation */
+ 172:Core/Src/wave_recorder.c ****     return 1;
+ 173:Core/Src/wave_recorder.c ****   }
+ 174:Core/Src/wave_recorder.c **** }
+ 175:Core/Src/wave_recorder.c **** 
+ 176:Core/Src/wave_recorder.c **** /**
+ 177:Core/Src/wave_recorder.c ****   * @brief  Stop audio recording
+ 178:Core/Src/wave_recorder.c ****   * @param  None
+ 179:Core/Src/wave_recorder.c ****   * @retval None
+ 180:Core/Src/wave_recorder.c ****   */
+ 181:Core/Src/wave_recorder.c **** uint32_t WaveRecorderStop(void)
+ 182:Core/Src/wave_recorder.c **** {
+ 183:Core/Src/wave_recorder.c ****   /* Check if the interface has already been initialized */
+ 184:Core/Src/wave_recorder.c ****   if (AudioRecInited)
+ 185:Core/Src/wave_recorder.c ****   {
+ 186:Core/Src/wave_recorder.c ****     
+ 187:Core/Src/wave_recorder.c ****     /* Stop conversion */
+ 188:Core/Src/wave_recorder.c ****     I2S_Cmd(SPI2, DISABLE); 
+ 189:Core/Src/wave_recorder.c ****     
+ 190:Core/Src/wave_recorder.c ****     /* Return 0 if all operations are OK */
+ 191:Core/Src/wave_recorder.c ****     return 0;
+ 192:Core/Src/wave_recorder.c ****   }
+ 193:Core/Src/wave_recorder.c ****   else
+ 194:Core/Src/wave_recorder.c ****   {
+ 195:Core/Src/wave_recorder.c ****     /* Cannot perform operation */
+ 196:Core/Src/wave_recorder.c ****     return 1;
+ 197:Core/Src/wave_recorder.c ****   }
+ 198:Core/Src/wave_recorder.c **** }
+ 199:Core/Src/wave_recorder.c **** 
+ 200:Core/Src/wave_recorder.c **** /**
+ 201:Core/Src/wave_recorder.c ****   * @brief  This function handles AUDIO_REC_SPI global interrupt request.
+ 202:Core/Src/wave_recorder.c ****   * @param  None
+ARM GAS  /tmp/ccmXvSLv.s 			page 5
+
+
+ 203:Core/Src/wave_recorder.c ****   * @retval None
+ 204:Core/Src/wave_recorder.c **** */
+ 205:Core/Src/wave_recorder.c **** 
+ 206:Core/Src/wave_recorder.c **** void AUDIO_REC_SPI_IRQHANDLER(void)
+ 207:Core/Src/wave_recorder.c **** {  
+ 208:Core/Src/wave_recorder.c ****    uint16_t volume;
+ 209:Core/Src/wave_recorder.c ****    uint16_t app;
+ 210:Core/Src/wave_recorder.c **** 
+ 211:Core/Src/wave_recorder.c ****   /* Check if data are available in SPI Data register */
+ 212:Core/Src/wave_recorder.c ****   if (SPI_GetITStatus(SPI2, SPI_IT_RXNE) != RESET)
+ 213:Core/Src/wave_recorder.c ****   {
+ 214:Core/Src/wave_recorder.c ****     app = SPI_I2S_ReceiveData(SPI2);
+ 215:Core/Src/wave_recorder.c ****     InternalBuffer[InternalBufferSize++] = HTONS(app);
+ 216:Core/Src/wave_recorder.c ****     
+ 217:Core/Src/wave_recorder.c ****     /* Check to prevent overflow condition */
+ 218:Core/Src/wave_recorder.c ****     if (InternalBufferSize >= INTERNAL_BUFF_SIZE)
+ 219:Core/Src/wave_recorder.c ****     {
+ 220:Core/Src/wave_recorder.c ****       InternalBufferSize = 0;
+ 221:Core/Src/wave_recorder.c ****      
+ 222:Core/Src/wave_recorder.c ****       volume = 50;
+ 223:Core/Src/wave_recorder.c ****       
+ 224:Core/Src/wave_recorder.c ****       PDM_Filter_64_LSB((uint8_t *)InternalBuffer, (uint16_t *)pAudioRecBuf, volume , (PDMFilter_In
+ 225:Core/Src/wave_recorder.c ****       Data_Status = 1;       
+ 226:Core/Src/wave_recorder.c ****     }
+ 227:Core/Src/wave_recorder.c ****   }
+ 228:Core/Src/wave_recorder.c **** }
+ 229:Core/Src/wave_recorder.c **** 
+ 230:Core/Src/wave_recorder.c **** /**
+ 231:Core/Src/wave_recorder.c ****   * @brief  Initialize the wave header file
+ 232:Core/Src/wave_recorder.c ****   * @param  pHeadBuf:Pointer to a buffer
+ 233:Core/Src/wave_recorder.c ****   * @retval None
+ 234:Core/Src/wave_recorder.c ****   */
+ 235:Core/Src/wave_recorder.c **** uint32_t WavaRecorderHeaderInit(uint8_t* pHeadBuf)
+ 236:Core/Src/wave_recorder.c **** {
+ 237:Core/Src/wave_recorder.c ****   uint16_t count = 0;
+ 238:Core/Src/wave_recorder.c **** 
+ 239:Core/Src/wave_recorder.c ****   /* write chunkID, must be 'RIFF'  ------------------------------------------*/
+ 240:Core/Src/wave_recorder.c ****   pHeadBuf[0] = 'R';
+ 241:Core/Src/wave_recorder.c ****   pHeadBuf[1] = 'I';
+ 242:Core/Src/wave_recorder.c ****   pHeadBuf[2] = 'F';
+ 243:Core/Src/wave_recorder.c ****   pHeadBuf[3] = 'F';
+ 244:Core/Src/wave_recorder.c **** 
+ 245:Core/Src/wave_recorder.c ****   /* Write the file length */
+ 246:Core/Src/wave_recorder.c ****   /* The sampling time 8000 Hz
+ 247:Core/Src/wave_recorder.c ****    To recorde 10s we need 8000 x 10 x 2 (16-Bit data) */
+ 248:Core/Src/wave_recorder.c ****   pHeadBuf[4] = 0x00;
+ 249:Core/Src/wave_recorder.c ****   pHeadBuf[5] = 0xE2;
+ 250:Core/Src/wave_recorder.c ****   pHeadBuf[6] = 0x04;
+ 251:Core/Src/wave_recorder.c ****   pHeadBuf[7] = 0x00;
+ 252:Core/Src/wave_recorder.c **** 
+ 253:Core/Src/wave_recorder.c ****   
+ 254:Core/Src/wave_recorder.c ****   /* Write the file format, must be 'WAVE' */
+ 255:Core/Src/wave_recorder.c ****   pHeadBuf[8]  = 'W';
+ 256:Core/Src/wave_recorder.c ****   pHeadBuf[9]  = 'A';
+ 257:Core/Src/wave_recorder.c ****   pHeadBuf[10] = 'V';
+ 258:Core/Src/wave_recorder.c ****   pHeadBuf[11] = 'E';
+ 259:Core/Src/wave_recorder.c **** 
+ARM GAS  /tmp/ccmXvSLv.s 			page 6
+
+
+ 260:Core/Src/wave_recorder.c ****   /* Write the format chunk, must be'fmt ' */
+ 261:Core/Src/wave_recorder.c ****   pHeadBuf[12]  = 'f';
+ 262:Core/Src/wave_recorder.c ****   pHeadBuf[13]  = 'm';
+ 263:Core/Src/wave_recorder.c ****   pHeadBuf[14]  = 't';
+ 264:Core/Src/wave_recorder.c ****   pHeadBuf[15]  = ' ';
+ 265:Core/Src/wave_recorder.c **** 
+ 266:Core/Src/wave_recorder.c ****   /* Write the length of the 'fmt' data, must be 0x10 */
+ 267:Core/Src/wave_recorder.c ****   pHeadBuf[16]  = 0x10;
+ 268:Core/Src/wave_recorder.c ****   pHeadBuf[17]  = 0x00;
+ 269:Core/Src/wave_recorder.c ****   pHeadBuf[18]  = 0x00;
+ 270:Core/Src/wave_recorder.c ****   pHeadBuf[19]  = 0x00;
+ 271:Core/Src/wave_recorder.c **** 
+ 272:Core/Src/wave_recorder.c ****   /* Write the audio format, must be 0x01 (PCM) */
+ 273:Core/Src/wave_recorder.c ****   pHeadBuf[20]  = 0x01;
+ 274:Core/Src/wave_recorder.c ****   pHeadBuf[21]  = 0x00;
+ 275:Core/Src/wave_recorder.c **** 
+ 276:Core/Src/wave_recorder.c ****   /* Write the number of channels, must be 0x01 (Mono) or 0x02 (Stereo) */
+ 277:Core/Src/wave_recorder.c ****   pHeadBuf[22]  = 0x02;
+ 278:Core/Src/wave_recorder.c ****   pHeadBuf[23]  = 0x00;
+ 279:Core/Src/wave_recorder.c **** 
+ 280:Core/Src/wave_recorder.c ****   /* Write the Sample Rate 8000 Hz */
+ 281:Core/Src/wave_recorder.c ****   pHeadBuf[24]  = (uint8_t)((REC_FREQ & 0xFF));
+ 282:Core/Src/wave_recorder.c ****   pHeadBuf[25]  = (uint8_t)((REC_FREQ >> 8) & 0xFF);
+ 283:Core/Src/wave_recorder.c ****   pHeadBuf[26]  = (uint8_t)((REC_FREQ >> 16) & 0xFF);
+ 284:Core/Src/wave_recorder.c ****   pHeadBuf[27]  = (uint8_t)((REC_FREQ >> 24) & 0xFF);
+ 285:Core/Src/wave_recorder.c **** 
+ 286:Core/Src/wave_recorder.c ****   /* Write the Byte Rate */
+ 287:Core/Src/wave_recorder.c ****   pHeadBuf[28]  = (uint8_t)((REC_FREQ & 0xFF));
+ 288:Core/Src/wave_recorder.c ****   pHeadBuf[29]  = (uint8_t)((REC_FREQ >> 8) & 0xFF);
+ 289:Core/Src/wave_recorder.c ****   pHeadBuf[30]  = (uint8_t)((REC_FREQ >> 16) & 0xFF);
+ 290:Core/Src/wave_recorder.c ****   pHeadBuf[31]  = (uint8_t)((REC_FREQ >> 24) & 0xFF);
+ 291:Core/Src/wave_recorder.c **** 
+ 292:Core/Src/wave_recorder.c ****   /* Write the block alignment */
+ 293:Core/Src/wave_recorder.c ****   pHeadBuf[32]  = 0x02;/*0x02*/
+ 294:Core/Src/wave_recorder.c ****   pHeadBuf[33]  = 0x00;
+ 295:Core/Src/wave_recorder.c **** 
+ 296:Core/Src/wave_recorder.c ****   /* Write the number of bits per sample */
+ 297:Core/Src/wave_recorder.c ****   pHeadBuf[34]  = 0x10; /*0x08*/
+ 298:Core/Src/wave_recorder.c ****   pHeadBuf[35]  = 0x00;
+ 299:Core/Src/wave_recorder.c **** 
+ 300:Core/Src/wave_recorder.c ****   /* Write the Data chunk, must be 'data' */
+ 301:Core/Src/wave_recorder.c ****   pHeadBuf[36]  = 'd';
+ 302:Core/Src/wave_recorder.c ****   pHeadBuf[37]  = 'a';
+ 303:Core/Src/wave_recorder.c ****   pHeadBuf[38]  = 't';
+ 304:Core/Src/wave_recorder.c ****   pHeadBuf[39]  = 'a';
+ 305:Core/Src/wave_recorder.c **** 
+ 306:Core/Src/wave_recorder.c ****   /* Write the number of sample data */
+ 307:Core/Src/wave_recorder.c ****   pHeadBuf[40] = 0x00;
+ 308:Core/Src/wave_recorder.c ****   pHeadBuf[41] = 0xE2;
+ 309:Core/Src/wave_recorder.c ****   pHeadBuf[42] = 0x04;
+ 310:Core/Src/wave_recorder.c ****   pHeadBuf[43] = 0x00;
+ 311:Core/Src/wave_recorder.c **** 
+ 312:Core/Src/wave_recorder.c ****   /* Fill the missing bytes in Buffer with 0x80 */
+ 313:Core/Src/wave_recorder.c ****   for (count = 44; count < 512 ; count ++)
+ 314:Core/Src/wave_recorder.c ****   {
+ 315:Core/Src/wave_recorder.c ****     pHeadBuf[count] = 0x80;
+ 316:Core/Src/wave_recorder.c ****   }
+ARM GAS  /tmp/ccmXvSLv.s 			page 7
+
+
+ 317:Core/Src/wave_recorder.c ****   
+ 318:Core/Src/wave_recorder.c ****   /* Return 0 if all operations are OK */
+ 319:Core/Src/wave_recorder.c ****   return 0;
+ 320:Core/Src/wave_recorder.c **** }
+ 321:Core/Src/wave_recorder.c **** 
+ 322:Core/Src/wave_recorder.c **** /**
+ 323:Core/Src/wave_recorder.c ****   * @brief  Update the recorded data 
+ 324:Core/Src/wave_recorder.c ****   * @param  None
+ 325:Core/Src/wave_recorder.c ****   * @retval None
+ 326:Core/Src/wave_recorder.c ****   */
+ 327:Core/Src/wave_recorder.c **** void WaveRecorderUpdate(void)
+ 328:Core/Src/wave_recorder.c **** {     
+ 329:Core/Src/wave_recorder.c ****   WaveRecorderInit(32000,16, 1);
+ 330:Core/Src/wave_recorder.c ****   WaveCounter = 0;
+ 331:Core/Src/wave_recorder.c ****   LED_Toggle = 7;
+ 332:Core/Src/wave_recorder.c ****   
+ 333:Core/Src/wave_recorder.c ****   /* Remove Wave file if exist on flash disk */
+ 334:Core/Src/wave_recorder.c ****   f_unlink ();
+ 335:Core/Src/wave_recorder.c ****      
+ 336:Core/Src/wave_recorder.c **** 
+ 337:Core/Src/wave_recorder.c ****     WaveRecStatus = 1;
+ 338:Core/Src/wave_recorder.c ****   
+ 339:Core/Src/wave_recorder.c ****   /* Initialize the Header Wave */
+ 340:Core/Src/wave_recorder.c ****   WavaRecorderHeaderInit(RecBufHeader);
+ 341:Core/Src/wave_recorder.c ****   
+ 342:Core/Src/wave_recorder.c ****   /* Write the Header wave */
+ 343:Core/Src/wave_recorder.c ****   
+ 344:Core/Src/wave_recorder.c ****   /* Increment tne wave counter */  
+ 345:Core/Src/wave_recorder.c ****   WaveCounter += 512;
+ 346:Core/Src/wave_recorder.c **** 
+ 347:Core/Src/wave_recorder.c ****   /* Start the record */
+ 348:Core/Src/wave_recorder.c ****   WaveRecorderStart(RecBuf, PCM_OUT_SIZE);
+ 349:Core/Src/wave_recorder.c ****   
+ 350:Core/Src/wave_recorder.c ****   /* Reset the time base variable */
+ 351:Core/Src/wave_recorder.c ****   Time_Rec_Base = 0;
+ 352:Core/Src/wave_recorder.c ****   Switch = 0;
+ 353:Core/Src/wave_recorder.c ****     
+ 354:Core/Src/wave_recorder.c ****     /* Wait for the recording time */  
+ 355:Core/Src/wave_recorder.c ****   
+ 356:Core/Src/wave_recorder.c ****       /* Wait for the data to be ready with PCM form */
+ 357:Core/Src/wave_recorder.c ****      
+ 358:Core/Src/wave_recorder.c ****       
+ 359:Core/Src/wave_recorder.c ****       /* Switch the buffers*/
+ 360:Core/Src/wave_recorder.c ****       if (Switch ==1)
+ 361:Core/Src/wave_recorder.c ****      {
+ 362:Core/Src/wave_recorder.c ****        pAudioRecBuf = RecBuf;
+ 363:Core/Src/wave_recorder.c ****        writebuffer = RecBuf1;
+ 364:Core/Src/wave_recorder.c ****        WaveCounter += 32;
+ 365:Core/Src/wave_recorder.c ****        Switch = 0;
+ 366:Core/Src/wave_recorder.c ****      }
+ 367:Core/Src/wave_recorder.c ****       else
+ 368:Core/Src/wave_recorder.c ****       {
+ 369:Core/Src/wave_recorder.c ****         pAudioRecBuf = RecBuf1;
+ 370:Core/Src/wave_recorder.c ****         writebuffer = RecBuf;
+ 371:Core/Src/wave_recorder.c ****         WaveCounter += 32;
+ 372:Core/Src/wave_recorder.c ****         Switch = 1;
+ 373:Core/Src/wave_recorder.c ****       }
+ARM GAS  /tmp/ccmXvSLv.s 			page 8
+
+
+ 374:Core/Src/wave_recorder.c ****       
+ 375:Core/Src/wave_recorder.c ****       for (counter=0; counter<16; counter++)
+ 376:Core/Src/wave_recorder.c ****       {
+ 377:Core/Src/wave_recorder.c ****         LED_Toggle = 3;
+ 378:Core/Src/wave_recorder.c ****         if (buf_idx< RAM_BUFFER_SIZE)
+ 379:Core/Src/wave_recorder.c ****         {
+ 380:Core/Src/wave_recorder.c ****           /* Store Data in RAM buffer */
+ 381:Core/Src/wave_recorder.c ****           RAM_Buf[buf_idx++]= *(writebuffer + counter);
+ 382:Core/Src/wave_recorder.c ****           if (buf_idx1 == RAM_BUFFER_SIZE)
+ 383:Core/Src/wave_recorder.c ****           {
+ 384:Core/Src/wave_recorder.c ****             buf_idx1 = 0;
+ 385:Core/Src/wave_recorder.c ****             /* Write the stored data in the RAm to the USB Key */
+ 386:Core/Src/wave_recorder.c ****           }
+ 387:Core/Src/wave_recorder.c ****         }
+ 388:Core/Src/wave_recorder.c ****         else if (buf_idx1< RAM_BUFFER_SIZE)
+ 389:Core/Src/wave_recorder.c ****         {
+ 390:Core/Src/wave_recorder.c ****           /* Store Data in RAM buffer */
+ 391:Core/Src/wave_recorder.c ****           RAM_Buf1[buf_idx1++]= *(writebuffer + counter);
+ 392:Core/Src/wave_recorder.c ****           if (buf_idx == RAM_BUFFER_SIZE)
+ 393:Core/Src/wave_recorder.c ****           {
+ 394:Core/Src/wave_recorder.c ****             buf_idx = 0;
+ 395:Core/Src/wave_recorder.c ****             /* Write the stored data in the RAM to the USB Key */
+ 396:Core/Src/wave_recorder.c ****           }
+ 397:Core/Src/wave_recorder.c ****         }
+ 398:Core/Src/wave_recorder.c ****       }   
+ 399:Core/Src/wave_recorder.c ****  
+ 400:Core/Src/wave_recorder.c ****       /* User button pressed */
+ 401:Core/Src/wave_recorder.c ****       if ( Command_index != 1)
+ 402:Core/Src/wave_recorder.c ****       {
+ 403:Core/Src/wave_recorder.c ****         /* Stop recording */
+ 404:Core/Src/wave_recorder.c ****         WaveRecorderStop();  
+ 405:Core/Src/wave_recorder.c ****       }
+ 406:Core/Src/wave_recorder.c ****     
+ 407:Core/Src/wave_recorder.c ****     
+ 408:Core/Src/wave_recorder.c ****   
+ 409:Core/Src/wave_recorder.c ****    
+ 410:Core/Src/wave_recorder.c ****   /* Update the data length in the header of the recorded wave */    
+ 411:Core/Src/wave_recorder.c ****     
+ 412:Core/Src/wave_recorder.c ****   /* Write the updated header wave */
+ 413:Core/Src/wave_recorder.c ****   
+ 414:Core/Src/wave_recorder.c ****   /* Close file and filesystem */
+ 415:Core/Src/wave_recorder.c ****   
+ 416:Core/Src/wave_recorder.c **** }
+ 417:Core/Src/wave_recorder.c **** 
+ 418:Core/Src/wave_recorder.c **** /**
+ 419:Core/Src/wave_recorder.c ****   * @brief  Initialize GPIO for wave recorder.
+ 420:Core/Src/wave_recorder.c ****   * @param  None
+ 421:Core/Src/wave_recorder.c ****   * @retval None
+ 422:Core/Src/wave_recorder.c ****   */
+ 423:Core/Src/wave_recorder.c **** static void WaveRecorder_GPIO_Init(void)
+ 424:Core/Src/wave_recorder.c **** {  
+  28              		.loc 1 424 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 24
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              	.LCFI0:
+ARM GAS  /tmp/ccmXvSLv.s 			page 9
+
+
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 86B0     		sub	sp, sp, #24
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 32
+ 425:Core/Src/wave_recorder.c ****   GPIO_InitTypeDef GPIO_InitStructure;
+  40              		.loc 1 425 3 view .LVU1
+ 426:Core/Src/wave_recorder.c **** 
+ 427:Core/Src/wave_recorder.c ****   /* Enable GPIO clocks */
+ 428:Core/Src/wave_recorder.c **** 
+ 429:Core/Src/wave_recorder.c ****   GPIO_InitStructure.Mode = GPIO_AF12_SDIO;
+  41              		.loc 1 429 3 view .LVU2
+  42              		.loc 1 429 27 is_stmt 0 view .LVU3
+  43 0004 0C23     		movs	r3, #12
+  44 0006 0293     		str	r3, [sp, #8]
+ 430:Core/Src/wave_recorder.c ****   GPIO_InitStructure.Alternate = GPIO_OTYPER_OT0;
+  45              		.loc 1 430 3 is_stmt 1 view .LVU4
+  46              		.loc 1 430 32 is_stmt 0 view .LVU5
+  47 0008 0123     		movs	r3, #1
+  48 000a 0593     		str	r3, [sp, #20]
+ 431:Core/Src/wave_recorder.c ****   GPIO_InitStructure.Pull  = GPIO_NOPULL;
+  49              		.loc 1 431 3 is_stmt 1 view .LVU6
+  50              		.loc 1 431 28 is_stmt 0 view .LVU7
+  51 000c 0023     		movs	r3, #0
+  52 000e 0393     		str	r3, [sp, #12]
+ 432:Core/Src/wave_recorder.c ****   GPIO_InitStructure.Speed = GPIO_SPEED_FREQ_HIGH;
+  53              		.loc 1 432 3 is_stmt 1 view .LVU8
+  54              		.loc 1 432 28 is_stmt 0 view .LVU9
+  55 0010 0223     		movs	r3, #2
+  56 0012 0493     		str	r3, [sp, #16]
+ 433:Core/Src/wave_recorder.c **** 
+ 434:Core/Src/wave_recorder.c ****   /* SPI SCK pin configuration */
+ 435:Core/Src/wave_recorder.c ****   GPIO_InitStructure.Pin = SPI_SCK_PIN;
+  57              		.loc 1 435 3 is_stmt 1 view .LVU10
+  58              		.loc 1 435 26 is_stmt 0 view .LVU11
+  59 0014 4FF48063 		mov	r3, #1024
+  60 0018 0193     		str	r3, [sp, #4]
+ 436:Core/Src/wave_recorder.c ****   GPIO_Init(SPI_SCK_GPIO_PORT, &GPIO_InitStructure);
+  61              		.loc 1 436 3 is_stmt 1 view .LVU12
+  62 001a 0C4C     		ldr	r4, .L3
+  63 001c 01A9     		add	r1, sp, #4
+  64 001e 2046     		mov	r0, r4
+  65 0020 FFF7FEFF 		bl	GPIO_Init
+  66              	.LVL0:
+ 437:Core/Src/wave_recorder.c ****   
+ 438:Core/Src/wave_recorder.c ****   /* Connect SPI pins to AF5 */  
+ 439:Core/Src/wave_recorder.c ****   GPIO_PinAFConfig(SPI_SCK_GPIO_PORT, GET_GPIO_SOURCE(GPIO_PIN_10), GPIO_AF5_SPI2);
+  67              		.loc 1 439 3 view .LVU13
+  68 0024 0522     		movs	r2, #5
+  69 0026 0721     		movs	r1, #7
+  70 0028 2046     		mov	r0, r4
+  71 002a FFF7FEFF 		bl	GPIO_PinAFConfig
+  72              	.LVL1:
+ 440:Core/Src/wave_recorder.c ****   
+ 441:Core/Src/wave_recorder.c ****   /* SPI MOSI pin configuration */
+ 442:Core/Src/wave_recorder.c ****   GPIO_InitStructure.Pin =  SPI_MOSI_PIN;
+ARM GAS  /tmp/ccmXvSLv.s 			page 10
+
+
+  73              		.loc 1 442 3 view .LVU14
+  74              		.loc 1 442 26 is_stmt 0 view .LVU15
+  75 002e 0823     		movs	r3, #8
+  76 0030 0193     		str	r3, [sp, #4]
+ 443:Core/Src/wave_recorder.c ****   GPIO_Init(SPI_MOSI_GPIO_PORT, &GPIO_InitStructure);
+  77              		.loc 1 443 3 is_stmt 1 view .LVU16
+  78 0032 04F58064 		add	r4, r4, #1024
+  79 0036 01A9     		add	r1, sp, #4
+  80 0038 2046     		mov	r0, r4
+  81 003a FFF7FEFF 		bl	GPIO_Init
+  82              	.LVL2:
+ 444:Core/Src/wave_recorder.c ****   GPIO_PinAFConfig(SPI_MOSI_GPIO_PORT, GET_GPIO_SOURCE(GPIO_PIN_3), GPIO_AF5_SPI2);
+  83              		.loc 1 444 3 view .LVU17
+  84 003e 0522     		movs	r2, #5
+  85 0040 0721     		movs	r1, #7
+  86 0042 2046     		mov	r0, r4
+  87 0044 FFF7FEFF 		bl	GPIO_PinAFConfig
+  88              	.LVL3:
+ 445:Core/Src/wave_recorder.c **** }
+  89              		.loc 1 445 1 is_stmt 0 view .LVU18
+  90 0048 06B0     		add	sp, sp, #24
+  91              	.LCFI2:
+  92              		.cfi_def_cfa_offset 8
+  93              		@ sp needed
+  94 004a 10BD     		pop	{r4, pc}
+  95              	.L4:
+  96              		.align	2
+  97              	.L3:
+  98 004c 00040240 		.word	1073873920
+  99              		.cfi_endproc
+ 100              	.LFE136:
+ 102              		.section	.text.WaveRecorder_NVIC_Init,"ax",%progbits
+ 103              		.align	1
+ 104              		.syntax unified
+ 105              		.thumb
+ 106              		.thumb_func
+ 107              		.fpu fpv4-sp-d16
+ 109              	WaveRecorder_NVIC_Init:
+ 110              	.LFB138:
+ 446:Core/Src/wave_recorder.c **** 
+ 447:Core/Src/wave_recorder.c **** /**
+ 448:Core/Src/wave_recorder.c ****   * @brief  Initialize SPI peripheral.
+ 449:Core/Src/wave_recorder.c ****   * @param  Freq :Audio frequency
+ 450:Core/Src/wave_recorder.c ****   * @retval None
+ 451:Core/Src/wave_recorder.c ****   */
+ 452:Core/Src/wave_recorder.c **** static void WaveRecorder_SPI_Init(uint32_t Freq)
+ 453:Core/Src/wave_recorder.c **** {
+ 454:Core/Src/wave_recorder.c ****   I2S_InitTypeDef I2S_InitStructure;
+ 455:Core/Src/wave_recorder.c **** 
+ 456:Core/Src/wave_recorder.c ****   /* Enable the SPI clock */
+ 457:Core/Src/wave_recorder.c ****   RCC_APB1PeriphClockCmd(RCC_APB1LPENR_TIM2LPEN,ENABLE);
+ 458:Core/Src/wave_recorder.c ****   
+ 459:Core/Src/wave_recorder.c ****   /* SPI configuration */
+ 460:Core/Src/wave_recorder.c ****   SPI_I2S_DeInit(SPI2);
+ 461:Core/Src/wave_recorder.c ****   I2S_InitStructure.AudioFreq = 32000;
+ 462:Core/Src/wave_recorder.c ****   I2S_InitStructure.Standard = I2S_STANDARD_LSB;
+ 463:Core/Src/wave_recorder.c ****   I2S_InitStructure.DataFormat = I2S_DATAFORMAT_16B;
+ARM GAS  /tmp/ccmXvSLv.s 			page 11
+
+
+ 464:Core/Src/wave_recorder.c ****   I2S_InitStructure.CPOL = I2S_CPOL_HIGH;
+ 465:Core/Src/wave_recorder.c ****   I2S_InitStructure.Mode = I2S_MODE_MASTER_RX;
+ 466:Core/Src/wave_recorder.c ****   I2S_InitStructure.MCLKOutput = I2S_MCLKOUTPUT_DISABLE;
+ 467:Core/Src/wave_recorder.c ****   /* Initialize the I2S peripheral with the structure above */
+ 468:Core/Src/wave_recorder.c ****   I2S_Init(SPI2, &I2S_InitStructure);
+ 469:Core/Src/wave_recorder.c **** 
+ 470:Core/Src/wave_recorder.c ****   /* Enable the Rx buffer not empty interrupt */
+ 471:Core/Src/wave_recorder.c ****   SPI_I2S_ITConfig(SPI2, SPI_IT_RXNE, ENABLE);
+ 472:Core/Src/wave_recorder.c **** }
+ 473:Core/Src/wave_recorder.c **** 
+ 474:Core/Src/wave_recorder.c **** 
+ 475:Core/Src/wave_recorder.c **** /**
+ 476:Core/Src/wave_recorder.c ****   * @brief  Initialize the NVIC.
+ 477:Core/Src/wave_recorder.c ****   * @param  None
+ 478:Core/Src/wave_recorder.c ****   * @retval None
+ 479:Core/Src/wave_recorder.c ****   */
+ 480:Core/Src/wave_recorder.c **** static void WaveRecorder_NVIC_Init(void)
+ 481:Core/Src/wave_recorder.c **** {
+ 111              		.loc 1 481 1 is_stmt 1 view -0
+ 112              		.cfi_startproc
+ 113              		@ args = 0, pretend = 0, frame = 0
+ 114              		@ frame_needed = 0, uses_anonymous_args = 0
+ 115 0000 08B5     		push	{r3, lr}
+ 116              	.LCFI3:
+ 117              		.cfi_def_cfa_offset 8
+ 118              		.cfi_offset 3, -8
+ 119              		.cfi_offset 14, -4
+ 482:Core/Src/wave_recorder.c ****   NVIC_Type NVIC_InitStructure;
+ 120              		.loc 1 482 3 view .LVU20
+ 483:Core/Src/wave_recorder.c **** 
+ 484:Core/Src/wave_recorder.c ****   NVIC_PriorityGroupConfig(NVIC_PRIORITYGROUP_3); 
+ 121              		.loc 1 484 3 view .LVU21
+ 122 0002 0420     		movs	r0, #4
+ 123 0004 FFF7FEFF 		bl	NVIC_PriorityGroupConfig
+ 124              	.LVL4:
+ 485:Core/Src/wave_recorder.c ****   /* Configure the SPI interrupt priority */
+ 486:Core/Src/wave_recorder.c **** 
+ 487:Core/Src/wave_recorder.c **** 
+ 488:Core/Src/wave_recorder.c **** }
+ 125              		.loc 1 488 1 is_stmt 0 view .LVU22
+ 126 0008 08BD     		pop	{r3, pc}
+ 127              		.cfi_endproc
+ 128              	.LFE138:
+ 130              		.section	.text.WaveRecorder_SPI_Init,"ax",%progbits
+ 131              		.align	1
+ 132              		.syntax unified
+ 133              		.thumb
+ 134              		.thumb_func
+ 135              		.fpu fpv4-sp-d16
+ 137              	WaveRecorder_SPI_Init:
+ 138              	.LVL5:
+ 139              	.LFB137:
+ 453:Core/Src/wave_recorder.c ****   I2S_InitTypeDef I2S_InitStructure;
+ 140              		.loc 1 453 1 is_stmt 1 view -0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 32
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccmXvSLv.s 			page 12
+
+
+ 453:Core/Src/wave_recorder.c ****   I2S_InitTypeDef I2S_InitStructure;
+ 144              		.loc 1 453 1 is_stmt 0 view .LVU24
+ 145 0000 10B5     		push	{r4, lr}
+ 146              	.LCFI4:
+ 147              		.cfi_def_cfa_offset 8
+ 148              		.cfi_offset 4, -8
+ 149              		.cfi_offset 14, -4
+ 150 0002 88B0     		sub	sp, sp, #32
+ 151              	.LCFI5:
+ 152              		.cfi_def_cfa_offset 40
+ 454:Core/Src/wave_recorder.c **** 
+ 153              		.loc 1 454 3 is_stmt 1 view .LVU25
+ 457:Core/Src/wave_recorder.c ****   
+ 154              		.loc 1 457 3 view .LVU26
+ 155 0004 0121     		movs	r1, #1
+ 156 0006 0846     		mov	r0, r1
+ 157              	.LVL6:
+ 457:Core/Src/wave_recorder.c ****   
+ 158              		.loc 1 457 3 is_stmt 0 view .LVU27
+ 159 0008 FFF7FEFF 		bl	RCC_APB1PeriphClockCmd
+ 160              	.LVL7:
+ 460:Core/Src/wave_recorder.c ****   I2S_InitStructure.AudioFreq = 32000;
+ 161              		.loc 1 460 3 is_stmt 1 view .LVU28
+ 162 000c 0D4C     		ldr	r4, .L9
+ 163 000e 2046     		mov	r0, r4
+ 164 0010 FFF7FEFF 		bl	SPI_I2S_DeInit
+ 165              	.LVL8:
+ 461:Core/Src/wave_recorder.c ****   I2S_InitStructure.Standard = I2S_STANDARD_LSB;
+ 166              		.loc 1 461 3 view .LVU29
+ 461:Core/Src/wave_recorder.c ****   I2S_InitStructure.Standard = I2S_STANDARD_LSB;
+ 167              		.loc 1 461 31 is_stmt 0 view .LVU30
+ 168 0014 4FF4FA43 		mov	r3, #32000
+ 169 0018 0493     		str	r3, [sp, #16]
+ 462:Core/Src/wave_recorder.c ****   I2S_InitStructure.DataFormat = I2S_DATAFORMAT_16B;
+ 170              		.loc 1 462 3 is_stmt 1 view .LVU31
+ 462:Core/Src/wave_recorder.c ****   I2S_InitStructure.DataFormat = I2S_DATAFORMAT_16B;
+ 171              		.loc 1 462 30 is_stmt 0 view .LVU32
+ 172 001a 2023     		movs	r3, #32
+ 173 001c 0193     		str	r3, [sp, #4]
+ 463:Core/Src/wave_recorder.c ****   I2S_InitStructure.CPOL = I2S_CPOL_HIGH;
+ 174              		.loc 1 463 3 is_stmt 1 view .LVU33
+ 463:Core/Src/wave_recorder.c ****   I2S_InitStructure.CPOL = I2S_CPOL_HIGH;
+ 175              		.loc 1 463 32 is_stmt 0 view .LVU34
+ 176 001e 0023     		movs	r3, #0
+ 177 0020 0293     		str	r3, [sp, #8]
+ 464:Core/Src/wave_recorder.c ****   I2S_InitStructure.Mode = I2S_MODE_MASTER_RX;
+ 178              		.loc 1 464 3 is_stmt 1 view .LVU35
+ 464:Core/Src/wave_recorder.c ****   I2S_InitStructure.Mode = I2S_MODE_MASTER_RX;
+ 179              		.loc 1 464 26 is_stmt 0 view .LVU36
+ 180 0022 0822     		movs	r2, #8
+ 181 0024 0592     		str	r2, [sp, #20]
+ 465:Core/Src/wave_recorder.c ****   I2S_InitStructure.MCLKOutput = I2S_MCLKOUTPUT_DISABLE;
+ 182              		.loc 1 465 3 is_stmt 1 view .LVU37
+ 465:Core/Src/wave_recorder.c ****   I2S_InitStructure.MCLKOutput = I2S_MCLKOUTPUT_DISABLE;
+ 183              		.loc 1 465 26 is_stmt 0 view .LVU38
+ 184 0026 4FF44072 		mov	r2, #768
+ 185 002a 0092     		str	r2, [sp]
+ARM GAS  /tmp/ccmXvSLv.s 			page 13
+
+
+ 466:Core/Src/wave_recorder.c ****   /* Initialize the I2S peripheral with the structure above */
+ 186              		.loc 1 466 3 is_stmt 1 view .LVU39
+ 466:Core/Src/wave_recorder.c ****   /* Initialize the I2S peripheral with the structure above */
+ 187              		.loc 1 466 32 is_stmt 0 view .LVU40
+ 188 002c 0393     		str	r3, [sp, #12]
+ 468:Core/Src/wave_recorder.c **** 
+ 189              		.loc 1 468 3 is_stmt 1 view .LVU41
+ 190 002e 6946     		mov	r1, sp
+ 191 0030 2046     		mov	r0, r4
+ 192 0032 FFF7FEFF 		bl	I2S_Init
+ 193              	.LVL9:
+ 471:Core/Src/wave_recorder.c **** }
+ 194              		.loc 1 471 3 view .LVU42
+ 195 0036 0122     		movs	r2, #1
+ 196 0038 4021     		movs	r1, #64
+ 197 003a 2046     		mov	r0, r4
+ 198 003c FFF7FEFF 		bl	SPI_I2S_ITConfig
+ 199              	.LVL10:
+ 472:Core/Src/wave_recorder.c **** 
+ 200              		.loc 1 472 1 is_stmt 0 view .LVU43
+ 201 0040 08B0     		add	sp, sp, #32
+ 202              	.LCFI6:
+ 203              		.cfi_def_cfa_offset 8
+ 204              		@ sp needed
+ 205 0042 10BD     		pop	{r4, pc}
+ 206              	.L10:
+ 207              		.align	2
+ 208              	.L9:
+ 209 0044 00380040 		.word	1073756160
+ 210              		.cfi_endproc
+ 211              	.LFE137:
+ 213              		.section	.text.WaveRecorderInit,"ax",%progbits
+ 214              		.align	1
+ 215              		.global	WaveRecorderInit
+ 216              		.syntax unified
+ 217              		.thumb
+ 218              		.thumb_func
+ 219              		.fpu fpv4-sp-d16
+ 221              	WaveRecorderInit:
+ 222              	.LVL11:
+ 223              	.LFB130:
+ 103:Core/Src/wave_recorder.c ****   /* Check if the interface is already initialized */
+ 224              		.loc 1 103 1 is_stmt 1 view -0
+ 225              		.cfi_startproc
+ 226              		@ args = 0, pretend = 0, frame = 0
+ 227              		@ frame_needed = 0, uses_anonymous_args = 0
+ 103:Core/Src/wave_recorder.c ****   /* Check if the interface is already initialized */
+ 228              		.loc 1 103 1 is_stmt 0 view .LVU45
+ 229 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 230              	.LCFI7:
+ 231              		.cfi_def_cfa_offset 24
+ 232              		.cfi_offset 3, -24
+ 233              		.cfi_offset 4, -20
+ 234              		.cfi_offset 5, -16
+ 235              		.cfi_offset 6, -12
+ 236              		.cfi_offset 7, -8
+ 237              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccmXvSLv.s 			page 14
+
+
+ 105:Core/Src/wave_recorder.c ****   {
+ 238              		.loc 1 105 3 is_stmt 1 view .LVU46
+ 105:Core/Src/wave_recorder.c ****   {
+ 239              		.loc 1 105 7 is_stmt 0 view .LVU47
+ 240 0002 144B     		ldr	r3, .L15
+ 241 0004 1B68     		ldr	r3, [r3]
+ 105:Core/Src/wave_recorder.c ****   {
+ 242              		.loc 1 105 6 view .LVU48
+ 243 0006 0BB1     		cbz	r3, .L14
+ 244              	.LVL12:
+ 245              	.L12:
+ 143:Core/Src/wave_recorder.c **** 
+ 246              		.loc 1 143 1 view .LVU49
+ 247 0008 0020     		movs	r0, #0
+ 248 000a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 249              	.LVL13:
+ 250              	.L14:
+ 143:Core/Src/wave_recorder.c **** 
+ 251              		.loc 1 143 1 view .LVU50
+ 252 000c 0646     		mov	r6, r0
+ 253 000e 0D46     		mov	r5, r1
+ 254 0010 1446     		mov	r4, r2
+ 113:Core/Src/wave_recorder.c ****     
+ 255              		.loc 1 113 5 is_stmt 1 view .LVU51
+ 113:Core/Src/wave_recorder.c ****     
+ 256              		.loc 1 113 18 is_stmt 0 view .LVU52
+ 257 0012 114A     		ldr	r2, .L15+4
+ 258              	.LVL14:
+ 113:Core/Src/wave_recorder.c ****     
+ 259              		.loc 1 113 18 view .LVU53
+ 260 0014 136B     		ldr	r3, [r2, #48]
+ 261 0016 43F48053 		orr	r3, r3, #4096
+ 262 001a 1363     		str	r3, [r2, #48]
+ 116:Core/Src/wave_recorder.c ****     Filter.HP_HZ = 10;
+ 263              		.loc 1 116 5 is_stmt 1 view .LVU54
+ 116:Core/Src/wave_recorder.c ****     Filter.HP_HZ = 10;
+ 264              		.loc 1 116 18 is_stmt 0 view .LVU55
+ 265 001c 0F48     		ldr	r0, .L15+8
+ 266              	.LVL15:
+ 116:Core/Src/wave_recorder.c ****     Filter.HP_HZ = 10;
+ 267              		.loc 1 116 18 view .LVU56
+ 268 001e 104B     		ldr	r3, .L15+12
+ 269 0020 4360     		str	r3, [r0, #4]	@ float
+ 117:Core/Src/wave_recorder.c ****     Filter.Fs = 16000;
+ 270              		.loc 1 117 5 is_stmt 1 view .LVU57
+ 117:Core/Src/wave_recorder.c ****     Filter.Fs = 16000;
+ 271              		.loc 1 117 18 is_stmt 0 view .LVU58
+ 272 0022 104B     		ldr	r3, .L15+16
+ 273 0024 8360     		str	r3, [r0, #8]	@ float
+ 118:Core/Src/wave_recorder.c ****     Filter.Out_MicChannels = 1;
+ 274              		.loc 1 118 5 is_stmt 1 view .LVU59
+ 118:Core/Src/wave_recorder.c ****     Filter.Out_MicChannels = 1;
+ 275              		.loc 1 118 15 is_stmt 0 view .LVU60
+ 276 0026 4FF47A53 		mov	r3, #16000
+ 277 002a 0380     		strh	r3, [r0]	@ movhi
+ 119:Core/Src/wave_recorder.c ****     Filter.In_MicChannels = 1;
+ 278              		.loc 1 119 5 is_stmt 1 view .LVU61
+ARM GAS  /tmp/ccmXvSLv.s 			page 15
+
+
+ 119:Core/Src/wave_recorder.c ****     Filter.In_MicChannels = 1;
+ 279              		.loc 1 119 28 is_stmt 0 view .LVU62
+ 280 002c 0127     		movs	r7, #1
+ 281 002e C781     		strh	r7, [r0, #14]	@ movhi
+ 120:Core/Src/wave_recorder.c ****     
+ 282              		.loc 1 120 5 is_stmt 1 view .LVU63
+ 120:Core/Src/wave_recorder.c ****     
+ 283              		.loc 1 120 27 is_stmt 0 view .LVU64
+ 284 0030 8781     		strh	r7, [r0, #12]	@ movhi
+ 122:Core/Src/wave_recorder.c ****     
+ 285              		.loc 1 122 5 is_stmt 1 view .LVU65
+ 286 0032 FFF7FEFF 		bl	PDM_Filter_Init
+ 287              	.LVL16:
+ 125:Core/Src/wave_recorder.c ****     
+ 288              		.loc 1 125 5 view .LVU66
+ 289 0036 FFF7FEFF 		bl	WaveRecorder_GPIO_Init
+ 290              	.LVL17:
+ 128:Core/Src/wave_recorder.c ****     
+ 291              		.loc 1 128 5 view .LVU67
+ 292 003a FFF7FEFF 		bl	WaveRecorder_NVIC_Init
+ 293              	.LVL18:
+ 131:Core/Src/wave_recorder.c ****     
+ 294              		.loc 1 131 5 view .LVU68
+ 295 003e 3046     		mov	r0, r6
+ 296 0040 FFF7FEFF 		bl	WaveRecorder_SPI_Init
+ 297              	.LVL19:
+ 134:Core/Src/wave_recorder.c ****     AudioRecChnlNbr = ChnlNbr;
+ 298              		.loc 1 134 5 view .LVU69
+ 134:Core/Src/wave_recorder.c ****     AudioRecChnlNbr = ChnlNbr;
+ 299              		.loc 1 134 20 is_stmt 0 view .LVU70
+ 300 0044 084B     		ldr	r3, .L15+20
+ 301 0046 1D60     		str	r5, [r3]
+ 135:Core/Src/wave_recorder.c ****     
+ 302              		.loc 1 135 5 is_stmt 1 view .LVU71
+ 135:Core/Src/wave_recorder.c ****     
+ 303              		.loc 1 135 21 is_stmt 0 view .LVU72
+ 304 0048 084B     		ldr	r3, .L15+24
+ 305 004a 1C60     		str	r4, [r3]
+ 138:Core/Src/wave_recorder.c ****     
+ 306              		.loc 1 138 5 is_stmt 1 view .LVU73
+ 138:Core/Src/wave_recorder.c ****     
+ 307              		.loc 1 138 20 is_stmt 0 view .LVU74
+ 308 004c 014B     		ldr	r3, .L15
+ 309 004e 1F60     		str	r7, [r3]
+ 141:Core/Src/wave_recorder.c ****   }  
+ 310              		.loc 1 141 5 is_stmt 1 view .LVU75
+ 141:Core/Src/wave_recorder.c ****   }  
+ 311              		.loc 1 141 12 is_stmt 0 view .LVU76
+ 312 0050 DAE7     		b	.L12
+ 313              	.L16:
+ 314 0052 00BF     		.align	2
+ 315              	.L15:
+ 316 0054 00000000 		.word	.LANCHOR0
+ 317 0058 00380240 		.word	1073887232
+ 318 005c 00000000 		.word	Filter
+ 319 0060 0000FA45 		.word	1174011904
+ 320 0064 00002041 		.word	1092616192
+ARM GAS  /tmp/ccmXvSLv.s 			page 16
+
+
+ 321 0068 00000000 		.word	.LANCHOR1
+ 322 006c 00000000 		.word	.LANCHOR2
+ 323              		.cfi_endproc
+ 324              	.LFE130:
+ 326              		.section	.text.WaveRecorderStart,"ax",%progbits
+ 327              		.align	1
+ 328              		.global	WaveRecorderStart
+ 329              		.syntax unified
+ 330              		.thumb
+ 331              		.thumb_func
+ 332              		.fpu fpv4-sp-d16
+ 334              	WaveRecorderStart:
+ 335              	.LVL20:
+ 336              	.LFB131:
+ 152:Core/Src/wave_recorder.c **** /* Check if the interface has already been initialized */
+ 337              		.loc 1 152 1 is_stmt 1 view -0
+ 338              		.cfi_startproc
+ 339              		@ args = 0, pretend = 0, frame = 0
+ 340              		@ frame_needed = 0, uses_anonymous_args = 0
+ 154:Core/Src/wave_recorder.c ****   {
+ 341              		.loc 1 154 3 view .LVU78
+ 154:Core/Src/wave_recorder.c ****   {
+ 342              		.loc 1 154 7 is_stmt 0 view .LVU79
+ 343 0000 0A4B     		ldr	r3, .L25
+ 344 0002 1B68     		ldr	r3, [r3]
+ 154:Core/Src/wave_recorder.c ****   {
+ 345              		.loc 1 154 6 view .LVU80
+ 346 0004 0BB9     		cbnz	r3, .L24
+ 172:Core/Src/wave_recorder.c ****   }
+ 347              		.loc 1 172 12 view .LVU81
+ 348 0006 0120     		movs	r0, #1
+ 349              	.LVL21:
+ 174:Core/Src/wave_recorder.c **** 
+ 350              		.loc 1 174 1 view .LVU82
+ 351 0008 7047     		bx	lr
+ 352              	.LVL22:
+ 353              	.L24:
+ 152:Core/Src/wave_recorder.c **** /* Check if the interface has already been initialized */
+ 354              		.loc 1 152 1 view .LVU83
+ 355 000a 10B5     		push	{r4, lr}
+ 356              	.LCFI8:
+ 357              		.cfi_def_cfa_offset 8
+ 358              		.cfi_offset 4, -8
+ 359              		.cfi_offset 14, -4
+ 360              	.LBB2:
+ 157:Core/Src/wave_recorder.c ****     AudioRecCurrSize = size;
+ 361              		.loc 1 157 5 is_stmt 1 view .LVU84
+ 157:Core/Src/wave_recorder.c ****     AudioRecCurrSize = size;
+ 362              		.loc 1 157 18 is_stmt 0 view .LVU85
+ 363 000c 084B     		ldr	r3, .L25+4
+ 364 000e 1860     		str	r0, [r3]
+ 158:Core/Src/wave_recorder.c ****     
+ 365              		.loc 1 158 5 is_stmt 1 view .LVU86
+ 158:Core/Src/wave_recorder.c ****     
+ 366              		.loc 1 158 22 is_stmt 0 view .LVU87
+ 367 0010 084B     		ldr	r3, .L25+8
+ 368 0012 1960     		str	r1, [r3]
+ARM GAS  /tmp/ccmXvSLv.s 			page 17
+
+
+ 161:Core/Src/wave_recorder.c ****     /* The Data transfer is performed in the SPI interrupt routine */
+ 369              		.loc 1 161 5 is_stmt 1 view .LVU88
+ 370 0014 084C     		ldr	r4, .L25+12
+ 371 0016 0122     		movs	r2, #1
+ 372 0018 4021     		movs	r1, #64
+ 373              	.LVL23:
+ 161:Core/Src/wave_recorder.c ****     /* The Data transfer is performed in the SPI interrupt routine */
+ 374              		.loc 1 161 5 is_stmt 0 view .LVU89
+ 375 001a 2046     		mov	r0, r4
+ 376              	.LVL24:
+ 161:Core/Src/wave_recorder.c ****     /* The Data transfer is performed in the SPI interrupt routine */
+ 377              		.loc 1 161 5 view .LVU90
+ 378 001c FFF7FEFF 		bl	SPI_I2S_ITConfig
+ 379              	.LVL25:
+ 164:Core/Src/wave_recorder.c ****    
+ 380              		.loc 1 164 5 is_stmt 1 view .LVU91
+ 381 0020 0121     		movs	r1, #1
+ 382 0022 2046     		mov	r0, r4
+ 383 0024 FFF7FEFF 		bl	I2S_Cmd
+ 384              	.LVL26:
+ 167:Core/Src/wave_recorder.c ****   }
+ 385              		.loc 1 167 5 view .LVU92
+ 167:Core/Src/wave_recorder.c ****   }
+ 386              		.loc 1 167 12 is_stmt 0 view .LVU93
+ 387 0028 0020     		movs	r0, #0
+ 388              	.LBE2:
+ 174:Core/Src/wave_recorder.c **** 
+ 389              		.loc 1 174 1 view .LVU94
+ 390 002a 10BD     		pop	{r4, pc}
+ 391              	.L26:
+ 392              		.align	2
+ 393              	.L25:
+ 394 002c 00000000 		.word	.LANCHOR0
+ 395 0030 00000000 		.word	pAudioRecBuf
+ 396 0034 00000000 		.word	.LANCHOR3
+ 397 0038 00380040 		.word	1073756160
+ 398              		.cfi_endproc
+ 399              	.LFE131:
+ 401              		.section	.text.WaveRecorderStop,"ax",%progbits
+ 402              		.align	1
+ 403              		.global	WaveRecorderStop
+ 404              		.syntax unified
+ 405              		.thumb
+ 406              		.thumb_func
+ 407              		.fpu fpv4-sp-d16
+ 409              	WaveRecorderStop:
+ 410              	.LFB132:
+ 182:Core/Src/wave_recorder.c ****   /* Check if the interface has already been initialized */
+ 411              		.loc 1 182 1 is_stmt 1 view -0
+ 412              		.cfi_startproc
+ 413              		@ args = 0, pretend = 0, frame = 0
+ 414              		@ frame_needed = 0, uses_anonymous_args = 0
+ 415 0000 08B5     		push	{r3, lr}
+ 416              	.LCFI9:
+ 417              		.cfi_def_cfa_offset 8
+ 418              		.cfi_offset 3, -8
+ 419              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccmXvSLv.s 			page 18
+
+
+ 184:Core/Src/wave_recorder.c ****   {
+ 420              		.loc 1 184 3 view .LVU96
+ 184:Core/Src/wave_recorder.c ****   {
+ 421              		.loc 1 184 7 is_stmt 0 view .LVU97
+ 422 0002 054B     		ldr	r3, .L32
+ 423 0004 1B68     		ldr	r3, [r3]
+ 184:Core/Src/wave_recorder.c ****   {
+ 424              		.loc 1 184 6 view .LVU98
+ 425 0006 0BB9     		cbnz	r3, .L31
+ 196:Core/Src/wave_recorder.c ****   }
+ 426              		.loc 1 196 12 view .LVU99
+ 427 0008 0120     		movs	r0, #1
+ 428              	.L27:
+ 198:Core/Src/wave_recorder.c **** 
+ 429              		.loc 1 198 1 view .LVU100
+ 430 000a 08BD     		pop	{r3, pc}
+ 431              	.L31:
+ 432              	.LBB3:
+ 188:Core/Src/wave_recorder.c ****     
+ 433              		.loc 1 188 5 is_stmt 1 view .LVU101
+ 434 000c 0021     		movs	r1, #0
+ 435 000e 0348     		ldr	r0, .L32+4
+ 436 0010 FFF7FEFF 		bl	I2S_Cmd
+ 437              	.LVL27:
+ 191:Core/Src/wave_recorder.c ****   }
+ 438              		.loc 1 191 5 view .LVU102
+ 191:Core/Src/wave_recorder.c ****   }
+ 439              		.loc 1 191 12 is_stmt 0 view .LVU103
+ 440 0014 0020     		movs	r0, #0
+ 441 0016 F8E7     		b	.L27
+ 442              	.L33:
+ 443              		.align	2
+ 444              	.L32:
+ 445 0018 00000000 		.word	.LANCHOR0
+ 446 001c 00380040 		.word	1073756160
+ 447              	.LBE3:
+ 448              		.cfi_endproc
+ 449              	.LFE132:
+ 451              		.section	.text.SPI2_IRQHandler,"ax",%progbits
+ 452              		.align	1
+ 453              		.global	SPI2_IRQHandler
+ 454              		.syntax unified
+ 455              		.thumb
+ 456              		.thumb_func
+ 457              		.fpu fpv4-sp-d16
+ 459              	SPI2_IRQHandler:
+ 460              	.LFB133:
+ 207:Core/Src/wave_recorder.c ****    uint16_t volume;
+ 461              		.loc 1 207 1 is_stmt 1 view -0
+ 462              		.cfi_startproc
+ 463              		@ args = 0, pretend = 0, frame = 0
+ 464              		@ frame_needed = 0, uses_anonymous_args = 0
+ 465 0000 10B5     		push	{r4, lr}
+ 466              	.LCFI10:
+ 467              		.cfi_def_cfa_offset 8
+ 468              		.cfi_offset 4, -8
+ 469              		.cfi_offset 14, -4
+ARM GAS  /tmp/ccmXvSLv.s 			page 19
+
+
+ 208:Core/Src/wave_recorder.c ****    uint16_t app;
+ 470              		.loc 1 208 4 view .LVU105
+ 209:Core/Src/wave_recorder.c **** 
+ 471              		.loc 1 209 4 view .LVU106
+ 212:Core/Src/wave_recorder.c ****   {
+ 472              		.loc 1 212 3 view .LVU107
+ 473              	.LBB4:
+ 212:Core/Src/wave_recorder.c ****   {
+ 474              		.loc 1 212 7 is_stmt 0 view .LVU108
+ 475 0002 4021     		movs	r1, #64
+ 476 0004 1248     		ldr	r0, .L38
+ 477 0006 FFF7FEFF 		bl	SPI_GetITStatus
+ 478              	.LVL28:
+ 212:Core/Src/wave_recorder.c ****   {
+ 479              		.loc 1 212 6 view .LVU109
+ 480 000a 00B9     		cbnz	r0, .L37
+ 481              	.L34:
+ 482              	.LBE4:
+ 228:Core/Src/wave_recorder.c **** 
+ 483              		.loc 1 228 1 view .LVU110
+ 484 000c 10BD     		pop	{r4, pc}
+ 485              	.L37:
+ 486              	.LBB6:
+ 487              	.LBB5:
+ 214:Core/Src/wave_recorder.c ****     InternalBuffer[InternalBufferSize++] = HTONS(app);
+ 488              		.loc 1 214 5 is_stmt 1 view .LVU111
+ 214:Core/Src/wave_recorder.c ****     InternalBuffer[InternalBufferSize++] = HTONS(app);
+ 489              		.loc 1 214 11 is_stmt 0 view .LVU112
+ 490 000e 1048     		ldr	r0, .L38
+ 491 0010 FFF7FEFF 		bl	SPI_I2S_ReceiveData
+ 492              	.LVL29:
+ 215:Core/Src/wave_recorder.c ****     
+ 493              		.loc 1 215 5 is_stmt 1 view .LVU113
+ 215:Core/Src/wave_recorder.c ****     
+ 494              		.loc 1 215 44 is_stmt 0 view .LVU114
+ 495 0014 C0F30723 		ubfx	r3, r0, #8, #8
+ 496 0018 0002     		lsls	r0, r0, #8
+ 497              	.LVL30:
+ 215:Core/Src/wave_recorder.c ****     
+ 498              		.loc 1 215 44 view .LVU115
+ 499 001a 20F07F40 		bic	r0, r0, #-16777216
+ 500 001e 20F0FF00 		bic	r0, r0, #255
+ 215:Core/Src/wave_recorder.c ****     
+ 501              		.loc 1 215 38 view .LVU116
+ 502 0022 0C4C     		ldr	r4, .L38+4
+ 503 0024 2168     		ldr	r1, [r4]
+ 504 0026 4A1C     		adds	r2, r1, #1
+ 505 0028 2260     		str	r2, [r4]
+ 215:Core/Src/wave_recorder.c ****     
+ 506              		.loc 1 215 44 view .LVU117
+ 507 002a 1843     		orrs	r0, r0, r3
+ 215:Core/Src/wave_recorder.c ****     
+ 508              		.loc 1 215 42 view .LVU118
+ 509 002c 0A4B     		ldr	r3, .L38+8
+ 510 002e 23F81100 		strh	r0, [r3, r1, lsl #1]	@ movhi
+ 218:Core/Src/wave_recorder.c ****     {
+ 511              		.loc 1 218 5 is_stmt 1 view .LVU119
+ARM GAS  /tmp/ccmXvSLv.s 			page 20
+
+
+ 218:Core/Src/wave_recorder.c ****     {
+ 512              		.loc 1 218 8 is_stmt 0 view .LVU120
+ 513 0032 3F2A     		cmp	r2, #63
+ 514 0034 EAD9     		bls	.L34
+ 220:Core/Src/wave_recorder.c ****      
+ 515              		.loc 1 220 7 is_stmt 1 view .LVU121
+ 220:Core/Src/wave_recorder.c ****      
+ 516              		.loc 1 220 26 is_stmt 0 view .LVU122
+ 517 0036 0022     		movs	r2, #0
+ 518 0038 2260     		str	r2, [r4]
+ 222:Core/Src/wave_recorder.c ****       
+ 519              		.loc 1 222 7 is_stmt 1 view .LVU123
+ 520              	.LVL31:
+ 224:Core/Src/wave_recorder.c ****       Data_Status = 1;       
+ 521              		.loc 1 224 7 view .LVU124
+ 522 003a 084B     		ldr	r3, .L38+12
+ 523 003c 3222     		movs	r2, #50
+ 524 003e 0849     		ldr	r1, .L38+16
+ 525 0040 0968     		ldr	r1, [r1]
+ 526 0042 0548     		ldr	r0, .L38+8
+ 527 0044 FFF7FEFF 		bl	PDM_Filter_64_LSB
+ 528              	.LVL32:
+ 225:Core/Src/wave_recorder.c ****     }
+ 529              		.loc 1 225 7 view .LVU125
+ 225:Core/Src/wave_recorder.c ****     }
+ 530              		.loc 1 225 19 is_stmt 0 view .LVU126
+ 531 0048 064B     		ldr	r3, .L38+20
+ 532 004a 0122     		movs	r2, #1
+ 533 004c 1A60     		str	r2, [r3]
+ 534              	.LBE5:
+ 535              	.LBE6:
+ 228:Core/Src/wave_recorder.c **** 
+ 536              		.loc 1 228 1 view .LVU127
+ 537 004e DDE7     		b	.L34
+ 538              	.L39:
+ 539              		.align	2
+ 540              	.L38:
+ 541 0050 00380040 		.word	1073756160
+ 542 0054 00000000 		.word	.LANCHOR4
+ 543 0058 00000000 		.word	.LANCHOR5
+ 544 005c 00000000 		.word	Filter
+ 545 0060 00000000 		.word	pAudioRecBuf
+ 546 0064 00000000 		.word	.LANCHOR6
+ 547              		.cfi_endproc
+ 548              	.LFE133:
+ 550              		.section	.text.WavaRecorderHeaderInit,"ax",%progbits
+ 551              		.align	1
+ 552              		.global	WavaRecorderHeaderInit
+ 553              		.syntax unified
+ 554              		.thumb
+ 555              		.thumb_func
+ 556              		.fpu fpv4-sp-d16
+ 558              	WavaRecorderHeaderInit:
+ 559              	.LVL33:
+ 560              	.LFB134:
+ 236:Core/Src/wave_recorder.c ****   uint16_t count = 0;
+ 561              		.loc 1 236 1 is_stmt 1 view -0
+ARM GAS  /tmp/ccmXvSLv.s 			page 21
+
+
+ 562              		.cfi_startproc
+ 563              		@ args = 0, pretend = 0, frame = 0
+ 564              		@ frame_needed = 0, uses_anonymous_args = 0
+ 565              		@ link register save eliminated.
+ 236:Core/Src/wave_recorder.c ****   uint16_t count = 0;
+ 566              		.loc 1 236 1 is_stmt 0 view .LVU129
+ 567 0000 F0B4     		push	{r4, r5, r6, r7}
+ 568              	.LCFI11:
+ 569              		.cfi_def_cfa_offset 16
+ 570              		.cfi_offset 4, -16
+ 571              		.cfi_offset 5, -12
+ 572              		.cfi_offset 6, -8
+ 573              		.cfi_offset 7, -4
+ 237:Core/Src/wave_recorder.c **** 
+ 574              		.loc 1 237 3 is_stmt 1 view .LVU130
+ 575              	.LVL34:
+ 240:Core/Src/wave_recorder.c ****   pHeadBuf[1] = 'I';
+ 576              		.loc 1 240 3 view .LVU131
+ 240:Core/Src/wave_recorder.c ****   pHeadBuf[1] = 'I';
+ 577              		.loc 1 240 15 is_stmt 0 view .LVU132
+ 578 0002 5223     		movs	r3, #82
+ 579 0004 0370     		strb	r3, [r0]
+ 241:Core/Src/wave_recorder.c ****   pHeadBuf[2] = 'F';
+ 580              		.loc 1 241 3 is_stmt 1 view .LVU133
+ 241:Core/Src/wave_recorder.c ****   pHeadBuf[2] = 'F';
+ 581              		.loc 1 241 15 is_stmt 0 view .LVU134
+ 582 0006 4923     		movs	r3, #73
+ 583 0008 4370     		strb	r3, [r0, #1]
+ 242:Core/Src/wave_recorder.c ****   pHeadBuf[3] = 'F';
+ 584              		.loc 1 242 3 is_stmt 1 view .LVU135
+ 242:Core/Src/wave_recorder.c ****   pHeadBuf[3] = 'F';
+ 585              		.loc 1 242 15 is_stmt 0 view .LVU136
+ 586 000a 4623     		movs	r3, #70
+ 587 000c 8370     		strb	r3, [r0, #2]
+ 243:Core/Src/wave_recorder.c **** 
+ 588              		.loc 1 243 3 is_stmt 1 view .LVU137
+ 243:Core/Src/wave_recorder.c **** 
+ 589              		.loc 1 243 15 is_stmt 0 view .LVU138
+ 590 000e C370     		strb	r3, [r0, #3]
+ 248:Core/Src/wave_recorder.c ****   pHeadBuf[5] = 0xE2;
+ 591              		.loc 1 248 3 is_stmt 1 view .LVU139
+ 248:Core/Src/wave_recorder.c ****   pHeadBuf[5] = 0xE2;
+ 592              		.loc 1 248 15 is_stmt 0 view .LVU140
+ 593 0010 0023     		movs	r3, #0
+ 594 0012 0371     		strb	r3, [r0, #4]
+ 249:Core/Src/wave_recorder.c ****   pHeadBuf[6] = 0x04;
+ 595              		.loc 1 249 3 is_stmt 1 view .LVU141
+ 249:Core/Src/wave_recorder.c ****   pHeadBuf[6] = 0x04;
+ 596              		.loc 1 249 15 is_stmt 0 view .LVU142
+ 597 0014 E221     		movs	r1, #226
+ 598 0016 4171     		strb	r1, [r0, #5]
+ 250:Core/Src/wave_recorder.c ****   pHeadBuf[7] = 0x00;
+ 599              		.loc 1 250 3 is_stmt 1 view .LVU143
+ 250:Core/Src/wave_recorder.c ****   pHeadBuf[7] = 0x00;
+ 600              		.loc 1 250 15 is_stmt 0 view .LVU144
+ 601 0018 0422     		movs	r2, #4
+ 602 001a 8271     		strb	r2, [r0, #6]
+ARM GAS  /tmp/ccmXvSLv.s 			page 22
+
+
+ 251:Core/Src/wave_recorder.c **** 
+ 603              		.loc 1 251 3 is_stmt 1 view .LVU145
+ 251:Core/Src/wave_recorder.c **** 
+ 604              		.loc 1 251 15 is_stmt 0 view .LVU146
+ 605 001c C371     		strb	r3, [r0, #7]
+ 255:Core/Src/wave_recorder.c ****   pHeadBuf[9]  = 'A';
+ 606              		.loc 1 255 3 is_stmt 1 view .LVU147
+ 255:Core/Src/wave_recorder.c ****   pHeadBuf[9]  = 'A';
+ 607              		.loc 1 255 16 is_stmt 0 view .LVU148
+ 608 001e 5724     		movs	r4, #87
+ 609 0020 0472     		strb	r4, [r0, #8]
+ 256:Core/Src/wave_recorder.c ****   pHeadBuf[10] = 'V';
+ 610              		.loc 1 256 3 is_stmt 1 view .LVU149
+ 256:Core/Src/wave_recorder.c ****   pHeadBuf[10] = 'V';
+ 611              		.loc 1 256 16 is_stmt 0 view .LVU150
+ 612 0022 4124     		movs	r4, #65
+ 613 0024 4472     		strb	r4, [r0, #9]
+ 257:Core/Src/wave_recorder.c ****   pHeadBuf[11] = 'E';
+ 614              		.loc 1 257 3 is_stmt 1 view .LVU151
+ 257:Core/Src/wave_recorder.c ****   pHeadBuf[11] = 'E';
+ 615              		.loc 1 257 16 is_stmt 0 view .LVU152
+ 616 0026 5624     		movs	r4, #86
+ 617 0028 8472     		strb	r4, [r0, #10]
+ 258:Core/Src/wave_recorder.c **** 
+ 618              		.loc 1 258 3 is_stmt 1 view .LVU153
+ 258:Core/Src/wave_recorder.c **** 
+ 619              		.loc 1 258 16 is_stmt 0 view .LVU154
+ 620 002a 4524     		movs	r4, #69
+ 621 002c C472     		strb	r4, [r0, #11]
+ 261:Core/Src/wave_recorder.c ****   pHeadBuf[13]  = 'm';
+ 622              		.loc 1 261 3 is_stmt 1 view .LVU155
+ 261:Core/Src/wave_recorder.c ****   pHeadBuf[13]  = 'm';
+ 623              		.loc 1 261 17 is_stmt 0 view .LVU156
+ 624 002e 6624     		movs	r4, #102
+ 625 0030 0473     		strb	r4, [r0, #12]
+ 262:Core/Src/wave_recorder.c ****   pHeadBuf[14]  = 't';
+ 626              		.loc 1 262 3 is_stmt 1 view .LVU157
+ 262:Core/Src/wave_recorder.c ****   pHeadBuf[14]  = 't';
+ 627              		.loc 1 262 17 is_stmt 0 view .LVU158
+ 628 0032 6D24     		movs	r4, #109
+ 629 0034 4473     		strb	r4, [r0, #13]
+ 263:Core/Src/wave_recorder.c ****   pHeadBuf[15]  = ' ';
+ 630              		.loc 1 263 3 is_stmt 1 view .LVU159
+ 263:Core/Src/wave_recorder.c ****   pHeadBuf[15]  = ' ';
+ 631              		.loc 1 263 17 is_stmt 0 view .LVU160
+ 632 0036 7425     		movs	r5, #116
+ 633 0038 8573     		strb	r5, [r0, #14]
+ 264:Core/Src/wave_recorder.c **** 
+ 634              		.loc 1 264 3 is_stmt 1 view .LVU161
+ 264:Core/Src/wave_recorder.c **** 
+ 635              		.loc 1 264 17 is_stmt 0 view .LVU162
+ 636 003a 2024     		movs	r4, #32
+ 637 003c C473     		strb	r4, [r0, #15]
+ 267:Core/Src/wave_recorder.c ****   pHeadBuf[17]  = 0x00;
+ 638              		.loc 1 267 3 is_stmt 1 view .LVU163
+ 267:Core/Src/wave_recorder.c ****   pHeadBuf[17]  = 0x00;
+ 639              		.loc 1 267 17 is_stmt 0 view .LVU164
+ARM GAS  /tmp/ccmXvSLv.s 			page 23
+
+
+ 640 003e 1024     		movs	r4, #16
+ 641 0040 0474     		strb	r4, [r0, #16]
+ 268:Core/Src/wave_recorder.c ****   pHeadBuf[18]  = 0x00;
+ 642              		.loc 1 268 3 is_stmt 1 view .LVU165
+ 268:Core/Src/wave_recorder.c ****   pHeadBuf[18]  = 0x00;
+ 643              		.loc 1 268 17 is_stmt 0 view .LVU166
+ 644 0042 4374     		strb	r3, [r0, #17]
+ 269:Core/Src/wave_recorder.c ****   pHeadBuf[19]  = 0x00;
+ 645              		.loc 1 269 3 is_stmt 1 view .LVU167
+ 269:Core/Src/wave_recorder.c ****   pHeadBuf[19]  = 0x00;
+ 646              		.loc 1 269 17 is_stmt 0 view .LVU168
+ 647 0044 8374     		strb	r3, [r0, #18]
+ 270:Core/Src/wave_recorder.c **** 
+ 648              		.loc 1 270 3 is_stmt 1 view .LVU169
+ 270:Core/Src/wave_recorder.c **** 
+ 649              		.loc 1 270 17 is_stmt 0 view .LVU170
+ 650 0046 C374     		strb	r3, [r0, #19]
+ 273:Core/Src/wave_recorder.c ****   pHeadBuf[21]  = 0x00;
+ 651              		.loc 1 273 3 is_stmt 1 view .LVU171
+ 273:Core/Src/wave_recorder.c ****   pHeadBuf[21]  = 0x00;
+ 652              		.loc 1 273 17 is_stmt 0 view .LVU172
+ 653 0048 0126     		movs	r6, #1
+ 654 004a 0675     		strb	r6, [r0, #20]
+ 274:Core/Src/wave_recorder.c **** 
+ 655              		.loc 1 274 3 is_stmt 1 view .LVU173
+ 274:Core/Src/wave_recorder.c **** 
+ 656              		.loc 1 274 17 is_stmt 0 view .LVU174
+ 657 004c 4375     		strb	r3, [r0, #21]
+ 277:Core/Src/wave_recorder.c ****   pHeadBuf[23]  = 0x00;
+ 658              		.loc 1 277 3 is_stmt 1 view .LVU175
+ 277:Core/Src/wave_recorder.c ****   pHeadBuf[23]  = 0x00;
+ 659              		.loc 1 277 17 is_stmt 0 view .LVU176
+ 660 004e 0226     		movs	r6, #2
+ 661 0050 8675     		strb	r6, [r0, #22]
+ 278:Core/Src/wave_recorder.c **** 
+ 662              		.loc 1 278 3 is_stmt 1 view .LVU177
+ 278:Core/Src/wave_recorder.c **** 
+ 663              		.loc 1 278 17 is_stmt 0 view .LVU178
+ 664 0052 C375     		strb	r3, [r0, #23]
+ 281:Core/Src/wave_recorder.c ****   pHeadBuf[25]  = (uint8_t)((REC_FREQ >> 8) & 0xFF);
+ 665              		.loc 1 281 3 is_stmt 1 view .LVU179
+ 281:Core/Src/wave_recorder.c ****   pHeadBuf[25]  = (uint8_t)((REC_FREQ >> 8) & 0xFF);
+ 666              		.loc 1 281 17 is_stmt 0 view .LVU180
+ 667 0054 4FF0400C 		mov	ip, #64
+ 668 0058 80F818C0 		strb	ip, [r0, #24]
+ 282:Core/Src/wave_recorder.c ****   pHeadBuf[26]  = (uint8_t)((REC_FREQ >> 16) & 0xFF);
+ 669              		.loc 1 282 3 is_stmt 1 view .LVU181
+ 282:Core/Src/wave_recorder.c ****   pHeadBuf[26]  = (uint8_t)((REC_FREQ >> 16) & 0xFF);
+ 670              		.loc 1 282 17 is_stmt 0 view .LVU182
+ 671 005c 1F27     		movs	r7, #31
+ 672 005e 4776     		strb	r7, [r0, #25]
+ 283:Core/Src/wave_recorder.c ****   pHeadBuf[27]  = (uint8_t)((REC_FREQ >> 24) & 0xFF);
+ 673              		.loc 1 283 3 is_stmt 1 view .LVU183
+ 283:Core/Src/wave_recorder.c ****   pHeadBuf[27]  = (uint8_t)((REC_FREQ >> 24) & 0xFF);
+ 674              		.loc 1 283 17 is_stmt 0 view .LVU184
+ 675 0060 8376     		strb	r3, [r0, #26]
+ 284:Core/Src/wave_recorder.c **** 
+ARM GAS  /tmp/ccmXvSLv.s 			page 24
+
+
+ 676              		.loc 1 284 3 is_stmt 1 view .LVU185
+ 284:Core/Src/wave_recorder.c **** 
+ 677              		.loc 1 284 17 is_stmt 0 view .LVU186
+ 678 0062 C376     		strb	r3, [r0, #27]
+ 287:Core/Src/wave_recorder.c ****   pHeadBuf[29]  = (uint8_t)((REC_FREQ >> 8) & 0xFF);
+ 679              		.loc 1 287 3 is_stmt 1 view .LVU187
+ 287:Core/Src/wave_recorder.c ****   pHeadBuf[29]  = (uint8_t)((REC_FREQ >> 8) & 0xFF);
+ 680              		.loc 1 287 17 is_stmt 0 view .LVU188
+ 681 0064 80F81CC0 		strb	ip, [r0, #28]
+ 288:Core/Src/wave_recorder.c ****   pHeadBuf[30]  = (uint8_t)((REC_FREQ >> 16) & 0xFF);
+ 682              		.loc 1 288 3 is_stmt 1 view .LVU189
+ 288:Core/Src/wave_recorder.c ****   pHeadBuf[30]  = (uint8_t)((REC_FREQ >> 16) & 0xFF);
+ 683              		.loc 1 288 17 is_stmt 0 view .LVU190
+ 684 0068 4777     		strb	r7, [r0, #29]
+ 289:Core/Src/wave_recorder.c ****   pHeadBuf[31]  = (uint8_t)((REC_FREQ >> 24) & 0xFF);
+ 685              		.loc 1 289 3 is_stmt 1 view .LVU191
+ 289:Core/Src/wave_recorder.c ****   pHeadBuf[31]  = (uint8_t)((REC_FREQ >> 24) & 0xFF);
+ 686              		.loc 1 289 17 is_stmt 0 view .LVU192
+ 687 006a 8377     		strb	r3, [r0, #30]
+ 290:Core/Src/wave_recorder.c **** 
+ 688              		.loc 1 290 3 is_stmt 1 view .LVU193
+ 290:Core/Src/wave_recorder.c **** 
+ 689              		.loc 1 290 17 is_stmt 0 view .LVU194
+ 690 006c C377     		strb	r3, [r0, #31]
+ 293:Core/Src/wave_recorder.c ****   pHeadBuf[33]  = 0x00;
+ 691              		.loc 1 293 3 is_stmt 1 view .LVU195
+ 293:Core/Src/wave_recorder.c ****   pHeadBuf[33]  = 0x00;
+ 692              		.loc 1 293 17 is_stmt 0 view .LVU196
+ 693 006e 80F82060 		strb	r6, [r0, #32]
+ 294:Core/Src/wave_recorder.c **** 
+ 694              		.loc 1 294 3 is_stmt 1 view .LVU197
+ 294:Core/Src/wave_recorder.c **** 
+ 695              		.loc 1 294 17 is_stmt 0 view .LVU198
+ 696 0072 80F82130 		strb	r3, [r0, #33]
+ 297:Core/Src/wave_recorder.c ****   pHeadBuf[35]  = 0x00;
+ 697              		.loc 1 297 3 is_stmt 1 view .LVU199
+ 297:Core/Src/wave_recorder.c ****   pHeadBuf[35]  = 0x00;
+ 698              		.loc 1 297 17 is_stmt 0 view .LVU200
+ 699 0076 80F82240 		strb	r4, [r0, #34]
+ 298:Core/Src/wave_recorder.c **** 
+ 700              		.loc 1 298 3 is_stmt 1 view .LVU201
+ 298:Core/Src/wave_recorder.c **** 
+ 701              		.loc 1 298 17 is_stmt 0 view .LVU202
+ 702 007a 80F82330 		strb	r3, [r0, #35]
+ 301:Core/Src/wave_recorder.c ****   pHeadBuf[37]  = 'a';
+ 703              		.loc 1 301 3 is_stmt 1 view .LVU203
+ 301:Core/Src/wave_recorder.c ****   pHeadBuf[37]  = 'a';
+ 704              		.loc 1 301 17 is_stmt 0 view .LVU204
+ 705 007e 6424     		movs	r4, #100
+ 706 0080 80F82440 		strb	r4, [r0, #36]
+ 302:Core/Src/wave_recorder.c ****   pHeadBuf[38]  = 't';
+ 707              		.loc 1 302 3 is_stmt 1 view .LVU205
+ 302:Core/Src/wave_recorder.c ****   pHeadBuf[38]  = 't';
+ 708              		.loc 1 302 17 is_stmt 0 view .LVU206
+ 709 0084 6124     		movs	r4, #97
+ 710 0086 80F82540 		strb	r4, [r0, #37]
+ 303:Core/Src/wave_recorder.c ****   pHeadBuf[39]  = 'a';
+ARM GAS  /tmp/ccmXvSLv.s 			page 25
+
+
+ 711              		.loc 1 303 3 is_stmt 1 view .LVU207
+ 303:Core/Src/wave_recorder.c ****   pHeadBuf[39]  = 'a';
+ 712              		.loc 1 303 17 is_stmt 0 view .LVU208
+ 713 008a 80F82650 		strb	r5, [r0, #38]
+ 304:Core/Src/wave_recorder.c **** 
+ 714              		.loc 1 304 3 is_stmt 1 view .LVU209
+ 304:Core/Src/wave_recorder.c **** 
+ 715              		.loc 1 304 17 is_stmt 0 view .LVU210
+ 716 008e 80F82740 		strb	r4, [r0, #39]
+ 307:Core/Src/wave_recorder.c ****   pHeadBuf[41] = 0xE2;
+ 717              		.loc 1 307 3 is_stmt 1 view .LVU211
+ 307:Core/Src/wave_recorder.c ****   pHeadBuf[41] = 0xE2;
+ 718              		.loc 1 307 16 is_stmt 0 view .LVU212
+ 719 0092 80F82830 		strb	r3, [r0, #40]
+ 308:Core/Src/wave_recorder.c ****   pHeadBuf[42] = 0x04;
+ 720              		.loc 1 308 3 is_stmt 1 view .LVU213
+ 308:Core/Src/wave_recorder.c ****   pHeadBuf[42] = 0x04;
+ 721              		.loc 1 308 16 is_stmt 0 view .LVU214
+ 722 0096 80F82910 		strb	r1, [r0, #41]
+ 309:Core/Src/wave_recorder.c ****   pHeadBuf[43] = 0x00;
+ 723              		.loc 1 309 3 is_stmt 1 view .LVU215
+ 309:Core/Src/wave_recorder.c ****   pHeadBuf[43] = 0x00;
+ 724              		.loc 1 309 16 is_stmt 0 view .LVU216
+ 725 009a 80F82A20 		strb	r2, [r0, #42]
+ 310:Core/Src/wave_recorder.c **** 
+ 726              		.loc 1 310 3 is_stmt 1 view .LVU217
+ 310:Core/Src/wave_recorder.c **** 
+ 727              		.loc 1 310 16 is_stmt 0 view .LVU218
+ 728 009e 80F82B30 		strb	r3, [r0, #43]
+ 313:Core/Src/wave_recorder.c ****   {
+ 729              		.loc 1 313 3 is_stmt 1 view .LVU219
+ 730              	.LVL35:
+ 313:Core/Src/wave_recorder.c ****   {
+ 731              		.loc 1 313 14 is_stmt 0 view .LVU220
+ 732 00a2 2C23     		movs	r3, #44
+ 733              	.LVL36:
+ 734              	.L41:
+ 313:Core/Src/wave_recorder.c ****   {
+ 735              		.loc 1 313 20 is_stmt 1 discriminator 1 view .LVU221
+ 313:Core/Src/wave_recorder.c ****   {
+ 736              		.loc 1 313 3 is_stmt 0 discriminator 1 view .LVU222
+ 737 00a4 B3F5007F 		cmp	r3, #512
+ 738 00a8 04D2     		bcs	.L44
+ 315:Core/Src/wave_recorder.c ****   }
+ 739              		.loc 1 315 5 is_stmt 1 discriminator 3 view .LVU223
+ 315:Core/Src/wave_recorder.c ****   }
+ 740              		.loc 1 315 21 is_stmt 0 discriminator 3 view .LVU224
+ 741 00aa 8022     		movs	r2, #128
+ 742 00ac C254     		strb	r2, [r0, r3]
+ 313:Core/Src/wave_recorder.c ****   {
+ 743              		.loc 1 313 34 is_stmt 1 discriminator 3 view .LVU225
+ 313:Core/Src/wave_recorder.c ****   {
+ 744              		.loc 1 313 40 is_stmt 0 discriminator 3 view .LVU226
+ 745 00ae 0133     		adds	r3, r3, #1
+ 746              	.LVL37:
+ 313:Core/Src/wave_recorder.c ****   {
+ 747              		.loc 1 313 40 discriminator 3 view .LVU227
+ARM GAS  /tmp/ccmXvSLv.s 			page 26
+
+
+ 748 00b0 9BB2     		uxth	r3, r3
+ 749              	.LVL38:
+ 313:Core/Src/wave_recorder.c ****   {
+ 750              		.loc 1 313 40 discriminator 3 view .LVU228
+ 751 00b2 F7E7     		b	.L41
+ 752              	.L44:
+ 319:Core/Src/wave_recorder.c **** }
+ 753              		.loc 1 319 3 is_stmt 1 view .LVU229
+ 320:Core/Src/wave_recorder.c **** 
+ 754              		.loc 1 320 1 is_stmt 0 view .LVU230
+ 755 00b4 0020     		movs	r0, #0
+ 756              	.LVL39:
+ 320:Core/Src/wave_recorder.c **** 
+ 757              		.loc 1 320 1 view .LVU231
+ 758 00b6 F0BC     		pop	{r4, r5, r6, r7}
+ 759              	.LCFI12:
+ 760              		.cfi_restore 7
+ 761              		.cfi_restore 6
+ 762              		.cfi_restore 5
+ 763              		.cfi_restore 4
+ 764              		.cfi_def_cfa_offset 0
+ 765 00b8 7047     		bx	lr
+ 766              		.cfi_endproc
+ 767              	.LFE134:
+ 769              		.section	.text.WaveRecorderUpdate,"ax",%progbits
+ 770              		.align	1
+ 771              		.global	WaveRecorderUpdate
+ 772              		.syntax unified
+ 773              		.thumb
+ 774              		.thumb_func
+ 775              		.fpu fpv4-sp-d16
+ 777              	WaveRecorderUpdate:
+ 778              	.LFB135:
+ 328:Core/Src/wave_recorder.c ****   WaveRecorderInit(32000,16, 1);
+ 779              		.loc 1 328 1 is_stmt 1 view -0
+ 780              		.cfi_startproc
+ 781              		@ args = 0, pretend = 0, frame = 0
+ 782              		@ frame_needed = 0, uses_anonymous_args = 0
+ 783 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 784              	.LCFI13:
+ 785              		.cfi_def_cfa_offset 24
+ 786              		.cfi_offset 3, -24
+ 787              		.cfi_offset 4, -20
+ 788              		.cfi_offset 5, -16
+ 789              		.cfi_offset 6, -12
+ 790              		.cfi_offset 7, -8
+ 791              		.cfi_offset 14, -4
+ 329:Core/Src/wave_recorder.c ****   WaveCounter = 0;
+ 792              		.loc 1 329 3 view .LVU233
+ 793 0002 0122     		movs	r2, #1
+ 794 0004 1021     		movs	r1, #16
+ 795 0006 4FF4FA40 		mov	r0, #32000
+ 796 000a FFF7FEFF 		bl	WaveRecorderInit
+ 797              	.LVL40:
+ 330:Core/Src/wave_recorder.c ****   LED_Toggle = 7;
+ 798              		.loc 1 330 3 view .LVU234
+ 330:Core/Src/wave_recorder.c ****   LED_Toggle = 7;
+ARM GAS  /tmp/ccmXvSLv.s 			page 27
+
+
+ 799              		.loc 1 330 15 is_stmt 0 view .LVU235
+ 800 000e 314C     		ldr	r4, .L55
+ 801 0010 0025     		movs	r5, #0
+ 802 0012 2560     		str	r5, [r4]
+ 331:Core/Src/wave_recorder.c ****   
+ 803              		.loc 1 331 3 is_stmt 1 view .LVU236
+ 331:Core/Src/wave_recorder.c ****   
+ 804              		.loc 1 331 14 is_stmt 0 view .LVU237
+ 805 0014 304B     		ldr	r3, .L55+4
+ 806 0016 0722     		movs	r2, #7
+ 807 0018 1A70     		strb	r2, [r3]
+ 334:Core/Src/wave_recorder.c ****      
+ 808              		.loc 1 334 3 is_stmt 1 view .LVU238
+ 809 001a FFF7FEFF 		bl	f_unlink
+ 810              	.LVL41:
+ 337:Core/Src/wave_recorder.c ****   
+ 811              		.loc 1 337 5 view .LVU239
+ 337:Core/Src/wave_recorder.c ****   
+ 812              		.loc 1 337 19 is_stmt 0 view .LVU240
+ 813 001e 0126     		movs	r6, #1
+ 814 0020 2E4B     		ldr	r3, .L55+8
+ 815 0022 1E70     		strb	r6, [r3]
+ 340:Core/Src/wave_recorder.c ****   
+ 816              		.loc 1 340 3 is_stmt 1 view .LVU241
+ 817 0024 2E48     		ldr	r0, .L55+12
+ 818 0026 FFF7FEFF 		bl	WavaRecorderHeaderInit
+ 819              	.LVL42:
+ 345:Core/Src/wave_recorder.c **** 
+ 820              		.loc 1 345 3 view .LVU242
+ 345:Core/Src/wave_recorder.c **** 
+ 821              		.loc 1 345 15 is_stmt 0 view .LVU243
+ 822 002a 2368     		ldr	r3, [r4]
+ 823 002c 03F50073 		add	r3, r3, #512
+ 824 0030 2360     		str	r3, [r4]
+ 348:Core/Src/wave_recorder.c ****   
+ 825              		.loc 1 348 3 is_stmt 1 view .LVU244
+ 826 0032 2C4F     		ldr	r7, .L55+16
+ 827 0034 1021     		movs	r1, #16
+ 828 0036 3846     		mov	r0, r7
+ 829 0038 FFF7FEFF 		bl	WaveRecorderStart
+ 830              	.LVL43:
+ 351:Core/Src/wave_recorder.c ****   Switch = 0;
+ 831              		.loc 1 351 3 view .LVU245
+ 351:Core/Src/wave_recorder.c ****   Switch = 0;
+ 832              		.loc 1 351 17 is_stmt 0 view .LVU246
+ 833 003c 2A4B     		ldr	r3, .L55+20
+ 834 003e 1D80     		strh	r5, [r3]	@ movhi
+ 352:Core/Src/wave_recorder.c ****     
+ 835              		.loc 1 352 3 is_stmt 1 view .LVU247
+ 360:Core/Src/wave_recorder.c ****      {
+ 836              		.loc 1 360 7 view .LVU248
+ 369:Core/Src/wave_recorder.c ****         writebuffer = RecBuf;
+ 837              		.loc 1 369 9 view .LVU249
+ 369:Core/Src/wave_recorder.c ****         writebuffer = RecBuf;
+ 838              		.loc 1 369 22 is_stmt 0 view .LVU250
+ 839 0040 2A4B     		ldr	r3, .L55+24
+ 840 0042 2B4A     		ldr	r2, .L55+28
+ARM GAS  /tmp/ccmXvSLv.s 			page 28
+
+
+ 841 0044 1A60     		str	r2, [r3]
+ 370:Core/Src/wave_recorder.c ****         WaveCounter += 32;
+ 842              		.loc 1 370 9 is_stmt 1 view .LVU251
+ 370:Core/Src/wave_recorder.c ****         WaveCounter += 32;
+ 843              		.loc 1 370 21 is_stmt 0 view .LVU252
+ 844 0046 2B4B     		ldr	r3, .L55+32
+ 845 0048 1F60     		str	r7, [r3]
+ 371:Core/Src/wave_recorder.c ****         Switch = 1;
+ 846              		.loc 1 371 9 is_stmt 1 view .LVU253
+ 371:Core/Src/wave_recorder.c ****         Switch = 1;
+ 847              		.loc 1 371 21 is_stmt 0 view .LVU254
+ 848 004a 2368     		ldr	r3, [r4]
+ 849 004c 2033     		adds	r3, r3, #32
+ 850 004e 2360     		str	r3, [r4]
+ 372:Core/Src/wave_recorder.c ****       }
+ 851              		.loc 1 372 9 is_stmt 1 view .LVU255
+ 372:Core/Src/wave_recorder.c ****       }
+ 852              		.loc 1 372 16 is_stmt 0 view .LVU256
+ 853 0050 294B     		ldr	r3, .L55+36
+ 854 0052 1E70     		strb	r6, [r3]
+ 375:Core/Src/wave_recorder.c ****       {
+ 855              		.loc 1 375 7 is_stmt 1 view .LVU257
+ 375:Core/Src/wave_recorder.c ****       {
+ 856              		.loc 1 375 19 is_stmt 0 view .LVU258
+ 857 0054 294B     		ldr	r3, .L55+40
+ 858 0056 1D80     		strh	r5, [r3]	@ movhi
+ 375:Core/Src/wave_recorder.c ****       {
+ 859              		.loc 1 375 7 view .LVU259
+ 860 0058 12E0     		b	.L46
+ 861              	.L47:
+ 388:Core/Src/wave_recorder.c ****         {
+ 862              		.loc 1 388 14 is_stmt 1 view .LVU260
+ 388:Core/Src/wave_recorder.c ****         {
+ 863              		.loc 1 388 26 is_stmt 0 view .LVU261
+ 864 005a 2949     		ldr	r1, .L55+44
+ 865 005c 0988     		ldrh	r1, [r1]
+ 388:Core/Src/wave_recorder.c ****         {
+ 866              		.loc 1 388 17 view .LVU262
+ 867 005e FF29     		cmp	r1, #255
+ 868 0060 0BD8     		bhi	.L48
+ 391:Core/Src/wave_recorder.c ****           if (buf_idx == RAM_BUFFER_SIZE)
+ 869              		.loc 1 391 11 is_stmt 1 view .LVU263
+ 391:Core/Src/wave_recorder.c ****           if (buf_idx == RAM_BUFFER_SIZE)
+ 870              		.loc 1 391 28 is_stmt 0 view .LVU264
+ 871 0062 4C1C     		adds	r4, r1, #1
+ 872 0064 2648     		ldr	r0, .L55+44
+ 873 0066 0480     		strh	r4, [r0]	@ movhi
+ 391:Core/Src/wave_recorder.c ****           if (buf_idx == RAM_BUFFER_SIZE)
+ 874              		.loc 1 391 33 view .LVU265
+ 875 0068 1E48     		ldr	r0, .L55+16
+ 876 006a 30F81340 		ldrh	r4, [r0, r3, lsl #1]
+ 391:Core/Src/wave_recorder.c ****           if (buf_idx == RAM_BUFFER_SIZE)
+ 877              		.loc 1 391 31 view .LVU266
+ 878 006e 2548     		ldr	r0, .L55+48
+ 879 0070 20F81140 		strh	r4, [r0, r1, lsl #1]	@ movhi
+ 392:Core/Src/wave_recorder.c ****           {
+ 880              		.loc 1 392 11 is_stmt 1 view .LVU267
+ARM GAS  /tmp/ccmXvSLv.s 			page 29
+
+
+ 392:Core/Src/wave_recorder.c ****           {
+ 881              		.loc 1 392 14 is_stmt 0 view .LVU268
+ 882 0074 B2F5807F 		cmp	r2, #256
+ 883 0078 1FD0     		beq	.L52
+ 884              	.L48:
+ 375:Core/Src/wave_recorder.c ****       {
+ 885              		.loc 1 375 35 is_stmt 1 discriminator 2 view .LVU269
+ 375:Core/Src/wave_recorder.c ****       {
+ 886              		.loc 1 375 42 is_stmt 0 discriminator 2 view .LVU270
+ 887 007a 0133     		adds	r3, r3, #1
+ 888 007c 1F4A     		ldr	r2, .L55+40
+ 889 007e 1380     		strh	r3, [r2]	@ movhi
+ 890              	.L46:
+ 375:Core/Src/wave_recorder.c ****       {
+ 891              		.loc 1 375 23 is_stmt 1 discriminator 1 view .LVU271
+ 375:Core/Src/wave_recorder.c ****       {
+ 892              		.loc 1 375 30 is_stmt 0 discriminator 1 view .LVU272
+ 893 0080 1E4B     		ldr	r3, .L55+40
+ 894 0082 1B88     		ldrh	r3, [r3]
+ 375:Core/Src/wave_recorder.c ****       {
+ 895              		.loc 1 375 7 discriminator 1 view .LVU273
+ 896 0084 0F2B     		cmp	r3, #15
+ 897 0086 1CD8     		bhi	.L53
+ 377:Core/Src/wave_recorder.c ****         if (buf_idx< RAM_BUFFER_SIZE)
+ 898              		.loc 1 377 9 is_stmt 1 view .LVU274
+ 377:Core/Src/wave_recorder.c ****         if (buf_idx< RAM_BUFFER_SIZE)
+ 899              		.loc 1 377 20 is_stmt 0 view .LVU275
+ 900 0088 134A     		ldr	r2, .L55+4
+ 901 008a 0321     		movs	r1, #3
+ 902 008c 1170     		strb	r1, [r2]
+ 378:Core/Src/wave_recorder.c ****         {
+ 903              		.loc 1 378 9 is_stmt 1 view .LVU276
+ 378:Core/Src/wave_recorder.c ****         {
+ 904              		.loc 1 378 20 is_stmt 0 view .LVU277
+ 905 008e 1E4A     		ldr	r2, .L55+52
+ 906 0090 1288     		ldrh	r2, [r2]
+ 378:Core/Src/wave_recorder.c ****         {
+ 907              		.loc 1 378 12 view .LVU278
+ 908 0092 FF2A     		cmp	r2, #255
+ 909 0094 E1D8     		bhi	.L47
+ 381:Core/Src/wave_recorder.c ****           if (buf_idx1 == RAM_BUFFER_SIZE)
+ 910              		.loc 1 381 11 is_stmt 1 view .LVU279
+ 381:Core/Src/wave_recorder.c ****           if (buf_idx1 == RAM_BUFFER_SIZE)
+ 911              		.loc 1 381 26 is_stmt 0 view .LVU280
+ 912 0096 501C     		adds	r0, r2, #1
+ 913 0098 1B49     		ldr	r1, .L55+52
+ 914 009a 0880     		strh	r0, [r1]	@ movhi
+ 381:Core/Src/wave_recorder.c ****           if (buf_idx1 == RAM_BUFFER_SIZE)
+ 915              		.loc 1 381 31 view .LVU281
+ 916 009c 1149     		ldr	r1, .L55+16
+ 917 009e 31F81300 		ldrh	r0, [r1, r3, lsl #1]
+ 381:Core/Src/wave_recorder.c ****           if (buf_idx1 == RAM_BUFFER_SIZE)
+ 918              		.loc 1 381 29 view .LVU282
+ 919 00a2 1A49     		ldr	r1, .L55+56
+ 920 00a4 21F81200 		strh	r0, [r1, r2, lsl #1]	@ movhi
+ 382:Core/Src/wave_recorder.c ****           {
+ 921              		.loc 1 382 11 is_stmt 1 view .LVU283
+ARM GAS  /tmp/ccmXvSLv.s 			page 30
+
+
+ 382:Core/Src/wave_recorder.c ****           {
+ 922              		.loc 1 382 24 is_stmt 0 view .LVU284
+ 923 00a8 154A     		ldr	r2, .L55+44
+ 924 00aa 1288     		ldrh	r2, [r2]
+ 382:Core/Src/wave_recorder.c ****           {
+ 925              		.loc 1 382 14 view .LVU285
+ 926 00ac B2F5807F 		cmp	r2, #256
+ 927 00b0 E3D1     		bne	.L48
+ 384:Core/Src/wave_recorder.c ****             /* Write the stored data in the RAm to the USB Key */
+ 928              		.loc 1 384 13 is_stmt 1 view .LVU286
+ 384:Core/Src/wave_recorder.c ****             /* Write the stored data in the RAm to the USB Key */
+ 929              		.loc 1 384 22 is_stmt 0 view .LVU287
+ 930 00b2 134A     		ldr	r2, .L55+44
+ 931 00b4 0021     		movs	r1, #0
+ 932 00b6 1180     		strh	r1, [r2]	@ movhi
+ 933 00b8 DFE7     		b	.L48
+ 934              	.L52:
+ 394:Core/Src/wave_recorder.c ****             /* Write the stored data in the RAM to the USB Key */
+ 935              		.loc 1 394 13 is_stmt 1 view .LVU288
+ 394:Core/Src/wave_recorder.c ****             /* Write the stored data in the RAM to the USB Key */
+ 936              		.loc 1 394 21 is_stmt 0 view .LVU289
+ 937 00ba 134A     		ldr	r2, .L55+52
+ 938 00bc 0021     		movs	r1, #0
+ 939 00be 1180     		strh	r1, [r2]	@ movhi
+ 940 00c0 DBE7     		b	.L48
+ 941              	.L53:
+ 401:Core/Src/wave_recorder.c ****       {
+ 942              		.loc 1 401 7 is_stmt 1 view .LVU290
+ 401:Core/Src/wave_recorder.c ****       {
+ 943              		.loc 1 401 26 is_stmt 0 view .LVU291
+ 944 00c2 134B     		ldr	r3, .L55+60
+ 945 00c4 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 946 00c6 DBB2     		uxtb	r3, r3
+ 401:Core/Src/wave_recorder.c ****       {
+ 947              		.loc 1 401 10 view .LVU292
+ 948 00c8 012B     		cmp	r3, #1
+ 949 00ca 00D1     		bne	.L54
+ 950              	.L45:
+ 416:Core/Src/wave_recorder.c **** 
+ 951              		.loc 1 416 1 view .LVU293
+ 952 00cc F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 953              	.L54:
+ 404:Core/Src/wave_recorder.c ****       }
+ 954              		.loc 1 404 9 is_stmt 1 view .LVU294
+ 955 00ce FFF7FEFF 		bl	WaveRecorderStop
+ 956              	.LVL44:
+ 416:Core/Src/wave_recorder.c **** 
+ 957              		.loc 1 416 1 is_stmt 0 view .LVU295
+ 958 00d2 FBE7     		b	.L45
+ 959              	.L56:
+ 960              		.align	2
+ 961              	.L55:
+ 962 00d4 00000000 		.word	WaveCounter
+ 963 00d8 00000000 		.word	LED_Toggle
+ 964 00dc 00000000 		.word	.LANCHOR7
+ 965 00e0 00000000 		.word	RecBufHeader
+ 966 00e4 00000000 		.word	RecBuf
+ARM GAS  /tmp/ccmXvSLv.s 			page 31
+
+
+ 967 00e8 00000000 		.word	Time_Rec_Base
+ 968 00ec 00000000 		.word	pAudioRecBuf
+ 969 00f0 00000000 		.word	RecBuf1
+ 970 00f4 00000000 		.word	writebuffer
+ 971 00f8 00000000 		.word	.LANCHOR8
+ 972 00fc 00000000 		.word	.LANCHOR9
+ 973 0100 00000000 		.word	.LANCHOR11
+ 974 0104 00000000 		.word	RAM_Buf1
+ 975 0108 00000000 		.word	.LANCHOR10
+ 976 010c 00000000 		.word	RAM_Buf
+ 977 0110 00000000 		.word	Command_index
+ 978              		.cfi_endproc
+ 979              	.LFE135:
+ 981              		.comm	bytesWritten,2,2
+ 982              		.global	AudioRecCurrSize
+ 983              		.comm	pAudioRecBuf,4,4
+ 984              		.global	AudioRecChnlNbr
+ 985              		.global	Data_Status
+ 986              		.global	Switch
+ 987              		.comm	RecBufHeader,512,4
+ 988              		.comm	RecBuf1,32,4
+ 989              		.comm	RecBuf,32,4
+ 990              		.global	AudioRecBitRes
+ 991              		.comm	Filter,52,4
+ 992              		.global	WaveRecStatus
+ 993              		.global	counter
+ 994              		.comm	writebuffer,4,4
+ 995              		.global	buf_idx1
+ 996              		.global	buf_idx
+ 997              		.comm	RAM_Buf1,512,4
+ 998              		.comm	RAM_Buf,512,4
+ 999              		.section	.bss.AudioRecCurrSize,"aw",%nobits
+ 1000              		.align	2
+ 1001              		.set	.LANCHOR3,. + 0
+ 1004              	AudioRecCurrSize:
+ 1005 0000 00000000 		.space	4
+ 1006              		.section	.bss.AudioRecInited,"aw",%nobits
+ 1007              		.align	2
+ 1008              		.set	.LANCHOR0,. + 0
+ 1011              	AudioRecInited:
+ 1012 0000 00000000 		.space	4
+ 1013              		.section	.bss.Data_Status,"aw",%nobits
+ 1014              		.align	2
+ 1015              		.set	.LANCHOR6,. + 0
+ 1018              	Data_Status:
+ 1019 0000 00000000 		.space	4
+ 1020              		.section	.bss.InternalBuffer,"aw",%nobits
+ 1021              		.align	2
+ 1022              		.set	.LANCHOR5,. + 0
+ 1025              	InternalBuffer:
+ 1026 0000 00000000 		.space	128
+ 1026      00000000 
+ 1026      00000000 
+ 1026      00000000 
+ 1026      00000000 
+ 1027              		.section	.bss.InternalBufferSize,"aw",%nobits
+ 1028              		.align	2
+ARM GAS  /tmp/ccmXvSLv.s 			page 32
+
+
+ 1029              		.set	.LANCHOR4,. + 0
+ 1032              	InternalBufferSize:
+ 1033 0000 00000000 		.space	4
+ 1034              		.section	.bss.Switch,"aw",%nobits
+ 1035              		.set	.LANCHOR8,. + 0
+ 1038              	Switch:
+ 1039 0000 00       		.space	1
+ 1040              		.section	.bss.WaveRecStatus,"aw",%nobits
+ 1041              		.set	.LANCHOR7,. + 0
+ 1044              	WaveRecStatus:
+ 1045 0000 00       		.space	1
+ 1046              		.section	.bss.buf_idx,"aw",%nobits
+ 1047              		.align	1
+ 1048              		.set	.LANCHOR10,. + 0
+ 1051              	buf_idx:
+ 1052 0000 0000     		.space	2
+ 1053              		.section	.bss.buf_idx1,"aw",%nobits
+ 1054              		.align	1
+ 1055              		.set	.LANCHOR11,. + 0
+ 1058              	buf_idx1:
+ 1059 0000 0000     		.space	2
+ 1060              		.section	.bss.counter,"aw",%nobits
+ 1061              		.align	1
+ 1062              		.set	.LANCHOR9,. + 0
+ 1065              	counter:
+ 1066 0000 0000     		.space	2
+ 1067              		.section	.data.AudioRecBitRes,"aw"
+ 1068              		.align	2
+ 1069              		.set	.LANCHOR1,. + 0
+ 1072              	AudioRecBitRes:
+ 1073 0000 10000000 		.word	16
+ 1074              		.section	.data.AudioRecChnlNbr,"aw"
+ 1075              		.align	2
+ 1076              		.set	.LANCHOR2,. + 0
+ 1079              	AudioRecChnlNbr:
+ 1080 0000 01000000 		.word	1
+ 1081              		.text
+ 1082              	.Letext0:
+ 1083              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 1084              		.file 3 "Drivers/CMSIS/Include/core_cm4.h"
+ 1085              		.file 4 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 1086              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 1087              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h"
+ 1088              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 1089              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h"
+ 1090              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1091              		.file 10 "Core/Inc/pdm_filter.h"
+ARM GAS  /tmp/ccmXvSLv.s 			page 33
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 wave_recorder.c
+     /tmp/ccmXvSLv.s:18     .text.WaveRecorder_GPIO_Init:0000000000000000 $t
+     /tmp/ccmXvSLv.s:25     .text.WaveRecorder_GPIO_Init:0000000000000000 WaveRecorder_GPIO_Init
+     /tmp/ccmXvSLv.s:98     .text.WaveRecorder_GPIO_Init:000000000000004c $d
+     /tmp/ccmXvSLv.s:103    .text.WaveRecorder_NVIC_Init:0000000000000000 $t
+     /tmp/ccmXvSLv.s:109    .text.WaveRecorder_NVIC_Init:0000000000000000 WaveRecorder_NVIC_Init
+     /tmp/ccmXvSLv.s:131    .text.WaveRecorder_SPI_Init:0000000000000000 $t
+     /tmp/ccmXvSLv.s:137    .text.WaveRecorder_SPI_Init:0000000000000000 WaveRecorder_SPI_Init
+     /tmp/ccmXvSLv.s:209    .text.WaveRecorder_SPI_Init:0000000000000044 $d
+     /tmp/ccmXvSLv.s:214    .text.WaveRecorderInit:0000000000000000 $t
+     /tmp/ccmXvSLv.s:221    .text.WaveRecorderInit:0000000000000000 WaveRecorderInit
+     /tmp/ccmXvSLv.s:316    .text.WaveRecorderInit:0000000000000054 $d
+                            *COM*:0000000000000034 Filter
+     /tmp/ccmXvSLv.s:327    .text.WaveRecorderStart:0000000000000000 $t
+     /tmp/ccmXvSLv.s:334    .text.WaveRecorderStart:0000000000000000 WaveRecorderStart
+     /tmp/ccmXvSLv.s:394    .text.WaveRecorderStart:000000000000002c $d
+                            *COM*:0000000000000004 pAudioRecBuf
+     /tmp/ccmXvSLv.s:402    .text.WaveRecorderStop:0000000000000000 $t
+     /tmp/ccmXvSLv.s:409    .text.WaveRecorderStop:0000000000000000 WaveRecorderStop
+     /tmp/ccmXvSLv.s:445    .text.WaveRecorderStop:0000000000000018 $d
+     /tmp/ccmXvSLv.s:452    .text.SPI2_IRQHandler:0000000000000000 $t
+     /tmp/ccmXvSLv.s:459    .text.SPI2_IRQHandler:0000000000000000 SPI2_IRQHandler
+     /tmp/ccmXvSLv.s:541    .text.SPI2_IRQHandler:0000000000000050 $d
+     /tmp/ccmXvSLv.s:551    .text.WavaRecorderHeaderInit:0000000000000000 $t
+     /tmp/ccmXvSLv.s:558    .text.WavaRecorderHeaderInit:0000000000000000 WavaRecorderHeaderInit
+     /tmp/ccmXvSLv.s:770    .text.WaveRecorderUpdate:0000000000000000 $t
+     /tmp/ccmXvSLv.s:777    .text.WaveRecorderUpdate:0000000000000000 WaveRecorderUpdate
+     /tmp/ccmXvSLv.s:962    .text.WaveRecorderUpdate:00000000000000d4 $d
+                            *COM*:0000000000000200 RecBufHeader
+                            *COM*:0000000000000020 RecBuf
+                            *COM*:0000000000000020 RecBuf1
+                            *COM*:0000000000000004 writebuffer
+                            *COM*:0000000000000200 RAM_Buf1
+                            *COM*:0000000000000200 RAM_Buf
+                            *COM*:0000000000000002 bytesWritten
+     /tmp/ccmXvSLv.s:1004   .bss.AudioRecCurrSize:0000000000000000 AudioRecCurrSize
+     /tmp/ccmXvSLv.s:1079   .data.AudioRecChnlNbr:0000000000000000 AudioRecChnlNbr
+     /tmp/ccmXvSLv.s:1018   .bss.Data_Status:0000000000000000 Data_Status
+     /tmp/ccmXvSLv.s:1038   .bss.Switch:0000000000000000 Switch
+     /tmp/ccmXvSLv.s:1072   .data.AudioRecBitRes:0000000000000000 AudioRecBitRes
+     /tmp/ccmXvSLv.s:1044   .bss.WaveRecStatus:0000000000000000 WaveRecStatus
+     /tmp/ccmXvSLv.s:1065   .bss.counter:0000000000000000 counter
+     /tmp/ccmXvSLv.s:1058   .bss.buf_idx1:0000000000000000 buf_idx1
+     /tmp/ccmXvSLv.s:1051   .bss.buf_idx:0000000000000000 buf_idx
+     /tmp/ccmXvSLv.s:1000   .bss.AudioRecCurrSize:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1007   .bss.AudioRecInited:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1011   .bss.AudioRecInited:0000000000000000 AudioRecInited
+     /tmp/ccmXvSLv.s:1014   .bss.Data_Status:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1021   .bss.InternalBuffer:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1025   .bss.InternalBuffer:0000000000000000 InternalBuffer
+     /tmp/ccmXvSLv.s:1028   .bss.InternalBufferSize:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1032   .bss.InternalBufferSize:0000000000000000 InternalBufferSize
+     /tmp/ccmXvSLv.s:1039   .bss.Switch:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1045   .bss.WaveRecStatus:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1047   .bss.buf_idx:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1054   .bss.buf_idx1:0000000000000000 $d
+ARM GAS  /tmp/ccmXvSLv.s 			page 34
+
+
+     /tmp/ccmXvSLv.s:1061   .bss.counter:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1068   .data.AudioRecBitRes:0000000000000000 $d
+     /tmp/ccmXvSLv.s:1075   .data.AudioRecChnlNbr:0000000000000000 $d
+
+UNDEFINED SYMBOLS
+GPIO_Init
+GPIO_PinAFConfig
+NVIC_PriorityGroupConfig
+RCC_APB1PeriphClockCmd
+SPI_I2S_DeInit
+I2S_Init
+SPI_I2S_ITConfig
+PDM_Filter_Init
+I2S_Cmd
+SPI_GetITStatus
+SPI_I2S_ReceiveData
+PDM_Filter_64_LSB
+f_unlink
+WaveCounter
+LED_Toggle
+Time_Rec_Base
+Command_index
