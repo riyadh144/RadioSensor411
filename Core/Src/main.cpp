@@ -426,38 +426,45 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  * 
  * @param GPIO_Pin 
  */
-// void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
-// {
-//   //Fatfs object
-// 	FATFS FatFs;
-// 	//File object
-// 	FIL fil;
-//   //Mount drive
-// 	if (f_mount(&FatFs, "", 1) == FR_OK) {
-// 		//Mounted OK, turn on RED LED
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  //Fatfs object
+	FATFS FatFs;
+	//File object
+	FIL fil;
+  //Mount drive
+	if (f_mount(&FatFs, "", 1) == FR_OK) {
+		//Mounted OK, turn on RED LED
 		
-// 		wav_player1.file_select("human.wav");
-//     wav_player1.play();
-//     while(!wav_player1.isEndOfFile())
-//     {
-//     wav_player1.process();
-//     }
-// 		//Unmount drive, don't forget this!
-// 		f_mount(0, "", 1);
-// 	}
+		wav_player1.file_select("human.wav");
+    wav_player1.play();
+    while(!wav_player1.isEndOfFile())
+    {
+    wav_player1.process();
+    }
+		//Unmount drive, don't forget this!
+		f_mount(0, "", 1);
+	}
 	
 
-// }
-void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
+}
+//I2S callback
+
+void HAL_I2S_TxCpltCallback(I2S_HandleTypeDef *hi2s)
 {
-  /* EXTI line interrupt detected */
-  if (__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != 0x00u)
+  if(hi2s->Instance == SPI2)
   {
-    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // Clears The Interrupt Flag
-    HAL_GPIO_EXTI_Callback(GPIO_Pin);   // Calls The ISR Handler CallBack Function
+    wav_player1.cplt_transfer_callback();
   }
 }
 
+void HAL_I2S_TxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
+{
+  if(hi2s->Instance == SPI2)
+  {
+    wav_player1.half_transfer_callback();
+  }
+}
 /* USER CODE END 4 */
 
 /**
