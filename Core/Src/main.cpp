@@ -105,12 +105,8 @@ uart uart_sa818(uart::uart2,9600);
 uart uart_pc(uart::uart1,115200);
 sa818 sa8181(&uart_sa818, &radio_pd, &radio_ptt);
 trigger triggerPB2(GPIOE,trigger::PIN2,trigger::NoPull);
-<<<<<<< HEAD
-
-=======
 wav_player wav_player1(i2s::I2S2); //codec to module is hoked up here
 trigger button(GPIOD, trigger::PIN3, trigger::PullDown);
->>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 /* USER CODE END 0 */
 
 /**
@@ -830,18 +826,6 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
  * 
  * @param GPIO_Pin 
  */
-<<<<<<< HEAD
-void HAL_GPIO_EXTI_IRQHandler(uint16_t GPIO_Pin)
-{
-  /* EXTI line interrupt detected */
-  if (__HAL_GPIO_EXTI_GET_IT(GPIO_Pin) != 0x00u)
-  {
-    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_Pin); // Clears The Interrupt Flag
-    HAL_GPIO_EXTI_Callback(GPIO_Pin);   // Calls The ISR Handler CallBack Function
-  }
-}
-
-=======
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   //Fatfs object
@@ -881,7 +865,6 @@ void HAL_I2S_TxHalfCpltCallback(I2S_HandleTypeDef *hi2s)
     wav_player1.half_transfer_callback();
   }
 }
->>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 /* USER CODE END 4 */
 
 /**
