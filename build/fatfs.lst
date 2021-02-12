@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/cc5Lt2qX.s 			page 1
+=======
+ARM GAS  /tmp/ccnsnvLa.s 			page 1
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
    1              		.cpu cortex-m4
@@ -58,7 +62,11 @@ ARM GAS  /tmp/cc5Lt2qX.s 			page 1
   28:FATFS/App/fatfs.c **** /* USER CODE END Variables */
   29:FATFS/App/fatfs.c **** 
   30:FATFS/App/fatfs.c **** void MX_FATFS_Init(void)
+<<<<<<< HEAD
 ARM GAS  /tmp/cc5Lt2qX.s 			page 2
+=======
+ARM GAS  /tmp/ccnsnvLa.s 			page 2
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
   31:FATFS/App/fatfs.c **** {
@@ -118,7 +126,11 @@ ARM GAS  /tmp/cc5Lt2qX.s 			page 1
   69              		.cfi_startproc
   70              		@ args = 0, pretend = 0, frame = 0
   71              		@ frame_needed = 0, uses_anonymous_args = 0
+<<<<<<< HEAD
 ARM GAS  /tmp/cc5Lt2qX.s 			page 3
+=======
+ARM GAS  /tmp/ccnsnvLa.s 			page 3
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
   72              		@ link register save eliminated.
@@ -153,11 +165,16 @@ ARM GAS  /tmp/cc5Lt2qX.s 			page 1
   98              		.file 14 "Middlewares/Third_Party/FatFs/src/ff_gen_drv.h"
   99              		.file 15 "FATFS/Target/sd_diskio.h"
  100              		.file 16 "FATFS/App/fatfs.h"
+<<<<<<< HEAD
 ARM GAS  /tmp/cc5Lt2qX.s 			page 4
+=======
+ARM GAS  /tmp/ccnsnvLa.s 			page 4
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 fatfs.c
+<<<<<<< HEAD
      /tmp/cc5Lt2qX.s:18     .text.MX_FATFS_Init:0000000000000000 $t
      /tmp/cc5Lt2qX.s:26     .text.MX_FATFS_Init:0000000000000000 MX_FATFS_Init
      /tmp/cc5Lt2qX.s:52     .text.MX_FATFS_Init:0000000000000010 $d
@@ -165,6 +182,15 @@ DEFINED SYMBOLS
                             *COM*:0000000000000001 retSD
      /tmp/cc5Lt2qX.s:59     .text.get_fattime:0000000000000000 $t
      /tmp/cc5Lt2qX.s:66     .text.get_fattime:0000000000000000 get_fattime
+=======
+     /tmp/ccnsnvLa.s:18     .text.MX_FATFS_Init:0000000000000000 $t
+     /tmp/ccnsnvLa.s:26     .text.MX_FATFS_Init:0000000000000000 MX_FATFS_Init
+     /tmp/ccnsnvLa.s:52     .text.MX_FATFS_Init:0000000000000010 $d
+                            *COM*:0000000000000004 SDPath
+                            *COM*:0000000000000001 retSD
+     /tmp/ccnsnvLa.s:59     .text.get_fattime:0000000000000000 $t
+     /tmp/ccnsnvLa.s:66     .text.get_fattime:0000000000000000 get_fattime
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
                             *COM*:0000000000001030 SDFile
                             *COM*:0000000000001034 SDFatFS
 

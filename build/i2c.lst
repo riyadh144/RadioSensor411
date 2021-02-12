@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/ccjadCRU.s 			page 1
+=======
+ARM GAS  /tmp/ccRN8xT7.s 			page 1
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
    1              		.cpu cortex-m4
@@ -18,7 +22,11 @@ ARM GAS  /tmp/ccjadCRU.s 			page 1
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
   17              	.Letext0:
+<<<<<<< HEAD
 ARM GAS  /tmp/ccjadCRU.s 			page 2
+=======
+ARM GAS  /tmp/ccRN8xT7.s 			page 2
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
 DEFINED SYMBOLS

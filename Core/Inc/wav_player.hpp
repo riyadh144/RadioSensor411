@@ -10,6 +10,7 @@
 class wav_player
 {
     private:
+    i2s i2sx;
     //WAV File System variables
     FIL wavFile;
 
@@ -69,11 +70,12 @@ class wav_player
     }WAV_HeaderTypeDef;
 
     public:
+    
     /**
      * @brief Construct a new wave player object
      * 
      */
-    wav_player();
+    wav_player(i2s::i2s_num i2snum);
     /**
      * @brief Select WAV file to play
      * @retval 1: when file is found 0 when not
@@ -111,6 +113,18 @@ class wav_player
      */
     void reset(void);
 
+    //sadly for now those will need to be called from the callback
+    
+    /**
+     * @brief complete transfer callback function
+     * @note sadly they will need to be handled from the callback
+     */
+    void cplt_transfer_callback(void);
+    /**
+     * @brief hall transfer callback function
+     * @note sadly they will need to be handled from the callback
+     */
+    void half_transfer_callback(void);
 
 };
 

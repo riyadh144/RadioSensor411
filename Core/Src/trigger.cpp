@@ -11,8 +11,8 @@ trigger::trigger(GPIO_TypeDef * gpiox_ ,PinNumber pinx_,Pull pull_)
 
       /* EXTI interrupt init  on pin PB2 */
       /* These two lines are pin specific : TODO: find a way to make them general */
-    HAL_NVIC_SetPriority(EXTI2_IRQn, 0, 0);
-    HAL_NVIC_EnableIRQ(EXTI2_IRQn);
+    HAL_NVIC_SetPriority(EXTI3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(EXTI3_IRQn);
 
     gpiox = gpiox_;
       /*Configure GPIO pin : x */

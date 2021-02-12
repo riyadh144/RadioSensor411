@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 1
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 1
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
    1              		.cpu cortex-m4
@@ -58,7 +62,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   51 000e 0161     		str	r1, [r0, #16]
   52              	.LBE2:
    6:Core/Src/menu.cpp **** }
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 2
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 2
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
   53              		.loc 1 6 1 view .LVU5
@@ -118,7 +126,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   88 006a 0000     		.align	2
   89              	.LC7:
   90 006c 6D656E75 		.ascii	"menu  back\000"
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 3
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 3
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
   90      20206261 
@@ -178,7 +190,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  138 001a 1D       		.byte	(.L4-.L6)/2
  139 001b 1D       		.byte	(.L4-.L6)/2
  140 001c 1D       		.byte	(.L4-.L6)/2
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 4
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 4
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
  141 001d 1D       		.byte	(.L4-.L6)/2
@@ -238,7 +254,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   29:Core/Src/menu.cpp ****             break;
   30:Core/Src/menu.cpp ****         case MENU_CH_IN:
   31:Core/Src/menu.cpp ****             sprintf(temp, "   CH:%.2s   ",ch);
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 5
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 5
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
   32:Core/Src/menu.cpp ****             oled1->oled_print(temp,Font_16x26, 0,19);
@@ -298,7 +318,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  212              		.loc 1 20 13 is_stmt 1 view .LVU24
   20:Core/Src/menu.cpp ****             break;
  213              		.loc 1 20 30 is_stmt 0 view .LVU25
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 6
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 6
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
  214 006c 304B     		ldr	r3, .L14+4
@@ -358,7 +382,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   27:Core/Src/menu.cpp ****             oled1->oled_print(temp, Font_16x26, 0,19);
  259              		.loc 1 27 20 view .LVU35
  260 00a8 03C3     		stmia	r3!, {r0, r1}
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 7
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 7
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
  261 00aa 23F8022B 		strh	r2, [r3], #2	@ movhi
@@ -418,7 +446,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  305              		.loc 1 35 13 view .LVU45
   35:Core/Src/menu.cpp ****             oled1->oled_print(temp, Font_16x26, 0,19);
  306              		.loc 1 35 20 is_stmt 0 view .LVU46
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 8
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 8
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
  307 00e8 821C     		adds	r2, r0, #2
@@ -478,7 +510,11 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  352              	.L15:
  353 012a 00BF     		.align	2
  354              	.L14:
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 9
+=======
+ARM GAS  /tmp/ccMEB0iu.s 			page 9
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
  355 012c 00000000 		.word	.LC0
@@ -557,12 +593,24 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  414 000c E0B1     		cbz	r0, .L17
   52:Core/Src/menu.cpp ****     {
   53:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+<<<<<<< HEAD
  415              		.loc 1 53 9 is_stmt 1 view .LVU62
  416              		.loc 1 53 31 is_stmt 0 view .LVU63
  417 000e 2069     		ldr	r0, [r4, #16]
  418 0010 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
  419              	.LVL30:
  420              	.L18:
+=======
+ 404              		.loc 1 53 9 is_stmt 1 view .LVU62
+ 405              		.loc 1 53 31 is_stmt 0 view .LVU63
+ 406 000c 2069     		ldr	r0, [r4, #16]
+ 407 000e FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ARM GAS  /tmp/ccMEB0iu.s 			page 10
+
+
+ 408              	.LVL30:
+ 409              	.L18:
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
   54:Core/Src/menu.cpp ****     }
   55:Core/Src/menu.cpp ****     else
   56:Core/Src/menu.cpp ****     {
@@ -634,12 +682,24 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   58:Core/Src/menu.cpp ****     }
  476              		.loc 1 58 9 is_stmt 1 view .LVU68
   58:Core/Src/menu.cpp ****     }
+<<<<<<< HEAD
  477              		.loc 1 58 31 is_stmt 0 view .LVU69
  478 004e 2069     		ldr	r0, [r4, #16]
  479 0050 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
  480              	.LVL32:
  481 0054 DEE7     		b	.L18
  482              	.L30:
+=======
+ 450              		.loc 1 58 31 is_stmt 0 view .LVU69
+ 451 003c 2069     		ldr	r0, [r4, #16]
+ 452 003e FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ARM GAS  /tmp/ccMEB0iu.s 			page 11
+
+
+ 453              	.LVL32:
+ 454 0042 E6E7     		b	.L18
+ 455              	.L26:
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
   62:Core/Src/menu.cpp ****     {
   63:Core/Src/menu.cpp ****     case MENU_HOME:
   64:Core/Src/menu.cpp ****         break;
@@ -671,6 +731,7 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   80:Core/Src/menu.cpp ****             //TODO:Call the Modules set channel 
   81:Core/Src/menu.cpp ****         }
   82:Core/Src/menu.cpp ****         break;
+<<<<<<< HEAD
   83:Core/Src/menu.cpp ****     case MENU_MIC_REC:
   84:Core/Src/menu.cpp ****         menu_value = MENU_MIC_REC_IN;
   85:Core/Src/menu.cpp ****         break;
@@ -724,6 +785,40 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  498              	.L29:
  499              	.LCFI9:
  500              		.cfi_restore_state
+=======
+  83:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+  84:Core/Src/menu.cpp ****         cursorOn^=1;
+  85:Core/Src/menu.cpp ****         if(!cursorOn)
+  86:Core/Src/menu.cpp ****         {
+  87:Core/Src/menu.cpp ****             chVal=atoi(sq);
+  88:Core/Src/menu.cpp ****             cursorPos=0; //reset the cursor positon
+  89:Core/Src/menu.cpp ****             //TODO:Call the Modules set squash function
+  90:Core/Src/menu.cpp ****         }
+  91:Core/Src/menu.cpp ****         break;
+  92:Core/Src/menu.cpp ****     case MENU_TMO_IN:
+  93:Core/Src/menu.cpp ****         cursorOn%=1;
+  94:Core/Src/menu.cpp ****         if(!cursorOn)
+  95:Core/Src/menu.cpp ****         {
+  96:Core/Src/menu.cpp ****             tmoVal=atoi(tmo); //OK is meant to set the value
+  97:Core/Src/menu.cpp ****             cursorPos=0;
+  98:Core/Src/menu.cpp ****             //TODO:Implement the display timer and use tmoVal to modify the prescaler
+  99:Core/Src/menu.cpp ****         }
+ 100:Core/Src/menu.cpp ****         break;
+ 101:Core/Src/menu.cpp **** 
+ 102:Core/Src/menu.cpp ****     default:
+ 103:Core/Src/menu.cpp ****         break;
+ 104:Core/Src/menu.cpp ****     }
+ 105:Core/Src/menu.cpp **** 
+ 106:Core/Src/menu.cpp ****     
+ 107:Core/Src/menu.cpp **** }
+ 463              		.loc 1 107 1 is_stmt 0 view .LVU74
+ARM GAS  /tmp/ccMEB0iu.s 			page 12
+
+
+ 464 0048 38BD     		pop	{r3, r4, r5, pc}
+ 465              	.LVL33:
+ 466              	.L25:
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
   68:Core/Src/menu.cpp ****     case MENU_SQ:
  501              		.loc 1 68 5 is_stmt 1 view .LVU75
   69:Core/Src/menu.cpp ****         break;
@@ -774,6 +869,7 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
   79:Core/Src/menu.cpp ****             //TODO:Call the Modules set channel 
  533              		.loc 1 79 13 is_stmt 1 view .LVU90
   79:Core/Src/menu.cpp ****             //TODO:Call the Modules set channel 
+<<<<<<< HEAD
  534              		.loc 1 79 22 is_stmt 0 view .LVU91
  535 007e 0023     		movs	r3, #0
  536 0080 A373     		strb	r3, [r4, #14]
@@ -1322,6 +1418,565 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
 
 
  181:Core/Src/menu.cpp ****     case MENU_HOME:
+=======
+ 500              		.loc 1 79 22 is_stmt 0 view .LVU91
+ 501 006a 0023     		movs	r3, #0
+ 502 006c A373     		strb	r3, [r4, #14]
+ 503 006e EBE7     		b	.L16
+ARM GAS  /tmp/ccMEB0iu.s 			page 13
+
+
+ 504              	.L22:
+  83:Core/Src/menu.cpp ****         cursorOn^=1;
+ 505              		.loc 1 83 5 is_stmt 1 view .LVU92
+  84:Core/Src/menu.cpp ****         if(!cursorOn)
+ 506              		.loc 1 84 9 view .LVU93
+  84:Core/Src/menu.cpp ****         if(!cursorOn)
+ 507              		.loc 1 84 17 is_stmt 0 view .LVU94
+ 508 0070 E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 509 0072 83F00103 		eor	r3, r3, #1
+ 510 0076 E373     		strb	r3, [r4, #15]
+  85:Core/Src/menu.cpp ****         {
+ 511              		.loc 1 85 9 is_stmt 1 view .LVU95
+ 512 0078 002B     		cmp	r3, #0
+ 513 007a E5D1     		bne	.L16
+  87:Core/Src/menu.cpp ****             cursorPos=0; //reset the cursor positon
+ 514              		.loc 1 87 13 view .LVU96
+  87:Core/Src/menu.cpp ****             cursorPos=0; //reset the cursor positon
+ 515              		.loc 1 87 23 is_stmt 0 view .LVU97
+ 516 007c A01C     		adds	r0, r4, #2
+ 517 007e FFF7FEFF 		bl	atoi
+ 518              	.LVL35:
+  87:Core/Src/menu.cpp ****             cursorPos=0; //reset the cursor positon
+ 519              		.loc 1 87 18 view .LVU98
+ 520 0082 E071     		strb	r0, [r4, #7]
+  88:Core/Src/menu.cpp ****             //TODO:Call the Modules set squash function
+ 521              		.loc 1 88 13 is_stmt 1 view .LVU99
+  88:Core/Src/menu.cpp ****             //TODO:Call the Modules set squash function
+ 522              		.loc 1 88 22 is_stmt 0 view .LVU100
+ 523 0084 0023     		movs	r3, #0
+ 524 0086 A373     		strb	r3, [r4, #14]
+ 525 0088 DEE7     		b	.L16
+ 526              	.L20:
+  92:Core/Src/menu.cpp ****         cursorOn%=1;
+ 527              		.loc 1 92 5 is_stmt 1 view .LVU101
+  93:Core/Src/menu.cpp ****         if(!cursorOn)
+ 528              		.loc 1 93 9 view .LVU102
+  93:Core/Src/menu.cpp ****         if(!cursorOn)
+ 529              		.loc 1 93 17 is_stmt 0 view .LVU103
+ 530 008a 0025     		movs	r5, #0
+ 531 008c E573     		strb	r5, [r4, #15]
+  94:Core/Src/menu.cpp ****         {
+ 532              		.loc 1 94 9 is_stmt 1 view .LVU104
+  96:Core/Src/menu.cpp ****             cursorPos=0;
+ 533              		.loc 1 96 13 view .LVU105
+  96:Core/Src/menu.cpp ****             cursorPos=0;
+ 534              		.loc 1 96 24 is_stmt 0 view .LVU106
+ 535 008e 04F10B00 		add	r0, r4, #11
+ 536 0092 FFF7FEFF 		bl	atoi
+ 537              	.LVL36:
+  96:Core/Src/menu.cpp ****             cursorPos=0;
+ 538              		.loc 1 96 19 view .LVU107
+ 539 0096 6073     		strb	r0, [r4, #13]
+  97:Core/Src/menu.cpp ****             //TODO:Implement the display timer and use tmoVal to modify the prescaler
+ 540              		.loc 1 97 13 is_stmt 1 view .LVU108
+  97:Core/Src/menu.cpp ****             //TODO:Implement the display timer and use tmoVal to modify the prescaler
+ 541              		.loc 1 97 22 is_stmt 0 view .LVU109
+ 542 0098 A573     		strb	r5, [r4, #14]
+ARM GAS  /tmp/ccMEB0iu.s 			page 14
+
+
+ 543              		.loc 1 107 1 view .LVU110
+ 544 009a D5E7     		b	.L16
+ 545              		.cfi_endproc
+ 546              	.LFE142:
+ 547              		.fnend
+ 549              		.section	.text._ZN4menu9menu_nextEv,"ax",%progbits
+ 550              		.align	1
+ 551              		.global	_ZN4menu9menu_nextEv
+ 552              		.syntax unified
+ 553              		.thumb
+ 554              		.thumb_func
+ 555              		.fpu fpv4-sp-d16
+ 557              	_ZN4menu9menu_nextEv:
+ 558              		.fnstart
+ 559              	.LVL37:
+ 560              	.LFB143:
+ 108:Core/Src/menu.cpp **** 
+ 109:Core/Src/menu.cpp **** void menu::menu_next()
+ 110:Core/Src/menu.cpp **** {
+ 561              		.loc 1 110 1 is_stmt 1 view -0
+ 562              		.cfi_startproc
+ 563              		@ args = 0, pretend = 0, frame = 0
+ 564              		@ frame_needed = 0, uses_anonymous_args = 0
+ 565              		.loc 1 110 1 is_stmt 0 view .LVU112
+ 566 0000 10B5     		push	{r4, lr}
+ 567              		.save {r4, lr}
+ 568              	.LCFI7:
+ 569              		.cfi_def_cfa_offset 8
+ 570              		.cfi_offset 4, -8
+ 571              		.cfi_offset 14, -4
+ 572 0002 0446     		mov	r4, r0
+ 111:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+ 573              		.loc 1 111 5 is_stmt 1 view .LVU113
+ 574              		.loc 1 111 28 is_stmt 0 view .LVU114
+ 575 0004 0069     		ldr	r0, [r0, #16]
+ 576              	.LVL38:
+ 577              		.loc 1 111 28 view .LVU115
+ 578 0006 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 579              	.LVL39:
+ 580              		.loc 1 111 5 view .LVU116
+ 581 000a 88B9     		cbnz	r0, .L38
+ 582              	.L29:
+ 112:Core/Src/menu.cpp ****     {
+ 113:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 114:Core/Src/menu.cpp ****     }
+ 115:Core/Src/menu.cpp ****     switch (menu_value)
+ 583              		.loc 1 115 5 is_stmt 1 view .LVU117
+ 584              		.loc 1 115 13 is_stmt 0 view .LVU118
+ 585 000c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 586 000e 013B     		subs	r3, r3, #1
+ 587 0010 172B     		cmp	r3, #23
+ 588 0012 1AD8     		bhi	.L28
+ 589 0014 DFE803F0 		tbb	[pc, r3]
+ 590              	.L32:
+ 591 0018 10       		.byte	(.L36-.L32)/2
+ 592 0019 13       		.byte	(.L35-.L32)/2
+ 593 001a 13       		.byte	(.L35-.L32)/2
+ARM GAS  /tmp/ccMEB0iu.s 			page 15
+
+
+ 594 001b 19       		.byte	(.L28-.L32)/2
+ 595 001c 19       		.byte	(.L28-.L32)/2
+ 596 001d 19       		.byte	(.L28-.L32)/2
+ 597 001e 19       		.byte	(.L28-.L32)/2
+ 598 001f 15       		.byte	(.L34-.L32)/2
+ 599 0020 19       		.byte	(.L28-.L32)/2
+ 600 0021 19       		.byte	(.L28-.L32)/2
+ 601 0022 19       		.byte	(.L28-.L32)/2
+ 602 0023 19       		.byte	(.L28-.L32)/2
+ 603 0024 19       		.byte	(.L28-.L32)/2
+ 604 0025 19       		.byte	(.L28-.L32)/2
+ 605 0026 19       		.byte	(.L28-.L32)/2
+ 606 0027 1A       		.byte	(.L33-.L32)/2
+ 607 0028 19       		.byte	(.L28-.L32)/2
+ 608 0029 19       		.byte	(.L28-.L32)/2
+ 609 002a 19       		.byte	(.L28-.L32)/2
+ 610 002b 19       		.byte	(.L28-.L32)/2
+ 611 002c 19       		.byte	(.L28-.L32)/2
+ 612 002d 19       		.byte	(.L28-.L32)/2
+ 613 002e 19       		.byte	(.L28-.L32)/2
+ 614 002f 1F       		.byte	(.L31-.L32)/2
+ 615              		.p2align 1
+ 616              	.L38:
+ 113:Core/Src/menu.cpp ****     }
+ 617              		.loc 1 113 9 is_stmt 1 view .LVU119
+ 113:Core/Src/menu.cpp ****     }
+ 618              		.loc 1 113 31 is_stmt 0 view .LVU120
+ 619 0030 2069     		ldr	r0, [r4, #16]
+ 620 0032 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 621              	.LVL40:
+ 622 0036 E9E7     		b	.L29
+ 623              	.L36:
+ 116:Core/Src/menu.cpp ****     {
+ 117:Core/Src/menu.cpp ****     case MENU_HOME:
+ 118:Core/Src/menu.cpp ****         break;
+ 119:Core/Src/menu.cpp ****     case MENU_CH:
+ 624              		.loc 1 119 5 is_stmt 1 view .LVU121
+ 120:Core/Src/menu.cpp ****         menu_value=MENU_SQ;
+ 625              		.loc 1 120 9 view .LVU122
+ 626              		.loc 1 120 19 is_stmt 0 view .LVU123
+ 627 0038 0223     		movs	r3, #2
+ 628 003a 2370     		strb	r3, [r4]
+ 121:Core/Src/menu.cpp ****         break;
+ 629              		.loc 1 121 9 is_stmt 1 view .LVU124
+ 630 003c 05E0     		b	.L28
+ 631              	.L35:
+ 122:Core/Src/menu.cpp ****     case MENU_SQ:
+ 123:Core/Src/menu.cpp ****         menu_value=MENU_TMO;
+ 124:Core/Src/menu.cpp ****     case MENU_TMO:
+ 632              		.loc 1 124 5 view .LVU125
+ 125:Core/Src/menu.cpp ****         menu_value=MENU_CH;
+ 633              		.loc 1 125 9 view .LVU126
+ 634              		.loc 1 125 19 is_stmt 0 view .LVU127
+ 635 003e 0123     		movs	r3, #1
+ 636 0040 2370     		strb	r3, [r4]
+ 637              	.L34:
+ 126:Core/Src/menu.cpp ****     case MENU_CH_IN:
+ARM GAS  /tmp/ccMEB0iu.s 			page 16
+
+
+ 638              		.loc 1 126 5 is_stmt 1 view .LVU128
+ 127:Core/Src/menu.cpp ****         cursorPos^=cursorOn; // If the cursor is on switch position
+ 639              		.loc 1 127 9 view .LVU129
+ 640              		.loc 1 127 20 is_stmt 0 view .LVU130
+ 641 0042 E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 642              		.loc 1 127 18 view .LVU131
+ 643 0044 A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 644 0046 5340     		eors	r3, r3, r2
+ 645 0048 A373     		strb	r3, [r4, #14]
+ 128:Core/Src/menu.cpp ****         break;
+ 646              		.loc 1 128 9 is_stmt 1 view .LVU132
+ 647              	.L28:
+ 129:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+ 130:Core/Src/menu.cpp ****         cursorPos^=cursorOn;//TODO: Add a Draw cursor function 
+ 131:Core/Src/menu.cpp ****         break;
+ 132:Core/Src/menu.cpp ****     case MENU_TMO_IN:
+ 133:Core/Src/menu.cpp ****         cursorPos^=cursorOn;
+ 134:Core/Src/menu.cpp ****         break;
+ 135:Core/Src/menu.cpp **** 
+ 136:Core/Src/menu.cpp ****     default:
+ 137:Core/Src/menu.cpp ****         break;
+ 138:Core/Src/menu.cpp ****     }
+ 139:Core/Src/menu.cpp **** }
+ 648              		.loc 1 139 1 is_stmt 0 view .LVU133
+ 649 004a 10BD     		pop	{r4, pc}
+ 650              	.LVL41:
+ 651              	.L33:
+ 129:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+ 652              		.loc 1 129 5 is_stmt 1 view .LVU134
+ 130:Core/Src/menu.cpp ****         break;
+ 653              		.loc 1 130 9 view .LVU135
+ 130:Core/Src/menu.cpp ****         break;
+ 654              		.loc 1 130 20 is_stmt 0 view .LVU136
+ 655 004c E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 130:Core/Src/menu.cpp ****         break;
+ 656              		.loc 1 130 18 view .LVU137
+ 657 004e A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 658 0050 5340     		eors	r3, r3, r2
+ 659 0052 A373     		strb	r3, [r4, #14]
+ 131:Core/Src/menu.cpp ****     case MENU_TMO_IN:
+ 660              		.loc 1 131 9 is_stmt 1 view .LVU138
+ 661 0054 F9E7     		b	.L28
+ 662              	.L31:
+ 132:Core/Src/menu.cpp ****         cursorPos^=cursorOn;
+ 663              		.loc 1 132 5 view .LVU139
+ 133:Core/Src/menu.cpp ****         break;
+ 664              		.loc 1 133 9 view .LVU140
+ 133:Core/Src/menu.cpp ****         break;
+ 665              		.loc 1 133 20 is_stmt 0 view .LVU141
+ 666 0056 E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 133:Core/Src/menu.cpp ****         break;
+ 667              		.loc 1 133 18 view .LVU142
+ 668 0058 A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 669 005a 5340     		eors	r3, r3, r2
+ 670 005c A373     		strb	r3, [r4, #14]
+ 134:Core/Src/menu.cpp **** 
+ 671              		.loc 1 134 9 is_stmt 1 view .LVU143
+ARM GAS  /tmp/ccMEB0iu.s 			page 17
+
+
+ 672              		.loc 1 139 1 is_stmt 0 view .LVU144
+ 673 005e F4E7     		b	.L28
+ 674              		.cfi_endproc
+ 675              	.LFE143:
+ 676              		.fnend
+ 678              		.section	.text._ZN4menu9menu_menuEv,"ax",%progbits
+ 679              		.align	1
+ 680              		.global	_ZN4menu9menu_menuEv
+ 681              		.syntax unified
+ 682              		.thumb
+ 683              		.thumb_func
+ 684              		.fpu fpv4-sp-d16
+ 686              	_ZN4menu9menu_menuEv:
+ 687              		.fnstart
+ 688              	.LVL42:
+ 689              	.LFB144:
+ 140:Core/Src/menu.cpp **** 
+ 141:Core/Src/menu.cpp **** void menu::menu_menu()
+ 142:Core/Src/menu.cpp **** {
+ 690              		.loc 1 142 1 is_stmt 1 view -0
+ 691              		.cfi_startproc
+ 692              		@ args = 0, pretend = 0, frame = 0
+ 693              		@ frame_needed = 0, uses_anonymous_args = 0
+ 694              		.loc 1 142 1 is_stmt 0 view .LVU146
+ 695 0000 10B5     		push	{r4, lr}
+ 696              		.save {r4, lr}
+ 697              	.LCFI8:
+ 698              		.cfi_def_cfa_offset 8
+ 699              		.cfi_offset 4, -8
+ 700              		.cfi_offset 14, -4
+ 701 0002 0446     		mov	r4, r0
+ 143:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn())
+ 702              		.loc 1 143 5 is_stmt 1 view .LVU147
+ 703              		.loc 1 143 28 is_stmt 0 view .LVU148
+ 704 0004 0069     		ldr	r0, [r0, #16]
+ 705              	.LVL43:
+ 706              		.loc 1 143 28 view .LVU149
+ 707 0006 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 708              	.LVL44:
+ 709              		.loc 1 143 5 view .LVU150
+ 710 000a 10B9     		cbnz	r0, .L42
+ 711              	.L40:
+ 144:Core/Src/menu.cpp ****     {
+ 145:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 146:Core/Src/menu.cpp ****     }
+ 147:Core/Src/menu.cpp ****     menu_value = MENU_CH;
+ 712              		.loc 1 147 5 is_stmt 1 view .LVU151
+ 713              		.loc 1 147 16 is_stmt 0 view .LVU152
+ 714 000c 0123     		movs	r3, #1
+ 715 000e 2370     		strb	r3, [r4]
+ 148:Core/Src/menu.cpp **** }
+ 716              		.loc 1 148 1 view .LVU153
+ 717 0010 10BD     		pop	{r4, pc}
+ 718              	.LVL45:
+ 719              	.L42:
+ 145:Core/Src/menu.cpp ****     }
+ 720              		.loc 1 145 9 is_stmt 1 view .LVU154
+ARM GAS  /tmp/ccMEB0iu.s 			page 18
+
+
+ 145:Core/Src/menu.cpp ****     }
+ 721              		.loc 1 145 31 is_stmt 0 view .LVU155
+ 722 0012 2069     		ldr	r0, [r4, #16]
+ 723 0014 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 724              	.LVL46:
+ 725 0018 F8E7     		b	.L40
+ 726              		.cfi_endproc
+ 727              	.LFE144:
+ 728              		.fnend
+ 730              		.section	.text._ZN4menu9menu_backEv,"ax",%progbits
+ 731              		.align	1
+ 732              		.global	_ZN4menu9menu_backEv
+ 733              		.syntax unified
+ 734              		.thumb
+ 735              		.thumb_func
+ 736              		.fpu fpv4-sp-d16
+ 738              	_ZN4menu9menu_backEv:
+ 739              		.fnstart
+ 740              	.LVL47:
+ 741              	.LFB145:
+ 149:Core/Src/menu.cpp **** 
+ 150:Core/Src/menu.cpp **** void menu::menu_back()
+ 151:Core/Src/menu.cpp **** {
+ 742              		.loc 1 151 1 is_stmt 1 view -0
+ 743              		.cfi_startproc
+ 744              		@ args = 0, pretend = 0, frame = 0
+ 745              		@ frame_needed = 0, uses_anonymous_args = 0
+ 746              		.loc 1 151 1 is_stmt 0 view .LVU157
+ 747 0000 10B5     		push	{r4, lr}
+ 748              		.save {r4, lr}
+ 749              	.LCFI9:
+ 750              		.cfi_def_cfa_offset 8
+ 751              		.cfi_offset 4, -8
+ 752              		.cfi_offset 14, -4
+ 753 0002 0446     		mov	r4, r0
+ 152:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+ 754              		.loc 1 152 5 is_stmt 1 view .LVU158
+ 755              		.loc 1 152 28 is_stmt 0 view .LVU159
+ 756 0004 0069     		ldr	r0, [r0, #16]
+ 757              	.LVL48:
+ 758              		.loc 1 152 28 view .LVU160
+ 759 0006 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 760              	.LVL49:
+ 761              		.loc 1 152 5 view .LVU161
+ 762 000a 18B9     		cbnz	r0, .L46
+ 763              	.L44:
+ 153:Core/Src/menu.cpp ****     {
+ 154:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 155:Core/Src/menu.cpp ****     }
+ 156:Core/Src/menu.cpp ****     menu_value = (enum menu_state)(menu_value >> 3);
+ 764              		.loc 1 156 5 is_stmt 1 view .LVU162
+ 765              		.loc 1 156 36 is_stmt 0 view .LVU163
+ 766 000c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 767              		.loc 1 156 18 view .LVU164
+ 768 000e DB08     		lsrs	r3, r3, #3
+ 769              		.loc 1 156 16 view .LVU165
+ 770 0010 2370     		strb	r3, [r4]
+ARM GAS  /tmp/ccMEB0iu.s 			page 19
+
+
+ 157:Core/Src/menu.cpp **** }
+ 771              		.loc 1 157 1 view .LVU166
+ 772 0012 10BD     		pop	{r4, pc}
+ 773              	.LVL50:
+ 774              	.L46:
+ 154:Core/Src/menu.cpp ****     }
+ 775              		.loc 1 154 9 is_stmt 1 view .LVU167
+ 154:Core/Src/menu.cpp ****     }
+ 776              		.loc 1 154 31 is_stmt 0 view .LVU168
+ 777 0014 2069     		ldr	r0, [r4, #16]
+ 778 0016 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 779              	.LVL51:
+ 780 001a F7E7     		b	.L44
+ 781              		.cfi_endproc
+ 782              	.LFE145:
+ 783              		.fnend
+ 785              		.section	.text._ZN4menu9menu_prevEv,"ax",%progbits
+ 786              		.align	1
+ 787              		.global	_ZN4menu9menu_prevEv
+ 788              		.syntax unified
+ 789              		.thumb
+ 790              		.thumb_func
+ 791              		.fpu fpv4-sp-d16
+ 793              	_ZN4menu9menu_prevEv:
+ 794              		.fnstart
+ 795              	.LVL52:
+ 796              	.LFB146:
+ 158:Core/Src/menu.cpp **** 
+ 159:Core/Src/menu.cpp **** void menu::menu_prev()
+ 160:Core/Src/menu.cpp **** {
+ 797              		.loc 1 160 1 is_stmt 1 view -0
+ 798              		.cfi_startproc
+ 799              		@ args = 0, pretend = 0, frame = 0
+ 800              		@ frame_needed = 0, uses_anonymous_args = 0
+ 801              		.loc 1 160 1 is_stmt 0 view .LVU170
+ 802 0000 10B5     		push	{r4, lr}
+ 803              		.save {r4, lr}
+ 804              	.LCFI10:
+ 805              		.cfi_def_cfa_offset 8
+ 806              		.cfi_offset 4, -8
+ 807              		.cfi_offset 14, -4
+ 808 0002 0446     		mov	r4, r0
+ 161:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+ 809              		.loc 1 161 5 is_stmt 1 view .LVU171
+ 810              		.loc 1 161 28 is_stmt 0 view .LVU172
+ 811 0004 0069     		ldr	r0, [r0, #16]
+ 812              	.LVL53:
+ 813              		.loc 1 161 28 view .LVU173
+ 814 0006 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 815              	.LVL54:
+ 816              		.loc 1 161 5 view .LVU174
+ 817 000a 88B9     		cbnz	r0, .L58
+ 818              	.L48:
+ 162:Core/Src/menu.cpp ****     {
+ 163:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 164:Core/Src/menu.cpp ****     }
+ 165:Core/Src/menu.cpp ****     switch (menu_value)
+ARM GAS  /tmp/ccMEB0iu.s 			page 20
+
+
+ 819              		.loc 1 165 5 is_stmt 1 view .LVU175
+ 820              		.loc 1 165 13 is_stmt 0 view .LVU176
+ 821 000c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 822 000e 013B     		subs	r3, r3, #1
+ 823 0010 172B     		cmp	r3, #23
+ 824 0012 13D8     		bhi	.L47
+ 825 0014 DFE803F0 		tbb	[pc, r3]
+ 826              	.L51:
+ 827 0018 10       		.byte	(.L56-.L51)/2
+ 828 0019 13       		.byte	(.L55-.L51)/2
+ 829 001a 16       		.byte	(.L54-.L51)/2
+ 830 001b 12       		.byte	(.L47-.L51)/2
+ 831 001c 12       		.byte	(.L47-.L51)/2
+ 832 001d 12       		.byte	(.L47-.L51)/2
+ 833 001e 12       		.byte	(.L47-.L51)/2
+ 834 001f 19       		.byte	(.L53-.L51)/2
+ 835 0020 12       		.byte	(.L47-.L51)/2
+ 836 0021 12       		.byte	(.L47-.L51)/2
+ 837 0022 12       		.byte	(.L47-.L51)/2
+ 838 0023 12       		.byte	(.L47-.L51)/2
+ 839 0024 12       		.byte	(.L47-.L51)/2
+ 840 0025 12       		.byte	(.L47-.L51)/2
+ 841 0026 12       		.byte	(.L47-.L51)/2
+ 842 0027 1E       		.byte	(.L52-.L51)/2
+ 843 0028 12       		.byte	(.L47-.L51)/2
+ 844 0029 12       		.byte	(.L47-.L51)/2
+ 845 002a 12       		.byte	(.L47-.L51)/2
+ 846 002b 12       		.byte	(.L47-.L51)/2
+ 847 002c 12       		.byte	(.L47-.L51)/2
+ 848 002d 12       		.byte	(.L47-.L51)/2
+ 849 002e 12       		.byte	(.L47-.L51)/2
+ 850 002f 23       		.byte	(.L50-.L51)/2
+ 851              		.p2align 1
+ 852              	.L58:
+ 163:Core/Src/menu.cpp ****     }
+ 853              		.loc 1 163 9 is_stmt 1 view .LVU177
+ 163:Core/Src/menu.cpp ****     }
+ 854              		.loc 1 163 31 is_stmt 0 view .LVU178
+ 855 0030 2069     		ldr	r0, [r4, #16]
+ 856 0032 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 857              	.LVL55:
+ 858 0036 E9E7     		b	.L48
+ 859              	.L56:
+ 166:Core/Src/menu.cpp ****     {
+ 167:Core/Src/menu.cpp ****     case MENU_HOME:
+ 168:Core/Src/menu.cpp ****         break;
+ 169:Core/Src/menu.cpp ****     case MENU_CH:
+ 860              		.loc 1 169 5 is_stmt 1 view .LVU179
+ 170:Core/Src/menu.cpp ****         menu_value=MENU_TMO;
+ 861              		.loc 1 170 9 view .LVU180
+ 862              		.loc 1 170 19 is_stmt 0 view .LVU181
+ 863 0038 0323     		movs	r3, #3
+ 864 003a 2370     		strb	r3, [r4]
+ 171:Core/Src/menu.cpp ****         break;
+ 865              		.loc 1 171 9 is_stmt 1 view .LVU182
+ 866              	.L47:
+ 172:Core/Src/menu.cpp ****     case MENU_SQ:
+ARM GAS  /tmp/ccMEB0iu.s 			page 21
+
+
+ 173:Core/Src/menu.cpp ****         menu_value=MENU_CH;
+ 174:Core/Src/menu.cpp ****         break;
+ 175:Core/Src/menu.cpp ****     case MENU_TMO:
+ 176:Core/Src/menu.cpp ****         menu_value=MENU_SQ;
+ 177:Core/Src/menu.cpp ****         break;
+ 178:Core/Src/menu.cpp ****     case MENU_CH_IN:
+ 179:Core/Src/menu.cpp ****         cursorPos^=cursorOn; 
+ 180:Core/Src/menu.cpp ****         break;
+ 181:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+ 182:Core/Src/menu.cpp ****         cursorPos^=cursorOn;
+ 183:Core/Src/menu.cpp ****         break;
+ 184:Core/Src/menu.cpp ****     case MENU_TMO_IN:
+ 185:Core/Src/menu.cpp ****         cursorPos^=cursorOn;
+ 186:Core/Src/menu.cpp ****         break;
+ 187:Core/Src/menu.cpp **** 
+ 188:Core/Src/menu.cpp ****     default:
+ 189:Core/Src/menu.cpp ****         break;
+ 190:Core/Src/menu.cpp ****     }
+ 191:Core/Src/menu.cpp **** }
+ 867              		.loc 1 191 1 is_stmt 0 view .LVU183
+ 868 003c 10BD     		pop	{r4, pc}
+ 869              	.LVL56:
+ 870              	.L55:
+ 172:Core/Src/menu.cpp ****     case MENU_SQ:
+ 871              		.loc 1 172 5 is_stmt 1 view .LVU184
+ 173:Core/Src/menu.cpp ****         break;
+ 872              		.loc 1 173 9 view .LVU185
+ 173:Core/Src/menu.cpp ****         break;
+ 873              		.loc 1 173 19 is_stmt 0 view .LVU186
+ 874 003e 0123     		movs	r3, #1
+ 875 0040 2370     		strb	r3, [r4]
+ 174:Core/Src/menu.cpp ****     case MENU_TMO:
+ 876              		.loc 1 174 9 is_stmt 1 view .LVU187
+ 877 0042 FBE7     		b	.L47
+ 878              	.L54:
+ 175:Core/Src/menu.cpp ****         menu_value=MENU_SQ;
+ 879              		.loc 1 175 5 view .LVU188
+ 176:Core/Src/menu.cpp ****         break;
+ 880              		.loc 1 176 9 view .LVU189
+ 176:Core/Src/menu.cpp ****         break;
+ 881              		.loc 1 176 19 is_stmt 0 view .LVU190
+ 882 0044 0223     		movs	r3, #2
+ 883 0046 2370     		strb	r3, [r4]
+ 177:Core/Src/menu.cpp ****     case MENU_CH_IN:
+ 884              		.loc 1 177 9 is_stmt 1 view .LVU191
+ 885 0048 F8E7     		b	.L47
+ 886              	.L53:
+ 178:Core/Src/menu.cpp ****         cursorPos^=cursorOn; 
+ 887              		.loc 1 178 5 view .LVU192
+ 179:Core/Src/menu.cpp ****         break;
+ 888              		.loc 1 179 9 view .LVU193
+ 179:Core/Src/menu.cpp ****         break;
+ 889              		.loc 1 179 20 is_stmt 0 view .LVU194
+ 890 004a E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 179:Core/Src/menu.cpp ****         break;
+ 891              		.loc 1 179 18 view .LVU195
+ 892 004c A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ARM GAS  /tmp/ccMEB0iu.s 			page 22
+
+
+ 893 004e 5340     		eors	r3, r3, r2
+ 894 0050 A373     		strb	r3, [r4, #14]
+ 180:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+ 895              		.loc 1 180 9 is_stmt 1 view .LVU196
+ 896 0052 F3E7     		b	.L47
+ 897              	.L52:
+ 181:Core/Src/menu.cpp ****         cursorPos^=cursorOn;
+ 898              		.loc 1 181 5 view .LVU197
+ 182:Core/Src/menu.cpp ****         break;
+ 899              		.loc 1 182 9 view .LVU198
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
  182:Core/Src/menu.cpp ****         break;
  183:Core/Src/menu.cpp ****     case MENU_CH:
  948              		.loc 1 183 5 is_stmt 1 view .LVU195
@@ -1331,6 +1986,7 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  951 0038 0323     		movs	r3, #3
  952 003a 2370     		strb	r3, [r4]
  185:Core/Src/menu.cpp ****         break;
+<<<<<<< HEAD
  953              		.loc 1 185 9 is_stmt 1 view .LVU198
  954              	.L53:
  186:Core/Src/menu.cpp ****     case MENU_SQ:
@@ -2282,9 +2938,891 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
 
 
  1558              		.loc 1 358 9 view .LVU410
+=======
+ 911              		.loc 1 185 20 is_stmt 0 view .LVU204
+ 912 005e E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 185:Core/Src/menu.cpp ****         break;
+ 913              		.loc 1 185 18 view .LVU205
+ 914 0060 A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 915 0062 5340     		eors	r3, r3, r2
+ 916 0064 A373     		strb	r3, [r4, #14]
+ 186:Core/Src/menu.cpp **** 
+ 917              		.loc 1 186 9 is_stmt 1 view .LVU206
+ 918              		.loc 1 191 1 is_stmt 0 view .LVU207
+ 919 0066 E9E7     		b	.L47
+ 920              		.cfi_endproc
+ 921              	.LFE146:
+ 922              		.fnend
+ 924              		.section	.text._ZN4menu11menu_numberEc,"ax",%progbits
+ 925              		.align	1
+ 926              		.global	_ZN4menu11menu_numberEc
+ 927              		.syntax unified
+ 928              		.thumb
+ 929              		.thumb_func
+ 930              		.fpu fpv4-sp-d16
+ 932              	_ZN4menu11menu_numberEc:
+ 933              		.fnstart
+ 934              	.LVL57:
+ 935              	.LFB147:
+ 192:Core/Src/menu.cpp **** void menu::menu_number(char num)
+ 193:Core/Src/menu.cpp **** {
+ 936              		.loc 1 193 1 is_stmt 1 view -0
+ 937              		.cfi_startproc
+ 938              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  /tmp/ccMEB0iu.s 			page 23
+
+
+ 939              		@ frame_needed = 0, uses_anonymous_args = 0
+ 940              		.loc 1 193 1 is_stmt 0 view .LVU209
+ 941 0000 38B5     		push	{r3, r4, r5, lr}
+ 942              		.save {r3, r4, r5, lr}
+ 943              	.LCFI11:
+ 944              		.cfi_def_cfa_offset 16
+ 945              		.cfi_offset 3, -16
+ 946              		.cfi_offset 4, -12
+ 947              		.cfi_offset 5, -8
+ 948              		.cfi_offset 14, -4
+ 949 0002 0446     		mov	r4, r0
+ 950 0004 0D46     		mov	r5, r1
+ 194:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+ 951              		.loc 1 194 5 is_stmt 1 view .LVU210
+ 952              		.loc 1 194 28 is_stmt 0 view .LVU211
+ 953 0006 0069     		ldr	r0, [r0, #16]
+ 954              	.LVL58:
+ 955              		.loc 1 194 28 view .LVU212
+ 956 0008 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 957              	.LVL59:
+ 958              		.loc 1 194 5 view .LVU213
+ 959 000c 48B9     		cbnz	r0, .L65
+ 960              	.L60:
+ 195:Core/Src/menu.cpp ****     {
+ 196:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 197:Core/Src/menu.cpp ****     }
+ 198:Core/Src/menu.cpp ****     if(cursorOn) //Only accept an input when the cursor is on
+ 961              		.loc 1 198 5 is_stmt 1 view .LVU214
+ 962              		.loc 1 198 8 is_stmt 0 view .LVU215
+ 963 000e E37B     		ldrb	r3, [r4, #15]	@ zero_extendqisi2
+ 964              		.loc 1 198 5 view .LVU216
+ 965 0010 33B1     		cbz	r3, .L59
+ 199:Core/Src/menu.cpp ****     {
+ 200:Core/Src/menu.cpp ****         switch (menu_value)
+ 966              		.loc 1 200 9 is_stmt 1 view .LVU217
+ 967              		.loc 1 200 17 is_stmt 0 view .LVU218
+ 968 0012 2278     		ldrb	r2, [r4]	@ zero_extendqisi2
+ 969              		.loc 1 200 9 view .LVU219
+ 970 0014 102A     		cmp	r2, #16
+ 971 0016 0ED0     		beq	.L62
+ 972 0018 182A     		cmp	r2, #24
+ 973 001a 12D0     		beq	.L63
+ 974 001c 082A     		cmp	r2, #8
+ 975 001e 04D0     		beq	.L66
+ 976              	.L59:
+ 201:Core/Src/menu.cpp ****         {
+ 202:Core/Src/menu.cpp ****         case MENU_CH_IN:
+ 203:Core/Src/menu.cpp ****             ch[cursorPos]=num; //Changes the value 
+ 204:Core/Src/menu.cpp ****             cursorPos^=cursorOn; //Goes to the next position
+ 205:Core/Src/menu.cpp ****             break;
+ 206:Core/Src/menu.cpp ****         case MENU_SQ_IN:
+ 207:Core/Src/menu.cpp ****             sq[cursorPos]=num;
+ 208:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 209:Core/Src/menu.cpp ****             break;
+ 210:Core/Src/menu.cpp ****         case MENU_TMO_IN:
+ 211:Core/Src/menu.cpp ****             tmo[cursorPos]=num;
+ 212:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ARM GAS  /tmp/ccMEB0iu.s 			page 24
+
+
+ 213:Core/Src/menu.cpp ****             break;
+ 214:Core/Src/menu.cpp **** 
+ 215:Core/Src/menu.cpp ****         default:
+ 216:Core/Src/menu.cpp ****             break;
+ 217:Core/Src/menu.cpp ****         }
+ 218:Core/Src/menu.cpp ****     }
+ 219:Core/Src/menu.cpp **** }
+ 977              		.loc 1 219 1 view .LVU220
+ 978 0020 38BD     		pop	{r3, r4, r5, pc}
+ 979              	.LVL60:
+ 980              	.L65:
+ 196:Core/Src/menu.cpp ****     }
+ 981              		.loc 1 196 9 is_stmt 1 view .LVU221
+ 196:Core/Src/menu.cpp ****     }
+ 982              		.loc 1 196 31 is_stmt 0 view .LVU222
+ 983 0022 2069     		ldr	r0, [r4, #16]
+ 984 0024 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 985              	.LVL61:
+ 986 0028 F1E7     		b	.L60
+ 987              	.L66:
+ 202:Core/Src/menu.cpp ****             ch[cursorPos]=num; //Changes the value 
+ 988              		.loc 1 202 9 is_stmt 1 view .LVU223
+ 203:Core/Src/menu.cpp ****             cursorPos^=cursorOn; //Goes to the next position
+ 989              		.loc 1 203 13 view .LVU224
+ 203:Core/Src/menu.cpp ****             cursorPos^=cursorOn; //Goes to the next position
+ 990              		.loc 1 203 16 is_stmt 0 view .LVU225
+ 991 002a A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 203:Core/Src/menu.cpp ****             cursorPos^=cursorOn; //Goes to the next position
+ 992              		.loc 1 203 26 view .LVU226
+ 993 002c A118     		adds	r1, r4, r2
+ 994 002e 4D71     		strb	r5, [r1, #5]
+ 204:Core/Src/menu.cpp ****             break;
+ 995              		.loc 1 204 13 is_stmt 1 view .LVU227
+ 204:Core/Src/menu.cpp ****             break;
+ 996              		.loc 1 204 22 is_stmt 0 view .LVU228
+ 997 0030 5340     		eors	r3, r3, r2
+ 998 0032 A373     		strb	r3, [r4, #14]
+ 205:Core/Src/menu.cpp ****         case MENU_SQ_IN:
+ 999              		.loc 1 205 13 is_stmt 1 view .LVU229
+ 1000 0034 F4E7     		b	.L59
+ 1001              	.L62:
+ 206:Core/Src/menu.cpp ****             sq[cursorPos]=num;
+ 1002              		.loc 1 206 9 view .LVU230
+ 207:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 1003              		.loc 1 207 13 view .LVU231
+ 207:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 1004              		.loc 1 207 16 is_stmt 0 view .LVU232
+ 1005 0036 A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 207:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 1006              		.loc 1 207 26 view .LVU233
+ 1007 0038 A118     		adds	r1, r4, r2
+ 1008 003a 8D70     		strb	r5, [r1, #2]
+ 208:Core/Src/menu.cpp ****             break;
+ 1009              		.loc 1 208 13 is_stmt 1 view .LVU234
+ 208:Core/Src/menu.cpp ****             break;
+ 1010              		.loc 1 208 22 is_stmt 0 view .LVU235
+ 1011 003c 5340     		eors	r3, r3, r2
+ARM GAS  /tmp/ccMEB0iu.s 			page 25
+
+
+ 1012 003e A373     		strb	r3, [r4, #14]
+ 209:Core/Src/menu.cpp ****         case MENU_TMO_IN:
+ 1013              		.loc 1 209 13 is_stmt 1 view .LVU236
+ 1014 0040 EEE7     		b	.L59
+ 1015              	.L63:
+ 210:Core/Src/menu.cpp ****             tmo[cursorPos]=num;
+ 1016              		.loc 1 210 9 view .LVU237
+ 211:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 1017              		.loc 1 211 13 view .LVU238
+ 211:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 1018              		.loc 1 211 17 is_stmt 0 view .LVU239
+ 1019 0042 A27B     		ldrb	r2, [r4, #14]	@ zero_extendqisi2
+ 211:Core/Src/menu.cpp ****             cursorPos^=cursorOn; 
+ 1020              		.loc 1 211 27 view .LVU240
+ 1021 0044 A118     		adds	r1, r4, r2
+ 1022 0046 CD72     		strb	r5, [r1, #11]
+ 212:Core/Src/menu.cpp ****             break;
+ 1023              		.loc 1 212 13 is_stmt 1 view .LVU241
+ 212:Core/Src/menu.cpp ****             break;
+ 1024              		.loc 1 212 22 is_stmt 0 view .LVU242
+ 1025 0048 5340     		eors	r3, r3, r2
+ 1026 004a A373     		strb	r3, [r4, #14]
+ 213:Core/Src/menu.cpp **** 
+ 1027              		.loc 1 213 13 is_stmt 1 view .LVU243
+ 1028              		.loc 1 219 1 is_stmt 0 view .LVU244
+ 1029 004c E8E7     		b	.L59
+ 1030              		.cfi_endproc
+ 1031              	.LFE147:
+ 1032              		.fnend
+ 1034              		.section	.text._ZN4menu7menu_upEv,"ax",%progbits
+ 1035              		.align	1
+ 1036              		.global	_ZN4menu7menu_upEv
+ 1037              		.syntax unified
+ 1038              		.thumb
+ 1039              		.thumb_func
+ 1040              		.fpu fpv4-sp-d16
+ 1042              	_ZN4menu7menu_upEv:
+ 1043              		.fnstart
+ 1044              	.LVL62:
+ 1045              	.LFB148:
+ 220:Core/Src/menu.cpp **** void menu::menu_up()
+ 221:Core/Src/menu.cpp **** {
+ 1046              		.loc 1 221 1 is_stmt 1 view -0
+ 1047              		.cfi_startproc
+ 1048              		@ args = 0, pretend = 0, frame = 0
+ 1049              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1050              		.loc 1 221 1 is_stmt 0 view .LVU246
+ 1051 0000 10B5     		push	{r4, lr}
+ 1052              		.save {r4, lr}
+ 1053              	.LCFI12:
+ 1054              		.cfi_def_cfa_offset 8
+ 1055              		.cfi_offset 4, -8
+ 1056              		.cfi_offset 14, -4
+ 1057 0002 0446     		mov	r4, r0
+ 222:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+ 1058              		.loc 1 222 5 is_stmt 1 view .LVU247
+ 1059              		.loc 1 222 28 is_stmt 0 view .LVU248
+ARM GAS  /tmp/ccMEB0iu.s 			page 26
+
+
+ 1060 0004 0069     		ldr	r0, [r0, #16]
+ 1061              	.LVL63:
+ 1062              		.loc 1 222 28 view .LVU249
+ 1063 0006 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 1064              	.LVL64:
+ 1065              		.loc 1 222 5 view .LVU250
+ 1066 000a 50B9     		cbnz	r0, .L75
+ 1067              	.L68:
+ 223:Core/Src/menu.cpp ****     {
+ 224:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 225:Core/Src/menu.cpp ****     }
+ 226:Core/Src/menu.cpp ****     switch (menu_value)
+ 1068              		.loc 1 226 5 is_stmt 1 view .LVU251
+ 1069              		.loc 1 226 13 is_stmt 0 view .LVU252
+ 1070 000c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 1071              		.loc 1 226 5 view .LVU253
+ 1072 000e 082B     		cmp	r3, #8
+ 1073 0010 0BD0     		beq	.L69
+ 1074 0012 102B     		cmp	r3, #16
+ 1075 0014 0FD0     		beq	.L70
+ 227:Core/Src/menu.cpp ****     {
+ 228:Core/Src/menu.cpp ****     case MENU_CH_IN:
+ 229:Core/Src/menu.cpp ****         if(chVal < 22) // Current max for ch is 22
+ 230:Core/Src/menu.cpp ****         {
+ 231:Core/Src/menu.cpp ****             chVal++;
+ 232:Core/Src/menu.cpp ****         }
+ 233:Core/Src/menu.cpp ****         break;
+ 234:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+ 235:Core/Src/menu.cpp ****         if(sqVal < 9) // Current max for Sq is 9
+ 236:Core/Src/menu.cpp ****         {
+ 237:Core/Src/menu.cpp ****             sqVal++;
+ 238:Core/Src/menu.cpp ****         }
+ 239:Core/Src/menu.cpp ****         break;   
+ 240:Core/Src/menu.cpp ****     default:
+ 1076              		.loc 1 240 5 is_stmt 1 view .LVU254
+ 241:Core/Src/menu.cpp ****         if(volVal < 8) // Current max for volume is 8
+ 1077              		.loc 1 241 9 view .LVU255
+ 1078              		.loc 1 241 12 is_stmt 0 view .LVU256
+ 1079 0016 A37A     		ldrb	r3, [r4, #10]	@ zero_extendqisi2
+ 1080              		.loc 1 241 9 view .LVU257
+ 1081 0018 072B     		cmp	r3, #7
+ 1082 001a 0BD8     		bhi	.L67
+ 242:Core/Src/menu.cpp ****         {
+ 243:Core/Src/menu.cpp ****             volVal++;
+ 1083              		.loc 1 243 13 is_stmt 1 view .LVU258
+ 1084              		.loc 1 243 19 is_stmt 0 view .LVU259
+ 1085 001c 0133     		adds	r3, r3, #1
+ 1086 001e A372     		strb	r3, [r4, #10]
+ 244:Core/Src/menu.cpp ****         }
+ 245:Core/Src/menu.cpp ****         break;
+ 246:Core/Src/menu.cpp ****     }
+ 247:Core/Src/menu.cpp **** }
+ 1087              		.loc 1 247 1 view .LVU260
+ 1088 0020 08E0     		b	.L67
+ 1089              	.L75:
+ 224:Core/Src/menu.cpp ****     }
+ 1090              		.loc 1 224 9 is_stmt 1 view .LVU261
+ARM GAS  /tmp/ccMEB0iu.s 			page 27
+
+
+ 224:Core/Src/menu.cpp ****     }
+ 1091              		.loc 1 224 31 is_stmt 0 view .LVU262
+ 1092 0022 2069     		ldr	r0, [r4, #16]
+ 1093 0024 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 1094              	.LVL65:
+ 1095 0028 F0E7     		b	.L68
+ 1096              	.L69:
+ 228:Core/Src/menu.cpp ****         if(chVal < 22) // Current max for ch is 22
+ 1097              		.loc 1 228 5 is_stmt 1 view .LVU263
+ 229:Core/Src/menu.cpp ****         {
+ 1098              		.loc 1 229 9 view .LVU264
+ 229:Core/Src/menu.cpp ****         {
+ 1099              		.loc 1 229 12 is_stmt 0 view .LVU265
+ 1100 002a E379     		ldrb	r3, [r4, #7]	@ zero_extendqisi2
+ 229:Core/Src/menu.cpp ****         {
+ 1101              		.loc 1 229 9 view .LVU266
+ 1102 002c 152B     		cmp	r3, #21
+ 1103 002e 01D8     		bhi	.L67
+ 231:Core/Src/menu.cpp ****         }
+ 1104              		.loc 1 231 13 is_stmt 1 view .LVU267
+ 231:Core/Src/menu.cpp ****         }
+ 1105              		.loc 1 231 18 is_stmt 0 view .LVU268
+ 1106 0030 0133     		adds	r3, r3, #1
+ 1107 0032 E371     		strb	r3, [r4, #7]
+ 1108              	.L67:
+ 1109              		.loc 1 247 1 view .LVU269
+ 1110 0034 10BD     		pop	{r4, pc}
+ 1111              	.LVL66:
+ 1112              	.L70:
+ 234:Core/Src/menu.cpp ****         if(sqVal < 9) // Current max for Sq is 9
+ 1113              		.loc 1 234 5 is_stmt 1 view .LVU270
+ 235:Core/Src/menu.cpp ****         {
+ 1114              		.loc 1 235 9 view .LVU271
+ 235:Core/Src/menu.cpp ****         {
+ 1115              		.loc 1 235 12 is_stmt 0 view .LVU272
+ 1116 0036 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ 235:Core/Src/menu.cpp ****         {
+ 1117              		.loc 1 235 9 view .LVU273
+ 1118 0038 082B     		cmp	r3, #8
+ 1119 003a FBD8     		bhi	.L67
+ 237:Core/Src/menu.cpp ****         }
+ 1120              		.loc 1 237 13 is_stmt 1 view .LVU274
+ 237:Core/Src/menu.cpp ****         }
+ 1121              		.loc 1 237 18 is_stmt 0 view .LVU275
+ 1122 003c 0133     		adds	r3, r3, #1
+ 1123 003e 2371     		strb	r3, [r4, #4]
+ 1124 0040 F8E7     		b	.L67
+ 1125              		.cfi_endproc
+ 1126              	.LFE148:
+ 1127              		.fnend
+ 1129              		.section	.text._ZN4menu9menu_downEv,"ax",%progbits
+ 1130              		.align	1
+ 1131              		.global	_ZN4menu9menu_downEv
+ 1132              		.syntax unified
+ 1133              		.thumb
+ 1134              		.thumb_func
+ 1135              		.fpu fpv4-sp-d16
+ARM GAS  /tmp/ccMEB0iu.s 			page 28
+
+
+ 1137              	_ZN4menu9menu_downEv:
+ 1138              		.fnstart
+ 1139              	.LVL67:
+ 1140              	.LFB149:
+ 248:Core/Src/menu.cpp **** 
+ 249:Core/Src/menu.cpp **** void menu::menu_down()
+ 250:Core/Src/menu.cpp **** {
+ 1141              		.loc 1 250 1 is_stmt 1 view -0
+ 1142              		.cfi_startproc
+ 1143              		@ args = 0, pretend = 0, frame = 0
+ 1144              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1145              		.loc 1 250 1 is_stmt 0 view .LVU277
+ 1146 0000 10B5     		push	{r4, lr}
+ 1147              		.save {r4, lr}
+ 1148              	.LCFI13:
+ 1149              		.cfi_def_cfa_offset 8
+ 1150              		.cfi_offset 4, -8
+ 1151              		.cfi_offset 14, -4
+ 1152 0002 0446     		mov	r4, r0
+ 251:Core/Src/menu.cpp ****     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
+ 1153              		.loc 1 251 5 is_stmt 1 view .LVU278
+ 1154              		.loc 1 251 28 is_stmt 0 view .LVU279
+ 1155 0004 0069     		ldr	r0, [r0, #16]
+ 1156              	.LVL68:
+ 1157              		.loc 1 251 28 view .LVU280
+ 1158 0006 FFF7FEFF 		bl	_ZN4oled13oled_isOledOnEv
+ 1159              	.LVL69:
+ 1160              		.loc 1 251 5 view .LVU281
+ 1161 000a 48B9     		cbnz	r0, .L84
+ 1162              	.L77:
+ 252:Core/Src/menu.cpp ****     {
+ 253:Core/Src/menu.cpp ****         oled1->oled_resetTimer();
+ 254:Core/Src/menu.cpp ****     }
+ 255:Core/Src/menu.cpp ****     switch (menu_value)
+ 1163              		.loc 1 255 5 is_stmt 1 view .LVU282
+ 1164              		.loc 1 255 13 is_stmt 0 view .LVU283
+ 1165 000c 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
+ 1166              		.loc 1 255 5 view .LVU284
+ 1167 000e 082B     		cmp	r3, #8
+ 1168 0010 0AD0     		beq	.L78
+ 1169 0012 102B     		cmp	r3, #16
+ 1170 0014 0DD0     		beq	.L79
+ 256:Core/Src/menu.cpp ****     {
+ 257:Core/Src/menu.cpp ****     case MENU_CH_IN:
+ 258:Core/Src/menu.cpp ****         if(chVal > 0)
+ 259:Core/Src/menu.cpp ****         {
+ 260:Core/Src/menu.cpp ****         chVal--;
+ 261:Core/Src/menu.cpp ****         }
+ 262:Core/Src/menu.cpp ****         break;
+ 263:Core/Src/menu.cpp ****     case MENU_SQ_IN:
+ 264:Core/Src/menu.cpp ****         if(sqVal > 0)
+ 265:Core/Src/menu.cpp ****         {
+ 266:Core/Src/menu.cpp ****         sqVal--;
+ 267:Core/Src/menu.cpp ****         }
+ 268:Core/Src/menu.cpp ****         break;   
+ 269:Core/Src/menu.cpp ****     default:
+ 1171              		.loc 1 269 5 is_stmt 1 view .LVU285
+ARM GAS  /tmp/ccMEB0iu.s 			page 29
+
+
+ 270:Core/Src/menu.cpp ****         if(volVal > 0)
+ 1172              		.loc 1 270 9 view .LVU286
+ 1173              		.loc 1 270 12 is_stmt 0 view .LVU287
+ 1174 0016 A37A     		ldrb	r3, [r4, #10]	@ zero_extendqisi2
+ 1175              		.loc 1 270 9 view .LVU288
+ 1176 0018 53B1     		cbz	r3, .L76
+ 271:Core/Src/menu.cpp ****         {
+ 272:Core/Src/menu.cpp ****             volVal--;
+ 1177              		.loc 1 272 13 is_stmt 1 view .LVU289
+ 1178              		.loc 1 272 19 is_stmt 0 view .LVU290
+ 1179 001a 013B     		subs	r3, r3, #1
+ 1180 001c A372     		strb	r3, [r4, #10]
+ 273:Core/Src/menu.cpp ****         }
+ 274:Core/Src/menu.cpp ****         break;
+ 275:Core/Src/menu.cpp ****     }
+ 276:Core/Src/menu.cpp **** 
+ 277:Core/Src/menu.cpp **** }
+ 1181              		.loc 1 277 1 view .LVU291
+ 1182 001e 07E0     		b	.L76
+ 1183              	.L84:
+ 253:Core/Src/menu.cpp ****     }
+ 1184              		.loc 1 253 9 is_stmt 1 view .LVU292
+ 253:Core/Src/menu.cpp ****     }
+ 1185              		.loc 1 253 31 is_stmt 0 view .LVU293
+ 1186 0020 2069     		ldr	r0, [r4, #16]
+ 1187 0022 FFF7FEFF 		bl	_ZN4oled15oled_resetTimerEv
+ 1188              	.LVL70:
+ 1189 0026 F1E7     		b	.L77
+ 1190              	.L78:
+ 257:Core/Src/menu.cpp ****         if(chVal > 0)
+ 1191              		.loc 1 257 5 is_stmt 1 view .LVU294
+ 258:Core/Src/menu.cpp ****         {
+ 1192              		.loc 1 258 9 view .LVU295
+ 258:Core/Src/menu.cpp ****         {
+ 1193              		.loc 1 258 12 is_stmt 0 view .LVU296
+ 1194 0028 E379     		ldrb	r3, [r4, #7]	@ zero_extendqisi2
+ 258:Core/Src/menu.cpp ****         {
+ 1195              		.loc 1 258 9 view .LVU297
+ 1196 002a 0BB1     		cbz	r3, .L76
+ 260:Core/Src/menu.cpp ****         }
+ 1197              		.loc 1 260 9 is_stmt 1 view .LVU298
+ 260:Core/Src/menu.cpp ****         }
+ 1198              		.loc 1 260 14 is_stmt 0 view .LVU299
+ 1199 002c 013B     		subs	r3, r3, #1
+ 1200 002e E371     		strb	r3, [r4, #7]
+ 1201              	.L76:
+ 1202              		.loc 1 277 1 view .LVU300
+ 1203 0030 10BD     		pop	{r4, pc}
+ 1204              	.LVL71:
+ 1205              	.L79:
+ 263:Core/Src/menu.cpp ****         if(sqVal > 0)
+ 1206              		.loc 1 263 5 is_stmt 1 view .LVU301
+ 264:Core/Src/menu.cpp ****         {
+ 1207              		.loc 1 264 9 view .LVU302
+ 264:Core/Src/menu.cpp ****         {
+ 1208              		.loc 1 264 12 is_stmt 0 view .LVU303
+ 1209 0032 2379     		ldrb	r3, [r4, #4]	@ zero_extendqisi2
+ARM GAS  /tmp/ccMEB0iu.s 			page 30
+
+
+ 264:Core/Src/menu.cpp ****         {
+ 1210              		.loc 1 264 9 view .LVU304
+ 1211 0034 002B     		cmp	r3, #0
+ 1212 0036 FBD0     		beq	.L76
+ 266:Core/Src/menu.cpp ****         }
+ 1213              		.loc 1 266 9 is_stmt 1 view .LVU305
+ 266:Core/Src/menu.cpp ****         }
+ 1214              		.loc 1 266 14 is_stmt 0 view .LVU306
+ 1215 0038 013B     		subs	r3, r3, #1
+ 1216 003a 2371     		strb	r3, [r4, #4]
+ 1217 003c F8E7     		b	.L76
+ 1218              		.cfi_endproc
+ 1219              	.LFE149:
+ 1220              		.fnend
+ 1222              		.section	.text._ZN4menu13keyboard_pollEv,"ax",%progbits
+ 1223              		.align	1
+ 1224              		.global	_ZN4menu13keyboard_pollEv
+ 1225              		.syntax unified
+ 1226              		.thumb
+ 1227              		.thumb_func
+ 1228              		.fpu fpv4-sp-d16
+ 1230              	_ZN4menu13keyboard_pollEv:
+ 1231              		.fnstart
+ 1232              	.LVL72:
+ 1233              	.LFB150:
+ 278:Core/Src/menu.cpp **** 
+ 279:Core/Src/menu.cpp **** 
+ 280:Core/Src/menu.cpp **** void menu::keyboard_poll()
+ 281:Core/Src/menu.cpp **** {
+ 1234              		.loc 1 281 1 is_stmt 1 view -0
+ 1235              		.cfi_startproc
+ 1236              		@ args = 0, pretend = 0, frame = 0
+ 1237              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1238              		.loc 1 281 1 is_stmt 0 view .LVU308
+ 1239 0000 10B5     		push	{r4, lr}
+ 1240              		.save {r4, lr}
+ 1241              	.LCFI14:
+ 1242              		.cfi_def_cfa_offset 8
+ 1243              		.cfi_offset 4, -8
+ 1244              		.cfi_offset 14, -4
+ 1245 0002 0446     		mov	r4, r0
+ 282:Core/Src/menu.cpp ****     uint16_t pin = GPIO_PIN_11;
+ 1246              		.loc 1 282 5 is_stmt 1 view .LVU309
+ 1247              	.LVL73:
+ 283:Core/Src/menu.cpp ****     //Set The KEY1(PD11) One on
+ 284:Core/Src/menu.cpp **** 
+ 285:Core/Src/menu.cpp ****     GPIOD->ODR|=pin;
+ 1248              		.loc 1 285 5 view .LVU310
+ 1249              		.loc 1 285 15 is_stmt 0 view .LVU311
+ 1250 0004 534B     		ldr	r3, .L107
+ 1251 0006 5A69     		ldr	r2, [r3, #20]
+ 1252 0008 42F40062 		orr	r2, r2, #2048
+ 1253 000c 5A61     		str	r2, [r3, #20]
+ 286:Core/Src/menu.cpp ****         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+ 287:Core/Src/menu.cpp ****     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+ 1254              		.loc 1 287 5 is_stmt 1 view .LVU312
+ 1255              		.loc 1 287 20 is_stmt 0 view .LVU313
+ARM GAS  /tmp/ccMEB0iu.s 			page 31
+
+
+ 1256 000e 1B69     		ldr	r3, [r3, #16]
+ 1257              		.loc 1 287 23 view .LVU314
+ 1258 0010 03F40743 		and	r3, r3, #34560
+ 1259              		.loc 1 287 5 view .LVU315
+ 1260 0014 B3F5806F 		cmp	r3, #1024
+ 1261 0018 2AD0     		beq	.L86
+ 1262 001a 09D8     		bhi	.L87
+ 1263 001c B3F5807F 		cmp	r3, #256
+ 1264 0020 2AD0     		beq	.L88
+ 1265 0022 B3F5007F 		cmp	r3, #512
+ 1266 0026 08D1     		bne	.L90
+ 288:Core/Src/menu.cpp ****     {
+ 289:Core/Src/menu.cpp ****         case GPIO_PIN_15:
+ 290:Core/Src/menu.cpp ****             menu_next();//R
+ 291:Core/Src/menu.cpp ****             break;
+ 292:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 293:Core/Src/menu.cpp ****             menu_number('6');
+ 294:Core/Src/menu.cpp ****             break;
+ 295:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1267              		.loc 1 295 9 is_stmt 1 view .LVU316
+ 296:Core/Src/menu.cpp ****             menu_number('5');
+ 1268              		.loc 1 296 13 view .LVU317
+ 1269              		.loc 1 296 24 is_stmt 0 view .LVU318
+ 1270 0028 3521     		movs	r1, #53
+ 1271 002a FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1272              	.LVL74:
+ 297:Core/Src/menu.cpp ****             break;
+ 1273              		.loc 1 297 13 is_stmt 1 view .LVU319
+ 1274 002e 04E0     		b	.L90
+ 1275              	.LVL75:
+ 1276              	.L87:
+ 287:Core/Src/menu.cpp ****     {
+ 1277              		.loc 1 287 5 is_stmt 0 view .LVU320
+ 1278 0030 B3F5004F 		cmp	r3, #32768
+ 1279 0034 01D1     		bne	.L90
+ 289:Core/Src/menu.cpp ****             menu_next();//R
+ 1280              		.loc 1 289 9 is_stmt 1 view .LVU321
+ 290:Core/Src/menu.cpp ****             break;
+ 1281              		.loc 1 290 13 view .LVU322
+ 290:Core/Src/menu.cpp ****             break;
+ 1282              		.loc 1 290 22 is_stmt 0 view .LVU323
+ 1283 0036 FFF7FEFF 		bl	_ZN4menu9menu_nextEv
+ 1284              	.LVL76:
+ 291:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 1285              		.loc 1 291 13 is_stmt 1 view .LVU324
+ 1286              	.L90:
+ 298:Core/Src/menu.cpp ****         case GPIO_PIN_8:
+ 299:Core/Src/menu.cpp ****             menu_number('4');
+ 300:Core/Src/menu.cpp ****             break;
+ 301:Core/Src/menu.cpp ****         default:
+ 302:Core/Src/menu.cpp ****             break;
+ 303:Core/Src/menu.cpp ****     }
+ 304:Core/Src/menu.cpp ****     GPIOD->ODR&=(~pin);
+ 1287              		.loc 1 304 5 view .LVU325
+ 1288              		.loc 1 304 15 is_stmt 0 view .LVU326
+ 1289 003a 464B     		ldr	r3, .L107
+ 1290 003c 5A69     		ldr	r2, [r3, #20]
+ARM GAS  /tmp/ccMEB0iu.s 			page 32
+
+
+ 1291 003e 22F40062 		bic	r2, r2, #2048
+ 1292 0042 5A61     		str	r2, [r3, #20]
+ 305:Core/Src/menu.cpp **** 
+ 306:Core/Src/menu.cpp ****     pin = GPIO_PIN_12;//PD12
+ 1293              		.loc 1 306 5 is_stmt 1 view .LVU327
+ 1294              	.LVL77:
+ 307:Core/Src/menu.cpp ****     GPIOD->ODR|=pin;
+ 1295              		.loc 1 307 5 view .LVU328
+ 1296              		.loc 1 307 15 is_stmt 0 view .LVU329
+ 1297 0044 5A69     		ldr	r2, [r3, #20]
+ 1298 0046 42F48052 		orr	r2, r2, #4096
+ 1299 004a 5A61     		str	r2, [r3, #20]
+ 308:Core/Src/menu.cpp ****         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+ 309:Core/Src/menu.cpp ****     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+ 1300              		.loc 1 309 5 is_stmt 1 view .LVU330
+ 1301              		.loc 1 309 20 is_stmt 0 view .LVU331
+ 1302 004c 1B69     		ldr	r3, [r3, #16]
+ 1303              		.loc 1 309 23 view .LVU332
+ 1304 004e 03F40743 		and	r3, r3, #34560
+ 1305              		.loc 1 309 5 view .LVU333
+ 1306 0052 B3F5806F 		cmp	r3, #1024
+ 1307 0056 34D0     		beq	.L91
+ 1308 0058 12D8     		bhi	.L92
+ 1309 005a B3F5807F 		cmp	r3, #256
+ 1310 005e 35D0     		beq	.L93
+ 1311 0060 B3F5007F 		cmp	r3, #512
+ 1312 0064 12D1     		bne	.L95
+ 310:Core/Src/menu.cpp ****     {
+ 311:Core/Src/menu.cpp ****         case GPIO_PIN_15:
+ 312:Core/Src/menu.cpp ****             menu_prev();//L
+ 313:Core/Src/menu.cpp ****             break;
+ 314:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 315:Core/Src/menu.cpp ****             menu_number('8');
+ 316:Core/Src/menu.cpp ****             break;
+ 317:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1313              		.loc 1 317 9 is_stmt 1 view .LVU334
+ 318:Core/Src/menu.cpp ****             menu_number('7');
+ 1314              		.loc 1 318 13 view .LVU335
+ 1315              		.loc 1 318 24 is_stmt 0 view .LVU336
+ 1316 0066 3721     		movs	r1, #55
+ 1317 0068 2046     		mov	r0, r4
+ 1318 006a FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1319              	.LVL78:
+ 319:Core/Src/menu.cpp ****             break;
+ 1320              		.loc 1 319 13 is_stmt 1 view .LVU337
+ 1321 006e 0DE0     		b	.L95
+ 1322              	.LVL79:
+ 1323              	.L86:
+ 292:Core/Src/menu.cpp ****             menu_number('6');
+ 1324              		.loc 1 292 9 view .LVU338
+ 293:Core/Src/menu.cpp ****             break;
+ 1325              		.loc 1 293 13 view .LVU339
+ 293:Core/Src/menu.cpp ****             break;
+ 1326              		.loc 1 293 24 is_stmt 0 view .LVU340
+ 1327 0070 3621     		movs	r1, #54
+ 1328 0072 FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1329              	.LVL80:
+ARM GAS  /tmp/ccMEB0iu.s 			page 33
+
+
+ 294:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1330              		.loc 1 294 13 is_stmt 1 view .LVU341
+ 1331 0076 E0E7     		b	.L90
+ 1332              	.LVL81:
+ 1333              	.L88:
+ 298:Core/Src/menu.cpp ****             menu_number('4');
+ 1334              		.loc 1 298 9 view .LVU342
+ 299:Core/Src/menu.cpp ****             break;
+ 1335              		.loc 1 299 13 view .LVU343
+ 299:Core/Src/menu.cpp ****             break;
+ 1336              		.loc 1 299 24 is_stmt 0 view .LVU344
+ 1337 0078 3421     		movs	r1, #52
+ 1338 007a FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1339              	.LVL82:
+ 300:Core/Src/menu.cpp ****         default:
+ 1340              		.loc 1 300 13 is_stmt 1 view .LVU345
+ 1341 007e DCE7     		b	.L90
+ 1342              	.LVL83:
+ 1343              	.L92:
+ 309:Core/Src/menu.cpp ****     {
+ 1344              		.loc 1 309 5 is_stmt 0 view .LVU346
+ 1345 0080 B3F5004F 		cmp	r3, #32768
+ 1346 0084 02D1     		bne	.L95
+ 311:Core/Src/menu.cpp ****             menu_prev();//L
+ 1347              		.loc 1 311 9 is_stmt 1 view .LVU347
+ 312:Core/Src/menu.cpp ****             break;
+ 1348              		.loc 1 312 13 view .LVU348
+ 312:Core/Src/menu.cpp ****             break;
+ 1349              		.loc 1 312 22 is_stmt 0 view .LVU349
+ 1350 0086 2046     		mov	r0, r4
+ 1351 0088 FFF7FEFF 		bl	_ZN4menu9menu_prevEv
+ 1352              	.LVL84:
+ 313:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 1353              		.loc 1 313 13 is_stmt 1 view .LVU350
+ 1354              	.L95:
+ 320:Core/Src/menu.cpp ****         case GPIO_PIN_8:
+ 321:Core/Src/menu.cpp ****             menu_number('9');
+ 322:Core/Src/menu.cpp ****             break;
+ 323:Core/Src/menu.cpp ****         default:
+ 324:Core/Src/menu.cpp ****             break;
+ 325:Core/Src/menu.cpp **** 
+ 326:Core/Src/menu.cpp ****     }
+ 327:Core/Src/menu.cpp ****     GPIOD->ODR&=(~pin);
+ 1355              		.loc 1 327 5 view .LVU351
+ 1356              		.loc 1 327 15 is_stmt 0 view .LVU352
+ 1357 008c 314B     		ldr	r3, .L107
+ 1358 008e 5A69     		ldr	r2, [r3, #20]
+ 1359 0090 22F48052 		bic	r2, r2, #4096
+ 1360 0094 5A61     		str	r2, [r3, #20]
+ 328:Core/Src/menu.cpp **** 
+ 329:Core/Src/menu.cpp **** 
+ 330:Core/Src/menu.cpp ****     pin = GPIO_PIN_13;//PD13
+ 1361              		.loc 1 330 5 is_stmt 1 view .LVU353
+ 1362              	.LVL85:
+ 331:Core/Src/menu.cpp ****     GPIOD->ODR|=pin;
+ 1363              		.loc 1 331 5 view .LVU354
+ 1364              		.loc 1 331 15 is_stmt 0 view .LVU355
+ARM GAS  /tmp/ccMEB0iu.s 			page 34
+
+
+ 1365 0096 5A69     		ldr	r2, [r3, #20]
+ 1366 0098 42F40052 		orr	r2, r2, #8192
+ 1367 009c 5A61     		str	r2, [r3, #20]
+ 332:Core/Src/menu.cpp ****         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+ 333:Core/Src/menu.cpp ****     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+ 1368              		.loc 1 333 5 is_stmt 1 view .LVU356
+ 1369              		.loc 1 333 20 is_stmt 0 view .LVU357
+ 1370 009e 1B69     		ldr	r3, [r3, #16]
+ 1371              		.loc 1 333 23 view .LVU358
+ 1372 00a0 03F40743 		and	r3, r3, #34560
+ 1373              		.loc 1 333 5 view .LVU359
+ 1374 00a4 B3F5806F 		cmp	r3, #1024
+ 1375 00a8 36D0     		beq	.L96
+ 1376 00aa 14D8     		bhi	.L97
+ 1377 00ac B3F5807F 		cmp	r3, #256
+ 1378 00b0 36D0     		beq	.L98
+ 1379 00b2 B3F5007F 		cmp	r3, #512
+ 1380 00b6 14D1     		bne	.L100
+ 334:Core/Src/menu.cpp ****     {
+ 335:Core/Src/menu.cpp ****         case GPIO_PIN_15:
+ 336:Core/Src/menu.cpp ****             menu_down();//D
+ 337:Core/Src/menu.cpp ****             break;
+ 338:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 339:Core/Src/menu.cpp ****             menu_menu();//M
+ 340:Core/Src/menu.cpp ****             break;
+ 341:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1381              		.loc 1 341 9 is_stmt 1 view .LVU360
+ 342:Core/Src/menu.cpp ****             menu_number('0');
+ 1382              		.loc 1 342 13 view .LVU361
+ 1383              		.loc 1 342 24 is_stmt 0 view .LVU362
+ 1384 00b8 3021     		movs	r1, #48
+ 1385 00ba 2046     		mov	r0, r4
+ 1386 00bc FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1387              	.LVL86:
+ 343:Core/Src/menu.cpp ****             break;
+ 1388              		.loc 1 343 13 is_stmt 1 view .LVU363
+ 1389 00c0 0FE0     		b	.L100
+ 1390              	.LVL87:
+ 1391              	.L91:
+ 314:Core/Src/menu.cpp ****             menu_number('8');
+ 1392              		.loc 1 314 9 view .LVU364
+ 315:Core/Src/menu.cpp ****             break;
+ 1393              		.loc 1 315 13 view .LVU365
+ 315:Core/Src/menu.cpp ****             break;
+ 1394              		.loc 1 315 24 is_stmt 0 view .LVU366
+ 1395 00c2 3821     		movs	r1, #56
+ 1396 00c4 2046     		mov	r0, r4
+ 1397 00c6 FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1398              	.LVL88:
+ 316:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1399              		.loc 1 316 13 is_stmt 1 view .LVU367
+ 1400 00ca DFE7     		b	.L95
+ 1401              	.L93:
+ 320:Core/Src/menu.cpp ****             menu_number('9');
+ 1402              		.loc 1 320 9 view .LVU368
+ 321:Core/Src/menu.cpp ****             break;
+ 1403              		.loc 1 321 13 view .LVU369
+ARM GAS  /tmp/ccMEB0iu.s 			page 35
+
+
+ 321:Core/Src/menu.cpp ****             break;
+ 1404              		.loc 1 321 24 is_stmt 0 view .LVU370
+ 1405 00cc 3921     		movs	r1, #57
+ 1406 00ce 2046     		mov	r0, r4
+ 1407 00d0 FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1408              	.LVL89:
+ 322:Core/Src/menu.cpp ****         default:
+ 1409              		.loc 1 322 13 is_stmt 1 view .LVU371
+ 1410 00d4 DAE7     		b	.L95
+ 1411              	.LVL90:
+ 1412              	.L97:
+ 333:Core/Src/menu.cpp ****     {
+ 1413              		.loc 1 333 5 is_stmt 0 view .LVU372
+ 1414 00d6 B3F5004F 		cmp	r3, #32768
+ 1415 00da 02D1     		bne	.L100
+ 335:Core/Src/menu.cpp ****             menu_down();//D
+ 1416              		.loc 1 335 9 is_stmt 1 view .LVU373
+ 336:Core/Src/menu.cpp ****             break;
+ 1417              		.loc 1 336 13 view .LVU374
+ 336:Core/Src/menu.cpp ****             break;
+ 1418              		.loc 1 336 22 is_stmt 0 view .LVU375
+ 1419 00dc 2046     		mov	r0, r4
+ 1420 00de FFF7FEFF 		bl	_ZN4menu9menu_downEv
+ 1421              	.LVL91:
+ 337:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 1422              		.loc 1 337 13 is_stmt 1 view .LVU376
+ 1423              	.L100:
+ 344:Core/Src/menu.cpp ****         case GPIO_PIN_8:
+ 345:Core/Src/menu.cpp ****             menu_back();//B
+ 346:Core/Src/menu.cpp ****             break;
+ 347:Core/Src/menu.cpp ****         default:
+ 348:Core/Src/menu.cpp ****             break;
+ 349:Core/Src/menu.cpp **** 
+ 350:Core/Src/menu.cpp ****     }
+ 351:Core/Src/menu.cpp ****     GPIOD->ODR&=(~pin);
+ 1424              		.loc 1 351 5 view .LVU377
+ 1425              		.loc 1 351 15 is_stmt 0 view .LVU378
+ 1426 00e2 1C4B     		ldr	r3, .L107
+ 1427 00e4 5A69     		ldr	r2, [r3, #20]
+ 1428 00e6 22F40052 		bic	r2, r2, #8192
+ 1429 00ea 5A61     		str	r2, [r3, #20]
+ 352:Core/Src/menu.cpp **** 
+ 353:Core/Src/menu.cpp ****     pin = GPIO_PIN_14;//PD14
+ 1430              		.loc 1 353 5 is_stmt 1 view .LVU379
+ 1431              	.LVL92:
+ 354:Core/Src/menu.cpp ****     GPIOD->ODR|=pin;
+ 1432              		.loc 1 354 5 view .LVU380
+ 1433              		.loc 1 354 15 is_stmt 0 view .LVU381
+ 1434 00ec 5A69     		ldr	r2, [r3, #20]
+ 1435 00ee 42F48042 		orr	r2, r2, #16384
+ 1436 00f2 5A61     		str	r2, [r3, #20]
+ 355:Core/Src/menu.cpp ****         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
+ 356:Core/Src/menu.cpp ****     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
+ 1437              		.loc 1 356 5 is_stmt 1 view .LVU382
+ 1438              		.loc 1 356 20 is_stmt 0 view .LVU383
+ 1439 00f4 1B69     		ldr	r3, [r3, #16]
+ 1440              		.loc 1 356 23 view .LVU384
+ARM GAS  /tmp/ccMEB0iu.s 			page 36
+
+
+ 1441 00f6 03F40743 		and	r3, r3, #34560
+ 1442              		.loc 1 356 5 view .LVU385
+ 1443 00fa B3F5806F 		cmp	r3, #1024
+ 1444 00fe 1FD0     		beq	.L101
+ 1445 0100 12D8     		bhi	.L102
+ 1446 0102 B3F5807F 		cmp	r3, #256
+ 1447 0106 20D0     		beq	.L103
+ 1448 0108 B3F5007F 		cmp	r3, #512
+ 1449 010c 12D1     		bne	.L105
+ 357:Core/Src/menu.cpp ****     {
+ 358:Core/Src/menu.cpp ****         case GPIO_PIN_15:
+ 359:Core/Src/menu.cpp ****             menu_up();//U
+ 360:Core/Src/menu.cpp ****             break;
+ 361:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 362:Core/Src/menu.cpp ****             menu_number('3');
+ 363:Core/Src/menu.cpp ****             break;
+ 364:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1450              		.loc 1 364 9 is_stmt 1 view .LVU386
+ 365:Core/Src/menu.cpp ****             menu_number('2');
+ 1451              		.loc 1 365 13 view .LVU387
+ 1452              		.loc 1 365 24 is_stmt 0 view .LVU388
+ 1453 010e 3221     		movs	r1, #50
+ 1454 0110 2046     		mov	r0, r4
+ 1455 0112 FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1456              	.LVL93:
+ 366:Core/Src/menu.cpp ****             break;
+ 1457              		.loc 1 366 13 is_stmt 1 view .LVU389
+ 1458 0116 0DE0     		b	.L105
+ 1459              	.LVL94:
+ 1460              	.L96:
+ 338:Core/Src/menu.cpp ****             menu_menu();//M
+ 1461              		.loc 1 338 9 view .LVU390
+ 339:Core/Src/menu.cpp ****             break;
+ 1462              		.loc 1 339 13 view .LVU391
+ 339:Core/Src/menu.cpp ****             break;
+ 1463              		.loc 1 339 22 is_stmt 0 view .LVU392
+ 1464 0118 2046     		mov	r0, r4
+ 1465 011a FFF7FEFF 		bl	_ZN4menu9menu_menuEv
+ 1466              	.LVL95:
+ 340:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1467              		.loc 1 340 13 is_stmt 1 view .LVU393
+ 1468 011e E0E7     		b	.L100
+ 1469              	.L98:
+ 344:Core/Src/menu.cpp ****             menu_back();//B
+ 1470              		.loc 1 344 9 view .LVU394
+ 345:Core/Src/menu.cpp ****             break;
+ 1471              		.loc 1 345 13 view .LVU395
+ 345:Core/Src/menu.cpp ****             break;
+ 1472              		.loc 1 345 22 is_stmt 0 view .LVU396
+ 1473 0120 2046     		mov	r0, r4
+ 1474 0122 FFF7FEFF 		bl	_ZN4menu9menu_backEv
+ 1475              	.LVL96:
+ 346:Core/Src/menu.cpp ****         default:
+ 1476              		.loc 1 346 13 is_stmt 1 view .LVU397
+ 1477 0126 DCE7     		b	.L100
+ 1478              	.LVL97:
+ 1479              	.L102:
+ARM GAS  /tmp/ccMEB0iu.s 			page 37
+
+
+ 356:Core/Src/menu.cpp ****     {
+ 1480              		.loc 1 356 5 is_stmt 0 view .LVU398
+ 1481 0128 B3F5004F 		cmp	r3, #32768
+ 1482 012c 02D1     		bne	.L105
+ 358:Core/Src/menu.cpp ****             menu_up();//U
+ 1483              		.loc 1 358 9 is_stmt 1 view .LVU399
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
  359:Core/Src/menu.cpp ****             break;
  1559              		.loc 1 359 13 view .LVU411
  359:Core/Src/menu.cpp ****             break;
+<<<<<<< HEAD
  1560              		.loc 1 359 22 is_stmt 0 view .LVU412
  1561 0120 2046     		mov	r0, r4
  1562 0122 FFF7FEFF 		bl	_ZN4menu9menu_backEv
@@ -2393,10 +3931,103 @@ ARM GAS  /tmp/cceDqxOT.s 			page 1
  1639              		.file 23 "<built-in>"
  1640              		.file 24 "/usr/include/newlib/stdio.h"
 ARM GAS  /tmp/cceDqxOT.s 			page 41
+=======
+ 1485              		.loc 1 359 20 is_stmt 0 view .LVU401
+ 1486 012e 2046     		mov	r0, r4
+ 1487 0130 FFF7FEFF 		bl	_ZN4menu7menu_upEv
+ 1488              	.LVL98:
+ 360:Core/Src/menu.cpp ****         case GPIO_PIN_10:
+ 1489              		.loc 1 360 13 is_stmt 1 view .LVU402
+ 1490              	.L105:
+ 367:Core/Src/menu.cpp ****         case GPIO_PIN_8:
+ 368:Core/Src/menu.cpp ****             menu_number('1');
+ 369:Core/Src/menu.cpp ****             break;
+ 370:Core/Src/menu.cpp ****         default:
+ 371:Core/Src/menu.cpp ****             break;
+ 372:Core/Src/menu.cpp **** 
+ 373:Core/Src/menu.cpp ****     }
+ 374:Core/Src/menu.cpp ****     GPIOD->ODR&=(~pin);
+ 1491              		.loc 1 374 5 view .LVU403
+ 1492              		.loc 1 374 15 is_stmt 0 view .LVU404
+ 1493 0134 074A     		ldr	r2, .L107
+ 1494 0136 5369     		ldr	r3, [r2, #20]
+ 1495 0138 23F48043 		bic	r3, r3, #16384
+ 1496 013c 5361     		str	r3, [r2, #20]
+ 375:Core/Src/menu.cpp **** 
+ 376:Core/Src/menu.cpp **** }
+ 1497              		.loc 1 376 1 view .LVU405
+ 1498 013e 10BD     		pop	{r4, pc}
+ 1499              	.LVL99:
+ 1500              	.L101:
+ 361:Core/Src/menu.cpp ****             menu_number('3');
+ 1501              		.loc 1 361 9 is_stmt 1 view .LVU406
+ 362:Core/Src/menu.cpp ****             break;
+ 1502              		.loc 1 362 13 view .LVU407
+ 362:Core/Src/menu.cpp ****             break;
+ 1503              		.loc 1 362 24 is_stmt 0 view .LVU408
+ 1504 0140 3321     		movs	r1, #51
+ 1505 0142 2046     		mov	r0, r4
+ 1506 0144 FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1507              	.LVL100:
+ 363:Core/Src/menu.cpp ****         case GPIO_PIN_9:
+ 1508              		.loc 1 363 13 is_stmt 1 view .LVU409
+ 1509 0148 F4E7     		b	.L105
+ 1510              	.L103:
+ 367:Core/Src/menu.cpp ****             menu_number('1');
+ 1511              		.loc 1 367 9 view .LVU410
+ 368:Core/Src/menu.cpp ****             break;
+ 1512              		.loc 1 368 13 view .LVU411
+ 368:Core/Src/menu.cpp ****             break;
+ 1513              		.loc 1 368 24 is_stmt 0 view .LVU412
+ 1514 014a 3121     		movs	r1, #49
+ARM GAS  /tmp/ccMEB0iu.s 			page 38
+
+
+ 1515 014c 2046     		mov	r0, r4
+ 1516 014e FFF7FEFF 		bl	_ZN4menu11menu_numberEc
+ 1517              	.LVL101:
+ 369:Core/Src/menu.cpp ****         default:
+ 1518              		.loc 1 369 13 is_stmt 1 view .LVU413
+ 1519 0152 EFE7     		b	.L105
+ 1520              	.L108:
+ 1521              		.align	2
+ 1522              	.L107:
+ 1523 0154 000C0240 		.word	1073875968
+ 1524              		.cfi_endproc
+ 1525              	.LFE150:
+ 1526              		.fnend
+ 1528              		.text
+ 1529              	.Letext0:
+ 1530              		.file 2 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 1531              		.file 3 "/usr/include/newlib/c++/9.2.1/cstdlib"
+ 1532              		.file 4 "/usr/include/newlib/c++/9.2.1/bits/std_abs.h"
+ 1533              		.file 5 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h"
+ 1534              		.file 6 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
+ 1535              		.file 7 "/usr/include/newlib/sys/_types.h"
+ 1536              		.file 8 "/usr/include/newlib/sys/reent.h"
+ 1537              		.file 9 "/usr/include/newlib/sys/lock.h"
+ 1538              		.file 10 "/usr/include/newlib/stdlib.h"
+ 1539              		.file 11 "/usr/include/newlib/c++/9.2.1/stdlib.h"
+ 1540              		.file 12 "Drivers/CMSIS/Include/core_cm4.h"
+ 1541              		.file 13 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 1542              		.file 14 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 1543              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 1544              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 1545              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"
+ 1546              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"
+ 1547              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 1548              		.file 20 "Core/Inc/fonts.h"
+ 1549              		.file 21 "Core/Inc/oled.h"
+ 1550              		.file 22 "Core/Inc/menu.hpp"
+ 1551              		.file 23 "<built-in>"
+ 1552              		.file 24 "/usr/include/newlib/stdio.h"
+ARM GAS  /tmp/ccMEB0iu.s 			page 39
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 menu.cpp
+<<<<<<< HEAD
      /tmp/cceDqxOT.s:18     .text._ZN4menuC2EP4oled:0000000000000000 $t
      /tmp/cceDqxOT.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC2EP4oled
 .ARM.exidx.text._ZN4menuC2EP4oled:0000000000000000 $d
@@ -2445,6 +4076,54 @@ DEFINED SYMBOLS
 .ARM.exidx.text._ZN4menu13keyboard_pollEv:0000000000000000 $d
      /tmp/cceDqxOT.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
      /tmp/cceDqxOT.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
+=======
+     /tmp/ccMEB0iu.s:18     .text._ZN4menuC2EP4oled:0000000000000000 $t
+     /tmp/ccMEB0iu.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC2EP4oled
+.ARM.exidx.text._ZN4menuC2EP4oled:0000000000000000 $d
+     /tmp/ccMEB0iu.s:26     .text._ZN4menuC2EP4oled:0000000000000000 _ZN4menuC1EP4oled
+     /tmp/ccMEB0iu.s:67     .rodata._ZN4menu10menu_printEv.str1.4:0000000000000000 $d
+     /tmp/ccMEB0iu.s:92     .text._ZN4menu10menu_printEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:99     .text._ZN4menu10menu_printEv:0000000000000000 _ZN4menu10menu_printEv
+     /tmp/ccMEB0iu.s:128    .text._ZN4menu10menu_printEv:0000000000000010 $d
+     /tmp/ccMEB0iu.s:355    .text._ZN4menu10menu_printEv:000000000000012c $d
+.ARM.exidx.text._ZN4menu10menu_printEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:370    .text._ZN4menu7menu_okEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:377    .text._ZN4menu7menu_okEv:0000000000000000 _ZN4menu7menu_okEv
+     /tmp/ccMEB0iu.s:418    .text._ZN4menu7menu_okEv:000000000000001e $d
+     /tmp/ccMEB0iu.s:442    .text._ZN4menu7menu_okEv:0000000000000036 $t
+.ARM.exidx.text._ZN4menu7menu_okEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:550    .text._ZN4menu9menu_nextEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:557    .text._ZN4menu9menu_nextEv:0000000000000000 _ZN4menu9menu_nextEv
+     /tmp/ccMEB0iu.s:591    .text._ZN4menu9menu_nextEv:0000000000000018 $d
+     /tmp/ccMEB0iu.s:615    .text._ZN4menu9menu_nextEv:0000000000000030 $t
+.ARM.exidx.text._ZN4menu9menu_nextEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:679    .text._ZN4menu9menu_menuEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:686    .text._ZN4menu9menu_menuEv:0000000000000000 _ZN4menu9menu_menuEv
+.ARM.exidx.text._ZN4menu9menu_menuEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:731    .text._ZN4menu9menu_backEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:738    .text._ZN4menu9menu_backEv:0000000000000000 _ZN4menu9menu_backEv
+.ARM.exidx.text._ZN4menu9menu_backEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:786    .text._ZN4menu9menu_prevEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:793    .text._ZN4menu9menu_prevEv:0000000000000000 _ZN4menu9menu_prevEv
+     /tmp/ccMEB0iu.s:827    .text._ZN4menu9menu_prevEv:0000000000000018 $d
+     /tmp/ccMEB0iu.s:851    .text._ZN4menu9menu_prevEv:0000000000000030 $t
+.ARM.exidx.text._ZN4menu9menu_prevEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:925    .text._ZN4menu11menu_numberEc:0000000000000000 $t
+     /tmp/ccMEB0iu.s:932    .text._ZN4menu11menu_numberEc:0000000000000000 _ZN4menu11menu_numberEc
+.ARM.exidx.text._ZN4menu11menu_numberEc:0000000000000000 $d
+     /tmp/ccMEB0iu.s:1035   .text._ZN4menu7menu_upEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:1042   .text._ZN4menu7menu_upEv:0000000000000000 _ZN4menu7menu_upEv
+.ARM.exidx.text._ZN4menu7menu_upEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:1130   .text._ZN4menu9menu_downEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:1137   .text._ZN4menu9menu_downEv:0000000000000000 _ZN4menu9menu_downEv
+.ARM.exidx.text._ZN4menu9menu_downEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:1223   .text._ZN4menu13keyboard_pollEv:0000000000000000 $t
+     /tmp/ccMEB0iu.s:1230   .text._ZN4menu13keyboard_pollEv:0000000000000000 _ZN4menu13keyboard_pollEv
+     /tmp/ccMEB0iu.s:1523   .text._ZN4menu13keyboard_pollEv:0000000000000154 $d
+.ARM.exidx.text._ZN4menu13keyboard_pollEv:0000000000000000 $d
+     /tmp/ccMEB0iu.s:153    .text._ZN4menu10menu_printEv:0000000000000029 $d
+     /tmp/ccMEB0iu.s:153    .text._ZN4menu10menu_printEv:000000000000002a $t
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 UNDEFINED SYMBOLS
 sprintf
@@ -2452,7 +4131,13 @@ _ZN4oled10oled_printEPc9FontDef_ttt
 Font_16x26
 Font_11x18
 __aeabi_unwind_cpp_pr0
+<<<<<<< HEAD
 ARM GAS  /tmp/cceDqxOT.s 			page 42
+=======
+_ZN4oled13oled_isOledOnEv
+_ZN4oled15oled_resetTimerEv
+ARM GAS  /tmp/ccMEB0iu.s 			page 40
+>>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 
 
 _ZN4oled13oled_isOledOnEv

@@ -1,7 +1,6 @@
 #ifndef OLED_H
 #define OLED_H
 #include "stm32f4xx.h"
-
 #include "string.h"
 #include "stdint.h"
 #include "fonts.h"

@@ -16,6 +16,8 @@ const uint32_t I2SFreq[8] = {8000, 11025, 16000, 22050, 32000, 44100, 48000, 960
 const uint32_t I2SPLLN[8] = {256, 429, 213, 429, 426, 271, 258, 344};
 const uint32_t I2SPLLR[8] = {5, 4, 4, 4, 4, 6, 3, 1};
 
+
+public:
 typedef enum 
 {
     I2S2=2,
@@ -23,27 +25,32 @@ typedef enum
     I2S4=4
 
 }i2s_num;
-
-public:
 /**
  * @brief Construct a new i2s object
  * 
  * @param i2sNum : which interface you want to use
  */
-i2s(uint8_t i2sNum, uint32_t audioFreq);
+
 
 /**
  * @brief initialize the PLLs clocks and sampling
  * 
  * @param audioFreq 
  */
-void init(uint32_t audioFreq);
+void set_handle(i2s_num i2sNum);
 
 /**
  * @brief Set the audiofreq i2s parameter
  * 
  * @param audioFreq 
  * @return uint8_t : 1:successful 0:failed
+ */
+void init(uint32_t audioFreq);
+/**
+ * @brief initialized I2S Audio Settings
+ * 
+ * @param audioFreq the files audio sampling rate
+ * @return uint8_t 1: success 0:failed
  */
 uint8_t set_audiofreq(uint32_t audioFreq);
 
