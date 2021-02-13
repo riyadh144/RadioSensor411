@@ -351,6 +351,9 @@ static void MX_DMA_Init(void)
   __HAL_RCC_DMA2_CLK_ENABLE();
 
   /* DMA interrupt init */
+  /* DMA2_Stream0_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
   /* DMA2_Stream2_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream2_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream2_IRQn);
@@ -405,7 +408,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
     if(oled1.oled_isOledOn())
     {
       menu1.keyboard_poll();
-      //oled1.oled_update_battery(adc_bat.adc_getValue()); //Get the battery voltage and print it
+      oled1.oled_update_battery(adc_bat.adc_getValue()); //Get the battery voltage and print it
       menu1.menu_print();//update the menu portion of the display
       oled1.oled_refresh();//Send the data to the display
       //oled1.Counter_increment();
