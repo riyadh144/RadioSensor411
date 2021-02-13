@@ -46,7 +46,7 @@ build/main.o: Core/Src/main.cpp Core/Inc/main.h \
  Core/Inc/uart.hpp Core/Inc/pin.hpp Core/Inc/oled.h Core/Inc/fonts.h \
  Core/Inc/fonts.h Core/Inc/menu.hpp Core/Inc/oled.h Core/Inc/pin.hpp \
  Core/Inc/uart.hpp Core/Inc/sa818.h Core/Inc/i2s.hpp \
- Core/Inc/wav_player.hpp Core/Inc/i2s.hpp
+ Core/Inc/wav_player.hpp Core/Inc/i2s.hpp Core/Inc/adc.hpp
 
 Core/Inc/main.h:
 
@@ -173,3 +173,5 @@ Core/Inc/i2s.hpp:
 Core/Inc/wav_player.hpp:
 
 Core/Inc/i2s.hpp:
+
+Core/Inc/adc.hpp:

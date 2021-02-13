@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccgX2YoA.s 			page 1
+ARM GAS  /tmp/ccfSqDSx.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
   38              	.LCFI0:
   39              		.cfi_def_cfa_offset 8
   40              		.cfi_offset 4, -8
-ARM GAS  /tmp/ccgX2YoA.s 			page 2
+ARM GAS  /tmp/ccfSqDSx.s 			page 2
 
 
   41              		.cfi_offset 5, -4
@@ -118,7 +118,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
   30:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //Set Memory Addressing Mode   
   31:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x10); //00,Horizontal Addressing Mode;01,Vertical Addressing Mode;10,Page Addre
   32:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
-ARM GAS  /tmp/ccgX2YoA.s 			page 3
+ARM GAS  /tmp/ccfSqDSx.s 			page 3
 
 
   33:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xC8); //Set COM Output Scan Direction
@@ -178,7 +178,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  107              	.L7:
   66:Core/Src/oled.cpp **** 	memset(&oled_buffer[W * m + 1], (uint8_t)color, W);
  108              		.loc 1 66 2 is_stmt 1 discriminator 2 view .LVU14
-ARM GAS  /tmp/ccgX2YoA.s 			page 4
+ARM GAS  /tmp/ccfSqDSx.s 			page 4
 
 
  109              		.loc 1 66 24 is_stmt 0 discriminator 2 view .LVU15
@@ -238,7 +238,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  158              	.LCFI3:
  159              		.cfi_def_cfa_offset 4
  160              		.cfi_offset 14, -4
-ARM GAS  /tmp/ccgX2YoA.s 			page 5
+ARM GAS  /tmp/ccfSqDSx.s 			page 5
 
 
  161              		.pad #12
@@ -298,7 +298,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  212              	.LCFI6:
  213              		.cfi_def_cfa_offset 24
  214              		.cfi_offset 4, -24
-ARM GAS  /tmp/ccgX2YoA.s 			page 6
+ARM GAS  /tmp/ccfSqDSx.s 			page 6
 
 
  215              		.cfi_offset 5, -20
@@ -358,7 +358,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  258 003c 4FF01008 		mov	r8, #16
  259 0040 84F80A80 		strb	r8, [r4, #10]
   31:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0xB0); //Set Page Start Address for Page Addressing Mode,0-7
-ARM GAS  /tmp/ccgX2YoA.s 			page 7
+ARM GAS  /tmp/ccfSqDSx.s 			page 7
 
 
  260              		.loc 1 31 2 view .LVU45
@@ -418,7 +418,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  302              		.loc 1 35 2 view .LVU57
  303 0082 0222     		movs	r2, #2
  304 0084 3146     		mov	r1, r6
-ARM GAS  /tmp/ccgX2YoA.s 			page 8
+ARM GAS  /tmp/ccfSqDSx.s 			page 8
 
 
  305 0086 2046     		mov	r0, r4
@@ -478,7 +478,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  347 00c2 0222     		movs	r2, #2
  348 00c4 3146     		mov	r1, r6
  349 00c6 2046     		mov	r0, r4
-ARM GAS  /tmp/ccgX2YoA.s 			page 9
+ARM GAS  /tmp/ccfSqDSx.s 			page 9
 
 
  350 00c8 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
@@ -538,7 +538,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  392 0104 3146     		mov	r1, r6
  393 0106 2046     		mov	r0, r4
  394 0108 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
-ARM GAS  /tmp/ccgX2YoA.s 			page 10
+ARM GAS  /tmp/ccfSqDSx.s 			page 10
 
 
  395              	.LVL29:
@@ -598,7 +598,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  437 0146 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
  438              	.LVL33:
   48:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x22); //
-ARM GAS  /tmp/ccgX2YoA.s 			page 11
+ARM GAS  /tmp/ccfSqDSx.s 			page 11
 
 
  439              		.loc 1 48 2 view .LVU94
@@ -658,7 +658,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  482              	.LVL37:
   52:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //0x20,0.77xVcc
  483              		.loc 1 52 2 view .LVU106
-ARM GAS  /tmp/ccgX2YoA.s 			page 12
+ARM GAS  /tmp/ccfSqDSx.s 			page 12
 
 
  484 018a 6572     		strb	r5, [r4, #9]
@@ -718,7 +718,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  526              		.loc 1 56 2 view .LVU118
  527 01c8 6572     		strb	r5, [r4, #9]
   56:Core/Src/oled.cpp **** 
-ARM GAS  /tmp/ccgX2YoA.s 			page 13
+ARM GAS  /tmp/ccfSqDSx.s 			page 13
 
 
  528              		.loc 1 56 2 view .LVU119
@@ -778,7 +778,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
   78:Core/Src/oled.cpp **** 	for (m = 0; m < 8; m++) {
   79:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0xB0 + m);
   80:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0x00);
-ARM GAS  /tmp/ccgX2YoA.s 			page 14
+ARM GAS  /tmp/ccfSqDSx.s 			page 14
 
 
   81:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0x10);
@@ -827,7 +827,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  604              	.L16:
  605              	.LBB4:
   92:Core/Src/oled.cpp **** 	// //loop through the chars in the string
-  93:Core/Src/oled.cpp **** 	while(strItr<=strlen(string)+4)
+  93:Core/Src/oled.cpp **** 	while(strItr<=strlen(string)+3)
   94:Core/Src/oled.cpp **** 	{
   95:Core/Src/oled.cpp **** 		int i=0;
   96:Core/Src/oled.cpp **** 		int j=0;
@@ -838,7 +838,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  101:Core/Src/oled.cpp **** 					oled_buffer[((y+i) / 8)*W+x+j]=0;
  606              		.loc 1 101 25 discriminator 2 view .LVU133
  607 001e DB10     		asrs	r3, r3, #3
-ARM GAS  /tmp/ccgX2YoA.s 			page 15
+ARM GAS  /tmp/ccfSqDSx.s 			page 15
 
 
  608              		.loc 1 101 31 discriminator 2 view .LVU134
@@ -898,7 +898,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  648              		.loc 1 106 10 view .LVU149
  649 004c 0021     		movs	r1, #0
  650              	.LVL51:
-ARM GAS  /tmp/ccgX2YoA.s 			page 16
+ARM GAS  /tmp/ccfSqDSx.s 			page 16
 
 
  651              		.loc 1 106 10 view .LVU150
@@ -958,7 +958,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  694              		.loc 1 110 25 view .LVU165
  695 0098 9E46     		mov	lr, r3
  696 009a 002B     		cmp	r3, #0
-ARM GAS  /tmp/ccgX2YoA.s 			page 17
+ARM GAS  /tmp/ccfSqDSx.s 			page 17
 
 
  697 009c D8DA     		bge	.L22
@@ -1018,7 +1018,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  744              		.loc 1 107 27 view .LVU180
  745 00ea 203B     		subs	r3, r3, #32
  107:Core/Src/oled.cpp **** 			for (j = 0; j < size.FontWidth; j++) {
-ARM GAS  /tmp/ccgX2YoA.s 			page 18
+ARM GAS  /tmp/ccfSqDSx.s 			page 18
 
 
  746              		.loc 1 107 51 view .LVU181
@@ -1078,7 +1078,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  785              		.loc 1 93 14 view .LVU197
   93:Core/Src/oled.cpp **** 	{
  786              		.loc 1 93 22 is_stmt 0 view .LVU198
-ARM GAS  /tmp/ccgX2YoA.s 			page 19
+ARM GAS  /tmp/ccfSqDSx.s 			page 19
 
 
  787 0112 3846     		mov	r0, r7
@@ -1086,7 +1086,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  789              	.LVL62:
   93:Core/Src/oled.cpp **** 	{
  790              		.loc 1 93 30 view .LVU199
- 791 0118 031D     		adds	r3, r0, #4
+ 791 0118 C31C     		adds	r3, r0, #3
   93:Core/Src/oled.cpp **** 	{
  792              		.loc 1 93 14 view .LVU200
  793 011a 9845     		cmp	r8, r3
@@ -1132,24 +1132,24 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  126:Core/Src/oled.cpp **** {
  830              		.loc 1 126 1 is_stmt 1 view -0
  831              		.cfi_startproc
- 832              		@ args = 0, pretend = 0, frame = 8
+ 832              		@ args = 0, pretend = 0, frame = 24
  833              		@ frame_needed = 0, uses_anonymous_args = 0
  834              		.loc 1 126 1 is_stmt 0 view .LVU205
  835 0000 10B5     		push	{r4, lr}
  836              	.LCFI10:
  837              		.cfi_def_cfa_offset 8
-ARM GAS  /tmp/ccgX2YoA.s 			page 20
+ARM GAS  /tmp/ccfSqDSx.s 			page 20
 
 
  838              		.cfi_offset 4, -8
  839              		.cfi_offset 14, -4
- 840 0002 84B0     		sub	sp, sp, #16
+ 840 0002 88B0     		sub	sp, sp, #32
  841              	.LCFI11:
- 842              		.cfi_def_cfa_offset 24
+ 842              		.cfi_def_cfa_offset 40
  843 0004 0446     		mov	r4, r0
  844 0006 10EE100A 		vmov	r0, s0
  845              	.LVL64:
- 127:Core/Src/oled.cpp **** 	char volt [6];
+ 127:Core/Src/oled.cpp **** 	char volt [20];
  846              		.loc 1 127 2 is_stmt 1 view .LVU206
  128:Core/Src/oled.cpp **** 	sprintf(volt,"%.1fv",voltage);
  847              		.loc 1 128 2 view .LVU207
@@ -1160,7 +1160,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  852 000e 0246     		mov	r2, r0
  853 0010 0B46     		mov	r3, r1
  854 0012 0849     		ldr	r1, .L32
- 855 0014 02A8     		add	r0, sp, #8
+ 855 0014 03A8     		add	r0, sp, #12
  856 0016 FFF7FEFF 		bl	sprintf
  857              	.LVL66:
  129:Core/Src/oled.cpp **** 	oled_print(volt,Font_7x10,90,0);
@@ -1172,13 +1172,13 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  863 0020 5A22     		movs	r2, #90
  864 0022 0092     		str	r2, [sp]
  865 0024 0CCB     		ldm	r3, {r2, r3}
- 866 0026 02A9     		add	r1, sp, #8
+ 866 0026 03A9     		add	r1, sp, #12
  867 0028 2046     		mov	r0, r4
  868 002a FFF7FEFF 		bl	_ZN4oled10oled_printEPc9FontDef_ttt
  869              	.LVL67:
  130:Core/Src/oled.cpp **** }
  870              		.loc 1 130 1 view .LVU212
- 871 002e 04B0     		add	sp, sp, #16
+ 871 002e 08B0     		add	sp, sp, #32
  872              	.LCFI12:
  873              		.cfi_def_cfa_offset 8
  874              		@ sp needed
@@ -1198,7 +1198,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  889              		.align	1
  890              		.global	_ZN4oled8oled_offEv
  891              		.syntax unified
-ARM GAS  /tmp/ccgX2YoA.s 			page 21
+ARM GAS  /tmp/ccfSqDSx.s 			page 21
 
 
  892              		.thumb
@@ -1258,7 +1258,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  943              	_ZN4oled13oled_isOledOnEv:
  944              		.fnstart
  945              	.LVL71:
-ARM GAS  /tmp/ccgX2YoA.s 			page 22
+ARM GAS  /tmp/ccfSqDSx.s 			page 22
 
 
  946              	.LFB142:
@@ -1318,7 +1318,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  987              	.LFE143:
  988              		.cantunwind
  989              		.fnend
-ARM GAS  /tmp/ccgX2YoA.s 			page 23
+ARM GAS  /tmp/ccfSqDSx.s 			page 23
 
 
  991              		.section	.text._ZN4oled7oled_onEv,"ax",%progbits
@@ -1378,7 +1378,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  1036 0020 10BD     		pop	{r4, pc}
  143:Core/Src/oled.cpp **** uint8_t oled::oled_isOledOn()
  1037              		.loc 1 143 1 view .LVU241
-ARM GAS  /tmp/ccgX2YoA.s 			page 24
+ARM GAS  /tmp/ccfSqDSx.s 			page 24
 
 
  1038              		.cfi_endproc
@@ -1438,7 +1438,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  1090              	_ZN4oled17Counter_incrementEv:
  1091              		.fnstart
  1092              	.LVL79:
-ARM GAS  /tmp/ccgX2YoA.s 			page 25
+ARM GAS  /tmp/ccfSqDSx.s 			page 25
 
 
  1093              	.LFB145:
@@ -1498,7 +1498,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  1137              		.thumb_func
  1138              		.fpu fpv4-sp-d16
  1140              	_ZN4oled12oled_refreshEv:
-ARM GAS  /tmp/ccgX2YoA.s 			page 26
+ARM GAS  /tmp/ccfSqDSx.s 			page 26
 
 
  1141              		.fnstart
@@ -1558,7 +1558,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
   80:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0x00);
  1185              		.loc 1 80 3 discriminator 2 view .LVU270
  1186 0024 0222     		movs	r2, #2
-ARM GAS  /tmp/ccgX2YoA.s 			page 27
+ARM GAS  /tmp/ccfSqDSx.s 			page 27
 
 
  1187 0026 3146     		mov	r1, r6
@@ -1618,7 +1618,7 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
   86:Core/Src/oled.cpp **** 	Counter_increment();
  1229              		.loc 1 86 19 is_stmt 0 view .LVU283
  1230 005e 2046     		mov	r0, r4
-ARM GAS  /tmp/ccgX2YoA.s 			page 28
+ARM GAS  /tmp/ccfSqDSx.s 			page 28
 
 
  1231 0060 FFF7FEFF 		bl	_ZN4oled17Counter_incrementEv
@@ -1650,54 +1650,54 @@ ARM GAS  /tmp/ccgX2YoA.s 			page 1
  1256              		.file 16 "Core/Inc/oled.h"
  1257              		.file 17 "/usr/include/newlib/stdio.h"
  1258              		.file 18 "/usr/include/newlib/string.h"
-ARM GAS  /tmp/ccgX2YoA.s 			page 29
+ARM GAS  /tmp/ccfSqDSx.s 			page 29
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 oled.cpp
-     /tmp/ccgX2YoA.s:18     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $t
-     /tmp/ccgX2YoA.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
+     /tmp/ccfSqDSx.s:18     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $t
+     /tmp/ccfSqDSx.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
 .ARM.exidx.text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $d
-     /tmp/ccgX2YoA.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC1EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
-     /tmp/ccgX2YoA.s:75     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 $t
-     /tmp/ccgX2YoA.s:82     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 _ZN4oled9oled_fillENS_12OLED_COLOR_tE
+     /tmp/ccfSqDSx.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC1EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
+     /tmp/ccfSqDSx.s:75     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 $t
+     /tmp/ccfSqDSx.s:82     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 _ZN4oled9oled_fillENS_12OLED_COLOR_tE
 .ARM.exidx.text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 $d
-     /tmp/ccgX2YoA.s:140    .text._ZN4oled10oled_writeEPht:0000000000000000 $t
-     /tmp/ccgX2YoA.s:147    .text._ZN4oled10oled_writeEPht:0000000000000000 _ZN4oled10oled_writeEPht
+     /tmp/ccfSqDSx.s:140    .text._ZN4oled10oled_writeEPht:0000000000000000 $t
+     /tmp/ccfSqDSx.s:147    .text._ZN4oled10oled_writeEPht:0000000000000000 _ZN4oled10oled_writeEPht
 .ARM.exidx.text._ZN4oled10oled_writeEPht:0000000000000000 $d
-     /tmp/ccgX2YoA.s:194    .text._ZN4oled4initEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:201    .text._ZN4oled4initEv:0000000000000000 _ZN4oled4initEv
+     /tmp/ccfSqDSx.s:194    .text._ZN4oled4initEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:201    .text._ZN4oled4initEv:0000000000000000 _ZN4oled4initEv
   .ARM.exidx.text._ZN4oled4initEv:0000000000000000 $d
-     /tmp/ccgX2YoA.s:561    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 $t
-     /tmp/ccgX2YoA.s:568    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 _ZN4oled10oled_printEPc9FontDef_ttt
+     /tmp/ccfSqDSx.s:561    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 $t
+     /tmp/ccfSqDSx.s:568    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 _ZN4oled10oled_printEPc9FontDef_ttt
 .ARM.exidx.text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 $d
-     /tmp/ccgX2YoA.s:815    .rodata._ZN4oled19oled_update_batteryEf.str1.4:0000000000000000 $d
-     /tmp/ccgX2YoA.s:819    .text._ZN4oled19oled_update_batteryEf:0000000000000000 $t
-     /tmp/ccgX2YoA.s:826    .text._ZN4oled19oled_update_batteryEf:0000000000000000 _ZN4oled19oled_update_batteryEf
-     /tmp/ccgX2YoA.s:881    .text._ZN4oled19oled_update_batteryEf:0000000000000034 $d
+     /tmp/ccfSqDSx.s:815    .rodata._ZN4oled19oled_update_batteryEf.str1.4:0000000000000000 $d
+     /tmp/ccfSqDSx.s:819    .text._ZN4oled19oled_update_batteryEf:0000000000000000 $t
+     /tmp/ccfSqDSx.s:826    .text._ZN4oled19oled_update_batteryEf:0000000000000000 _ZN4oled19oled_update_batteryEf
+     /tmp/ccfSqDSx.s:881    .text._ZN4oled19oled_update_batteryEf:0000000000000034 $d
 .ARM.exidx.text._ZN4oled19oled_update_batteryEf:0000000000000000 $d
-     /tmp/ccgX2YoA.s:889    .text._ZN4oled8oled_offEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:896    .text._ZN4oled8oled_offEv:0000000000000000 _ZN4oled8oled_offEv
+     /tmp/ccfSqDSx.s:889    .text._ZN4oled8oled_offEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:896    .text._ZN4oled8oled_offEv:0000000000000000 _ZN4oled8oled_offEv
 .ARM.exidx.text._ZN4oled8oled_offEv:0000000000000000 $d
-     /tmp/ccgX2YoA.s:936    .text._ZN4oled13oled_isOledOnEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:943    .text._ZN4oled13oled_isOledOnEv:0000000000000000 _ZN4oled13oled_isOledOnEv
+     /tmp/ccfSqDSx.s:936    .text._ZN4oled13oled_isOledOnEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:943    .text._ZN4oled13oled_isOledOnEv:0000000000000000 _ZN4oled13oled_isOledOnEv
 .ARM.exidx.text._ZN4oled13oled_isOledOnEv:0000000000000000 $d
-     /tmp/ccgX2YoA.s:964    .text._ZN4oled15oled_resetTimerEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:971    .text._ZN4oled15oled_resetTimerEv:0000000000000000 _ZN4oled15oled_resetTimerEv
+     /tmp/ccfSqDSx.s:964    .text._ZN4oled15oled_resetTimerEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:971    .text._ZN4oled15oled_resetTimerEv:0000000000000000 _ZN4oled15oled_resetTimerEv
 .ARM.exidx.text._ZN4oled15oled_resetTimerEv:0000000000000000 $d
-     /tmp/ccgX2YoA.s:992    .text._ZN4oled7oled_onEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:999    .text._ZN4oled7oled_onEv:0000000000000000 _ZN4oled7oled_onEv
+     /tmp/ccfSqDSx.s:992    .text._ZN4oled7oled_onEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:999    .text._ZN4oled7oled_onEv:0000000000000000 _ZN4oled7oled_onEv
 .ARM.exidx.text._ZN4oled7oled_onEv:0000000000000000 $d
-     /tmp/ccgX2YoA.s:1043   .text._ZN4oled13oled_setTimerEm:0000000000000000 $t
-     /tmp/ccgX2YoA.s:1050   .text._ZN4oled13oled_setTimerEm:0000000000000000 _ZN4oled13oled_setTimerEm
-     /tmp/ccgX2YoA.s:1076   .text._ZN4oled13oled_setTimerEm:0000000000000014 $d
+     /tmp/ccfSqDSx.s:1043   .text._ZN4oled13oled_setTimerEm:0000000000000000 $t
+     /tmp/ccfSqDSx.s:1050   .text._ZN4oled13oled_setTimerEm:0000000000000000 _ZN4oled13oled_setTimerEm
+     /tmp/ccfSqDSx.s:1076   .text._ZN4oled13oled_setTimerEm:0000000000000014 $d
 .ARM.exidx.text._ZN4oled13oled_setTimerEm:0000000000000000 $d
-     /tmp/ccgX2YoA.s:1083   .text._ZN4oled17Counter_incrementEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:1090   .text._ZN4oled17Counter_incrementEv:0000000000000000 _ZN4oled17Counter_incrementEv
+     /tmp/ccfSqDSx.s:1083   .text._ZN4oled17Counter_incrementEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:1090   .text._ZN4oled17Counter_incrementEv:0000000000000000 _ZN4oled17Counter_incrementEv
 .ARM.extab.text._ZN4oled17Counter_incrementEv:0000000000000000 $d
 .ARM.exidx.text._ZN4oled17Counter_incrementEv:0000000000000000 $d
-     /tmp/ccgX2YoA.s:1133   .text._ZN4oled12oled_refreshEv:0000000000000000 $t
-     /tmp/ccgX2YoA.s:1140   .text._ZN4oled12oled_refreshEv:0000000000000000 _ZN4oled12oled_refreshEv
+     /tmp/ccfSqDSx.s:1133   .text._ZN4oled12oled_refreshEv:0000000000000000 $t
+     /tmp/ccfSqDSx.s:1140   .text._ZN4oled12oled_refreshEv:0000000000000000 _ZN4oled12oled_refreshEv
 .ARM.exidx.text._ZN4oled12oled_refreshEv:0000000000000000 $d
 
 UNDEFINED SYMBOLS
@@ -1710,7 +1710,7 @@ strlen
 __aeabi_f2d
 sprintf
 Font_7x10
-ARM GAS  /tmp/ccgX2YoA.s 			page 30
+ARM GAS  /tmp/ccfSqDSx.s 			page 30
 
 
 __aeabi_unwind_cpp_pr1

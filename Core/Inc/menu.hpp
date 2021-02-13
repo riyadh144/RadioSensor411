@@ -32,28 +32,28 @@ uint8_t value;
  * @brief squash value in character form
  * 
  */
-char sq[3]=""; //TODO: Check on the correct number of SQ channels 
+char sq[3]="00"; //TODO: Check on the correct number of SQ channels 
 uint8_t sqVal;
 
 /**
  * @brief channel value in character form
  * 
  */
-char ch[3]="";
+char ch[3]="00";
 uint8_t chVal;
 
 /**
  * @brief volume value in character form
  * 
  */
-char vol[2];
+char vol[3]="00";
 uint8_t volVal=0;
 
 /**
  * @brief Display time out in seconds char form
  * 
  */
-char tmo[2];
+char tmo[3]="00";
 uint8_t tmoVal=30;//Default value of 30
 
 /**

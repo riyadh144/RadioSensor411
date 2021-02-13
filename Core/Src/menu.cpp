@@ -8,20 +8,20 @@ menu::menu(oled* oled_, uart* uart_)
 
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
-    char temp [20];
+    char temp [22];
 
     switch (menu_value)
     {
         case MENU_HOME:
-            sprintf(temp, "C:%.2s SQ:%.2s", ch,sq);
+            sprintf(temp, "C%.2s S%.2s  ", ch,sq);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break; 
         case MENU_CH:
-            sprintf(temp, "CHAN   ");
+            sprintf(temp, "CHAN     ");
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_SQ:
-            sprintf(temp, "SQUASH  ");
+            sprintf(temp, "SQUASH    ");
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_TMO: //Display Timeout in seconds
@@ -29,21 +29,21 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_CH_IN:
-            sprintf(temp, " CH:%.2s  ",ch);
+            sprintf(temp, "CH:%.2s    ",ch);
             oled1->oled_print(temp,Font_16x26, 0,19);
             break;
         case MENU_SQ_IN:
-            sprintf(temp, " SQ:%.2s   ",sq);
+            sprintf(temp, "SQ:%.2s    ",sq);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_TMO_IN:
-            sprintf(temp, " DS:%.2s   ",tmo);
+            sprintf(temp, "DS:%.2s    ",tmo);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         default:
             break;
     }
-    oled1->oled_print("menu back", Font_11x18,0,46);   
+    oled1->oled_print("menu backk   ", Font_11x18,0,46);   
 
 }
 

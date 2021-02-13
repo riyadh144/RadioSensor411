@@ -6,7 +6,7 @@
 class adc
 {
     private:
-    ADC_HandleTypeDef* hadc;
+    ADC_HandleTypeDef hadc;
     /**
      * @brief Slope of the ADC equation
      * 
@@ -18,12 +18,19 @@ class adc
      */
     float eq_b=0;
     public:
+    typedef enum 
+    {
+        ADC_1=1,
+        ADC_2=2,
+        ADC_3=3
+
+    }adc_enum;
     /**
      * @brief the constructor for the adc
      * 
      * @param hadc: pointer of the adc used
      */
-    adc(ADC_HandleTypeDef* hadc_);
+    adc(adc_enum adc_);
     /**
      * @brief set the conversion equation for adc
      * @note  ax+b is the equation of the line
@@ -38,6 +45,12 @@ class adc
      * @return float 
      */
     float adc_getValue();
+    /**
+     * @brief Initialize ADC
+     * 
+     */
+    void init(void);
+
 
 
 };

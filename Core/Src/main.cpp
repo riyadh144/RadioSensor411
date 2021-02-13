@@ -28,6 +28,7 @@
 #include "sa818.h"
 #include "i2s.hpp"
 #include "wav_player.hpp"
+#include "adc.hpp"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -92,7 +93,7 @@ pin pd15(GPIOD,pin::PIN15,pin::in,pin::PullDown,pin::SPEED_HIGH);
 pin pd8(GPIOD,pin::PIN8,pin::in,pin::PullDown,pin::SPEED_HIGH);
 pin pd9(GPIOD,pin::PIN9,pin::in,pin::PullDown,pin::SPEED_HIGH);
 pin pd10(GPIOD,pin::PIN10,pin::in,pin::PullDown,pin::SPEED_HIGH);
-
+adc adc_bat(adc::ADC_1);
 oled oled1(&hi2c1,0x78,&htim10);
 menu menu1(&oled1, &uart1);
 sa818 sa818_(&uart2,&sa818_pd,&sa818_ptt);
@@ -139,7 +140,8 @@ int main(void)
   pd8.init();
   pd9.init();
   pd10.init();
-
+  adc_bat.init();
+  adc_bat.adc_setEquation(3.3/(2*4096),0);
 uart1.send_recive("START","START");
   //Fatfs object
 	FATFS FatFs;
@@ -376,22 +378,26 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   if(htim->Instance==htim10.Instance) //htim10 is now setup to refresh 15 times a second 
   {
     //Debounce OK
-    if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_15))
+    // if(HAL_GPIO_ReadPin(GPIOB,GPIO_PIN_15))
+    // {
+    //   if(ok_debounce==0){
+    //     ok_debounce++;
+    //   }
+    //   else
+    //   {
+    //     if(ok_debounce==1){
+    //       menu1.menu_ok();
+    //       ok_debounce=0;
+    //     }
+    //   }
+    // }
+    // else
+    // {
+    //   ok_debounce=0;
+    // }
+    if(GPIOB->IDR& (GPIO_PIN_15))
     {
-      if(ok_debounce==0||ok_debounce==1){
-        ok_debounce++;
-      }
-      else
-      {
-        if(ok_debounce==2){
-          menu1.menu_ok();
-          ok_debounce=0;
-        }
-      }
-    }
-    else
-    {
-      ok_debounce=0;
+      menu1.menu_ok();
     }
     
     //char h1[]="tim";
