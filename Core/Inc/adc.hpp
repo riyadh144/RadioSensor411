@@ -51,7 +51,11 @@ class adc
      */
     void init(void);
 
-
+    /**
+     * @brief Handle ADC error
+     * 
+     */
+    void Error_Handler();
 
 };
 #endif
