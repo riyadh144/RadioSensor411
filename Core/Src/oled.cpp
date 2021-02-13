@@ -87,7 +87,7 @@ void oled::oled_refresh(void)
 	Counter_increment();
 }
 
-void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
+void oled::oled_print(const char* string, FontDef_t size, uint16_t x , uint16_t y)
 {	
 	uint8_t strItr=0;
 	// //loop through the chars in the string
