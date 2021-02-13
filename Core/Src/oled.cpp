@@ -1,4 +1,5 @@
 #include "oled.h"
+#include "stdlib.h"
 
 
 #define OLED_RIGHT_HORIZONTAL_SCROLL              0x26
@@ -122,11 +123,19 @@ void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 		strItr++;
 	}
 }
+
+void oled::switch_cursor()
+{
+	
+}
+
 void oled::oled_update_battery(float voltage)
 {
 	char volt [20];
 	sprintf(volt,"%.1fv",voltage);
-	oled_print(volt,Font_7x10,90,0);
+	//next lines are supposed to work as Battery GUI
+	DrawRectangle(90,0,4.2,4.2);
+	DrawFilledRectangle(90,0,4.2,(atoi(volt)/4.2)*100);
 }
 
 void oled::oled_off()
@@ -162,5 +171,141 @@ void oled::Counter_increment(void)
 	if(tmoValue == tmoCounter)
 	{
 		oled_off();
+	}
+}
+
+void oled::DrawPixel(uint16_t x, uint16_t y) {
+	if (
+		x >= W||
+		y >= H
+	) {
+		/* Error */
+		return;
+	}
+		oled_buffer[x + (y / 8) * W] |= 1 << (y % 8);
+
+}
+
+void oled::DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1) {
+	int16_t dx, dy, sx, sy, err, e2, i, tmp; 
+	
+	/* Check for overflow */
+	if (x0 >= W) {
+		x0 = W- 1;
+	}
+	if (x1 >= W) {
+		x1 = W- 1;
+	}
+	if (y0 >= H) {
+		y0 = H - 1;
+	}
+	if (y1 >= H) {
+		y1 = H - 1;
+	}
+	
+	dx = (x0 < x1) ? (x1 - x0) : (x0 - x1); 
+	dy = (y0 < y1) ? (y1 - y0) : (y0 - y1); 
+	sx = (x0 < x1) ? 1 : -1; 
+	sy = (y0 < y1) ? 1 : -1; 
+	err = ((dx > dy) ? dx : -dy) / 2; 
+
+	if (dx == 0) {
+		if (y1 < y0) {
+			tmp = y1;
+			y1 = y0;
+			y0 = tmp;
+		}
+		
+		if (x1 < x0) {
+			tmp = x1;
+			x1 = x0;
+			x0 = tmp;
+		}
+		
+		/* Vertical line */
+		for (i = y0; i <= y1; i++) {
+			DrawPixel(x0, i);
+		}
+		
+		/* Return from function */
+		return;
+	}
+	
+	if (dy == 0) {
+		if (y1 < y0) {
+			tmp = y1;
+			y1 = y0;
+			y0 = tmp;
+		}
+		
+		if (x1 < x0) {
+			tmp = x1;
+			x1 = x0;
+			x0 = tmp;
+		}
+		
+		/* Horizontal line */
+		for (i = x0; i <= x1; i++) {
+			DrawPixel(i, y0);
+		}
+		
+		/* Return from function */
+		return;
+	}
+	
+	while (1) {
+		DrawPixel(x0, y0);
+		if (x0 == x1 && y0 == y1) {
+			break;
+		}
+		e2 = err; 
+		if (e2 > -dx) {
+			err -= dy;
+			x0 += sx;
+		} 
+		if (e2 < dy) {
+			err += dx;
+			y0 += sy;
+		} 
+	}
+}
+
+void oled::DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h) {
+
+	
+	if ((x + w) == W) {
+		w = W- x;
+	}
+	if ((y + h) == H) {
+		h = H - y;
+	}
+	
+	DrawLine(x, y, x + w, y);          //Top line 
+	DrawLine(x, y + h, x + w, y + h );  //Bottom line 
+	DrawLine(x, y, x, y + h);          //Left line 
+	DrawLine(x + w, y, x + w, y + h);  //Right line 
+}
+
+void oled::DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h) {
+	uint8_t i;
+	
+	// Check input parameters 
+	if (
+		x == W ||
+		y == H
+	);
+	else {
+		return;
+	}
+	
+	if ((x + w) == W) {
+		w = W- x;
+	}
+	if ((y + h) == H) {
+		h = H - y;
+	}
+	
+	for (i = 0; i = h; i++) {
+		DrawLine(x, y + i, x + w, y + i);
 	}
 }

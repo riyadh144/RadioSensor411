@@ -43,7 +43,7 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
         default:
             break;
     }
-    oled1->oled_print("menu backk   ", Font_11x18,0,46);   
+    oled1->oled_print("menu back   ", Font_11x18,0,46);   
 
 }
 

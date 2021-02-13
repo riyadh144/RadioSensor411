@@ -328,7 +328,6 @@ void WaveRecorderUpdate(void)
 {     
   WaveRecorderInit(32000,16, 1);
   WaveCounter = 0;
-  LED_Toggle = 7;
   
   /* Remove Wave file if exist on flash disk */
   f_unlink ();

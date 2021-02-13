@@ -148,6 +148,20 @@ uint8_t oled_isOledOn();
  */
 void Counter_increment();
 
+/**
+ * @brief switches the state of the cursor to distinguish the parts being modified
+ * 
+ */
+void switch_cursor();
+
+void DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
+
+void DrawPixel(uint16_t x, uint16_t y);
+
+void DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
+
+void DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
+
 };
 
 
