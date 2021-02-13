@@ -4,6 +4,10 @@ uart::uart(uart_num uartNum_, uint32_t baudrate_) //TODO:Think to add parity and
 {
     uartNum=uartNum_;
     baudrate=baudrate_;
+
+}
+void uart::init()
+{
     switch(uartNum)
     {
         case uart1:
@@ -16,13 +20,14 @@ uart::uart(uart_num uartNum_, uint32_t baudrate_) //TODO:Think to add parity and
         uartx.Instance = USART6;
             break;
     }   
-    uartx.Init.BaudRate = baudrate_;
+    uartx.Init.BaudRate = baudrate;
     uartx.Init.WordLength = UART_WORDLENGTH_8B;
     uartx.Init.StopBits = UART_STOPBITS_1;
     uartx.Init.Parity = UART_PARITY_NONE;
     uartx.Init.Mode = UART_MODE_TX_RX;
     uartx.Init.HwFlowCtl = UART_HWCONTROL_NONE;
     uartx.Init.OverSampling = UART_OVERSAMPLING_16;
+
     if (HAL_UART_Init(&uartx) != HAL_OK)
     {
     Error_Handler();
@@ -31,16 +36,20 @@ uart::uart(uart_num uartNum_, uint32_t baudrate_) //TODO:Think to add parity and
 uint8_t uart::send_recive(char* txString,const char* rxString)
 {
     HAL_UART_Transmit(&uartx,(uint8_t*)txString, strlen(txString), 100);
-    set_recieve(strlen(rxString)-1); //Here we want to recieve the length of the string without the null char
-    HAL_Delay(100);//Give it some time to reply
-    if(strcmp(rxString, rxbuffer)==0)
-    {
-        return 1;
-    }
-    else
-    {
-        return send_recive(txString, rxString); //In case we get a different message or we get nothing back repeat the message
-    }
+    return 1;
+
+    //The problem with the compare is that it compares the whole buffer
+
+    //set_recieve(strlen(rxString)-1); //Here we want to recieve the length of the string without the null char
+    // HAL_Delay(10000);//Give it some time to reply
+    // if(strcmp(rxString, rxbuffer)<2)
+    // {
+    //     return 1;
+    // }
+    // else
+    // {
+    //     return send_recive(txString, rxString); //In case we get a different message or we get nothing back repeat the message
+    // }
     
 }
 
@@ -48,9 +57,10 @@ void uart::set_recieve(uint8_t count)
 {
     HAL_UART_Receive_DMA(&uartx, (uint8_t*) rxbuffer,count);
 }
+
 void uart::rx_cplt_callback()
 {
-    
+    HAL_UART_Transmit(&uartx,(uint8_t*)rxbuffer, strlen(rxbuffer), 100);
 }
 void uart::Error_Handler(void)
 {

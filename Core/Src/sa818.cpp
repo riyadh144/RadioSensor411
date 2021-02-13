@@ -46,7 +46,7 @@ sa818::sa818(uart* uartx_, pin* pin_pd_, pin* pin_ptt_)
     // while(locked!=0);
     // locked=1;
     sa818_power(on);//Power on the module
-    HAL_Delay(400);//Delay here is important to give some time for the module to wake up
+    //HAL_Delay(400);//Delay here is important to give some time for the module to wake up
     //TODO: maybe use something more efficient in the future.
     sa818_txrx_mode(rx);//Force the module to transmit
 

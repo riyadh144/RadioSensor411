@@ -1,13 +1,14 @@
 #include "menu.hpp"
 
-menu::menu(oled* oled_)
+menu::menu(oled* oled_, uart* uart_)
 {
     oled1=oled_;
+    uart1=uart_;
 }
 
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
-    char temp [13];
+    char temp [20];
 
     switch (menu_value)
     {
@@ -16,33 +17,33 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
             oled1->oled_print(temp, Font_16x26, 0,19);
             break; 
         case MENU_CH:
-            sprintf(temp, "    CHAN    ");
+            sprintf(temp, "CHAN   ");
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_SQ:
-            sprintf(temp, "   SQUASH   ");
+            sprintf(temp, "SQUASH  ");
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_TMO: //Display Timeout in seconds
-            sprintf(temp, " Disp TMO "); 
+            sprintf(temp, "Disp TMO"); 
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_CH_IN:
-            sprintf(temp, "   CH:%.2s   ",ch);
+            sprintf(temp, " CH:%.2s  ",ch);
             oled1->oled_print(temp,Font_16x26, 0,19);
             break;
         case MENU_SQ_IN:
-            sprintf(temp, "   SQ:%.2s   ",sq);
+            sprintf(temp, " SQ:%.2s   ",sq);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_TMO_IN:
-            sprintf(temp, "   DS:%.2s   ",tmo);
+            sprintf(temp, " DS:%.2s   ",tmo);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         default:
             break;
     }
-    oled1->oled_print("menu  back", Font_11x18,0,46);   
+    oled1->oled_print("menu back", Font_11x18,0,46);   
 
 }
 
@@ -277,26 +278,43 @@ void menu::menu_down()
 }
 
 
+
 void menu::keyboard_poll()
 {
+    int sds=0;
+    char x[20];
+
     uint16_t pin = GPIO_PIN_11;
     //Set The KEY1(PD11) One on
 
     GPIOD->ODR|=pin;
+    while(sds<10)
+    {
+        sds++;
+    }
+    sds=0;
         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
     {
         case GPIO_PIN_15:
             menu_next();//R
+            sprintf(x,"next");
+            uart1->send_recive(x,"next");   
             break;
         case GPIO_PIN_10:
             menu_number('6');
+            sprintf(x,"6");
+            uart1->send_recive(x,"6");   
             break;
         case GPIO_PIN_9:
             menu_number('5');
+            sprintf(x,"5");
+            uart1->send_recive(x,"5");   
             break;
         case GPIO_PIN_8:
             menu_number('4');
+            sprintf(x,"4");
+            uart1->send_recive(x,"4");   
             break;
         default:
             break;
@@ -305,20 +323,34 @@ void menu::keyboard_poll()
 
     pin = GPIO_PIN_12;//PD12
     GPIOD->ODR|=pin;
+    
+    while(sds<10)
+    {
+        sds++;
+    }
+    sds=0;
         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
     {
         case GPIO_PIN_15:
             menu_prev();//L
+            sprintf(x,"prev");
+            uart1->send_recive(x,"prev");
             break;
         case GPIO_PIN_10:
             menu_number('8');
+            sprintf(x,"8");
+            uart1->send_recive(x,"8");   
             break;
         case GPIO_PIN_9:
             menu_number('7');
+            sprintf(x,"7");
+            uart1->send_recive(x,"7");   
             break;
         case GPIO_PIN_8:
             menu_number('9');
+            sprintf(x,"9");
+            uart1->send_recive(x,"9");   
             break;
         default:
             break;
@@ -329,20 +361,33 @@ void menu::keyboard_poll()
 
     pin = GPIO_PIN_13;//PD13
     GPIOD->ODR|=pin;
+    while(sds<10)
+    {
+        sds++;
+    }
+    //uart1->send_recive("PD13","PD13");
         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
     {
         case GPIO_PIN_15:
             menu_down();//D
+            sprintf(x,"down");
+            uart1->send_recive(x,"down");
             break;
         case GPIO_PIN_10:
             menu_menu();//M
+            sprintf(x,"MENUs");
+            uart1->send_recive(x,"MENU");
             break;
         case GPIO_PIN_9:
             menu_number('0');
+            sprintf(x,"0");
+            uart1->send_recive(x,"0");   
             break;
         case GPIO_PIN_8:
             menu_back();//B
+            sprintf(x,"Back");
+            uart1->send_recive(x,"Back");
             break;
         default:
             break;
@@ -352,20 +397,33 @@ void menu::keyboard_poll()
 
     pin = GPIO_PIN_14;//PD14
     GPIOD->ODR|=pin;
+    while(sds<10)
+    {
+        sds++;
+    }
+    sds=0;
         //Scan to see which port is on filter out PD8,PD9,PD10,PD15
     switch (GPIOD->IDR& (GPIO_PIN_15|GPIO_PIN_10|GPIO_PIN_9|GPIO_PIN_8))
     {
         case GPIO_PIN_15:
             menu_up();//U
+            sprintf(x,"up");
+            uart1->send_recive(x,"up");   
             break;
         case GPIO_PIN_10:
             menu_number('3');
+            sprintf(x,"3");
+            uart1->send_recive(x,"3");   
             break;
         case GPIO_PIN_9:
             menu_number('2');
+            sprintf(x,"2");
+            uart1->send_recive(x,"2");   
             break;
         case GPIO_PIN_8:
             menu_number('1');
+            sprintf(x,"1");
+            uart1->send_recive(x,"1");   
             break;
         default:
             break;

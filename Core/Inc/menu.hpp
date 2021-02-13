@@ -4,7 +4,8 @@
 #include "stdint.h"
 #include "stdlib.h"
 #include "oled.h"
-
+#include "pin.hpp"
+#include "uart.hpp"
 
 class menu
 {
@@ -31,14 +32,14 @@ uint8_t value;
  * @brief squash value in character form
  * 
  */
-char sq[2]; //TODO: Check on the correct number of SQ channels 
+char sq[3]=""; //TODO: Check on the correct number of SQ channels 
 uint8_t sqVal;
 
 /**
  * @brief channel value in character form
  * 
  */
-char ch[2];
+char ch[3]="";
 uint8_t chVal;
 
 /**
@@ -68,7 +69,7 @@ uint8_t cursorPos=0;
 uint8_t cursorOn=0;
 
 oled* oled1;
-
+uart* uart1;
 
 public:
 /**
@@ -76,7 +77,7 @@ public:
  * 
  * @param oled_ oled to be desplayed on
  */
-menu(oled *oled_);
+menu(oled *oled_, uart *uart_);
 
 /**
  * @brief  Print the menu updates what is going on

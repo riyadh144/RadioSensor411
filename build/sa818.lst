@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc820aCN.s 			page 1
+ARM GAS  /tmp/ccimyG69.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
   27:Core/Src/sa818.cpp ****     else
   28:Core/Src/sa818.cpp ****         pin_pd->write(pin::off);
   29:Core/Src/sa818.cpp **** }
-ARM GAS  /tmp/cc820aCN.s 			page 2
+ARM GAS  /tmp/ccimyG69.s 			page 2
 
 
   30:Core/Src/sa818.cpp **** void sa818::sa818_txrx_mode(TxRx mode)
@@ -80,7 +80,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
   46:Core/Src/sa818.cpp ****     // while(locked!=0);
   47:Core/Src/sa818.cpp ****     // locked=1;
   48:Core/Src/sa818.cpp ****     sa818_power(on);//Power on the module
-  49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
+  49:Core/Src/sa818.cpp ****     //HAL_Delay(400);//Delay here is important to give some time for the module to wake up
   50:Core/Src/sa818.cpp ****     //TODO: maybe use something more efficient in the future.
   51:Core/Src/sa818.cpp ****     sa818_txrx_mode(rx);//Force the module to transmit
   52:Core/Src/sa818.cpp **** 
@@ -118,7 +118,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
   84:Core/Src/sa818.cpp **** void sa818::sa818_get_RSSI()
   85:Core/Src/sa818.cpp **** {
   86:Core/Src/sa818.cpp **** 
-ARM GAS  /tmp/cc820aCN.s 			page 3
+ARM GAS  /tmp/ccimyG69.s 			page 3
 
 
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
@@ -178,7 +178,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
   14:/usr/include/newlib/c++/9.2.1/iostream **** // GNU General Public License for more details.
   15:/usr/include/newlib/c++/9.2.1/iostream **** 
   16:/usr/include/newlib/c++/9.2.1/iostream **** // Under Section 7 of GPL version 3, you are granted additional
-ARM GAS  /tmp/cc820aCN.s 			page 4
+ARM GAS  /tmp/ccimyG69.s 			page 4
 
 
   17:/usr/include/newlib/c++/9.2.1/iostream **** // permissions described in the GCC Runtime Library Exception, version
@@ -238,7 +238,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
   71:/usr/include/newlib/c++/9.2.1/iostream ****   //@}
   72:/usr/include/newlib/c++/9.2.1/iostream **** 
   73:/usr/include/newlib/c++/9.2.1/iostream ****   // For construction of filebuffers for cout, cin, cerr, clog et. al.
-ARM GAS  /tmp/cc820aCN.s 			page 5
+ARM GAS  /tmp/ccimyG69.s 			page 5
 
 
   74:/usr/include/newlib/c++/9.2.1/iostream ****   static ios_base::Init __ioinit;
@@ -298,7 +298,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
  102              		.loc 1 26 9 view .LVU11
   26:Core/Src/sa818.cpp ****         pin_pd->write(pin::on);
  103              		.loc 1 26 22 is_stmt 0 view .LVU12
-ARM GAS  /tmp/cc820aCN.s 			page 6
+ARM GAS  /tmp/ccimyG69.s 			page 6
 
 
  104 0004 0121     		movs	r1, #1
@@ -358,7 +358,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
  150 0000 08B5     		push	{r3, lr}
  151              		.save {r3, lr}
  152              	.LCFI2:
-ARM GAS  /tmp/cc820aCN.s 			page 7
+ARM GAS  /tmp/ccimyG69.s 			page 7
 
 
  153              		.cfi_def_cfa_offset 8
@@ -418,7 +418,7 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
  194              	.LC1:
  195 0010 2B444D4F 		.ascii	"+DMOCONNECT:0\015\012\000"
  195      434F4E4E 
-ARM GAS  /tmp/cc820aCN.s 			page 8
+ARM GAS  /tmp/ccimyG69.s 			page 8
 
 
  195      4543543A 
@@ -476,717 +476,710 @@ ARM GAS  /tmp/cc820aCN.s 			page 1
  236              		.loc 1 48 16 view .LVU44
  237 000c FFF7FEFF 		bl	_ZN5sa81811sa818_powerENS_5OnOffE
  238              	.LVL22:
-  49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
- 239              		.loc 1 49 5 is_stmt 1 view .LVU45
-ARM GAS  /tmp/cc820aCN.s 			page 9
+  51:Core/Src/sa818.cpp ****     sa818_txrx_mode(rx);//Force the module to transmit
+ 239              		.loc 1 51 5 is_stmt 1 view .LVU45
+ARM GAS  /tmp/ccimyG69.s 			page 9
 
 
-  49:Core/Src/sa818.cpp ****     HAL_Delay(400);//Delay here is important to give some time for the module to wake up
- 240              		.loc 1 49 14 is_stmt 0 view .LVU46
- 241 0010 4FF4C870 		mov	r0, #400
- 242 0014 FFF7FEFF 		bl	HAL_Delay
- 243              	.LVL23:
   51:Core/Src/sa818.cpp ****     sa818_txrx_mode(rx);//Force the module to transmit
- 244              		.loc 1 51 5 is_stmt 1 view .LVU47
-  51:Core/Src/sa818.cpp ****     sa818_txrx_mode(rx);//Force the module to transmit
- 245              		.loc 1 51 20 is_stmt 0 view .LVU48
- 246 0018 0121     		movs	r1, #1
- 247 001a 2046     		mov	r0, r4
- 248 001c FFF7FEFF 		bl	_ZN5sa81815sa818_txrx_modeENS_4TxRxE
- 249              	.LVL24:
+ 240              		.loc 1 51 20 is_stmt 0 view .LVU46
+ 241 0010 0121     		movs	r1, #1
+ 242 0012 2046     		mov	r0, r4
+ 243 0014 FFF7FEFF 		bl	_ZN5sa81815sa818_txrx_modeENS_4TxRxE
+ 244              	.LVL23:
   53:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOCONNECT\r\n");
- 250              		.loc 1 53 5 is_stmt 1 view .LVU49
+ 245              		.loc 1 53 5 is_stmt 1 view .LVU47
   53:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOCONNECT\r\n");
- 251              		.loc 1 53 12 is_stmt 0 view .LVU50
- 252 0020 094D     		ldr	r5, .L20
- 253 0022 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
- 254 0024 2060     		str	r0, [r4]	@ unaligned
- 255 0026 6160     		str	r1, [r4, #4]	@ unaligned
- 256 0028 A260     		str	r2, [r4, #8]	@ unaligned
- 257 002a E360     		str	r3, [r4, #12]	@ unaligned
+ 246              		.loc 1 53 12 is_stmt 0 view .LVU48
+ 247 0018 094D     		ldr	r5, .L20
+ 248 001a 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
+ 249 001c 2060     		str	r0, [r4]	@ unaligned
+ 250 001e 6160     		str	r1, [r4, #4]	@ unaligned
+ 251 0020 A260     		str	r2, [r4, #8]	@ unaligned
+ 252 0022 E360     		str	r3, [r4, #12]	@ unaligned
   54:Core/Src/sa818.cpp ****     tx_len=20;
- 258              		.loc 1 54 5 is_stmt 1 view .LVU51
+ 253              		.loc 1 54 5 is_stmt 1 view .LVU49
   54:Core/Src/sa818.cpp ****     tx_len=20;
- 259              		.loc 1 54 11 is_stmt 0 view .LVU52
- 260 002c 1423     		movs	r3, #20
- 261 002e 84F85130 		strb	r3, [r4, #81]
+ 254              		.loc 1 54 11 is_stmt 0 view .LVU50
+ 255 0024 1423     		movs	r3, #20
+ 256 0026 84F85130 		strb	r3, [r4, #81]
   55:Core/Src/sa818.cpp ****     rx_len=16;
- 262              		.loc 1 55 5 is_stmt 1 view .LVU53
+ 257              		.loc 1 55 5 is_stmt 1 view .LVU51
   55:Core/Src/sa818.cpp ****     rx_len=16;
- 263              		.loc 1 55 11 is_stmt 0 view .LVU54
- 264 0032 1023     		movs	r3, #16
- 265 0034 84F85230 		strb	r3, [r4, #82]
+ 258              		.loc 1 55 11 is_stmt 0 view .LVU52
+ 259 002a 1023     		movs	r3, #16
+ 260 002c 84F85230 		strb	r3, [r4, #82]
   56:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 266              		.loc 1 56 5 is_stmt 1 view .LVU55
+ 261              		.loc 1 56 5 is_stmt 1 view .LVU53
   56:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 267              		.loc 1 56 23 is_stmt 0 view .LVU56
- 268 0038 044A     		ldr	r2, .L20+4
- 269 003a 2146     		mov	r1, r4
- 270 003c E06D     		ldr	r0, [r4, #92]
- 271 003e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
+ 262              		.loc 1 56 23 is_stmt 0 view .LVU54
+ 263 0030 044A     		ldr	r2, .L20+4
+ 264 0032 2146     		mov	r1, r4
+ 265 0034 E06D     		ldr	r0, [r4, #92]
+ 266 0036 FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
+ 267              	.LVL24:
+ 268              	.LBE2:
+  58:Core/Src/sa818.cpp **** }
+ 269              		.loc 1 58 1 view .LVU55
+ 270 003a 2046     		mov	r0, r4
+ 271 003c 38BD     		pop	{r3, r4, r5, pc}
  272              	.LVL25:
- 273              	.LBE2:
+ 273              	.L21:
   58:Core/Src/sa818.cpp **** }
- 274              		.loc 1 58 1 view .LVU57
- 275 0042 2046     		mov	r0, r4
- 276 0044 38BD     		pop	{r3, r4, r5, pc}
- 277              	.LVL26:
- 278              	.L21:
-  58:Core/Src/sa818.cpp **** }
- 279              		.loc 1 58 1 view .LVU58
- 280 0046 00BF     		.align	2
- 281              	.L20:
- 282 0048 00000000 		.word	.LC0
- 283 004c 10000000 		.word	.LC1
-ARM GAS  /tmp/cc820aCN.s 			page 10
+ 274              		.loc 1 58 1 view .LVU56
+ 275 003e 00BF     		.align	2
+ 276              	.L20:
+ 277 0040 00000000 		.word	.LC0
+ 278 0044 10000000 		.word	.LC1
+ 279              		.cfi_endproc
+ 280              	.LFE1987:
+ 281              		.fnend
+ 283              		.global	_ZN5sa818C1EP4uartP3pinS3_
+ 284              		.thumb_set _ZN5sa818C1EP4uartP3pinS3_,_ZN5sa818C2EP4uartP3pinS3_
+ 285              		.section	.rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4,"aMS",%progbits,1
+ 286              		.align	2
+ARM GAS  /tmp/ccimyG69.s 			page 10
 
 
- 284              		.cfi_endproc
- 285              	.LFE1987:
- 286              		.fnend
- 288              		.global	_ZN5sa818C1EP4uartP3pinS3_
- 289              		.thumb_set _ZN5sa818C1EP4uartP3pinS3_,_ZN5sa818C2EP4uartP3pinS3_
- 290              		.section	.rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4,"aMS",%progbits,1
- 291              		.align	2
- 292              	.LC2:
- 293 0000 41542B44 		.ascii	"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\015\012\000"
- 293      4D4F5345 
- 293      5447524F 
- 293      55503D25 
- 293      692C2573 
- 294              		.section	.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_,"ax",%progbits
- 295              		.align	1
- 296              		.global	_ZN5sa81815sa818_configureEhPcS0_S0_hS0_
- 297              		.syntax unified
- 298              		.thumb
- 299              		.thumb_func
- 300              		.fpu fpv4-sp-d16
- 302              	_ZN5sa81815sa818_configureEhPcS0_S0_hS0_:
- 303              		.fnstart
- 304              	.LVL27:
- 305              	.LFB1989:
+ 287              	.LC2:
+ 288 0000 41542B44 		.ascii	"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\015\012\000"
+ 288      4D4F5345 
+ 288      5447524F 
+ 288      55503D25 
+ 288      692C2573 
+ 289              		.section	.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_,"ax",%progbits
+ 290              		.align	1
+ 291              		.global	_ZN5sa81815sa818_configureEhPcS0_S0_hS0_
+ 292              		.syntax unified
+ 293              		.thumb
+ 294              		.thumb_func
+ 295              		.fpu fpv4-sp-d16
+ 297              	_ZN5sa81815sa818_configureEhPcS0_S0_hS0_:
+ 298              		.fnstart
+ 299              	.LVL26:
+ 300              	.LFB1989:
   61:Core/Src/sa818.cpp **** {
- 306              		.loc 1 61 1 is_stmt 1 view -0
- 307              		.cfi_startproc
- 308              		@ args = 12, pretend = 0, frame = 0
- 309              		@ frame_needed = 0, uses_anonymous_args = 0
+ 301              		.loc 1 61 1 is_stmt 1 view -0
+ 302              		.cfi_startproc
+ 303              		@ args = 12, pretend = 0, frame = 0
+ 304              		@ frame_needed = 0, uses_anonymous_args = 0
   61:Core/Src/sa818.cpp **** {
- 310              		.loc 1 61 1 is_stmt 0 view .LVU60
- 311 0000 F0B5     		push	{r4, r5, r6, r7, lr}
- 312              		.save {r4, r5, r6, r7, lr}
- 313              	.LCFI4:
- 314              		.cfi_def_cfa_offset 20
- 315              		.cfi_offset 4, -20
- 316              		.cfi_offset 5, -16
- 317              		.cfi_offset 6, -12
- 318              		.cfi_offset 7, -8
- 319              		.cfi_offset 14, -4
- 320              		.pad #20
- 321 0002 85B0     		sub	sp, sp, #20
- 322              	.LCFI5:
- 323              		.cfi_def_cfa_offset 40
- 324 0004 0446     		mov	r4, r0
- 325 0006 0D46     		mov	r5, r1
- 326 0008 1646     		mov	r6, r2
- 327 000a 1F46     		mov	r7, r3
+ 305              		.loc 1 61 1 is_stmt 0 view .LVU58
+ 306 0000 F0B5     		push	{r4, r5, r6, r7, lr}
+ 307              		.save {r4, r5, r6, r7, lr}
+ 308              	.LCFI4:
+ 309              		.cfi_def_cfa_offset 20
+ 310              		.cfi_offset 4, -20
+ 311              		.cfi_offset 5, -16
+ 312              		.cfi_offset 6, -12
+ 313              		.cfi_offset 7, -8
+ 314              		.cfi_offset 14, -4
+ 315              		.pad #20
+ 316 0002 85B0     		sub	sp, sp, #20
+ 317              	.LCFI5:
+ 318              		.cfi_def_cfa_offset 40
+ 319 0004 0446     		mov	r4, r0
+ 320 0006 0D46     		mov	r5, r1
+ 321 0008 1646     		mov	r6, r2
+ 322 000a 1F46     		mov	r7, r3
   64:Core/Src/sa818.cpp ****     HAL_Delay(1000);
- 328              		.loc 1 64 5 is_stmt 1 view .LVU61
+ 323              		.loc 1 64 5 is_stmt 1 view .LVU59
   64:Core/Src/sa818.cpp ****     HAL_Delay(1000);
- 329              		.loc 1 64 14 is_stmt 0 view .LVU62
- 330 000c 4FF47A70 		mov	r0, #1000
- 331              	.LVL28:
+ 324              		.loc 1 64 14 is_stmt 0 view .LVU60
+ 325 000c 4FF47A70 		mov	r0, #1000
+ 326              	.LVL27:
   64:Core/Src/sa818.cpp ****     HAL_Delay(1000);
- 332              		.loc 1 64 14 view .LVU63
- 333 0010 FFF7FEFF 		bl	HAL_Delay
-ARM GAS  /tmp/cc820aCN.s 			page 11
-
-
- 334              	.LVL29:
+ 327              		.loc 1 64 14 view .LVU61
+ 328 0010 FFF7FEFF 		bl	HAL_Delay
+ 329              	.LVL28:
   66:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_s
- 335              		.loc 1 66 5 is_stmt 1 view .LVU64
+ 330              		.loc 1 66 5 is_stmt 1 view .LVU62
   66:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_s
- 336              		.loc 1 66 12 is_stmt 0 view .LVU65
- 337 0014 0C9B     		ldr	r3, [sp, #48]
- 338 0016 0393     		str	r3, [sp, #12]
- 339 0018 9DF82C30 		ldrb	r3, [sp, #44]	@ zero_extendqisi2
- 340 001c 0293     		str	r3, [sp, #8]
- 341 001e 0A9B     		ldr	r3, [sp, #40]
- 342 0020 0193     		str	r3, [sp, #4]
- 343 0022 0097     		str	r7, [sp]
- 344 0024 3346     		mov	r3, r6
- 345 0026 2A46     		mov	r2, r5
- 346 0028 0849     		ldr	r1, .L24
- 347 002a 2046     		mov	r0, r4
- 348 002c FFF7FEFF 		bl	sprintf
- 349              	.LVL30:
+ 331              		.loc 1 66 12 is_stmt 0 view .LVU63
+ 332 0014 0C9B     		ldr	r3, [sp, #48]
+ 333 0016 0393     		str	r3, [sp, #12]
+ARM GAS  /tmp/ccimyG69.s 			page 11
+
+
+ 334 0018 9DF82C30 		ldrb	r3, [sp, #44]	@ zero_extendqisi2
+ 335 001c 0293     		str	r3, [sp, #8]
+ 336 001e 0A9B     		ldr	r3, [sp, #40]
+ 337 0020 0193     		str	r3, [sp, #4]
+ 338 0022 0097     		str	r7, [sp]
+ 339 0024 3346     		mov	r3, r6
+ 340 0026 2A46     		mov	r2, r5
+ 341 0028 0849     		ldr	r1, .L24
+ 342 002a 2046     		mov	r0, r4
+ 343 002c FFF7FEFF 		bl	sprintf
+ 344              	.LVL29:
   67:Core/Src/sa818.cpp ****     tx_len=50;
- 350              		.loc 1 67 5 is_stmt 1 view .LVU66
+ 345              		.loc 1 67 5 is_stmt 1 view .LVU64
   67:Core/Src/sa818.cpp ****     tx_len=50;
- 351              		.loc 1 67 11 is_stmt 0 view .LVU67
- 352 0030 3223     		movs	r3, #50
- 353 0032 84F85130 		strb	r3, [r4, #81]
+ 346              		.loc 1 67 11 is_stmt 0 view .LVU65
+ 347 0030 3223     		movs	r3, #50
+ 348 0032 84F85130 		strb	r3, [r4, #81]
   68:Core/Src/sa818.cpp ****     rx_len=16;
- 354              		.loc 1 68 5 is_stmt 1 view .LVU68
+ 349              		.loc 1 68 5 is_stmt 1 view .LVU66
   68:Core/Src/sa818.cpp ****     rx_len=16;
- 355              		.loc 1 68 11 is_stmt 0 view .LVU69
- 356 0036 1023     		movs	r3, #16
- 357 0038 84F85230 		strb	r3, [r4, #82]
+ 350              		.loc 1 68 11 is_stmt 0 view .LVU67
+ 351 0036 1023     		movs	r3, #16
+ 352 0038 84F85230 		strb	r3, [r4, #82]
   69:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 358              		.loc 1 69 5 is_stmt 1 view .LVU70
+ 353              		.loc 1 69 5 is_stmt 1 view .LVU68
   69:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 359              		.loc 1 69 23 is_stmt 0 view .LVU71
- 360 003c 044A     		ldr	r2, .L24+4
- 361 003e 2146     		mov	r1, r4
- 362 0040 E06D     		ldr	r0, [r4, #92]
- 363 0042 FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
- 364              	.LVL31:
+ 354              		.loc 1 69 23 is_stmt 0 view .LVU69
+ 355 003c 044A     		ldr	r2, .L24+4
+ 356 003e 2146     		mov	r1, r4
+ 357 0040 E06D     		ldr	r0, [r4, #92]
+ 358 0042 FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
+ 359              	.LVL30:
   70:Core/Src/sa818.cpp **** }
- 365              		.loc 1 70 1 view .LVU72
- 366 0046 05B0     		add	sp, sp, #20
- 367              	.LCFI6:
- 368              		.cfi_def_cfa_offset 20
- 369              		@ sp needed
- 370 0048 F0BD     		pop	{r4, r5, r6, r7, pc}
- 371              	.LVL32:
- 372              	.L25:
+ 360              		.loc 1 70 1 view .LVU70
+ 361 0046 05B0     		add	sp, sp, #20
+ 362              	.LCFI6:
+ 363              		.cfi_def_cfa_offset 20
+ 364              		@ sp needed
+ 365 0048 F0BD     		pop	{r4, r5, r6, r7, pc}
+ 366              	.LVL31:
+ 367              	.L25:
   70:Core/Src/sa818.cpp **** }
- 373              		.loc 1 70 1 view .LVU73
- 374 004a 00BF     		.align	2
- 375              	.L24:
- 376 004c 00000000 		.word	.LC2
- 377 0050 10000000 		.word	.LC1
- 378              		.cfi_endproc
- 379              	.LFE1989:
- 380              		.fnend
-ARM GAS  /tmp/cc820aCN.s 			page 12
+ 368              		.loc 1 70 1 view .LVU71
+ 369 004a 00BF     		.align	2
+ 370              	.L24:
+ 371 004c 00000000 		.word	.LC2
+ 372 0050 10000000 		.word	.LC1
+ 373              		.cfi_endproc
+ 374              	.LFE1989:
+ 375              		.fnend
+ 377              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
+ 378              		.align	2
+ 379              	.LC3:
+ 380 0000 41542B44 		.ascii	"AT+DMOSETVOLUME=%i\015\012\000"
+ 380      4D4F5345 
+ 380      54564F4C 
+ 380      554D453D 
+ARM GAS  /tmp/ccimyG69.s 			page 12
 
 
- 382              		.section	.rodata._ZN5sa81816sa818_set_volumeEh.str1.4,"aMS",%progbits,1
- 383              		.align	2
- 384              	.LC3:
- 385 0000 41542B44 		.ascii	"AT+DMOSETVOLUME=%i\015\012\000"
- 385      4D4F5345 
- 385      54564F4C 
- 385      554D453D 
- 385      25690D0A 
- 386              		.section	.text._ZN5sa81816sa818_set_volumeEh,"ax",%progbits
- 387              		.align	1
- 388              		.global	_ZN5sa81816sa818_set_volumeEh
- 389              		.syntax unified
- 390              		.thumb
- 391              		.thumb_func
- 392              		.fpu fpv4-sp-d16
- 394              	_ZN5sa81816sa818_set_volumeEh:
- 395              		.fnstart
- 396              	.LVL33:
- 397              	.LFB1990:
+ 380      25690D0A 
+ 381              		.section	.text._ZN5sa81816sa818_set_volumeEh,"ax",%progbits
+ 382              		.align	1
+ 383              		.global	_ZN5sa81816sa818_set_volumeEh
+ 384              		.syntax unified
+ 385              		.thumb
+ 386              		.thumb_func
+ 387              		.fpu fpv4-sp-d16
+ 389              	_ZN5sa81816sa818_set_volumeEh:
+ 390              		.fnstart
+ 391              	.LVL32:
+ 392              	.LFB1990:
   73:Core/Src/sa818.cpp **** {
- 398              		.loc 1 73 1 is_stmt 1 view -0
- 399              		.cfi_startproc
- 400              		@ args = 0, pretend = 0, frame = 0
- 401              		@ frame_needed = 0, uses_anonymous_args = 0
+ 393              		.loc 1 73 1 is_stmt 1 view -0
+ 394              		.cfi_startproc
+ 395              		@ args = 0, pretend = 0, frame = 0
+ 396              		@ frame_needed = 0, uses_anonymous_args = 0
   73:Core/Src/sa818.cpp **** {
- 402              		.loc 1 73 1 is_stmt 0 view .LVU75
- 403 0000 10B5     		push	{r4, lr}
- 404              		.save {r4, lr}
- 405              	.LCFI7:
- 406              		.cfi_def_cfa_offset 8
- 407              		.cfi_offset 4, -8
- 408              		.cfi_offset 14, -4
- 409 0002 0446     		mov	r4, r0
- 410 0004 0A46     		mov	r2, r1
+ 397              		.loc 1 73 1 is_stmt 0 view .LVU73
+ 398 0000 10B5     		push	{r4, lr}
+ 399              		.save {r4, lr}
+ 400              	.LCFI7:
+ 401              		.cfi_def_cfa_offset 8
+ 402              		.cfi_offset 4, -8
+ 403              		.cfi_offset 14, -4
+ 404 0002 0446     		mov	r4, r0
+ 405 0004 0A46     		mov	r2, r1
   76:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETVOLUME=%i\r\n",vol);
- 411              		.loc 1 76 5 is_stmt 1 view .LVU76
+ 406              		.loc 1 76 5 is_stmt 1 view .LVU74
   76:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETVOLUME=%i\r\n",vol);
- 412              		.loc 1 76 12 is_stmt 0 view .LVU77
- 413 0006 0749     		ldr	r1, .L28
- 414              	.LVL34:
+ 407              		.loc 1 76 12 is_stmt 0 view .LVU75
+ 408 0006 0749     		ldr	r1, .L28
+ 409              	.LVL33:
   76:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+DMOSETVOLUME=%i\r\n",vol);
- 415              		.loc 1 76 12 view .LVU78
- 416 0008 FFF7FEFF 		bl	sprintf
- 417              	.LVL35:
+ 410              		.loc 1 76 12 view .LVU76
+ 411 0008 FFF7FEFF 		bl	sprintf
+ 412              	.LVL34:
   77:Core/Src/sa818.cpp ****     tx_len=20;
- 418              		.loc 1 77 5 is_stmt 1 view .LVU79
+ 413              		.loc 1 77 5 is_stmt 1 view .LVU77
   77:Core/Src/sa818.cpp ****     tx_len=20;
- 419              		.loc 1 77 11 is_stmt 0 view .LVU80
- 420 000c 1423     		movs	r3, #20
- 421 000e 84F85130 		strb	r3, [r4, #81]
+ 414              		.loc 1 77 11 is_stmt 0 view .LVU78
+ 415 000c 1423     		movs	r3, #20
+ 416 000e 84F85130 		strb	r3, [r4, #81]
   78:Core/Src/sa818.cpp ****     rx_len=16;
- 422              		.loc 1 78 5 is_stmt 1 view .LVU81
+ 417              		.loc 1 78 5 is_stmt 1 view .LVU79
   78:Core/Src/sa818.cpp ****     rx_len=16;
- 423              		.loc 1 78 11 is_stmt 0 view .LVU82
- 424 0012 1023     		movs	r3, #16
- 425 0014 84F85230 		strb	r3, [r4, #82]
+ 418              		.loc 1 78 11 is_stmt 0 view .LVU80
+ 419 0012 1023     		movs	r3, #16
+ 420 0014 84F85230 		strb	r3, [r4, #82]
   80:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
-ARM GAS  /tmp/cc820aCN.s 			page 13
-
-
- 426              		.loc 1 80 5 is_stmt 1 view .LVU83
+ 421              		.loc 1 80 5 is_stmt 1 view .LVU81
   80:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 427              		.loc 1 80 23 is_stmt 0 view .LVU84
- 428 0018 034A     		ldr	r2, .L28+4
- 429 001a 2146     		mov	r1, r4
- 430 001c E06D     		ldr	r0, [r4, #92]
- 431 001e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
- 432              	.LVL36:
-  83:Core/Src/sa818.cpp **** }
- 433              		.loc 1 83 1 view .LVU85
- 434 0022 10BD     		pop	{r4, pc}
- 435              	.LVL37:
- 436              	.L29:
-  83:Core/Src/sa818.cpp **** }
- 437              		.loc 1 83 1 view .LVU86
- 438              		.align	2
- 439              	.L28:
- 440 0024 00000000 		.word	.LC3
- 441 0028 10000000 		.word	.LC1
- 442              		.cfi_endproc
- 443              	.LFE1990:
- 444              		.fnend
- 446              		.section	.rodata._ZN5sa81814sa818_get_RSSIEv.str1.4,"aMS",%progbits,1
- 447              		.align	2
- 448              	.LC4:
- 449 0000 52535349 		.ascii	"RSSI?\015\012\000"
- 449      3F0D0A00 
- 450              		.section	.text._ZN5sa81814sa818_get_RSSIEv,"ax",%progbits
- 451              		.align	1
- 452              		.global	_ZN5sa81814sa818_get_RSSIEv
- 453              		.syntax unified
- 454              		.thumb
- 455              		.thumb_func
- 456              		.fpu fpv4-sp-d16
- 458              	_ZN5sa81814sa818_get_RSSIEv:
- 459              		.fnstart
- 460              	.LVL38:
- 461              	.LFB1991:
-  85:Core/Src/sa818.cpp **** {
- 462              		.loc 1 85 1 is_stmt 1 view -0
- 463              		.cfi_startproc
- 464              		@ args = 0, pretend = 0, frame = 0
- 465              		@ frame_needed = 0, uses_anonymous_args = 0
-  85:Core/Src/sa818.cpp **** {
- 466              		.loc 1 85 1 is_stmt 0 view .LVU88
- 467 0000 08B5     		push	{r3, lr}
- 468              		.save {r3, lr}
- 469              	.LCFI8:
- 470              		.cfi_def_cfa_offset 8
- 471              		.cfi_offset 3, -8
- 472              		.cfi_offset 14, -4
- 473 0002 0346     		mov	r3, r0
-  87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
- 474              		.loc 1 87 5 is_stmt 1 view .LVU89
-  87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
- 475              		.loc 1 87 12 is_stmt 0 view .LVU90
- 476 0004 074A     		ldr	r2, .L32
-ARM GAS  /tmp/cc820aCN.s 			page 14
+ 422              		.loc 1 80 23 is_stmt 0 view .LVU82
+ 423 0018 034A     		ldr	r2, .L28+4
+ 424 001a 2146     		mov	r1, r4
+ 425 001c E06D     		ldr	r0, [r4, #92]
+ 426 001e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
+ARM GAS  /tmp/ccimyG69.s 			page 13
 
 
- 477 0006 03CA     		ldmia	r2!, {r0, r1}
- 478              	.LVL39:
+ 427              	.LVL35:
+  83:Core/Src/sa818.cpp **** }
+ 428              		.loc 1 83 1 view .LVU83
+ 429 0022 10BD     		pop	{r4, pc}
+ 430              	.LVL36:
+ 431              	.L29:
+  83:Core/Src/sa818.cpp **** }
+ 432              		.loc 1 83 1 view .LVU84
+ 433              		.align	2
+ 434              	.L28:
+ 435 0024 00000000 		.word	.LC3
+ 436 0028 10000000 		.word	.LC1
+ 437              		.cfi_endproc
+ 438              	.LFE1990:
+ 439              		.fnend
+ 441              		.section	.rodata._ZN5sa81814sa818_get_RSSIEv.str1.4,"aMS",%progbits,1
+ 442              		.align	2
+ 443              	.LC4:
+ 444 0000 52535349 		.ascii	"RSSI?\015\012\000"
+ 444      3F0D0A00 
+ 445              		.section	.text._ZN5sa81814sa818_get_RSSIEv,"ax",%progbits
+ 446              		.align	1
+ 447              		.global	_ZN5sa81814sa818_get_RSSIEv
+ 448              		.syntax unified
+ 449              		.thumb
+ 450              		.thumb_func
+ 451              		.fpu fpv4-sp-d16
+ 453              	_ZN5sa81814sa818_get_RSSIEv:
+ 454              		.fnstart
+ 455              	.LVL37:
+ 456              	.LFB1991:
+  85:Core/Src/sa818.cpp **** {
+ 457              		.loc 1 85 1 is_stmt 1 view -0
+ 458              		.cfi_startproc
+ 459              		@ args = 0, pretend = 0, frame = 0
+ 460              		@ frame_needed = 0, uses_anonymous_args = 0
+  85:Core/Src/sa818.cpp **** {
+ 461              		.loc 1 85 1 is_stmt 0 view .LVU86
+ 462 0000 08B5     		push	{r3, lr}
+ 463              		.save {r3, lr}
+ 464              	.LCFI8:
+ 465              		.cfi_def_cfa_offset 8
+ 466              		.cfi_offset 3, -8
+ 467              		.cfi_offset 14, -4
+ 468 0002 0346     		mov	r3, r0
   87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
- 479              		.loc 1 87 12 view .LVU91
- 480 0008 1860     		str	r0, [r3]	@ unaligned
- 481 000a 5960     		str	r1, [r3, #4]	@ unaligned
+ 469              		.loc 1 87 5 is_stmt 1 view .LVU87
+  87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
+ 470              		.loc 1 87 12 is_stmt 0 view .LVU88
+ 471 0004 074A     		ldr	r2, .L32
+ 472 0006 03CA     		ldmia	r2!, {r0, r1}
+ 473              	.LVL38:
+  87:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"RSSI?\r\n");
+ 474              		.loc 1 87 12 view .LVU89
+ 475 0008 1860     		str	r0, [r3]	@ unaligned
+ 476 000a 5960     		str	r1, [r3, #4]	@ unaligned
   88:Core/Src/sa818.cpp ****     tx_len=7;
- 482              		.loc 1 88 5 is_stmt 1 view .LVU92
+ARM GAS  /tmp/ccimyG69.s 			page 14
+
+
+ 477              		.loc 1 88 5 is_stmt 1 view .LVU90
   88:Core/Src/sa818.cpp ****     tx_len=7;
- 483              		.loc 1 88 11 is_stmt 0 view .LVU93
- 484 000c 0722     		movs	r2, #7
- 485 000e 83F85120 		strb	r2, [r3, #81]
+ 478              		.loc 1 88 11 is_stmt 0 view .LVU91
+ 479 000c 0722     		movs	r2, #7
+ 480 000e 83F85120 		strb	r2, [r3, #81]
   89:Core/Src/sa818.cpp ****     rx_len=10;
- 486              		.loc 1 89 5 is_stmt 1 view .LVU94
+ 481              		.loc 1 89 5 is_stmt 1 view .LVU92
   89:Core/Src/sa818.cpp ****     rx_len=10;
- 487              		.loc 1 89 11 is_stmt 0 view .LVU95
- 488 0012 0A22     		movs	r2, #10
- 489 0014 83F85220 		strb	r2, [r3, #82]
+ 482              		.loc 1 89 11 is_stmt 0 view .LVU93
+ 483 0012 0A22     		movs	r2, #10
+ 484 0014 83F85220 		strb	r2, [r3, #82]
   90:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 490              		.loc 1 90 5 is_stmt 1 view .LVU96
+ 485              		.loc 1 90 5 is_stmt 1 view .LVU94
   90:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
- 491              		.loc 1 90 23 is_stmt 0 view .LVU97
- 492 0018 034A     		ldr	r2, .L32+4
- 493 001a 1946     		mov	r1, r3
- 494 001c D86D     		ldr	r0, [r3, #92]
- 495 001e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
- 496              	.LVL40:
+ 486              		.loc 1 90 23 is_stmt 0 view .LVU95
+ 487 0018 034A     		ldr	r2, .L32+4
+ 488 001a 1946     		mov	r1, r3
+ 489 001c D86D     		ldr	r0, [r3, #92]
+ 490 001e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
+ 491              	.LVL39:
   92:Core/Src/sa818.cpp **** }
- 497              		.loc 1 92 1 view .LVU98
- 498 0022 08BD     		pop	{r3, pc}
- 499              	.L33:
- 500              		.align	2
- 501              	.L32:
- 502 0024 00000000 		.word	.LC4
- 503 0028 10000000 		.word	.LC1
- 504              		.cfi_endproc
- 505              	.LFE1991:
- 506              		.fnend
- 508              		.section	.rodata._ZN5sa81814sa818_set_tailEh.str1.4,"aMS",%progbits,1
- 509              		.align	2
- 510              	.LC5:
- 511 0000 41542B53 		.ascii	"AT+SETTAIL=%i\015\012\000"
- 511      45545441 
- 511      494C3D25 
- 511      690D0A00 
- 512              		.align	2
- 513              	.LC6:
- 514 0010 2B444D4F 		.ascii	"+DMOSETTAIL: 0\015\012\000"
- 514      53455454 
- 514      41494C3A 
- 514      20300D0A 
- 514      00
- 515              		.section	.text._ZN5sa81814sa818_set_tailEh,"ax",%progbits
- 516              		.align	1
- 517              		.global	_ZN5sa81814sa818_set_tailEh
- 518              		.syntax unified
- 519              		.thumb
-ARM GAS  /tmp/cc820aCN.s 			page 15
-
-
- 520              		.thumb_func
- 521              		.fpu fpv4-sp-d16
- 523              	_ZN5sa81814sa818_set_tailEh:
- 524              		.fnstart
- 525              	.LVL41:
- 526              	.LFB1992:
+ 492              		.loc 1 92 1 view .LVU96
+ 493 0022 08BD     		pop	{r3, pc}
+ 494              	.L33:
+ 495              		.align	2
+ 496              	.L32:
+ 497 0024 00000000 		.word	.LC4
+ 498 0028 10000000 		.word	.LC1
+ 499              		.cfi_endproc
+ 500              	.LFE1991:
+ 501              		.fnend
+ 503              		.section	.rodata._ZN5sa81814sa818_set_tailEh.str1.4,"aMS",%progbits,1
+ 504              		.align	2
+ 505              	.LC5:
+ 506 0000 41542B53 		.ascii	"AT+SETTAIL=%i\015\012\000"
+ 506      45545441 
+ 506      494C3D25 
+ 506      690D0A00 
+ 507              		.align	2
+ 508              	.LC6:
+ 509 0010 2B444D4F 		.ascii	"+DMOSETTAIL: 0\015\012\000"
+ 509      53455454 
+ 509      41494C3A 
+ 509      20300D0A 
+ 509      00
+ 510              		.section	.text._ZN5sa81814sa818_set_tailEh,"ax",%progbits
+ 511              		.align	1
+ 512              		.global	_ZN5sa81814sa818_set_tailEh
+ 513              		.syntax unified
+ 514              		.thumb
+ 515              		.thumb_func
+ 516              		.fpu fpv4-sp-d16
+ 518              	_ZN5sa81814sa818_set_tailEh:
+ 519              		.fnstart
+ 520              	.LVL40:
+ 521              	.LFB1992:
   94:Core/Src/sa818.cpp **** {
- 527              		.loc 1 94 1 is_stmt 1 view -0
- 528              		.cfi_startproc
- 529              		@ args = 0, pretend = 0, frame = 0
- 530              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  /tmp/ccimyG69.s 			page 15
+
+
+ 522              		.loc 1 94 1 is_stmt 1 view -0
+ 523              		.cfi_startproc
+ 524              		@ args = 0, pretend = 0, frame = 0
+ 525              		@ frame_needed = 0, uses_anonymous_args = 0
   94:Core/Src/sa818.cpp **** {
- 531              		.loc 1 94 1 is_stmt 0 view .LVU100
- 532 0000 10B5     		push	{r4, lr}
- 533              		.save {r4, lr}
- 534              	.LCFI9:
- 535              		.cfi_def_cfa_offset 8
- 536              		.cfi_offset 4, -8
- 537              		.cfi_offset 14, -4
- 538 0002 0446     		mov	r4, r0
- 539 0004 0A46     		mov	r2, r1
+ 526              		.loc 1 94 1 is_stmt 0 view .LVU98
+ 527 0000 10B5     		push	{r4, lr}
+ 528              		.save {r4, lr}
+ 529              	.LCFI9:
+ 530              		.cfi_def_cfa_offset 8
+ 531              		.cfi_offset 4, -8
+ 532              		.cfi_offset 14, -4
+ 533 0002 0446     		mov	r4, r0
+ 534 0004 0A46     		mov	r2, r1
   95:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+SETTAIL=%i\r\n",x);
- 540              		.loc 1 95 5 is_stmt 1 view .LVU101
+ 535              		.loc 1 95 5 is_stmt 1 view .LVU99
   95:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+SETTAIL=%i\r\n",x);
- 541              		.loc 1 95 12 is_stmt 0 view .LVU102
- 542 0006 0749     		ldr	r1, .L36
- 543              	.LVL42:
+ 536              		.loc 1 95 12 is_stmt 0 view .LVU100
+ 537 0006 0749     		ldr	r1, .L36
+ 538              	.LVL41:
   95:Core/Src/sa818.cpp ****     sprintf((char *)tx_buf,"AT+SETTAIL=%i\r\n",x);
- 544              		.loc 1 95 12 view .LVU103
- 545 0008 FFF7FEFF 		bl	sprintf
- 546              	.LVL43:
+ 539              		.loc 1 95 12 view .LVU101
+ 540 0008 FFF7FEFF 		bl	sprintf
+ 541              	.LVL42:
   96:Core/Src/sa818.cpp ****     tx_len=14;
- 547              		.loc 1 96 5 is_stmt 1 view .LVU104
+ 542              		.loc 1 96 5 is_stmt 1 view .LVU102
   96:Core/Src/sa818.cpp ****     tx_len=14;
- 548              		.loc 1 96 11 is_stmt 0 view .LVU105
- 549 000c 0E23     		movs	r3, #14
- 550 000e 84F85130 		strb	r3, [r4, #81]
+ 543              		.loc 1 96 11 is_stmt 0 view .LVU103
+ 544 000c 0E23     		movs	r3, #14
+ 545 000e 84F85130 		strb	r3, [r4, #81]
   97:Core/Src/sa818.cpp ****     rx_len=16;
- 551              		.loc 1 97 5 is_stmt 1 view .LVU106
+ 546              		.loc 1 97 5 is_stmt 1 view .LVU104
   97:Core/Src/sa818.cpp ****     rx_len=16;
- 552              		.loc 1 97 11 is_stmt 0 view .LVU107
- 553 0012 1023     		movs	r3, #16
- 554 0014 84F85230 		strb	r3, [r4, #82]
+ 547              		.loc 1 97 11 is_stmt 0 view .LVU105
+ 548 0012 1023     		movs	r3, #16
+ 549 0014 84F85230 		strb	r3, [r4, #82]
   99:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOSETTAIL: 0\r\n");
- 555              		.loc 1 99 5 is_stmt 1 view .LVU108
+ 550              		.loc 1 99 5 is_stmt 1 view .LVU106
   99:Core/Src/sa818.cpp ****     uartx->send_recive((char*) tx_buf,"+DMOSETTAIL: 0\r\n");
- 556              		.loc 1 99 23 is_stmt 0 view .LVU109
- 557 0018 034A     		ldr	r2, .L36+4
- 558 001a 2146     		mov	r1, r4
- 559 001c E06D     		ldr	r0, [r4, #92]
- 560 001e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
- 561              	.LVL44:
+ 551              		.loc 1 99 23 is_stmt 0 view .LVU107
+ 552 0018 034A     		ldr	r2, .L36+4
+ 553 001a 2146     		mov	r1, r4
+ 554 001c E06D     		ldr	r0, [r4, #92]
+ 555 001e FFF7FEFF 		bl	_ZN4uart11send_reciveEPcPKc
+ 556              	.LVL43:
  101:Core/Src/sa818.cpp **** }
- 562              		.loc 1 101 1 view .LVU110
- 563 0022 10BD     		pop	{r4, pc}
- 564              	.LVL45:
- 565              	.L37:
-ARM GAS  /tmp/cc820aCN.s 			page 16
+ 557              		.loc 1 101 1 view .LVU108
+ 558 0022 10BD     		pop	{r4, pc}
+ 559              	.LVL44:
+ 560              	.L37:
+ 101:Core/Src/sa818.cpp **** }
+ 561              		.loc 1 101 1 view .LVU109
+ 562              		.align	2
+ 563              	.L36:
+ 564 0024 00000000 		.word	.LC5
+ 565 0028 10000000 		.word	.LC6
+ 566              		.cfi_endproc
+ARM GAS  /tmp/ccimyG69.s 			page 16
 
 
- 101:Core/Src/sa818.cpp **** }
- 566              		.loc 1 101 1 view .LVU111
- 567              		.align	2
- 568              	.L36:
- 569 0024 00000000 		.word	.LC5
- 570 0028 10000000 		.word	.LC6
- 571              		.cfi_endproc
- 572              	.LFE1992:
- 573              		.fnend
- 575              		.section	.text._ZN5sa81821sa818_recieve_messageEh,"ax",%progbits
- 576              		.align	1
- 577              		.global	_ZN5sa81821sa818_recieve_messageEh
- 578              		.syntax unified
- 579              		.thumb
- 580              		.thumb_func
- 581              		.fpu fpv4-sp-d16
- 583              	_ZN5sa81821sa818_recieve_messageEh:
- 584              		.fnstart
- 585              	.LVL46:
- 586              	.LFB1993:
+ 567              	.LFE1992:
+ 568              		.fnend
+ 570              		.section	.text._ZN5sa81821sa818_recieve_messageEh,"ax",%progbits
+ 571              		.align	1
+ 572              		.global	_ZN5sa81821sa818_recieve_messageEh
+ 573              		.syntax unified
+ 574              		.thumb
+ 575              		.thumb_func
+ 576              		.fpu fpv4-sp-d16
+ 578              	_ZN5sa81821sa818_recieve_messageEh:
+ 579              		.fnstart
+ 580              	.LVL45:
+ 581              	.LFB1993:
  104:Core/Src/sa818.cpp **** {
- 587              		.loc 1 104 1 is_stmt 1 view -0
- 588              		.cfi_startproc
- 589              		@ args = 0, pretend = 0, frame = 0
- 590              		@ frame_needed = 0, uses_anonymous_args = 0
- 591              		@ link register save eliminated.
+ 582              		.loc 1 104 1 is_stmt 1 view -0
+ 583              		.cfi_startproc
+ 584              		@ args = 0, pretend = 0, frame = 0
+ 585              		@ frame_needed = 0, uses_anonymous_args = 0
+ 586              		@ link register save eliminated.
  105:Core/Src/sa818.cpp ****     return 0;
- 592              		.loc 1 105 5 view .LVU113
- 593              		.loc 1 106 1 is_stmt 0 view .LVU114
- 594 0000 0020     		movs	r0, #0
- 595              	.LVL47:
- 596              		.loc 1 106 1 view .LVU115
- 597 0002 7047     		bx	lr
- 598              		.cfi_endproc
- 599              	.LFE1993:
- 600              		.cantunwind
- 601              		.fnend
- 603              		.section	.text._GLOBAL__sub_I_CMD_SET,"ax",%progbits
- 604              		.align	1
- 605              		.syntax unified
- 606              		.thumb
- 607              		.thumb_func
- 608              		.fpu fpv4-sp-d16
- 610              	_GLOBAL__sub_I_CMD_SET:
- 611              		.fnstart
- 612              	.LFB2474:
- 613              		.loc 1 106 1 is_stmt 1 view -0
- 614              		.cfi_startproc
- 615              		@ args = 0, pretend = 0, frame = 0
- 616              		@ frame_needed = 0, uses_anonymous_args = 0
- 617 0000 08B5     		push	{r3, lr}
- 618              	.LCFI10:
- 619              		.cfi_def_cfa_offset 8
- 620              		.cfi_offset 3, -8
- 621              		.cfi_offset 14, -4
- 622              		.loc 1 106 1 is_stmt 0 view .LVU117
- 623 0002 4FF6FF71 		movw	r1, #65535
-ARM GAS  /tmp/cc820aCN.s 			page 17
+ 587              		.loc 1 105 5 view .LVU111
+ 588              		.loc 1 106 1 is_stmt 0 view .LVU112
+ 589 0000 0020     		movs	r0, #0
+ 590              	.LVL46:
+ 591              		.loc 1 106 1 view .LVU113
+ 592 0002 7047     		bx	lr
+ 593              		.cfi_endproc
+ 594              	.LFE1993:
+ 595              		.cantunwind
+ 596              		.fnend
+ 598              		.section	.text._GLOBAL__sub_I_CMD_SET,"ax",%progbits
+ 599              		.align	1
+ 600              		.syntax unified
+ 601              		.thumb
+ 602              		.thumb_func
+ 603              		.fpu fpv4-sp-d16
+ 605              	_GLOBAL__sub_I_CMD_SET:
+ 606              		.fnstart
+ 607              	.LFB2474:
+ 608              		.loc 1 106 1 is_stmt 1 view -0
+ 609              		.cfi_startproc
+ 610              		@ args = 0, pretend = 0, frame = 0
+ 611              		@ frame_needed = 0, uses_anonymous_args = 0
+ 612 0000 08B5     		push	{r3, lr}
+ 613              	.LCFI10:
+ 614              		.cfi_def_cfa_offset 8
+ 615              		.cfi_offset 3, -8
+ 616              		.cfi_offset 14, -4
+ 617              		.loc 1 106 1 is_stmt 0 view .LVU115
+ 618 0002 4FF6FF71 		movw	r1, #65535
+ 619 0006 0120     		movs	r0, #1
+ 620 0008 FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
+ 621              	.LVL47:
+ 622 000c 08BD     		pop	{r3, pc}
+ 623              		.cfi_endproc
+ 624              	.LFE2474:
+ 625              		.cantunwind
+ARM GAS  /tmp/ccimyG69.s 			page 17
 
 
- 624 0006 0120     		movs	r0, #1
- 625 0008 FFF7FEFF 		bl	_Z41__static_initialization_and_destruction_0ii
- 626              	.LVL48:
- 627 000c 08BD     		pop	{r3, pc}
- 628              		.cfi_endproc
- 629              	.LFE2474:
- 630              		.cantunwind
- 631              		.fnend
- 633              		.section	.init_array,"aw",%init_array
- 634              		.align	2
- 635 0000 00000000 		.word	_GLOBAL__sub_I_CMD_SET(target1)
- 636              		.global	rx_len
- 637              		.global	tx_len
- 638              		.global	locked
- 639              		.global	rx_buf
- 640              		.global	tx_buf
- 641              		.global	USART
- 642              		.global	status_cnt
- 643              		.global	len_rxnow
- 644              		.global	len_txnow
- 645              		.global	expected_rx
- 646              		.global	CMD_VOLUME
- 647              		.global	CMD_SET
- 648              		.section	.bss.USART,"aw",%nobits
- 649              		.align	2
- 652              	USART:
- 653 0000 00000000 		.space	4
- 654              		.section	.bss._ZStL8__ioinit,"aw",%nobits
- 655              		.align	2
- 656              		.set	.LANCHOR0,. + 0
- 659              	_ZStL8__ioinit:
- 660 0000 00       		.space	1
- 661              		.section	.bss.expected_rx,"aw",%nobits
- 662              		.align	2
- 665              	expected_rx:
- 666 0000 00000000 		.space	30
- 666      00000000 
- 666      00000000 
- 666      00000000 
- 666      00000000 
- 667              		.section	.bss.len_rxnow,"aw",%nobits
- 670              	len_rxnow:
+ 626              		.fnend
+ 628              		.section	.init_array,"aw",%init_array
+ 629              		.align	2
+ 630 0000 00000000 		.word	_GLOBAL__sub_I_CMD_SET(target1)
+ 631              		.global	rx_len
+ 632              		.global	tx_len
+ 633              		.global	locked
+ 634              		.global	rx_buf
+ 635              		.global	tx_buf
+ 636              		.global	USART
+ 637              		.global	status_cnt
+ 638              		.global	len_rxnow
+ 639              		.global	len_txnow
+ 640              		.global	expected_rx
+ 641              		.global	CMD_VOLUME
+ 642              		.global	CMD_SET
+ 643              		.section	.bss.USART,"aw",%nobits
+ 644              		.align	2
+ 647              	USART:
+ 648 0000 00000000 		.space	4
+ 649              		.section	.bss._ZStL8__ioinit,"aw",%nobits
+ 650              		.align	2
+ 651              		.set	.LANCHOR0,. + 0
+ 654              	_ZStL8__ioinit:
+ 655 0000 00       		.space	1
+ 656              		.section	.bss.expected_rx,"aw",%nobits
+ 657              		.align	2
+ 660              	expected_rx:
+ 661 0000 00000000 		.space	30
+ 661      00000000 
+ 661      00000000 
+ 661      00000000 
+ 661      00000000 
+ 662              		.section	.bss.len_rxnow,"aw",%nobits
+ 665              	len_rxnow:
+ 666 0000 00       		.space	1
+ 667              		.section	.bss.len_txnow,"aw",%nobits
+ 670              	len_txnow:
  671 0000 00       		.space	1
- 672              		.section	.bss.len_txnow,"aw",%nobits
- 675              	len_txnow:
+ 672              		.section	.bss.locked,"aw",%nobits
+ 675              	locked:
  676 0000 00       		.space	1
- 677              		.section	.bss.locked,"aw",%nobits
- 680              	locked:
- 681 0000 00       		.space	1
- 682              		.section	.bss.rx_buf,"aw",%nobits
- 683              		.align	2
- 686              	rx_buf:
- 687 0000 00000000 		.space	30
- 687      00000000 
- 687      00000000 
- 687      00000000 
- 687      00000000 
-ARM GAS  /tmp/cc820aCN.s 			page 18
+ 677              		.section	.bss.rx_buf,"aw",%nobits
+ 678              		.align	2
+ 681              	rx_buf:
+ 682 0000 00000000 		.space	30
+ 682      00000000 
+ 682      00000000 
+ 682      00000000 
+ 682      00000000 
+ 683              		.section	.bss.rx_len,"aw",%nobits
+ 686              	rx_len:
+ 687 0000 00       		.space	1
+ 688              		.section	.bss.tx_buf,"aw",%nobits
+ 689              		.align	2
+ 692              	tx_buf:
+ 693 0000 00000000 		.space	50
+ARM GAS  /tmp/ccimyG69.s 			page 18
 
 
- 688              		.section	.bss.rx_len,"aw",%nobits
- 691              	rx_len:
- 692 0000 00       		.space	1
- 693              		.section	.bss.tx_buf,"aw",%nobits
- 694              		.align	2
- 697              	tx_buf:
- 698 0000 00000000 		.space	50
- 698      00000000 
- 698      00000000 
- 698      00000000 
- 698      00000000 
- 699              		.section	.bss.tx_len,"aw",%nobits
- 702              	tx_len:
- 703 0000 00       		.space	1
- 704              		.section	.data.CMD_SET,"aw"
- 705              		.align	2
- 708              	CMD_SET:
- 709 0000 41542B44 		.ascii	"AT+DMOSETGROUP="
- 709      4D4F5345 
- 709      5447524F 
- 709      55503D
- 710              		.section	.data.CMD_VOLUME,"aw"
- 711              		.align	2
- 714              	CMD_VOLUME:
- 715 0000 41542B44 		.ascii	"AT+DMOSETVOLUME="
- 715      4D4F5345 
- 715      54564F4C 
- 715      554D453D 
- 716              		.section	.data.status_cnt,"aw"
- 719              	status_cnt:
- 720 0000 02       		.byte	2
- 721              		.text
- 722              	.Letext0:
- 723              		.file 3 "/usr/include/newlib/machine/_default_types.h"
- 724              		.file 4 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
- 725              		.file 5 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdarg.h"
- 726              		.file 6 "/usr/include/newlib/sys/_types.h"
- 727              		.file 7 "/usr/include/newlib/sys/reent.h"
- 728              		.file 8 "/usr/include/newlib/sys/lock.h"
- 729              		.file 9 "/usr/include/newlib/sys/_stdint.h"
- 730              		.file 10 "/usr/include/newlib/stdio.h"
- 731              		.file 11 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
- 732              		.file 12 "Drivers/CMSIS/Include/core_cm4.h"
- 733              		.file 13 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
- 734              		.file 14 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
- 735              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
- 736              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
- 737              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
- 738              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
- 739              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
- 740              		.file 20 "Core/Inc/pin.hpp"
- 741              		.file 21 "/usr/include/newlib/c++/9.2.1/cwchar"
- 742              		.file 22 "/usr/include/newlib/c++/9.2.1/new"
- 743              		.file 23 "/usr/include/newlib/c++/9.2.1/bits/exception_ptr.h"
- 744              		.file 24 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h"
- 745              		.file 25 "/usr/include/newlib/c++/9.2.1/type_traits"
- 746              		.file 26 "/usr/include/newlib/c++/9.2.1/bits/stl_pair.h"
-ARM GAS  /tmp/cc820aCN.s 			page 19
+ 693      00000000 
+ 693      00000000 
+ 693      00000000 
+ 693      00000000 
+ 694              		.section	.bss.tx_len,"aw",%nobits
+ 697              	tx_len:
+ 698 0000 00       		.space	1
+ 699              		.section	.data.CMD_SET,"aw"
+ 700              		.align	2
+ 703              	CMD_SET:
+ 704 0000 41542B44 		.ascii	"AT+DMOSETGROUP="
+ 704      4D4F5345 
+ 704      5447524F 
+ 704      55503D
+ 705              		.section	.data.CMD_VOLUME,"aw"
+ 706              		.align	2
+ 709              	CMD_VOLUME:
+ 710 0000 41542B44 		.ascii	"AT+DMOSETVOLUME="
+ 710      4D4F5345 
+ 710      54564F4C 
+ 710      554D453D 
+ 711              		.section	.data.status_cnt,"aw"
+ 714              	status_cnt:
+ 715 0000 02       		.byte	2
+ 716              		.text
+ 717              	.Letext0:
+ 718              		.file 3 "/usr/include/newlib/machine/_default_types.h"
+ 719              		.file 4 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stddef.h"
+ 720              		.file 5 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdarg.h"
+ 721              		.file 6 "/usr/include/newlib/sys/_types.h"
+ 722              		.file 7 "/usr/include/newlib/sys/reent.h"
+ 723              		.file 8 "/usr/include/newlib/sys/lock.h"
+ 724              		.file 9 "/usr/include/newlib/sys/_stdint.h"
+ 725              		.file 10 "/usr/include/newlib/stdio.h"
+ 726              		.file 11 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
+ 727              		.file 12 "Drivers/CMSIS/Include/core_cm4.h"
+ 728              		.file 13 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
+ 729              		.file 14 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
+ 730              		.file 15 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"
+ 731              		.file 16 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"
+ 732              		.file 17 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"
+ 733              		.file 18 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"
+ 734              		.file 19 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
+ 735              		.file 20 "Core/Inc/pin.hpp"
+ 736              		.file 21 "/usr/include/newlib/c++/9.2.1/cwchar"
+ 737              		.file 22 "/usr/include/newlib/c++/9.2.1/new"
+ 738              		.file 23 "/usr/include/newlib/c++/9.2.1/bits/exception_ptr.h"
+ 739              		.file 24 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/c++config.h"
+ 740              		.file 25 "/usr/include/newlib/c++/9.2.1/type_traits"
+ 741              		.file 26 "/usr/include/newlib/c++/9.2.1/bits/stl_pair.h"
+ 742              		.file 27 "/usr/include/newlib/c++/9.2.1/debug/debug.h"
+ 743              		.file 28 "/usr/include/newlib/c++/9.2.1/bits/char_traits.h"
+ 744              		.file 29 "/usr/include/newlib/c++/9.2.1/cstdint"
+ 745              		.file 30 "/usr/include/newlib/c++/9.2.1/clocale"
+ 746              		.file 31 "/usr/include/newlib/c++/9.2.1/cstdlib"
+ 747              		.file 32 "/usr/include/newlib/c++/9.2.1/cstdio"
+ 748              		.file 33 "/usr/include/newlib/c++/9.2.1/bits/basic_string.h"
+ARM GAS  /tmp/ccimyG69.s 			page 19
 
 
- 747              		.file 27 "/usr/include/newlib/c++/9.2.1/debug/debug.h"
- 748              		.file 28 "/usr/include/newlib/c++/9.2.1/bits/char_traits.h"
- 749              		.file 29 "/usr/include/newlib/c++/9.2.1/cstdint"
- 750              		.file 30 "/usr/include/newlib/c++/9.2.1/clocale"
- 751              		.file 31 "/usr/include/newlib/c++/9.2.1/cstdlib"
- 752              		.file 32 "/usr/include/newlib/c++/9.2.1/cstdio"
- 753              		.file 33 "/usr/include/newlib/c++/9.2.1/bits/basic_string.h"
- 754              		.file 34 "/usr/include/newlib/c++/9.2.1/system_error"
- 755              		.file 35 "/usr/include/newlib/c++/9.2.1/bits/ios_base.h"
- 756              		.file 36 "/usr/include/newlib/c++/9.2.1/cwctype"
- 757              		.file 37 "/usr/include/newlib/c++/9.2.1/iosfwd"
- 758              		.file 38 "/usr/include/newlib/c++/9.2.1/bits/uses_allocator.h"
- 759              		.file 39 "/usr/include/newlib/c++/9.2.1/tuple"
- 760              		.file 40 "/usr/include/newlib/c++/9.2.1/functional"
- 761              		.file 41 "/usr/include/newlib/c++/9.2.1/bits/predefined_ops.h"
- 762              		.file 42 "/usr/include/newlib/c++/9.2.1/ext/new_allocator.h"
- 763              		.file 43 "/usr/include/newlib/c++/9.2.1/ext/numeric_traits.h"
- 764              		.file 44 "<built-in>"
- 765              		.file 45 "/usr/include/newlib/wchar.h"
- 766              		.file 46 "/usr/include/newlib/locale.h"
- 767              		.file 47 "/usr/include/newlib/ctype.h"
- 768              		.file 48 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/atomic_word.h"
- 769              		.file 49 "/usr/include/newlib/stdlib.h"
- 770              		.file 50 "/usr/include/newlib/sys/errno.h"
- 771              		.file 51 "/usr/include/newlib/wctype.h"
- 772              		.file 52 "Core/Inc/uart.hpp"
- 773              		.file 53 "Core/Inc/sa818.h"
-ARM GAS  /tmp/cc820aCN.s 			page 20
+ 749              		.file 34 "/usr/include/newlib/c++/9.2.1/system_error"
+ 750              		.file 35 "/usr/include/newlib/c++/9.2.1/bits/ios_base.h"
+ 751              		.file 36 "/usr/include/newlib/c++/9.2.1/cwctype"
+ 752              		.file 37 "/usr/include/newlib/c++/9.2.1/iosfwd"
+ 753              		.file 38 "/usr/include/newlib/c++/9.2.1/bits/uses_allocator.h"
+ 754              		.file 39 "/usr/include/newlib/c++/9.2.1/tuple"
+ 755              		.file 40 "/usr/include/newlib/c++/9.2.1/functional"
+ 756              		.file 41 "/usr/include/newlib/c++/9.2.1/bits/predefined_ops.h"
+ 757              		.file 42 "/usr/include/newlib/c++/9.2.1/ext/new_allocator.h"
+ 758              		.file 43 "/usr/include/newlib/c++/9.2.1/ext/numeric_traits.h"
+ 759              		.file 44 "<built-in>"
+ 760              		.file 45 "/usr/include/newlib/wchar.h"
+ 761              		.file 46 "/usr/include/newlib/locale.h"
+ 762              		.file 47 "/usr/include/newlib/ctype.h"
+ 763              		.file 48 "/usr/include/newlib/c++/9.2.1/arm-none-eabi/thumb/v7e-m+fp/hard/bits/atomic_word.h"
+ 764              		.file 49 "/usr/include/newlib/stdlib.h"
+ 765              		.file 50 "/usr/include/newlib/sys/errno.h"
+ 766              		.file 51 "/usr/include/newlib/wctype.h"
+ 767              		.file 52 "Core/Inc/uart.hpp"
+ 768              		.file 53 "Core/Inc/sa818.h"
+ARM GAS  /tmp/ccimyG69.s 			page 20
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sa818.cpp
-     /tmp/cc820aCN.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
-     /tmp/cc820aCN.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
-     /tmp/cc820aCN.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
+     /tmp/ccimyG69.s:18     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $t
+     /tmp/ccimyG69.s:25     .text._Z41__static_initialization_and_destruction_0ii:0000000000000000 _Z41__static_initialization_and_destruction_0ii
+     /tmp/ccimyG69.s:69     .text._Z41__static_initialization_and_destruction_0ii:0000000000000024 $d
 .ARM.exidx.text._Z41__static_initialization_and_destruction_0ii:0000000000000000 $d
-     /tmp/cc820aCN.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
-     /tmp/cc820aCN.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
+     /tmp/ccimyG69.s:78     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $t
+     /tmp/ccimyG69.s:85     .text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 _ZN5sa81811sa818_powerENS_5OnOffE
 .ARM.extab.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81811sa818_powerENS_5OnOffE:0000000000000000 $d
-     /tmp/cc820aCN.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
-     /tmp/cc820aCN.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
+     /tmp/ccimyG69.s:134    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $t
+     /tmp/ccimyG69.s:141    .text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 _ZN5sa81815sa818_txrx_modeENS_4TxRxE
 .ARM.extab.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81815sa818_txrx_modeENS_4TxRxE:0000000000000000 $d
-     /tmp/cc820aCN.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
-     /tmp/cc820aCN.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
-     /tmp/cc820aCN.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
-     /tmp/cc820aCN.s:282    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000048 $d
+     /tmp/ccimyG69.s:190    .rodata._ZN5sa818C2EP4uartP3pinS3_.str1.4:0000000000000000 $d
+     /tmp/ccimyG69.s:197    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $t
+     /tmp/ccimyG69.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C2EP4uartP3pinS3_
+     /tmp/ccimyG69.s:277    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000040 $d
 .ARM.exidx.text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 $d
-     /tmp/cc820aCN.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
-     /tmp/cc820aCN.s:291    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
-     /tmp/cc820aCN.s:295    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
-     /tmp/cc820aCN.s:302    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
-     /tmp/cc820aCN.s:376    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
+     /tmp/ccimyG69.s:204    .text._ZN5sa818C2EP4uartP3pinS3_:0000000000000000 _ZN5sa818C1EP4uartP3pinS3_
+     /tmp/ccimyG69.s:286    .rodata._ZN5sa81815sa818_configureEhPcS0_S0_hS0_.str1.4:0000000000000000 $d
+     /tmp/ccimyG69.s:290    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $t
+     /tmp/ccimyG69.s:297    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 _ZN5sa81815sa818_configureEhPcS0_S0_hS0_
+     /tmp/ccimyG69.s:371    .text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:000000000000004c $d
 .ARM.exidx.text._ZN5sa81815sa818_configureEhPcS0_S0_hS0_:0000000000000000 $d
-     /tmp/cc820aCN.s:383    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
-     /tmp/cc820aCN.s:387    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
-     /tmp/cc820aCN.s:394    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
-     /tmp/cc820aCN.s:440    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
+     /tmp/ccimyG69.s:378    .rodata._ZN5sa81816sa818_set_volumeEh.str1.4:0000000000000000 $d
+     /tmp/ccimyG69.s:382    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $t
+     /tmp/ccimyG69.s:389    .text._ZN5sa81816sa818_set_volumeEh:0000000000000000 _ZN5sa81816sa818_set_volumeEh
+     /tmp/ccimyG69.s:435    .text._ZN5sa81816sa818_set_volumeEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81816sa818_set_volumeEh:0000000000000000 $d
-     /tmp/cc820aCN.s:447    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
-     /tmp/cc820aCN.s:451    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
-     /tmp/cc820aCN.s:458    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
-     /tmp/cc820aCN.s:502    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
+     /tmp/ccimyG69.s:442    .rodata._ZN5sa81814sa818_get_RSSIEv.str1.4:0000000000000000 $d
+     /tmp/ccimyG69.s:446    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $t
+     /tmp/ccimyG69.s:453    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 _ZN5sa81814sa818_get_RSSIEv
+     /tmp/ccimyG69.s:497    .text._ZN5sa81814sa818_get_RSSIEv:0000000000000024 $d
 .ARM.extab.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
 .ARM.exidx.text._ZN5sa81814sa818_get_RSSIEv:0000000000000000 $d
-     /tmp/cc820aCN.s:509    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
-     /tmp/cc820aCN.s:516    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
-     /tmp/cc820aCN.s:523    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
-     /tmp/cc820aCN.s:569    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
+     /tmp/ccimyG69.s:504    .rodata._ZN5sa81814sa818_set_tailEh.str1.4:0000000000000000 $d
+     /tmp/ccimyG69.s:511    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 $t
+     /tmp/ccimyG69.s:518    .text._ZN5sa81814sa818_set_tailEh:0000000000000000 _ZN5sa81814sa818_set_tailEh
+     /tmp/ccimyG69.s:564    .text._ZN5sa81814sa818_set_tailEh:0000000000000024 $d
 .ARM.exidx.text._ZN5sa81814sa818_set_tailEh:0000000000000000 $d
-     /tmp/cc820aCN.s:576    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $t
-     /tmp/cc820aCN.s:583    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
+     /tmp/ccimyG69.s:571    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $t
+     /tmp/ccimyG69.s:578    .text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 _ZN5sa81821sa818_recieve_messageEh
 .ARM.exidx.text._ZN5sa81821sa818_recieve_messageEh:0000000000000000 $d
-     /tmp/cc820aCN.s:604    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
-     /tmp/cc820aCN.s:610    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
+     /tmp/ccimyG69.s:599    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 $t
+     /tmp/ccimyG69.s:605    .text._GLOBAL__sub_I_CMD_SET:0000000000000000 _GLOBAL__sub_I_CMD_SET
 .ARM.exidx.text._GLOBAL__sub_I_CMD_SET:0000000000000000 $d
-     /tmp/cc820aCN.s:634    .init_array:0000000000000000 $d
-     /tmp/cc820aCN.s:691    .bss.rx_len:0000000000000000 rx_len
-     /tmp/cc820aCN.s:702    .bss.tx_len:0000000000000000 tx_len
-     /tmp/cc820aCN.s:680    .bss.locked:0000000000000000 locked
-     /tmp/cc820aCN.s:686    .bss.rx_buf:0000000000000000 rx_buf
-     /tmp/cc820aCN.s:697    .bss.tx_buf:0000000000000000 tx_buf
-     /tmp/cc820aCN.s:652    .bss.USART:0000000000000000 USART
-     /tmp/cc820aCN.s:719    .data.status_cnt:0000000000000000 status_cnt
-     /tmp/cc820aCN.s:670    .bss.len_rxnow:0000000000000000 len_rxnow
-     /tmp/cc820aCN.s:675    .bss.len_txnow:0000000000000000 len_txnow
-ARM GAS  /tmp/cc820aCN.s 			page 21
+     /tmp/ccimyG69.s:629    .init_array:0000000000000000 $d
+     /tmp/ccimyG69.s:686    .bss.rx_len:0000000000000000 rx_len
+     /tmp/ccimyG69.s:697    .bss.tx_len:0000000000000000 tx_len
+     /tmp/ccimyG69.s:675    .bss.locked:0000000000000000 locked
+     /tmp/ccimyG69.s:681    .bss.rx_buf:0000000000000000 rx_buf
+     /tmp/ccimyG69.s:692    .bss.tx_buf:0000000000000000 tx_buf
+     /tmp/ccimyG69.s:647    .bss.USART:0000000000000000 USART
+     /tmp/ccimyG69.s:714    .data.status_cnt:0000000000000000 status_cnt
+     /tmp/ccimyG69.s:665    .bss.len_rxnow:0000000000000000 len_rxnow
+     /tmp/ccimyG69.s:670    .bss.len_txnow:0000000000000000 len_txnow
+ARM GAS  /tmp/ccimyG69.s 			page 21
 
 
-     /tmp/cc820aCN.s:665    .bss.expected_rx:0000000000000000 expected_rx
-     /tmp/cc820aCN.s:714    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
-     /tmp/cc820aCN.s:708    .data.CMD_SET:0000000000000000 CMD_SET
-     /tmp/cc820aCN.s:649    .bss.USART:0000000000000000 $d
-     /tmp/cc820aCN.s:655    .bss._ZStL8__ioinit:0000000000000000 $d
-     /tmp/cc820aCN.s:659    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
-     /tmp/cc820aCN.s:662    .bss.expected_rx:0000000000000000 $d
-     /tmp/cc820aCN.s:671    .bss.len_rxnow:0000000000000000 $d
-     /tmp/cc820aCN.s:676    .bss.len_txnow:0000000000000000 $d
-     /tmp/cc820aCN.s:681    .bss.locked:0000000000000000 $d
-     /tmp/cc820aCN.s:683    .bss.rx_buf:0000000000000000 $d
-     /tmp/cc820aCN.s:692    .bss.rx_len:0000000000000000 $d
-     /tmp/cc820aCN.s:694    .bss.tx_buf:0000000000000000 $d
-     /tmp/cc820aCN.s:703    .bss.tx_len:0000000000000000 $d
-     /tmp/cc820aCN.s:705    .data.CMD_SET:0000000000000000 $d
-     /tmp/cc820aCN.s:711    .data.CMD_VOLUME:0000000000000000 $d
+     /tmp/ccimyG69.s:660    .bss.expected_rx:0000000000000000 expected_rx
+     /tmp/ccimyG69.s:709    .data.CMD_VOLUME:0000000000000000 CMD_VOLUME
+     /tmp/ccimyG69.s:703    .data.CMD_SET:0000000000000000 CMD_SET
+     /tmp/ccimyG69.s:644    .bss.USART:0000000000000000 $d
+     /tmp/ccimyG69.s:650    .bss._ZStL8__ioinit:0000000000000000 $d
+     /tmp/ccimyG69.s:654    .bss._ZStL8__ioinit:0000000000000000 _ZStL8__ioinit
+     /tmp/ccimyG69.s:657    .bss.expected_rx:0000000000000000 $d
+     /tmp/ccimyG69.s:666    .bss.len_rxnow:0000000000000000 $d
+     /tmp/ccimyG69.s:671    .bss.len_txnow:0000000000000000 $d
+     /tmp/ccimyG69.s:676    .bss.locked:0000000000000000 $d
+     /tmp/ccimyG69.s:678    .bss.rx_buf:0000000000000000 $d
+     /tmp/ccimyG69.s:687    .bss.rx_len:0000000000000000 $d
+     /tmp/ccimyG69.s:689    .bss.tx_buf:0000000000000000 $d
+     /tmp/ccimyG69.s:698    .bss.tx_len:0000000000000000 $d
+     /tmp/ccimyG69.s:700    .data.CMD_SET:0000000000000000 $d
+     /tmp/ccimyG69.s:706    .data.CMD_VOLUME:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 _ZNSt8ios_base4InitC1Ev
@@ -1195,7 +1188,7 @@ __dso_handle
 _ZNSt8ios_base4InitD1Ev
 _ZN3pin5writeENS_5OnOffE
 __aeabi_unwind_cpp_pr1
-HAL_Delay
 _ZN4uart11send_reciveEPcPKc
 __aeabi_unwind_cpp_pr0
+HAL_Delay
 sprintf

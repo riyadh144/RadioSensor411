@@ -58,24 +58,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define key_ok_Pin GPIO_PIN_15
-#define key_ok_GPIO_Port GPIOB
-#define keyin_4_Pin GPIO_PIN_8
-#define keyin_4_GPIO_Port GPIOD
-#define keyin_3_Pin GPIO_PIN_9
-#define keyin_3_GPIO_Port GPIOD
-#define keyin_2_Pin GPIO_PIN_10
-#define keyin_2_GPIO_Port GPIOD
-#define key_1_Pin GPIO_PIN_11
-#define key_1_GPIO_Port GPIOD
-#define key_2_Pin GPIO_PIN_12
-#define key_2_GPIO_Port GPIOD
-#define key_3_Pin GPIO_PIN_13
-#define key_3_GPIO_Port GPIOD
-#define key_4_Pin GPIO_PIN_14
-#define key_4_GPIO_Port GPIOD
-#define keyin_1_Pin GPIO_PIN_15
-#define keyin_1_GPIO_Port GPIOD
+#define LED1_Pin GPIO_PIN_0
+#define LED1_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

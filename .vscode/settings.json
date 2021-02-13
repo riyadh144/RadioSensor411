@@ -1,8 +1,8 @@
 {
     "stm32-for-vscode.openOCDPath": "openocd",
     "stm32-for-vscode.makePath": "make",
-    "stm32-for-vscode.armToolchainPath": "",
-    "cortex-debug.armToolchainPath": "",
+    "stm32-for-vscode.armToolchainPath": "/usr/bin",
+    "cortex-debug.gdbPath": "/usr/bin",
     "files.associations": {
         "limits": "cpp",
         "functional": "cpp",
@@ -49,6 +49,9 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "cinttypes": "cpp",
-        "typeinfo": "cpp"
-    }
+        "typeinfo": "cpp",
+        "main.h": "c"
+    },
+    "cortex-debug.armToolchainPath": "",
+    "cmake.configureOnOpen": false
 }
