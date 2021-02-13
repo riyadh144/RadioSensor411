@@ -29,11 +29,10 @@ void adc::init(void)
   /* USER CODE END ADC1_Init 1 */
   /** Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
   */
-  hadc.Instance = ADC1;
   hadc.Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV2;
   hadc.Init.Resolution = ADC_RESOLUTION_12B;
-  hadc.Init.ScanConvMode = DISABLE;
-  hadc.Init.ContinuousConvMode = DISABLE;
+  hadc.Init.ScanConvMode = ENABLE;
+  hadc.Init.ContinuousConvMode = ENABLE;
   hadc.Init.DiscontinuousConvMode = DISABLE;
   hadc.Init.ExternalTrigConvEdge = ADC_EXTERNALTRIGCONVEDGE_NONE;
   hadc.Init.ExternalTrigConv = ADC_SOFTWARE_START;
@@ -47,9 +46,9 @@ void adc::init(void)
   }
   /** Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
   */
-  sConfig.Channel = ADC_CHANNEL_10;
+  sConfig.Channel = ADC_CHANNEL_12;
   sConfig.Rank = 1;
-  sConfig.SamplingTime = ADC_SAMPLETIME_3CYCLES;
+  sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;
   if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
   {
     Error_Handler();
@@ -62,11 +61,11 @@ void adc::init(void)
 
 float adc::adc_getValue()
 {
-    float f;
-    HAL_ADC_Start (&hadc);
-    HAL_ADC_PollForConversion (&hadc, 1000);
-    f = eq_a*HAL_ADC_GetValue (&hadc)+eq_b; //y=a*x+b 
-    HAL_ADC_Stop (&hadc);
+    float f=4.0;
+    // HAL_ADC_Start (&hadc);
+    // HAL_ADC_PollForConversion (&hadc, 5);
+    // f = eq_a*HAL_ADC_GetValue (&hadc)+eq_b; //y=a*x+b 
+    // HAL_ADC_Stop (&hadc);
     return f;
 }
 void adc::adc_setEquation(float a, float b)
