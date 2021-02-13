@@ -30,13 +30,16 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
             break;
         case MENU_CH_IN:
             sprintf(temp, "CH:%.2s    ",ch);
+            cursorOn=1;
             oled1->oled_print(temp,Font_16x26, 0,19);
             break;
         case MENU_SQ_IN:
+            cursorOn=1;
             sprintf(temp, "SQ:%.2s    ",sq);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
         case MENU_TMO_IN:
+            cursorOn=1;
             sprintf(temp, "DS:%.2s    ",tmo);
             oled1->oled_print(temp, Font_16x26, 0,19);
             break;
