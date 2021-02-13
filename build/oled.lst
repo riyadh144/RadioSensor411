@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccM3cWia.s 			page 1
 =======
 ARM GAS  /tmp/ccsiO9CP.s 			page 1
@@ -7,6 +8,9 @@ ARM GAS  /tmp/ccsiO9CP.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 1
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 1
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
    1              		.cpu cortex-m4
@@ -75,8 +79,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
   39              		.cfi_def_cfa_offset 12
   40              		.cfi_offset 4, -12
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 2
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 2
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
   41              		.cfi_offset 5, -8
@@ -136,7 +144,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
   27:Core/Src/oled.cpp **** 	}
   28:Core/Src/oled.cpp ****     
   29:Core/Src/oled.cpp ****     OLED_WRITECOMMAND(0xAE); //display off
-ARM GAS  /tmp/ccVncu5o.s 			page 3
+ARM GAS  /tmp/cc1XDnsz.s 			page 3
 
 
   30:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x20); //Set Memory Addressing Mode   
@@ -223,8 +231,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  107 0006 0024     		movs	r4, #0
  108 0008 09E0     		b	.L5
  109              	.LVL3:
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 4
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 4
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  110              	.L7:
@@ -301,8 +313,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  158              		.loc 1 70 1 is_stmt 0 view .LVU24
  159 0000 00B5     		push	{lr}
  160              		.save {lr}
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 5
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 5
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  161              	.LCFI3:
@@ -375,8 +391,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  212              		.loc 1 25 1 is_stmt 0 view .LVU33
  213 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
  214              		.save {r4, r5, r6, r7, r8, lr}
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 6
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 6
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  215              	.LCFI6:
@@ -447,8 +467,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 =======
  260              		.loc 1 31 2 view .LVU44
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 7
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 7
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  261 003c 4FF01008 		mov	r8, #16
@@ -509,6 +533,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  304 007e 84F80A80 		strb	r8, [r4, #10]
   35:Core/Src/oled.cpp **** 	OLED_WRITECOMMAND(0x40); //--set start line address
 <<<<<<< HEAD
+<<<<<<< HEAD
  302              		.loc 1 35 2 view .LVU57
  303 0082 0222     		movs	r2, #2
  304 0084 3146     		mov	r1, r6
@@ -520,6 +545,9 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 8
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 8
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  305              		.loc 1 35 2 view .LVU57
@@ -590,8 +618,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 =======
  349              		.loc 1 39 2 view .LVU69
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 9
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 9
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  350 00c2 0222     		movs	r2, #2
@@ -663,8 +695,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
  393              		.loc 1 43 2 view .LVU81
  394 0102 0222     		movs	r2, #2
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 10
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 10
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  395 0104 3146     		mov	r1, r6
@@ -738,8 +774,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  437 0140 0222     		movs	r2, #2
  438 0142 3146     		mov	r1, r6
  439 0144 2046     		mov	r0, r4
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 11
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 11
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  440 0146 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
@@ -814,8 +854,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  482 0182 3146     		mov	r1, r6
  483 0184 2046     		mov	r0, r4
  484 0186 FFF7FEFF 		bl	_ZN4oled10oled_writeEPht
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 12
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 12
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  485              	.LVL37:
@@ -876,6 +920,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  528              	.LVL41:
   56:Core/Src/oled.cpp **** 
 <<<<<<< HEAD
+<<<<<<< HEAD
  526              		.loc 1 56 2 view .LVU118
  527 01c8 6572     		strb	r5, [r4, #9]
   56:Core/Src/oled.cpp **** 
@@ -887,6 +932,9 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 13
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 13
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  529              		.loc 1 56 2 view .LVU118
@@ -946,7 +994,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
   75:Core/Src/oled.cpp **** {
   76:Core/Src/oled.cpp **** 	uint8_t m;
   77:Core/Src/oled.cpp **** 	
-ARM GAS  /tmp/ccVncu5o.s 			page 14
+ARM GAS  /tmp/cc1XDnsz.s 			page 14
 
 
   78:Core/Src/oled.cpp **** 	for (m = 0; m < 8; m++) {
@@ -1017,6 +1065,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
   99:Core/Src/oled.cpp **** 			for (j = 0; j < size.FontWidth; j++) {
  100:Core/Src/oled.cpp **** 
 <<<<<<< HEAD
+<<<<<<< HEAD
  101:Core/Src/oled.cpp **** 					oled_buffer[((y+i) / 8)*W+x+j]=0;
  606              		.loc 1 101 25 discriminator 2 view .LVU133
  607 001e DB10     		asrs	r3, r3, #3
@@ -1028,6 +1077,9 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 15
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 15
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  101:Core/Src/oled.cpp **** 					oled_buffer[((y+i) / 8)*W+x+j]=0;
@@ -1088,6 +1140,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  105:Core/Src/oled.cpp **** 		}
  106:Core/Src/oled.cpp **** 		for (i = 0; i < size.FontHeight; i++) {
 <<<<<<< HEAD
+<<<<<<< HEAD
  648              		.loc 1 106 10 view .LVU149
  649 004c 0021     		movs	r1, #0
  650              	.LVL51:
@@ -1099,6 +1152,9 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 16
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 16
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  651              		.loc 1 106 10 view .LVU149
@@ -1174,8 +1230,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  694              		.loc 1 110 6 is_stmt 1 view .LVU163
  695              		.loc 1 110 21 is_stmt 0 view .LVU164
  696 0096 6318     		adds	r3, r4, r1
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 17
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 17
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  697              		.loc 1 110 25 view .LVU165
@@ -1237,6 +1297,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  107:Core/Src/oled.cpp **** 			for (j = 0; j < size.FontWidth; j++) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccM3cWia.s 			page 18
 =======
 ARM GAS  /tmp/ccsiO9CP.s 			page 18
@@ -1244,6 +1305,9 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 18
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 18
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  747              		.loc 1 107 27 view .LVU180
@@ -1304,6 +1368,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  787              		.loc 1 93 2 is_stmt 1 view .LVU196
   93:Core/Src/oled.cpp **** 	{
 <<<<<<< HEAD
+<<<<<<< HEAD
  784              		.loc 1 93 21 is_stmt 0 view .LVU197
  785 010c 3846     		mov	r0, r7
  786 010e FFF7FEFF 		bl	strlen
@@ -1315,6 +1380,9 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 19
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 19
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  788              		.loc 1 93 14 view .LVU197
@@ -1394,8 +1462,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  835              		@ args = 0, pretend = 0, frame = 24
  836              		@ frame_needed = 0, uses_anonymous_args = 0
  837              		.loc 1 126 1 is_stmt 0 view .LVU205
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 20
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 20
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  838 0000 10B5     		push	{r4, lr}
@@ -1488,8 +1560,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  888              		.cantunwind
  889              		.fnend
  891              		.section	.text._ZN4oled8oled_offEv,"ax",%progbits
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 21
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 21
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  892              		.align	1
@@ -1549,7 +1625,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  942              		.thumb
  943              		.thumb_func
  944              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccVncu5o.s 			page 22
+ARM GAS  /tmp/cc1XDnsz.s 			page 22
 
 
  946              	_ZN4oled13oled_isOledOnEv:
@@ -1637,8 +1713,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  987              		.loc 1 151 1 view .LVU230
  988 0004 7047     		bx	lr
  989              		.cfi_endproc
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 23
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 23
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  990              	.LFE143:
@@ -1714,8 +1794,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 =======
  1038              		.loc 1 143 1 view .LVU240
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 24
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 24
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  1039 0020 10BD     		pop	{r4, pc}
@@ -1743,7 +1827,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  1059              		@ args = 0, pretend = 0, frame = 0
  1060              		@ frame_needed = 0, uses_anonymous_args = 0
  1061              		@ link register save eliminated.
- 155:Core/Src/oled.cpp **** 	tmoValue = ((time*1000)/66);
+ 155:Core/Src/oled.cpp **** 	tmoValue = ((time*1000)/200);
  1062              		.loc 1 155 2 view .LVU243
  1063              		.loc 1 155 19 is_stmt 0 view .LVU244
  1064 0000 4FF47A73 		mov	r3, #1000
@@ -1753,7 +1837,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  1068              	.LVL78:
  1069              		.loc 1 155 25 view .LVU246
  1070 000a A1FB0323 		umull	r2, r3, r1, r3
- 1071 000e 1B09     		lsrs	r3, r3, #4
+ 1071 000e 9B09     		lsrs	r3, r3, #6
  1072              		.loc 1 155 11 view .LVU247
  1073 0010 0361     		str	r3, [r0, #16]
  156:Core/Src/oled.cpp **** 	
@@ -1763,7 +1847,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  1076              	.L42:
  1077              		.align	2
  1078              	.L41:
- 1079 0014 E1830F3E 		.word	1041204193
+ 1079 0014 1F85EB51 		.word	1374389535
  1080              		.cfi_endproc
  1081              	.LFE144:
  1082              		.cantunwind
@@ -1775,7 +1859,7 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  1089              		.thumb
  1090              		.thumb_func
  1091              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccVncu5o.s 			page 25
+ARM GAS  /tmp/cc1XDnsz.s 			page 25
 
 
  1093              	_ZN4oled17Counter_incrementEv:
@@ -1884,8 +1968,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  1137              		.global	_ZN4oled12oled_refreshEv
  1138              		.syntax unified
  1139              		.thumb
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 26
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 26
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
  1140              		.thumb_func
@@ -1962,8 +2050,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 =======
  1186              		.loc 1 80 3 discriminator 2 view .LVU269
  1187 0022 A772     		strb	r7, [r4, #10]
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 27
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 27
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
   80:Core/Src/oled.cpp **** 		OLED_WRITECOMMAND(0x00);
@@ -2037,8 +2129,12 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 =======
  1231              		.loc 1 86 2 view .LVU282
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 28
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 28
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
   86:Core/Src/oled.cpp **** 	Counter_increment();
@@ -2103,12 +2199,17 @@ ARM GAS  /tmp/ccVncu5o.s 			page 1
  1259              		.file 16 "Core/Inc/oled.h"
  1260              		.file 17 "/usr/include/newlib/stdio.h"
  1261              		.file 18 "/usr/include/newlib/string.h"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccVncu5o.s 			page 29
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 29
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 oled.cpp
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/ccM3cWia.s:18     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $t
@@ -2161,45 +2262,50 @@ DEFINED SYMBOLS
      /tmp/ccVncu5o.s:18     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $t
      /tmp/ccVncu5o.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+     /tmp/cc1XDnsz.s:18     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $t
+     /tmp/cc1XDnsz.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 .ARM.exidx.text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 $d
-     /tmp/ccVncu5o.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC1EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
-     /tmp/ccVncu5o.s:78     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 $t
-     /tmp/ccVncu5o.s:85     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 _ZN4oled9oled_fillENS_12OLED_COLOR_tE
+     /tmp/cc1XDnsz.s:26     .text._ZN4oledC2EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef:0000000000000000 _ZN4oledC1EP17I2C_HandleTypeDefhP17TIM_HandleTypeDef
+     /tmp/cc1XDnsz.s:78     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 $t
+     /tmp/cc1XDnsz.s:85     .text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 _ZN4oled9oled_fillENS_12OLED_COLOR_tE
 .ARM.exidx.text._ZN4oled9oled_fillENS_12OLED_COLOR_tE:0000000000000000 $d
-     /tmp/ccVncu5o.s:143    .text._ZN4oled10oled_writeEPht:0000000000000000 $t
-     /tmp/ccVncu5o.s:150    .text._ZN4oled10oled_writeEPht:0000000000000000 _ZN4oled10oled_writeEPht
+     /tmp/cc1XDnsz.s:143    .text._ZN4oled10oled_writeEPht:0000000000000000 $t
+     /tmp/cc1XDnsz.s:150    .text._ZN4oled10oled_writeEPht:0000000000000000 _ZN4oled10oled_writeEPht
 .ARM.exidx.text._ZN4oled10oled_writeEPht:0000000000000000 $d
-     /tmp/ccVncu5o.s:197    .text._ZN4oled4initEv:0000000000000000 $t
-     /tmp/ccVncu5o.s:204    .text._ZN4oled4initEv:0000000000000000 _ZN4oled4initEv
+     /tmp/cc1XDnsz.s:197    .text._ZN4oled4initEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:204    .text._ZN4oled4initEv:0000000000000000 _ZN4oled4initEv
   .ARM.exidx.text._ZN4oled4initEv:0000000000000000 $d
-     /tmp/ccVncu5o.s:564    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 $t
-     /tmp/ccVncu5o.s:571    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 _ZN4oled10oled_printEPc9FontDef_ttt
+     /tmp/cc1XDnsz.s:564    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 $t
+     /tmp/cc1XDnsz.s:571    .text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 _ZN4oled10oled_printEPc9FontDef_ttt
 .ARM.exidx.text._ZN4oled10oled_printEPc9FontDef_ttt:0000000000000000 $d
-     /tmp/ccVncu5o.s:818    .rodata._ZN4oled19oled_update_batteryEf.str1.4:0000000000000000 $d
-     /tmp/ccVncu5o.s:822    .text._ZN4oled19oled_update_batteryEf:0000000000000000 $t
-     /tmp/ccVncu5o.s:829    .text._ZN4oled19oled_update_batteryEf:0000000000000000 _ZN4oled19oled_update_batteryEf
-     /tmp/ccVncu5o.s:884    .text._ZN4oled19oled_update_batteryEf:0000000000000034 $d
+     /tmp/cc1XDnsz.s:818    .rodata._ZN4oled19oled_update_batteryEf.str1.4:0000000000000000 $d
+     /tmp/cc1XDnsz.s:822    .text._ZN4oled19oled_update_batteryEf:0000000000000000 $t
+     /tmp/cc1XDnsz.s:829    .text._ZN4oled19oled_update_batteryEf:0000000000000000 _ZN4oled19oled_update_batteryEf
+     /tmp/cc1XDnsz.s:884    .text._ZN4oled19oled_update_batteryEf:0000000000000034 $d
 .ARM.exidx.text._ZN4oled19oled_update_batteryEf:0000000000000000 $d
-     /tmp/ccVncu5o.s:892    .text._ZN4oled8oled_offEv:0000000000000000 $t
-     /tmp/ccVncu5o.s:899    .text._ZN4oled8oled_offEv:0000000000000000 _ZN4oled8oled_offEv
+     /tmp/cc1XDnsz.s:892    .text._ZN4oled8oled_offEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:899    .text._ZN4oled8oled_offEv:0000000000000000 _ZN4oled8oled_offEv
 .ARM.exidx.text._ZN4oled8oled_offEv:0000000000000000 $d
-     /tmp/ccVncu5o.s:939    .text._ZN4oled13oled_isOledOnEv:0000000000000000 $t
-     /tmp/ccVncu5o.s:946    .text._ZN4oled13oled_isOledOnEv:0000000000000000 _ZN4oled13oled_isOledOnEv
+     /tmp/cc1XDnsz.s:939    .text._ZN4oled13oled_isOledOnEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:946    .text._ZN4oled13oled_isOledOnEv:0000000000000000 _ZN4oled13oled_isOledOnEv
 .ARM.exidx.text._ZN4oled13oled_isOledOnEv:0000000000000000 $d
-     /tmp/ccVncu5o.s:967    .text._ZN4oled15oled_resetTimerEv:0000000000000000 $t
-     /tmp/ccVncu5o.s:974    .text._ZN4oled15oled_resetTimerEv:0000000000000000 _ZN4oled15oled_resetTimerEv
+     /tmp/cc1XDnsz.s:967    .text._ZN4oled15oled_resetTimerEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:974    .text._ZN4oled15oled_resetTimerEv:0000000000000000 _ZN4oled15oled_resetTimerEv
 .ARM.exidx.text._ZN4oled15oled_resetTimerEv:0000000000000000 $d
-     /tmp/ccVncu5o.s:995    .text._ZN4oled7oled_onEv:0000000000000000 $t
-     /tmp/ccVncu5o.s:1002   .text._ZN4oled7oled_onEv:0000000000000000 _ZN4oled7oled_onEv
+     /tmp/cc1XDnsz.s:995    .text._ZN4oled7oled_onEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:1002   .text._ZN4oled7oled_onEv:0000000000000000 _ZN4oled7oled_onEv
 .ARM.exidx.text._ZN4oled7oled_onEv:0000000000000000 $d
-     /tmp/ccVncu5o.s:1046   .text._ZN4oled13oled_setTimerEm:0000000000000000 $t
-     /tmp/ccVncu5o.s:1053   .text._ZN4oled13oled_setTimerEm:0000000000000000 _ZN4oled13oled_setTimerEm
-     /tmp/ccVncu5o.s:1079   .text._ZN4oled13oled_setTimerEm:0000000000000014 $d
+     /tmp/cc1XDnsz.s:1046   .text._ZN4oled13oled_setTimerEm:0000000000000000 $t
+     /tmp/cc1XDnsz.s:1053   .text._ZN4oled13oled_setTimerEm:0000000000000000 _ZN4oled13oled_setTimerEm
+     /tmp/cc1XDnsz.s:1079   .text._ZN4oled13oled_setTimerEm:0000000000000014 $d
 .ARM.exidx.text._ZN4oled13oled_setTimerEm:0000000000000000 $d
-     /tmp/ccVncu5o.s:1086   .text._ZN4oled17Counter_incrementEv:0000000000000000 $t
-     /tmp/ccVncu5o.s:1093   .text._ZN4oled17Counter_incrementEv:0000000000000000 _ZN4oled17Counter_incrementEv
+     /tmp/cc1XDnsz.s:1086   .text._ZN4oled17Counter_incrementEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:1093   .text._ZN4oled17Counter_incrementEv:0000000000000000 _ZN4oled17Counter_incrementEv
 .ARM.extab.text._ZN4oled17Counter_incrementEv:0000000000000000 $d
 .ARM.exidx.text._ZN4oled17Counter_incrementEv:0000000000000000 $d
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/ccsiO9CP.s:1129   .text._ZN4oled12oled_refreshEv:0000000000000000 $t
      /tmp/ccsiO9CP.s:1136   .text._ZN4oled12oled_refreshEv:0000000000000000 _ZN4oled12oled_refreshEv
@@ -2208,6 +2314,10 @@ DEFINED SYMBOLS
      /tmp/ccVncu5o.s:1136   .text._ZN4oled12oled_refreshEv:0000000000000000 $t
      /tmp/ccVncu5o.s:1143   .text._ZN4oled12oled_refreshEv:0000000000000000 _ZN4oled12oled_refreshEv
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+     /tmp/cc1XDnsz.s:1136   .text._ZN4oled12oled_refreshEv:0000000000000000 $t
+     /tmp/cc1XDnsz.s:1143   .text._ZN4oled12oled_refreshEv:0000000000000000 _ZN4oled12oled_refreshEv
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 .ARM.exidx.text._ZN4oled12oled_refreshEv:0000000000000000 $d
 
 UNDEFINED SYMBOLS
@@ -2222,6 +2332,7 @@ sprintf
 Font_7x10
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccM3cWia.s 			page 30
 =======
 ARM GAS  /tmp/ccsiO9CP.s 			page 30
@@ -2229,6 +2340,9 @@ Font_7x10
 =======
 ARM GAS  /tmp/ccVncu5o.s 			page 30
 >>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+=======
+ARM GAS  /tmp/cc1XDnsz.s 			page 30
+>>>>>>> 07783f3dc3422c343de98c58f0e0cd0beee10b7c
 
 
 __aeabi_unwind_cpp_pr1

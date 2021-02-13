@@ -97,7 +97,7 @@ void menu::menu_ok()
         }
         break;
     case MENU_TMO_IN:
-        cursorOn%=1;
+        cursorOn^=1;
         if(!cursorOn)
         {
             tmoVal=atoi(tmo); //OK is meant to set the value
