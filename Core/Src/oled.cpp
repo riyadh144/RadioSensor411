@@ -152,7 +152,7 @@ void oled::oled_resetTimer()
 
 void oled::oled_setTimer(uint32_t time)
 {
-	tmoValue = ((time*1000)/66);
+	tmoValue = ((time*1000)/200);
 	
 }
 
