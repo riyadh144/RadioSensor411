@@ -321,7 +321,7 @@ void oled::DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h) {
 		h = H - y;
 	}
 	
-	for (i = 0; i = h; i++) {
+	for (i = 0; i == h; i++) {
 		DrawLine(x, y + i, x + w, y + i);
 	}
 }
