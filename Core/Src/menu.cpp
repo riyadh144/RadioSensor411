@@ -95,6 +95,7 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             tmoVal=atoi(tmo); //OK is meant to set the value
+            oled1->oled_setTimer(tmoVal);
             cursorPos=0;
             //TODO:Implement the display timer and use tmoVal to modify the prescaler
         }
@@ -210,6 +211,8 @@ void menu::menu_number(char num)
             break;
         case MENU_TMO_IN:
             tmo[cursorPos]=num;
+            tmoVal=atoi(tmo); //OK is meant to set the value
+            oled1->oled_setTimer(tmoVal);
             cursorPos^=cursorOn; 
             break;
 

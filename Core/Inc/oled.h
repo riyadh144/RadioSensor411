@@ -20,7 +20,7 @@ uint8_t address;
 uint8_t comm[2];
 
 uint32_t tmoCounter=0;
-uint32_t tmoValue=0; // max
+uint32_t tmoValue=60; // max
 
 
 

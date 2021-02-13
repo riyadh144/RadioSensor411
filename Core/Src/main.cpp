@@ -408,6 +408,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
       //oled1.oled_update_battery(adc_bat.adc_getValue()); //Get the battery voltage and print it
       menu1.menu_print();//update the menu portion of the display
       oled1.oled_refresh();//Send the data to the display
+      //oled1.Counter_increment();
       //char h[]="oled";
       //uart1.send_recive(h,h);
 
