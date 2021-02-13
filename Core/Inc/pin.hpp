@@ -91,7 +91,6 @@ uint8_t write(OnOff onoff);
 
     
 
-    ~pin();
 };
 
 

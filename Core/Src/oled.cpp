@@ -90,7 +90,7 @@ void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 {	
 	uint8_t strItr=0;
 	// //loop through the chars in the string
-	while(strItr<strlen(string))
+	while(strItr<=strlen(string)+3)
 	{
 		int i=0;
 		int j=0;
@@ -114,7 +114,7 @@ void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 				}
 			}
 		}
-		x=x+i-2;
+		x=x+i-size.FontWidth/2;
 
 
 	
@@ -124,7 +124,7 @@ void oled::oled_print(char* string, FontDef_t size, uint16_t x , uint16_t y)
 }
 void oled::oled_update_battery(float voltage)
 {
-	char volt [6];
+	char volt [20];
 	sprintf(volt,"%.1fv",voltage);
 	oled_print(volt,Font_7x10,90,0);
 }

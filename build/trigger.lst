@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc53fipm.s 			page 1
 =======
 ARM GAS  /tmp/cc6l4sf5.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccR9t7Ar.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/cc6l4sf5.s 			page 1
   10:Core/Src/trigger.cpp **** {
   11:Core/Src/trigger.cpp **** 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc53fipm.s 			page 2
 =======
 ARM GAS  /tmp/cc6l4sf5.s 			page 2
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccR9t7Ar.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   12:Core/Src/trigger.cpp ****       /* EXTI interrupt init  on pin PB2 */
@@ -142,10 +150,14 @@ ARM GAS  /tmp/cc6l4sf5.s 			page 1
   92              		.fnend
   94              		.global	_ZN7triggerC1EP12GPIO_TypeDefNS_9PinNumberENS_4PullE
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc53fipm.s 			page 3
 =======
 ARM GAS  /tmp/cc6l4sf5.s 			page 3
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccR9t7Ar.s 			page 3
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   95              		.thumb_set _ZN7triggerC1EP12GPIO_TypeDefNS_9PinNumberENS_4PullE,_ZN7triggerC2EP12GPIO_TypeDefNS_9P
@@ -206,10 +218,14 @@ ARM GAS  /tmp/cc6l4sf5.s 			page 1
  145              		.loc 1 30 1 is_stmt 1 view -0
  146              		.cfi_startproc
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc53fipm.s 			page 4
 =======
 ARM GAS  /tmp/cc6l4sf5.s 			page 4
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccR9t7Ar.s 			page 4
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  147              		@ args = 0, pretend = 0, frame = 0
@@ -269,14 +285,19 @@ ARM GAS  /tmp/cc6l4sf5.s 			page 1
  197              		.file 8 "Core/Inc/trigger.hpp"
  198              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc53fipm.s 			page 5
 =======
 ARM GAS  /tmp/cc6l4sf5.s 			page 5
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccR9t7Ar.s 			page 5
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 trigger.cpp
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/cc53fipm.s:18     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 $t
      /tmp/cc53fipm.s:26     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 _ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE
@@ -296,18 +317,28 @@ DEFINED SYMBOLS
      /tmp/cc6l4sf5.s:18     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 $t
      /tmp/cc6l4sf5.s:26     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 _ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE
      /tmp/cc6l4sf5.s:89     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000028 $d
+=======
+     /tmp/ccR9t7Ar.s:18     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 $t
+     /tmp/ccR9t7Ar.s:26     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 _ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE
+     /tmp/ccR9t7Ar.s:89     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000028 $d
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 .ARM.exidx.text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 $d
-     /tmp/cc6l4sf5.s:26     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 _ZN7triggerC1EP12GPIO_TypeDefNS_9PinNumberENS_4PullE
-     /tmp/cc6l4sf5.s:97     .text._ZN7trigger4InitEv:0000000000000000 $t
-     /tmp/cc6l4sf5.s:104    .text._ZN7trigger4InitEv:0000000000000000 _ZN7trigger4InitEv
+     /tmp/ccR9t7Ar.s:26     .text._ZN7triggerC2EP12GPIO_TypeDefNS_9PinNumberENS_4PullE:0000000000000000 _ZN7triggerC1EP12GPIO_TypeDefNS_9PinNumberENS_4PullE
+     /tmp/ccR9t7Ar.s:97     .text._ZN7trigger4InitEv:0000000000000000 $t
+     /tmp/ccR9t7Ar.s:104    .text._ZN7trigger4InitEv:0000000000000000 _ZN7trigger4InitEv
 .ARM.extab.text._ZN7trigger4InitEv:0000000000000000 $d
 .ARM.exidx.text._ZN7trigger4InitEv:0000000000000000 $d
-     /tmp/cc6l4sf5.s:134    .text._ZN7trigger7SetEdgeEh:0000000000000000 $t
-     /tmp/cc6l4sf5.s:141    .text._ZN7trigger7SetEdgeEh:0000000000000000 _ZN7trigger7SetEdgeEh
+     /tmp/ccR9t7Ar.s:134    .text._ZN7trigger7SetEdgeEh:0000000000000000 $t
+     /tmp/ccR9t7Ar.s:141    .text._ZN7trigger7SetEdgeEh:0000000000000000 _ZN7trigger7SetEdgeEh
 .ARM.exidx.text._ZN7trigger7SetEdgeEh:0000000000000000 $d
+<<<<<<< HEAD
      /tmp/cc6l4sf5.s:162    .text._ZN7trigger7SetPullEh:0000000000000000 $t
      /tmp/cc6l4sf5.s:169    .text._ZN7trigger7SetPullEh:0000000000000000 _ZN7trigger7SetPullEh
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+     /tmp/ccR9t7Ar.s:162    .text._ZN7trigger7SetPullEh:0000000000000000 $t
+     /tmp/ccR9t7Ar.s:169    .text._ZN7trigger7SetPullEh:0000000000000000 _ZN7trigger7SetPullEh
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 .ARM.exidx.text._ZN7trigger7SetPullEh:0000000000000000 $d
 
 UNDEFINED SYMBOLS

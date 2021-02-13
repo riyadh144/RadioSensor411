@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccM3CDtJ.s 			page 1
 =======
 ARM GAS  /tmp/ccgGbsEU.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/cc9dBfg4.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -32,10 +36,14 @@ ARM GAS  /tmp/ccgGbsEU.s 			page 1
   25              		.file 8 "/usr/include/newlib/sys/lock.h"
   26              		.file 9 "/usr/include/newlib/stdlib.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccM3CDtJ.s 			page 2
 =======
 ARM GAS  /tmp/ccgGbsEU.s 			page 2
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/cc9dBfg4.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS

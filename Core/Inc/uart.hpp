@@ -27,7 +27,8 @@ class uart{
 
     public:
     uart(uart_num uartNum, uint32_t baudrate_);
-    void send(char * string);
+    void init();
+    void send(char* string);
     /**
      * @brief set the DMA to recieve
      * 

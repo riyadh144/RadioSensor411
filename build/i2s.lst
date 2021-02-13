@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyMs1v1.s 			page 1
 =======
 ARM GAS  /tmp/ccFGQf9r.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccw1WQ6j.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -62,6 +66,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
   13:Core/Src/i2s.cpp ****         case I2S4:
   14:Core/Src/i2s.cpp ****             i2sx.Instance = SPI4;
   15:Core/Src/i2s.cpp ****             break;
+<<<<<<< HEAD
 <<<<<<< HEAD
   16:Core/Src/i2s.cpp ****     }
   17:Core/Src/i2s.cpp ****     __HAL_I2S_DISABLE(&i2sx);
@@ -463,6 +468,9 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  312              	.LBB3:
 =======
 ARM GAS  /tmp/ccFGQf9r.s 			page 2
+=======
+ARM GAS  /tmp/ccw1WQ6j.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   16:Core/Src/i2s.cpp ****     }
@@ -648,7 +656,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
   84              		.global	_ZN3i2s13set_audiofreqEm
   85              		.syntax unified
   86              		.thumb
-ARM GAS  /tmp/ccFGQf9r.s 			page 3
+ARM GAS  /tmp/ccw1WQ6j.s 			page 3
 
 
   87              		.thumb_func
@@ -708,7 +716,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  119 0012 8261     		str	r2, [r0, #24]
   42:Core/Src/i2s.cpp ****   i2sx.Init.DataFormat  = I2S_DATAFORMAT_16B;
  120              		.loc 1 42 3 is_stmt 1 view .LVU25
-ARM GAS  /tmp/ccFGQf9r.s 			page 4
+ARM GAS  /tmp/ccw1WQ6j.s 			page 4
 
 
  121              		.loc 1 42 25 is_stmt 0 view .LVU26
@@ -768,7 +776,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  162              	_ZN3i2s16config_pll_clockEm:
  163              		.fnstart
  164              	.LVL4:
-ARM GAS  /tmp/ccFGQf9r.s 			page 5
+ARM GAS  /tmp/ccw1WQ6j.s 			page 5
 
 
  165              	.LFB133:
@@ -828,7 +836,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  209 001c 8A42     		cmp	r2, r1
  210 001e F5D1     		bne	.L14
   66:Core/Src/i2s.cpp ****     {
-ARM GAS  /tmp/ccFGQf9r.s 			page 6
+ARM GAS  /tmp/ccw1WQ6j.s 			page 6
 
 
   67:Core/Src/i2s.cpp ****         freqindex = index;
@@ -888,7 +896,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  248 0046 6846     		mov	r0, sp
  249 0048 FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
  250              	.LVL14:
-ARM GAS  /tmp/ccFGQf9r.s 			page 7
+ARM GAS  /tmp/ccw1WQ6j.s 			page 7
 
 
  251              	.L12:
@@ -948,7 +956,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  286              		.section	.text._ZN3i2s4initEm,"ax",%progbits
  287              		.align	1
  288              		.global	_ZN3i2s4initEm
-ARM GAS  /tmp/ccFGQf9r.s 			page 8
+ARM GAS  /tmp/ccw1WQ6j.s 			page 8
 
 
  289              		.syntax unified
@@ -1008,7 +1016,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  335              		.section	.text._ZN3i2s4playEPtm,"ax",%progbits
  336              		.align	1
  337              		.global	_ZN3i2s4playEPtm
-ARM GAS  /tmp/ccFGQf9r.s 			page 9
+ARM GAS  /tmp/ccw1WQ6j.s 			page 9
 
 
  338              		.syntax unified
@@ -1068,8 +1076,12 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  387              		.thumb_func
  388              		.fpu fpv4-sp-d16
  390              	_ZN3i2s13change_bufferEPtm:
+<<<<<<< HEAD
 ARM GAS  /tmp/ccFGQf9r.s 			page 10
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccw1WQ6j.s 			page 10
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  391              		.fnstart
@@ -1144,8 +1156,12 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  437              		@ frame_needed = 0, uses_anonymous_args = 0
  438              		.loc 1 110 1 is_stmt 0 view .LVU106
  439 0000 08B5     		push	{r3, lr}
+<<<<<<< HEAD
 ARM GAS  /tmp/ccFGQf9r.s 			page 11
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccw1WQ6j.s 			page 11
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  440              		.save {r3, lr}
@@ -1266,7 +1282,7 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  491              		.syntax unified
  492              		.thumb
  493              		.thumb_func
-ARM GAS  /tmp/ccFGQf9r.s 			page 12
+ARM GAS  /tmp/ccw1WQ6j.s 			page 12
 
 
  494              		.fpu fpv4-sp-d16
@@ -1301,12 +1317,17 @@ ARM GAS  /tmp/ccFGQf9r.s 			page 1
  521              		.file 9 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h"
  522              		.file 10 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
  523              		.file 11 "Core/Inc/i2s.hpp"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccFGQf9r.s 			page 13
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccw1WQ6j.s 			page 13
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 i2s.cpp
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/ccyMs1v1.s:18     .text._ZN3i2s13set_audiofreqEm:0000000000000000 $t
      /tmp/ccyMs1v1.s:26     .text._ZN3i2s13set_audiofreqEm:0000000000000000 _ZN3i2s13set_audiofreqEm
@@ -1343,34 +1364,39 @@ DEFINED SYMBOLS
      /tmp/ccFGQf9r.s:18     .text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000000 $t
      /tmp/ccFGQf9r.s:26     .text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000000 _ZN3i2s10set_handleENS_7i2s_numE
      /tmp/ccFGQf9r.s:74     .text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000020 $d
+=======
+     /tmp/ccw1WQ6j.s:18     .text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:26     .text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000000 _ZN3i2s10set_handleENS_7i2s_numE
+     /tmp/ccw1WQ6j.s:74     .text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000020 $d
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 .ARM.exidx.text._ZN3i2s10set_handleENS_7i2s_numE:0000000000000000 $d
-     /tmp/ccFGQf9r.s:83     .text._ZN3i2s13set_audiofreqEm:0000000000000000 $t
-     /tmp/ccFGQf9r.s:90     .text._ZN3i2s13set_audiofreqEm:0000000000000000 _ZN3i2s13set_audiofreqEm
+     /tmp/ccw1WQ6j.s:83     .text._ZN3i2s13set_audiofreqEm:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:90     .text._ZN3i2s13set_audiofreqEm:0000000000000000 _ZN3i2s13set_audiofreqEm
 .ARM.exidx.text._ZN3i2s13set_audiofreqEm:0000000000000000 $d
-     /tmp/ccFGQf9r.s:155    .text._ZN3i2s16config_pll_clockEm:0000000000000000 $t
-     /tmp/ccFGQf9r.s:162    .text._ZN3i2s16config_pll_clockEm:0000000000000000 _ZN3i2s16config_pll_clockEm
+     /tmp/ccw1WQ6j.s:155    .text._ZN3i2s16config_pll_clockEm:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:162    .text._ZN3i2s16config_pll_clockEm:0000000000000000 _ZN3i2s16config_pll_clockEm
 .ARM.exidx.text._ZN3i2s16config_pll_clockEm:0000000000000000 $d
-     /tmp/ccFGQf9r.s:287    .text._ZN3i2s4initEm:0000000000000000 $t
-     /tmp/ccFGQf9r.s:294    .text._ZN3i2s4initEm:0000000000000000 _ZN3i2s4initEm
+     /tmp/ccw1WQ6j.s:287    .text._ZN3i2s4initEm:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:294    .text._ZN3i2s4initEm:0000000000000000 _ZN3i2s4initEm
    .ARM.exidx.text._ZN3i2s4initEm:0000000000000000 $d
-     /tmp/ccFGQf9r.s:336    .text._ZN3i2s4playEPtm:0000000000000000 $t
-     /tmp/ccFGQf9r.s:343    .text._ZN3i2s4playEPtm:0000000000000000 _ZN3i2s4playEPtm
+     /tmp/ccw1WQ6j.s:336    .text._ZN3i2s4playEPtm:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:343    .text._ZN3i2s4playEPtm:0000000000000000 _ZN3i2s4playEPtm
  .ARM.extab.text._ZN3i2s4playEPtm:0000000000000000 $d
  .ARM.exidx.text._ZN3i2s4playEPtm:0000000000000000 $d
-     /tmp/ccFGQf9r.s:383    .text._ZN3i2s13change_bufferEPtm:0000000000000000 $t
-     /tmp/ccFGQf9r.s:390    .text._ZN3i2s13change_bufferEPtm:0000000000000000 _ZN3i2s13change_bufferEPtm
+     /tmp/ccw1WQ6j.s:383    .text._ZN3i2s13change_bufferEPtm:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:390    .text._ZN3i2s13change_bufferEPtm:0000000000000000 _ZN3i2s13change_bufferEPtm
 .ARM.extab.text._ZN3i2s13change_bufferEPtm:0000000000000000 $d
 .ARM.exidx.text._ZN3i2s13change_bufferEPtm:0000000000000000 $d
-     /tmp/ccFGQf9r.s:423    .text._ZN3i2s5pauseEv:0000000000000000 $t
-     /tmp/ccFGQf9r.s:430    .text._ZN3i2s5pauseEv:0000000000000000 _ZN3i2s5pauseEv
+     /tmp/ccw1WQ6j.s:423    .text._ZN3i2s5pauseEv:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:430    .text._ZN3i2s5pauseEv:0000000000000000 _ZN3i2s5pauseEv
   .ARM.extab.text._ZN3i2s5pauseEv:0000000000000000 $d
   .ARM.exidx.text._ZN3i2s5pauseEv:0000000000000000 $d
-     /tmp/ccFGQf9r.s:456    .text._ZN3i2s4stopEv:0000000000000000 $t
-     /tmp/ccFGQf9r.s:463    .text._ZN3i2s4stopEv:0000000000000000 _ZN3i2s4stopEv
+     /tmp/ccw1WQ6j.s:456    .text._ZN3i2s4stopEv:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:463    .text._ZN3i2s4stopEv:0000000000000000 _ZN3i2s4stopEv
    .ARM.extab.text._ZN3i2s4stopEv:0000000000000000 $d
    .ARM.exidx.text._ZN3i2s4stopEv:0000000000000000 $d
-     /tmp/ccFGQf9r.s:489    .text._ZN3i2s13error_handlerEv:0000000000000000 $t
-     /tmp/ccFGQf9r.s:496    .text._ZN3i2s13error_handlerEv:0000000000000000 _ZN3i2s13error_handlerEv
+     /tmp/ccw1WQ6j.s:489    .text._ZN3i2s13error_handlerEv:0000000000000000 $t
+     /tmp/ccw1WQ6j.s:496    .text._ZN3i2s13error_handlerEv:0000000000000000 _ZN3i2s13error_handlerEv
 .ARM.exidx.text._ZN3i2s13error_handlerEv:0000000000000000 $d
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
 

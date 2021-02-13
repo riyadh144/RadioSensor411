@@ -36,6 +36,7 @@ build/main.o: Core/Src/main.cpp Core/Inc/main.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h \
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h \
+<<<<<<< HEAD
  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h Core/Inc/oled.h \
  Core/Inc/fonts.h Core/Inc/menu.hpp Core/Inc/oled.h Core/Inc/adc.hpp \
  Core/Inc/pin.hpp Core/Inc/sa818.h Core/Inc/pin.hpp Core/Inc/uart.hpp \
@@ -44,13 +45,24 @@ build/main.o: Core/Src/main.cpp Core/Inc/main.h \
 =======
  Core/Inc/uart.hpp Core/Inc/trigger.hpp FATFS/App/fatfs.h \
  Middlewares/Third_Party/FatFs/src/ff.h \
+=======
+ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h \
+ FATFS/App/fatfs.h Middlewares/Third_Party/FatFs/src/ff.h \
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
  Middlewares/Third_Party/FatFs/src/integer.h FATFS/Target/ffconf.h \
  FATFS/Target/bsp_driver_sd.h \
  Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
  Middlewares/Third_Party/FatFs/src/diskio.h \
  Middlewares/Third_Party/FatFs/src/ff.h FATFS/Target/sd_diskio.h \
+<<<<<<< HEAD
  Core/Inc/wav_player.hpp Core/Inc/i2s.hpp
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ Core/Inc/uart.hpp Core/Inc/pin.hpp Core/Inc/oled.h Core/Inc/fonts.h \
+ Core/Inc/fonts.h Core/Inc/menu.hpp Core/Inc/oled.h Core/Inc/pin.hpp \
+ Core/Inc/uart.hpp Core/Inc/sa818.h Core/Inc/i2s.hpp \
+ Core/Inc/wav_player.hpp Core/Inc/i2s.hpp Core/Inc/adc.hpp
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 Core/Inc/main.h:
 
@@ -134,30 +146,6 @@ Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h:
 
 Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h:
 
-Core/Inc/oled.h:
-
-Core/Inc/fonts.h:
-
-Core/Inc/menu.hpp:
-
-Core/Inc/oled.h:
-
-Core/Inc/adc.hpp:
-
-Core/Inc/pin.hpp:
-
-Core/Inc/sa818.h:
-
-Core/Inc/pin.hpp:
-
-Core/Inc/uart.hpp:
-
-Core/Inc/uart.hpp:
-
-Core/Inc/trigger.hpp:
-<<<<<<< HEAD
-=======
-
 FATFS/App/fatfs.h:
 
 Middlewares/Third_Party/FatFs/src/ff.h:
@@ -176,7 +164,40 @@ Middlewares/Third_Party/FatFs/src/ff.h:
 
 FATFS/Target/sd_diskio.h:
 
+Core/Inc/uart.hpp:
+
+<<<<<<< HEAD
+Core/Inc/trigger.hpp:
+<<<<<<< HEAD
+=======
+=======
+Core/Inc/pin.hpp:
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
+
+Core/Inc/oled.h:
+
+Core/Inc/fonts.h:
+
+Core/Inc/fonts.h:
+
+Core/Inc/menu.hpp:
+
+Core/Inc/oled.h:
+
+Core/Inc/pin.hpp:
+
+Core/Inc/uart.hpp:
+
+Core/Inc/sa818.h:
+
+Core/Inc/i2s.hpp:
+
 Core/Inc/wav_player.hpp:
 
 Core/Inc/i2s.hpp:
+<<<<<<< HEAD
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+
+Core/Inc/adc.hpp:
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f

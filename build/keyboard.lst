@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccUvwpLx.s 			page 1
 =======
 ARM GAS  /tmp/ccbR934M.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccp8d2nC.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -27,10 +31,14 @@ ARM GAS  /tmp/ccbR934M.s 			page 1
   20              		.file 3 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
   21              		.file 4 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccUvwpLx.s 			page 2
 =======
 ARM GAS  /tmp/ccbR934M.s 			page 2
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccp8d2nC.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS

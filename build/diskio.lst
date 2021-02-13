@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 1
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
   28:Middlewares/Third_Party/FatFs/src/diskio.c **** /* Private function prototypes -----------------------------------------------*/
   29:Middlewares/Third_Party/FatFs/src/diskio.c **** /* Private functions ---------------------------------------------------------*/
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 2
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 2
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   30:Middlewares/Third_Party/FatFs/src/diskio.c **** 
@@ -127,10 +135,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
   71              		.fpu fpv4-sp-d16
   73              	disk_initialize:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 3
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 3
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 3
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   74              	.LVL3:
@@ -191,10 +203,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
   61:Middlewares/Third_Party/FatFs/src/diskio.c ****   }
   62:Middlewares/Third_Party/FatFs/src/diskio.c ****   return stat;
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 4
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 4
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 4
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  113              		.loc 1 62 3 is_stmt 1 view .LVU23
@@ -255,10 +271,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
  151              		.cfi_offset 5, -8
  152              		.cfi_offset 14, -4
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 5
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 5
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 5
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   80:Middlewares/Third_Party/FatFs/src/diskio.c ****   DRESULT res;
@@ -319,10 +339,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
  101:Middlewares/Third_Party/FatFs/src/diskio.c **** {
  189              		.loc 1 101 1 is_stmt 1 view -0
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 6
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 6
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 6
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  190              		.cfi_startproc
@@ -383,10 +407,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
  112:Middlewares/Third_Party/FatFs/src/diskio.c ****   * @param  cmd: Control code
  113:Middlewares/Third_Party/FatFs/src/diskio.c ****   * @param  *buff: Buffer to send/receive control data
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 7
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 7
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 7
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  114:Middlewares/Third_Party/FatFs/src/diskio.c ****   * @retval DRESULT: Operation result
@@ -447,10 +475,14 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
  280              	get_fattime:
  281              	.LFB135:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 8
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 8
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 8
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  128:Middlewares/Third_Party/FatFs/src/diskio.c **** #endif /* _USE_IOCTL == 1 */
@@ -490,14 +522,19 @@ ARM GAS  /tmp/ccVsaToS.s 			page 1
  306              		.file 12 "/usr/include/newlib/stdlib.h"
  307              		.file 13 "Middlewares/Third_Party/FatFs/src/ff_gen_drv.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cciSYRCP.s 			page 9
 =======
 ARM GAS  /tmp/ccVsaToS.s 			page 9
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccrfwv43.s 			page 9
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 diskio.c
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/cciSYRCP.s:18     .text.disk_status:0000000000000000 $t
      /tmp/cciSYRCP.s:26     .text.disk_status:0000000000000000 disk_status
@@ -535,6 +572,25 @@ DEFINED SYMBOLS
      /tmp/ccVsaToS.s:273    .text.get_fattime:0000000000000000 $t
      /tmp/ccVsaToS.s:280    .text.get_fattime:0000000000000000 get_fattime
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+     /tmp/ccrfwv43.s:18     .text.disk_status:0000000000000000 $t
+     /tmp/ccrfwv43.s:26     .text.disk_status:0000000000000000 disk_status
+     /tmp/ccrfwv43.s:61     .text.disk_status:0000000000000014 $d
+     /tmp/ccrfwv43.s:66     .text.disk_initialize:0000000000000000 $t
+     /tmp/ccrfwv43.s:73     .text.disk_initialize:0000000000000000 disk_initialize
+     /tmp/ccrfwv43.s:126    .text.disk_initialize:0000000000000024 $d
+     /tmp/ccrfwv43.s:131    .text.disk_read:0000000000000000 $t
+     /tmp/ccrfwv43.s:138    .text.disk_read:0000000000000000 disk_read
+     /tmp/ccrfwv43.s:174    .text.disk_read:0000000000000014 $d
+     /tmp/ccrfwv43.s:179    .text.disk_write:0000000000000000 $t
+     /tmp/ccrfwv43.s:186    .text.disk_write:0000000000000000 disk_write
+     /tmp/ccrfwv43.s:222    .text.disk_write:0000000000000014 $d
+     /tmp/ccrfwv43.s:227    .text.disk_ioctl:0000000000000000 $t
+     /tmp/ccrfwv43.s:234    .text.disk_ioctl:0000000000000000 disk_ioctl
+     /tmp/ccrfwv43.s:268    .text.disk_ioctl:0000000000000014 $d
+     /tmp/ccrfwv43.s:273    .text.get_fattime:0000000000000000 $t
+     /tmp/ccrfwv43.s:280    .text.get_fattime:0000000000000000 get_fattime
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 UNDEFINED SYMBOLS
 disk

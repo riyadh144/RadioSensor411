@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccJbasMF.s 			page 1
 =======
 ARM GAS  /tmp/ccisE8el.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/cc7k6QS5.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -62,7 +66,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
    1:Core/Inc/i2s.hpp **** #ifndef I2S_HPP
    2:Core/Inc/i2s.hpp **** #define I2S_HPP
    3:Core/Inc/i2s.hpp **** 
-ARM GAS  /tmp/ccisE8el.s 			page 2
+ARM GAS  /tmp/cc7k6QS5.s 			page 2
 
 
    4:Core/Inc/i2s.hpp **** #include "stm32f4xx.h"
@@ -195,7 +199,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
    7:Core/Src/wav_player.cpp ****     //In the future if we manage to make a FATFS in C++ we pass that on
    8:Core/Src/wav_player.cpp **** }
   97              		.loc 1 8 1 view .LVU8
-ARM GAS  /tmp/ccisE8el.s 			page 3
+ARM GAS  /tmp/cc7k6QS5.s 			page 3
 
 
   98 0062 2846     		mov	r0, r5
@@ -255,7 +259,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  147              		.loc 1 15 12 is_stmt 0 view .LVU16
  148 000a 00F1A805 		add	r5, r0, #168
  149 000e 0122     		movs	r2, #1
-ARM GAS  /tmp/ccisE8el.s 			page 4
+ARM GAS  /tmp/cc7k6QS5.s 			page 4
 
 
  150 0010 2846     		mov	r0, r5
@@ -316,7 +320,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  186 0032 079A     		ldr	r2, [sp, #28]
  187 0034 42F2E003 		movw	r3, #8416
  188 0038 E250     		str	r2, [r4, r3]
-ARM GAS  /tmp/ccisE8el.s 			page 5
+ARM GAS  /tmp/cc7k6QS5.s 			page 5
 
 
   25:Core/Src/wav_player.cpp **** 
@@ -467,7 +471,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  234 0012 FFF7FEFF 		bl	_ZN3i2s4initEm
  235              	.LVL12:
   37:Core/Src/wav_player.cpp ****   //Read Audio data from USB Disk
-ARM GAS  /tmp/ccisE8el.s 			page 6
+ARM GAS  /tmp/cc7k6QS5.s 			page 6
 
 
   38:Core/Src/wav_player.cpp ****   f_lseek(&wavFile, 0);
@@ -527,7 +531,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  284              		.thumb
  285              		.thumb_func
  286              		.fpu fpv4-sp-d16
-ARM GAS  /tmp/ccisE8el.s 			page 7
+ARM GAS  /tmp/cc7k6QS5.s 			page 7
 
 
  288              	_ZN10wav_player4stopEv:
@@ -732,7 +736,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
   95:Core/Src/wav_player.cpp **** /**
   96:Core/Src/wav_player.cpp ****  * @brief WAV stop
   97:Core/Src/wav_player.cpp ****  */
-ARM GAS  /tmp/ccisE8el.s 			page 8
+ARM GAS  /tmp/cc7k6QS5.s 			page 8
 
 
   98:Core/Src/wav_player.cpp **** void wav_player::stop(void)
@@ -1079,7 +1083,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  339              	.LCFI7:
  340              		.cfi_def_cfa_offset 8
  341              		.cfi_offset 3, -8
-ARM GAS  /tmp/ccisE8el.s 			page 9
+ARM GAS  /tmp/cc7k6QS5.s 			page 9
 
 
  342              		.cfi_offset 14, -4
@@ -1139,7 +1143,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  392              		.fpu fpv4-sp-d16
  394              	_ZN10wav_player11isEndOfFileEv:
  395              		.fnstart
-ARM GAS  /tmp/ccisE8el.s 			page 10
+ARM GAS  /tmp/cc7k6QS5.s 			page 10
 
 
  396              	.LVL22:
@@ -1199,7 +1203,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  440              		.loc 1 125 3 is_stmt 1 view .LVU74
  441              		.loc 1 125 19 is_stmt 0 view .LVU75
  442 0008 42F2E402 		movw	r2, #8420
-ARM GAS  /tmp/ccisE8el.s 			page 11
+ARM GAS  /tmp/cc7k6QS5.s 			page 11
 
 
  443 000c 8350     		str	r3, [r0, r2]
@@ -1259,7 +1263,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  492              	.L27:
   53:Core/Src/wav_player.cpp ****     playerReadBytes = 0;
  493              		.loc 1 53 3 is_stmt 1 view .LVU83
-ARM GAS  /tmp/ccisE8el.s 			page 12
+ARM GAS  /tmp/cc7k6QS5.s 			page 12
 
 
   54:Core/Src/wav_player.cpp ****     playerControlSM = PLAYER_CONTROL_Idle;
@@ -1319,7 +1323,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  533              		.loc 1 63 7 is_stmt 1 view .LVU98
   63:Core/Src/wav_player.cpp ****       playerControlSM = PLAYER_CONTROL_EndOfFile;
  534              		.loc 1 63 23 is_stmt 0 view .LVU99
-ARM GAS  /tmp/ccisE8el.s 			page 13
+ARM GAS  /tmp/cc7k6QS5.s 			page 13
 
 
  535 0058 42F2DC03 		movw	r3, #8412
@@ -1379,7 +1383,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
   77:Core/Src/wav_player.cpp ****     }
  575              		.loc 1 77 23 is_stmt 0 view .LVU114
  576 0096 42F2DC02 		movw	r2, #8412
-ARM GAS  /tmp/ccisE8el.s 			page 14
+ARM GAS  /tmp/cc7k6QS5.s 			page 14
 
 
  577 009a A358     		ldr	r3, [r4, r2]
@@ -1439,7 +1443,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
   90:Core/Src/wav_player.cpp ****     break;
  617              		.loc 1 90 5 is_stmt 1 view .LVU129
   90:Core/Src/wav_player.cpp ****     break;
-ARM GAS  /tmp/ccisE8el.s 			page 15
+ARM GAS  /tmp/cc7k6QS5.s 			page 15
 
 
  618              		.loc 1 90 21 is_stmt 0 view .LVU130
@@ -1499,7 +1503,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  666              	_ZN10wav_player22cplt_transfer_callbackEv:
  667              		.fnstart
  668              	.LVL38:
-ARM GAS  /tmp/ccisE8el.s 			page 16
+ARM GAS  /tmp/cc7k6QS5.s 			page 16
 
 
  669              	.LFB152:
@@ -1559,7 +1563,7 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  719              		.file 3 "/usr/lib/gcc/arm-none-eabi/9.2.1/include/stdint.h"
  720              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
  721              		.file 5 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
-ARM GAS  /tmp/ccisE8el.s 			page 17
+ARM GAS  /tmp/cc7k6QS5.s 			page 17
 
 
  722              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f411xe.h"
@@ -1584,12 +1588,17 @@ ARM GAS  /tmp/ccisE8el.s 			page 1
  741              		.file 25 "FATFS/App/fatfs.h"
  742              		.file 26 "Core/Inc/wav_player.hpp"
  743              		.file 27 "<built-in>"
+<<<<<<< HEAD
 ARM GAS  /tmp/ccisE8el.s 			page 18
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/cc7k6QS5.s 			page 18
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 wav_player.cpp
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/ccJbasMF.s:18     .text._ZN10wav_playerC2Ev:0000000000000000 $t
      /tmp/ccJbasMF.s:26     .text._ZN10wav_playerC2Ev:0000000000000000 _ZN10wav_playerC2Ev
@@ -1619,42 +1628,52 @@ DEFINED SYMBOLS
      /tmp/ccisE8el.s:18     .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 $t
      /tmp/ccisE8el.s:26     .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 _ZN10wav_playerC2EN3i2s7i2s_numE
      /tmp/ccisE8el.s:105    .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000068 $d
+=======
+     /tmp/cc7k6QS5.s:18     .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 $t
+     /tmp/cc7k6QS5.s:26     .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 _ZN10wav_playerC2EN3i2s7i2s_numE
+     /tmp/cc7k6QS5.s:105    .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000068 $d
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 .ARM.exidx.text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 $d
-     /tmp/ccisE8el.s:26     .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 _ZN10wav_playerC1EN3i2s7i2s_numE
-     /tmp/ccisE8el.s:113    .text._ZN10wav_player11file_selectEPc:0000000000000000 $t
-     /tmp/ccisE8el.s:120    .text._ZN10wav_player11file_selectEPc:0000000000000000 _ZN10wav_player11file_selectEPc
+     /tmp/cc7k6QS5.s:26     .text._ZN10wav_playerC2EN3i2s7i2s_numE:0000000000000000 _ZN10wav_playerC1EN3i2s7i2s_numE
+     /tmp/cc7k6QS5.s:113    .text._ZN10wav_player11file_selectEPc:0000000000000000 $t
+     /tmp/cc7k6QS5.s:120    .text._ZN10wav_player11file_selectEPc:0000000000000000 _ZN10wav_player11file_selectEPc
 .ARM.exidx.text._ZN10wav_player11file_selectEPc:0000000000000000 $d
-     /tmp/ccisE8el.s:198    .text._ZN10wav_player4playEv:0000000000000000 $t
-     /tmp/ccisE8el.s:205    .text._ZN10wav_player4playEv:0000000000000000 _ZN10wav_player4playEv
+     /tmp/cc7k6QS5.s:198    .text._ZN10wav_player4playEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:205    .text._ZN10wav_player4playEv:0000000000000000 _ZN10wav_player4playEv
 .ARM.exidx.text._ZN10wav_player4playEv:0000000000000000 $d
-     /tmp/ccisE8el.s:281    .text._ZN10wav_player4stopEv:0000000000000000 $t
-     /tmp/ccisE8el.s:288    .text._ZN10wav_player4stopEv:0000000000000000 _ZN10wav_player4stopEv
+     /tmp/cc7k6QS5.s:281    .text._ZN10wav_player4stopEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:288    .text._ZN10wav_player4stopEv:0000000000000000 _ZN10wav_player4stopEv
 .ARM.exidx.text._ZN10wav_player4stopEv:0000000000000000 $d
-     /tmp/ccisE8el.s:321    .text._ZN10wav_player5pauseEv:0000000000000000 $t
-     /tmp/ccisE8el.s:328    .text._ZN10wav_player5pauseEv:0000000000000000 _ZN10wav_player5pauseEv
+     /tmp/cc7k6QS5.s:321    .text._ZN10wav_player5pauseEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:328    .text._ZN10wav_player5pauseEv:0000000000000000 _ZN10wav_player5pauseEv
 .ARM.extab.text._ZN10wav_player5pauseEv:0000000000000000 $d
 .ARM.exidx.text._ZN10wav_player5pauseEv:0000000000000000 $d
-     /tmp/ccisE8el.s:354    .text._ZN10wav_player6resumeEv:0000000000000000 $t
-     /tmp/ccisE8el.s:361    .text._ZN10wav_player6resumeEv:0000000000000000 _ZN10wav_player6resumeEv
+     /tmp/cc7k6QS5.s:354    .text._ZN10wav_player6resumeEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:361    .text._ZN10wav_player6resumeEv:0000000000000000 _ZN10wav_player6resumeEv
 .ARM.extab.text._ZN10wav_player6resumeEv:0000000000000000 $d
 .ARM.exidx.text._ZN10wav_player6resumeEv:0000000000000000 $d
-     /tmp/ccisE8el.s:387    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 $t
-     /tmp/ccisE8el.s:394    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 _ZN10wav_player11isEndOfFileEv
+     /tmp/cc7k6QS5.s:387    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:394    .text._ZN10wav_player11isEndOfFileEv:0000000000000000 _ZN10wav_player11isEndOfFileEv
 .ARM.exidx.text._ZN10wav_player11isEndOfFileEv:0000000000000000 $d
-     /tmp/ccisE8el.s:419    .text._ZN10wav_player5resetEv:0000000000000000 $t
-     /tmp/ccisE8el.s:426    .text._ZN10wav_player5resetEv:0000000000000000 _ZN10wav_player5resetEv
+     /tmp/cc7k6QS5.s:419    .text._ZN10wav_player5resetEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:426    .text._ZN10wav_player5resetEv:0000000000000000 _ZN10wav_player5resetEv
 .ARM.exidx.text._ZN10wav_player5resetEv:0000000000000000 $d
+<<<<<<< HEAD
      /tmp/ccisE8el.s:452    .text._ZN10wav_player7processEv:0000000000000000 $t
      /tmp/ccisE8el.s:459    .text._ZN10wav_player7processEv:0000000000000000 _ZN10wav_player7processEv
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+     /tmp/cc7k6QS5.s:452    .text._ZN10wav_player7processEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:459    .text._ZN10wav_player7processEv:0000000000000000 _ZN10wav_player7processEv
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 .ARM.exidx.text._ZN10wav_player7processEv:0000000000000000 $d
-     /tmp/ccisE8el.s:630    .text._ZN10wav_player22half_transfer_callbackEv:0000000000000000 $t
-     /tmp/ccisE8el.s:637    .text._ZN10wav_player22half_transfer_callbackEv:0000000000000000 _ZN10wav_player22half_transfer_callbackEv
+     /tmp/cc7k6QS5.s:630    .text._ZN10wav_player22half_transfer_callbackEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:637    .text._ZN10wav_player22half_transfer_callbackEv:0000000000000000 _ZN10wav_player22half_transfer_callbackEv
 .ARM.exidx.text._ZN10wav_player22half_transfer_callbackEv:0000000000000000 $d
-     /tmp/ccisE8el.s:659    .text._ZN10wav_player22cplt_transfer_callbackEv:0000000000000000 $t
-     /tmp/ccisE8el.s:666    .text._ZN10wav_player22cplt_transfer_callbackEv:0000000000000000 _ZN10wav_player22cplt_transfer_callbackEv
+     /tmp/cc7k6QS5.s:659    .text._ZN10wav_player22cplt_transfer_callbackEv:0000000000000000 $t
+     /tmp/cc7k6QS5.s:666    .text._ZN10wav_player22cplt_transfer_callbackEv:0000000000000000 _ZN10wav_player22cplt_transfer_callbackEv
 .ARM.exidx.text._ZN10wav_player22cplt_transfer_callbackEv:0000000000000000 $d
-     /tmp/ccisE8el.s:688    .rodata:0000000000000000 $d
+     /tmp/cc7k6QS5.s:688    .rodata:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 _ZN3i2s10set_handleENS_7i2s_numE

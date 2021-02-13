@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 1
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
   28:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c **** 
   29:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c **** /**
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 2
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 2
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   30:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c ****   * @brief  Links a compatible diskio driver/lun id and increments the number of active
@@ -127,10 +135,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
   66 001e 6C60     		str	r4, [r5, #4]
   48:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c ****     disk.lun[disk.nbr] = lun;
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 3
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 3
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 3
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   67              		.loc 1 48 5 is_stmt 1 view .LVU13
@@ -191,10 +203,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
  112              		.cfi_def_cfa_offset 0
  113 003e 7047     		bx	lr
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 4
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 4
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 4
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  114              	.LVL9:
@@ -255,10 +271,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
  156 0008 08BD     		pop	{r3, pc}
  157              		.cfi_endproc
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 5
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 5
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 5
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  158              	.LFE131:
@@ -319,10 +339,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
   89:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c ****     {
   90:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c ****       disk.drv[DiskNum] = 0;
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 6
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 6
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 6
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  198              		.loc 1 90 7 is_stmt 1 view .LVU52
@@ -383,10 +407,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
  242              		.cfi_endproc
  243              	.LFE132:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 7
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 7
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 7
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  245              		.section	.text.FATFS_UnLinkDriver,"ax",%progbits
@@ -447,10 +475,14 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
  116:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c **** uint8_t FATFS_GetAttachedDriversNbr(void)
  117:Middlewares/Third_Party/FatFs/src/ff_gen_drv.c **** {
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 8
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 8
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 8
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  286              		.loc 1 117 1 is_stmt 1 view -0
@@ -495,14 +527,19 @@ ARM GAS  /tmp/cc20JoiA.s 			page 1
  324              		.file 12 "/usr/include/newlib/stdlib.h"
  325              		.file 13 "Middlewares/Third_Party/FatFs/src/ff_gen_drv.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/ccyW03Vr.s 			page 9
 =======
 ARM GAS  /tmp/cc20JoiA.s 			page 9
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccaoHhQO.s 			page 9
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 ff_gen_drv.c
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/ccyW03Vr.s:18     .text.FATFS_LinkDriverEx:0000000000000000 $t
      /tmp/ccyW03Vr.s:26     .text.FATFS_LinkDriverEx:0000000000000000 FATFS_LinkDriverEx
@@ -536,5 +573,22 @@ DEFINED SYMBOLS
      /tmp/cc20JoiA.s:310    .bss.disk:0000000000000000 disk
      /tmp/cc20JoiA.s:306    .bss.disk:0000000000000000 $d
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+     /tmp/ccaoHhQO.s:18     .text.FATFS_LinkDriverEx:0000000000000000 $t
+     /tmp/ccaoHhQO.s:26     .text.FATFS_LinkDriverEx:0000000000000000 FATFS_LinkDriverEx
+     /tmp/ccaoHhQO.s:125    .text.FATFS_LinkDriverEx:0000000000000044 $d
+     /tmp/ccaoHhQO.s:130    .text.FATFS_LinkDriver:0000000000000000 $t
+     /tmp/ccaoHhQO.s:137    .text.FATFS_LinkDriver:0000000000000000 FATFS_LinkDriver
+     /tmp/ccaoHhQO.s:161    .text.FATFS_UnLinkDriverEx:0000000000000000 $t
+     /tmp/ccaoHhQO.s:168    .text.FATFS_UnLinkDriverEx:0000000000000000 FATFS_UnLinkDriverEx
+     /tmp/ccaoHhQO.s:241    .text.FATFS_UnLinkDriverEx:0000000000000038 $d
+     /tmp/ccaoHhQO.s:246    .text.FATFS_UnLinkDriver:0000000000000000 $t
+     /tmp/ccaoHhQO.s:253    .text.FATFS_UnLinkDriver:0000000000000000 FATFS_UnLinkDriver
+     /tmp/ccaoHhQO.s:277    .text.FATFS_GetAttachedDriversNbr:0000000000000000 $t
+     /tmp/ccaoHhQO.s:284    .text.FATFS_GetAttachedDriversNbr:0000000000000000 FATFS_GetAttachedDriversNbr
+     /tmp/ccaoHhQO.s:300    .text.FATFS_GetAttachedDriversNbr:0000000000000008 $d
+     /tmp/ccaoHhQO.s:310    .bss.disk:0000000000000000 disk
+     /tmp/ccaoHhQO.s:306    .bss.disk:0000000000000000 $d
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 NO UNDEFINED SYMBOLS

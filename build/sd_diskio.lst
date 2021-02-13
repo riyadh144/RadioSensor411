@@ -1,8 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 1
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 1
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 1
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
    1              		.cpu cortex-m4
@@ -63,10 +67,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
   29:FATFS/Target/sd_diskio.c **** #include "ff_gen_drv.h"
   30:FATFS/Target/sd_diskio.c **** #include "sd_diskio.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 2
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 2
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 2
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   31:FATFS/Target/sd_diskio.c **** 
@@ -127,10 +135,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
   86:FATFS/Target/sd_diskio.c **** /* can be used to modify / undefine following code or add new code */
   87:FATFS/Target/sd_diskio.c **** /* USER CODE END beforeFunctionSection */
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 3
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 3
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 3
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   88:FATFS/Target/sd_diskio.c **** 
@@ -191,10 +203,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
   71              		.align	1
   72              		.global	SD_initialize
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 4
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 4
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 4
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
   73              		.syntax unified
@@ -255,10 +271,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  107 0012 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  124:FATFS/Target/sd_diskio.c **** }
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 5
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 5
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 5
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  108              		.loc 1 124 1 view .LVU21
@@ -319,10 +339,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  152              		.loc 1 134 1 view .LVU29
  153 0006 08BD     		pop	{r3, pc}
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 6
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 6
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 6
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  154              		.cfi_endproc
@@ -383,10 +407,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  193              	.LVL12:
  194              		.loc 1 152 5 view .LVU38
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 7
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 7
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 7
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  195 0010 30B9     		cbnz	r0, .L17
@@ -447,10 +475,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  170:FATFS/Target/sd_diskio.c ****   * @brief  Writes Sector(s)
  171:FATFS/Target/sd_diskio.c ****   * @param  lun : not used
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 8
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 8
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 8
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  172:FATFS/Target/sd_diskio.c ****   * @param  *buff: Data to be written
@@ -511,10 +543,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  188:FATFS/Target/sd_diskio.c ****     {
  265              		.loc 1 188 10 discriminator 1 view .LVU58
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 9
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 9
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 9
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  266 0016 0346     		mov	r3, r0
@@ -575,10 +611,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  302              		.cfi_offset 4, -12
  303              		.cfi_offset 5, -8
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 10
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 10
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 10
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  304              		.cfi_offset 14, -4
@@ -639,10 +679,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  342              		.loc 1 227 5 is_stmt 1 view .LVU75
  343              	.LVL29:
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 11
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 11
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 11
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  228:FATFS/Target/sd_diskio.c ****     break;
@@ -703,10 +747,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  382              		.loc 1 242 5 view .LVU93
  241:FATFS/Target/sd_diskio.c ****     res = RES_OK;
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 12
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 12
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 12
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  383              		.loc 1 241 9 is_stmt 0 view .LVU94
@@ -767,10 +815,14 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  434              		.file 6 "Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"
  435              		.file 7 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 13
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 13
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 13
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
  436              		.file 8 "Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"
@@ -783,14 +835,19 @@ ARM GAS  /tmp/ccAPqUfA.s 			page 1
  443              		.file 15 "FATFS/Target/sd_diskio.h"
  444              		.file 16 "FATFS/Target/bsp_driver_sd.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 ARM GAS  /tmp/cc8L0aFy.s 			page 14
 =======
 ARM GAS  /tmp/ccAPqUfA.s 			page 14
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+ARM GAS  /tmp/ccuGiA9I.s 			page 14
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 sd_diskio.c
+<<<<<<< HEAD
 <<<<<<< HEAD
      /tmp/cc8L0aFy.s:18     .text.SD_CheckStatus:0000000000000000 $t
      /tmp/cc8L0aFy.s:25     .text.SD_CheckStatus:0000000000000000 SD_CheckStatus
@@ -834,6 +891,28 @@ DEFINED SYMBOLS
      /tmp/ccAPqUfA.s:416    .data.Stat:0000000000000000 Stat
      /tmp/ccAPqUfA.s:419    .rodata.SD_Driver:0000000000000000 $d
 >>>>>>> 8c3342ba7dae04446312e2834acd3832612e2df6
+=======
+     /tmp/ccuGiA9I.s:18     .text.SD_CheckStatus:0000000000000000 $t
+     /tmp/ccuGiA9I.s:25     .text.SD_CheckStatus:0000000000000000 SD_CheckStatus
+     /tmp/ccuGiA9I.s:66     .text.SD_CheckStatus:0000000000000020 $d
+     /tmp/ccuGiA9I.s:71     .text.SD_initialize:0000000000000000 $t
+     /tmp/ccuGiA9I.s:78     .text.SD_initialize:0000000000000000 SD_initialize
+     /tmp/ccuGiA9I.s:123    .text.SD_initialize:0000000000000024 $d
+     /tmp/ccuGiA9I.s:128    .text.SD_status:0000000000000000 $t
+     /tmp/ccuGiA9I.s:135    .text.SD_status:0000000000000000 SD_status
+     /tmp/ccuGiA9I.s:158    .text.SD_read:0000000000000000 $t
+     /tmp/ccuGiA9I.s:165    .text.SD_read:0000000000000000 SD_read
+     /tmp/ccuGiA9I.s:221    .text.SD_write:0000000000000000 $t
+     /tmp/ccuGiA9I.s:228    .text.SD_write:0000000000000000 SD_write
+     /tmp/ccuGiA9I.s:284    .text.SD_ioctl:0000000000000000 $t
+     /tmp/ccuGiA9I.s:291    .text.SD_ioctl:0000000000000000 SD_ioctl
+     /tmp/ccuGiA9I.s:327    .text.SD_ioctl:000000000000001a $d
+     /tmp/ccuGiA9I.s:331    .text.SD_ioctl:000000000000001e $t
+     /tmp/ccuGiA9I.s:407    .text.SD_ioctl:0000000000000054 $d
+     /tmp/ccuGiA9I.s:422    .rodata.SD_Driver:0000000000000000 SD_Driver
+     /tmp/ccuGiA9I.s:416    .data.Stat:0000000000000000 Stat
+     /tmp/ccuGiA9I.s:419    .rodata.SD_Driver:0000000000000000 $d
+>>>>>>> 51f72f82c8ac2083e1ca87e290156dea23c5314f
 
 UNDEFINED SYMBOLS
 BSP_SD_GetCardState

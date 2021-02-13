@@ -20,7 +20,7 @@ uint8_t address;
 uint8_t comm[2];
 
 uint32_t tmoCounter=0;
-uint32_t tmoValue=0; // max
+uint32_t tmoValue=60; // max
 
 
 
@@ -30,7 +30,6 @@ uint8_t oledOn=1;
 
 public:
 uint8_t oled_buffer[W*H/8+8];
-
 
 typedef enum OLED_COLOR_t
 {

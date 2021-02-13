@@ -4,7 +4,8 @@
 #include "stdint.h"
 #include "stdlib.h"
 #include "oled.h"
-
+#include "pin.hpp"
+#include "uart.hpp"
 
 class menu
 {
@@ -36,28 +37,28 @@ uint8_t value;
  * @brief squash value in character form
  * 
  */
-char sq[2]; //TODO: Check on the correct number of SQ channels 
+char sq[3]="00"; //TODO: Check on the correct number of SQ channels 
 uint8_t sqVal;
 
 /**
  * @brief channel value in character form
  * 
  */
-char ch[2];
+char ch[3]="00";
 uint8_t chVal;
 
 /**
  * @brief volume value in character form
  * 
  */
-char vol[2];
+char vol[3]="00";
 uint8_t volVal=0;
 
 /**
  * @brief Display time out in seconds char form
  * 
  */
-char tmo[2];
+char tmo[3]="00";
 uint8_t tmoVal=30;//Default value of 30
 
 /**
@@ -73,7 +74,7 @@ uint8_t cursorPos=0;
 uint8_t cursorOn=0;
 
 oled* oled1;
-
+uart* uart1;
 
 public:
 /**
@@ -81,7 +82,7 @@ public:
  * 
  * @param oled_ oled to be desplayed on
  */
-menu(oled *oled_);
+menu(oled *oled_, uart *uart_);
 
 /**
  * @brief  Print the menu updates what is going on
