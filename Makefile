@@ -36,7 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 CPP_SOURCES=\
-Core/Src/main1.cpp
+Core/Src/main.cpp
 
 C_SOURCES =  \
 Core/Src/stm32f4xx_it.c \
@@ -76,9 +76,7 @@ FATFS/Target/sd_diskio.c \
 Middlewares/Third_Party/FatFs/src/diskio.c \
 Middlewares/Third_Party/FatFs/src/ff.c \
 Middlewares/Third_Party/FatFs/src/ff_gen_drv.c \
-Middlewares/Third_Party/FatFs/src/option/syscall.c\
-Core/Src/main.c
-
+Middlewares/Third_Party/FatFs/src/option/syscall.c
 # ASM sources
 # ASM sources# ASM sources# ASM sources# ASM sources# ASM sources# ASM sources# ASM sources# ASM sourcesASM_SOURCES =  \
 startup_stm32f411xe.s
