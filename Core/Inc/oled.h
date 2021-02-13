@@ -154,6 +154,15 @@ void Counter_increment();
  */
 void switch_cursor();
 
+/**
+ * @brief next functions provide tools for GUI presentation on the OLED
+ * 
+ * @param x : x location
+ * @param y : y location
+ * @param w : width of shape
+ * @param h : hight of shape
+ */
+
 void DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
 
 void DrawPixel(uint16_t x, uint16_t y);

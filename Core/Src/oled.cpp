@@ -131,11 +131,27 @@ void oled::switch_cursor()
 
 void oled::oled_update_battery(float voltage)
 {
-	char volt [20];
-	sprintf(volt,"%.1fv",voltage);
+	//char volt [20];
+	//sprintf(volt,"%.1fv",voltage);
 	//next lines are supposed to work as Battery GUI
-	DrawRectangle(90,0,4.2,4.2);
-	DrawFilledRectangle(90,0,4.2,(atoi(volt)/4.2)*100);
+
+	DrawRectangle(90,0,4.2,4.2); // considering that 4.2 is the maximum voltage for our battery
+
+	if(voltage >= 4.1){ //100%
+		DrawFilledRectangle(90,0,4.2,4.2); // considering that 4.2 is the maximum voltage for our battery
+	}
+	else if(voltage >= 4.0){ //75%
+		DrawFilledRectangle(90,0,4.2,3.15);
+	}
+	else if(voltage >= 3.9){ //50%
+		DrawFilledRectangle(90,0,4.2,2.1);
+	}
+	else if(voltage >= 3.8){ //25%
+		DrawFilledRectangle(90,0,4.2,1.05);
+	}
+	else{//low battery less than 10%
+		DrawFilledRectangle(90,0,4.2,0.5);
+	}
 }
 
 void oled::oled_off()
