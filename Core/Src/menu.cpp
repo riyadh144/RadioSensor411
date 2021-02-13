@@ -137,8 +137,10 @@ void menu::menu_next()
         break;
     case MENU_SQ:
         menu_value=MENU_TMO;
+        break;
     case MENU_TMO:
         menu_value=MENU_CH;
+        break;
     case MENU_CH_IN:
         cursorPos^=cursorOn; // If the cursor is on switch position
         break;
