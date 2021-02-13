@@ -13,14 +13,14 @@
         "Middlewares/Third_Party/FatFs/src"
       ],
       "defines": [
-        "_Debug",
         "STM32F411xE",
-        "USE_HAL_DRIVER",
         "UNICODE",
+        "USE_HAL_DRIVER",
+        "_Debug",
         "_UNICODE"
       ],
       "intelliSenseMode": "gcc-arm",
-      "compilerPath": "/usr/bin/arm-none-eabi-g++",
+      "compilerPath": null,
       "compilerArgs": [
         "-mcpu=cortex-m4",
         "-mthumb"

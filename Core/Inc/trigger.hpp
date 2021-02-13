@@ -60,13 +60,6 @@ public:
     void SetEdge(uint8_t rise);
 
     /**
-     * @brief this function switches the state of the pin
-     * 
-     */
-    void SetEdge(uint8_t rise);
-
-
-    /**
      * @brief It sets the pin pull status
      * 
      * @param Pull type
