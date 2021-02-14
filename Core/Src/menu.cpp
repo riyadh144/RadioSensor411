@@ -80,6 +80,10 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             chVal=atoi(ch);
+            if(chVal >= 9)
+            {
+                chVal = 9;
+            }
             cursorPos=0;
             //TODO:Call the Modules set channel 
         }
@@ -94,7 +98,11 @@ void menu::menu_ok()
         cursorOn^=1;
         if(!cursorOn)
         {
-            chVal=atoi(sq);
+            sqVal=atoi(sq);
+            if(sqVal >= 22)
+            {
+                sqVal = 22;
+            }
             cursorPos=0; //reset the cursor positon
             //TODO:Call the Modules set squash function
         }
@@ -104,17 +112,29 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             tmoVal=atoi(tmo); //OK is meant to set the value
+            if(tmoVal >= 8)
+            {
+                tmoVal = 8;
+            }
             oled1->oled_setTimer(tmoVal);
             cursorPos=0;
             //TODO:Implement the display timer and use tmoVal to modify the prescaler
         }
         break;
     case MENU_MIC_REC_IN:
+<<<<<<< HEAD
         oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_16x26,0,19);
         //TODO : call record function to start recording
         break;
     case MENU_MIC_PLAY_IN:
          oled1->oled_print("Click okay to play The track:", Font_16x26, 0,19);
+=======
+        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_7x10,0,19);
+        //TODO : call record function to start recording
+        break;
+    case MENU_MIC_PLAY_IN:
+         oled1->oled_print("Click okay to play The track:", Font_7x10, 0,19);
+>>>>>>> 09b2a7e008eeddce865cc5e08083157fa8c5e96c
          //TODO: call track list from SD card
          break;
         
