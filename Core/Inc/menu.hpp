@@ -15,12 +15,17 @@ private:
 enum menu_state
 {
     MENU_HOME=0, //Home screen
-    MENU_CH=1, //Menu itself
-    MENU_SQ=2,
-    MENU_TMO=3,
+    MENU_CH=1, //Menu itself AND CH tab
+    MENU_SQ=2, //MENU SQ tab
+    MENU_TMO=3, //Meny Vol tab  
+    MENU_MIC_REC=4, //Menu Mic tab
+    MENU_MIC_PLAY = 5,
     MENU_CH_IN=1<<3,
     MENU_SQ_IN=2<<3,
-    MENU_TMO_IN=3<<3
+    MENU_TMO_IN=3<<3,
+    MENU_MIC_REC_IN = 4<<3,
+    MENU_MIC_PLAY_IN = 5<<3
+
 
 };
 

@@ -46,7 +46,7 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
         default:
             break;
     }
-    oled1->oled_print("menu backk   ", Font_11x18,0,46);   
+    oled1->oled_print("menu back   ", Font_11x18,0,46);   
 
 }
 
@@ -84,6 +84,12 @@ void menu::menu_ok()
             //TODO:Call the Modules set channel 
         }
         break;
+    case MENU_MIC_REC:
+        menu_value = MENU_MIC_REC_IN;
+        break;
+    case MENU_MIC_PLAY:
+        menu_value = MENU_MIC_PLAY_IN;
+        break;
     case MENU_SQ_IN:
         cursorOn^=1;
         if(!cursorOn)
@@ -103,7 +109,15 @@ void menu::menu_ok()
             //TODO:Implement the display timer and use tmoVal to modify the prescaler
         }
         break;
-
+    case MENU_MIC_REC_IN:
+        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_16x26,0,19);
+        //TODO : call record function to start recording
+        break;
+    case MENU_MIC_PLAY_IN:
+         oled1->oled_print("Click okay to play The track:", Font_16x26, 0,19);
+         //TODO: call track list from SD card
+         break;
+        
     default:
         break;
     }
@@ -126,8 +140,10 @@ void menu::menu_next()
         break;
     case MENU_SQ:
         menu_value=MENU_TMO;
+        break;
     case MENU_TMO:
         menu_value=MENU_CH;
+        break;
     case MENU_CH_IN:
         cursorPos^=cursorOn; // If the cursor is on switch position
         break;

@@ -14,9 +14,19 @@
       ],
       "defines": [
         "STM32F411xE",
-        "USE_HAL_DRIVER"
+        "UNICODE",
+        "USE_HAL_DRIVER",
+        "_Debug",
+        "_UNICODE"
       ],
-      "compilerPath": null
+      "intelliSenseMode": "gcc-arm",
+      "compilerPath": null,
+      "compilerArgs": [
+        "-mcpu=cortex-m4",
+        "-mthumb"
+      ],
+      "cStandard": "c11",
+      "cppStandard" : "c++17"
     }
   ],
   "version": 4

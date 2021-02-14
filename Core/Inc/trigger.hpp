@@ -4,7 +4,6 @@
 class trigger
 {
 
-
 private:
 
     GPIO_TypeDef * gpiox;
@@ -59,7 +58,6 @@ public:
      * 
      */
     void SetEdge(uint8_t rise);
-
 
     /**
      * @brief It sets the pin pull status
