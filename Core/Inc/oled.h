@@ -170,6 +170,12 @@ void DrawPixel(uint16_t x, uint16_t y);
 void DrawLine(uint16_t x0, uint16_t y0, uint16_t x1, uint16_t y1);
 
 void DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
+/**
+ * @brief This function takes the tracks from the SD card and displays them on the screen
+ * 
+ */
+void Track_list();
+
 
 };
 
