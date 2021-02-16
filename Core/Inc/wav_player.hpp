@@ -113,7 +113,7 @@ class wav_player
     void pause(void);
     void resume(void);
     /**
-     * @brief rest the player
+     * @brief reset the player
      * 
      */
     void reset(void);

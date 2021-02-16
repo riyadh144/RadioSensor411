@@ -6,6 +6,8 @@
 #include "oled.h"
 #include "pin.hpp"
 #include "uart.hpp"
+#include "wav_player.hpp"
+#include "i2s.hpp"
 
 class menu
 {
@@ -82,7 +84,7 @@ public:
  * 
  * @param oled_ oled to be desplayed on
  */
-menu(oled *oled_, uart *uart_);
+menu(oled *oled_, uart *uart_,wav_player* wav_player_);
 
 /**
  * @brief  Print the menu updates what is going on

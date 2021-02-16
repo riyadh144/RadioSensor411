@@ -97,9 +97,9 @@ pin pd9(GPIOD,pin::PIN9,pin::in,pin::PullDown,pin::SPEED_HIGH);
 pin pd10(GPIOD,pin::PIN10,pin::in,pin::PullDown,pin::SPEED_HIGH);
 adc adc_bat(adc::ADC_1);
 oled oled1(&hi2c1,0x78,&htim10);
-menu menu1(&oled1, &uart1);
-sa818 sa818_(&uart2,&sa818_pd,&sa818_ptt);
 wav_player wav_player_(i2s::I2S2);
+menu menu1(&oled1, &uart1,&wav_player_);
+sa818 sa818_(&uart2,&sa818_pd,&sa818_ptt);
 
 /* USER CODE END 0 */
 

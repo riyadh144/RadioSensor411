@@ -1,5 +1,6 @@
 #include "oled.h"
 #include "stdlib.h"
+#include "wav_player.hpp"
 
 
 #define OLED_RIGHT_HORIZONTAL_SCROLL              0x26
@@ -124,35 +125,20 @@ void oled::oled_print(const char* string, FontDef_t size, uint16_t x , uint16_t 
 	}
 }
 
-void oled::switch_cursor()
+void oled::Track_list()
 {
-	
+	uint8_t n = 20;
+	/* // print all tracks names
+    while(!IsEndofTheFile){
+		//oled_print(Track,Font_7x10,19,n+10)// prints the Current track name
+	}
+	*/
 }
 
 void oled::oled_update_battery(float voltage)
 {
-	//char volt [20];
-	//sprintf(volt,"%.1fv",voltage);
 	//next lines are supposed to work as Battery GUI
 
-<<<<<<< HEAD
-	DrawRectangle(90,0,4.2,4.2); // considering that 4.2 is the maximum voltage for our battery
-
-	if(voltage >= 4.1){ //100%
-		DrawFilledRectangle(90,0,4.2,4.2); // considering that 4.2 is the maximum voltage for our battery
-	}
-	else if(voltage >= 4.0){ //75%
-		DrawFilledRectangle(90,0,4.2,3.15);
-	}
-	else if(voltage >= 3.9){ //50%
-		DrawFilledRectangle(90,0,4.2,2.1);
-	}
-	else if(voltage >= 3.8){ //25%
-		DrawFilledRectangle(90,0,4.2,1.05);
-	}
-	else{//low battery less than 10%
-		DrawFilledRectangle(90,0,4.2,0.5);
-=======
 	DrawRectangle(100,0,10,5); // considering that 4.2 is the maximum voltage for our battery
 	DrawRectangle(110,2,1,1);
 	if(voltage >= 4.1){ //100%
@@ -169,7 +155,6 @@ void oled::oled_update_battery(float voltage)
 	}
 	else{//low battery less than 10%
 		DrawFilledRectangle(100,0,1,5);
->>>>>>> 09b2a7e008eeddce865cc5e08083157fa8c5e96c
 	}
 }
 

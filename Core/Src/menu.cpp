@@ -1,10 +1,13 @@
 #include "menu.hpp"
 
-menu::menu(oled* oled_, uart* uart_)
+
+menu::menu(oled* oled_, uart* uart_,wav_player* wav_player)
 {
     oled1=oled_;
     uart1=uart_;
+    wav_player_ = wav_player;
 }
+
 
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
@@ -122,21 +125,19 @@ void menu::menu_ok()
         }
         break;
     case MENU_MIC_REC_IN:
-<<<<<<< HEAD
-        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_16x26,0,19);
+        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_7x10,19,19);
         //TODO : call record function to start recording
         break;
     case MENU_MIC_PLAY_IN:
-         oled1->oled_print("Click okay to play The track:", Font_16x26, 0,19);
-=======
-        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_7x10,0,19);
-        //TODO : call record function to start recording
+        char *Track;
+        oled1->oled_print("Click okay to play The track:", Font_7x10, 0,0);
+        oled1->Track_list();
+        //Track = SelectTrack();//TODO : implement a cursor function to select the track
+        if(wav_player_->file_select(Track) && Track != NULL)
+         {  
+            wav_player_->play(Track);
+         }
         break;
-    case MENU_MIC_PLAY_IN:
-         oled1->oled_print("Click okay to play The track:", Font_7x10, 0,19);
->>>>>>> 09b2a7e008eeddce865cc5e08083157fa8c5e96c
-         //TODO: call track list from SD card
-         break;
         
     default:
         break;
@@ -162,7 +163,13 @@ void menu::menu_next()
         menu_value=MENU_TMO;
         break;
     case MENU_TMO:
-        menu_value=MENU_CH;
+        menu_value=MENU_MIC_REC;
+        break;
+    case MENU_MIC_REC:
+        menu_value = MENU_MIC_PLAY;
+        break;
+    case MENU_MIC_PLAY:
+        menu_value = MENU_CH;
         break;
     case MENU_CH_IN:
         cursorPos^=cursorOn; // If the cursor is on switch position
@@ -208,13 +215,19 @@ void menu::menu_prev()
     case MENU_HOME:
         break;
     case MENU_CH:
-        menu_value=MENU_TMO;
+        menu_value=MENU_MIC_PLAY;
         break;
     case MENU_SQ:
         menu_value=MENU_CH;
         break;
     case MENU_TMO:
         menu_value=MENU_SQ;
+        break;
+    case MENU_MIC_REC:
+        menu_value = MENU_TMO;
+        break;
+    case MENU_MIC_PLAY:
+        menu_value = MENU_MIC_REC;
         break;
     case MENU_CH_IN:
         cursorPos^=cursorOn; 
@@ -225,7 +238,6 @@ void menu::menu_prev()
     case MENU_TMO_IN:
         cursorPos^=cursorOn;
         break;
-
     default:
         break;
     }
@@ -279,7 +291,11 @@ void menu::menu_up()
         {
             sqVal++;
         }
-        break;   
+        break;
+    case MENU_MIC_PLAY_IN:
+        //switch to the previous track in the list using the cursor function
+        break;
+
     default:
         if(volVal < 8) // Current max for volume is 8
         {
@@ -309,6 +325,9 @@ void menu::menu_down()
         sqVal--;
         }
         break;   
+    case MENU_MIC_PLAY_IN:
+        //switch to the next track in the list using the cursor function
+        break;
     default:
         if(volVal > 0)
         {
