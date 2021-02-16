@@ -50,7 +50,8 @@
         "streambuf": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp",
-        "main.h": "c"
+        "main.h": "c",
+        "sd_diskio.h": "c"
     },
     "cortex-debug.armToolchainPath": "",
     "cmake.configureOnOpen": false

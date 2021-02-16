@@ -6,6 +6,10 @@ wav_player::wav_player(i2s::i2s_num i2sNum )
     //Constructor for now there is nothing special to pass on
     //In the future if we manage to make a FATFS in C++ we pass that on
 }
+void wav_player::init()
+{
+  i2sx.start();
+}
 uint8_t wav_player::file_select(char * filePath)
 {
 
@@ -25,6 +29,7 @@ uint8_t wav_player::file_select(char * filePath)
   return 1;
 
 }
+
 
 /**
  * @brief WAV File Play

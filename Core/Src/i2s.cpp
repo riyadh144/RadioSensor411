@@ -1,5 +1,6 @@
 #include "i2s.hpp"
 
+
 void i2s::set_handle(i2s_num i2sNum)
 {
     switch(i2sNum)
@@ -14,14 +15,33 @@ void i2s::set_handle(i2s_num i2sNum)
             i2sx.Instance = SPI4;
             break;
     }
-
 }
 
+void i2s::start()
+{
+    i2sx.Instance= SPI2;
+    i2sx.Init.Mode = I2S_MODE_MASTER_TX;
+    i2sx.Init.Standard = I2S_STANDARD_PHILIPS;
+    i2sx.Init.DataFormat = I2S_DATAFORMAT_16B;
+    i2sx.Init.MCLKOutput = I2S_MCLKOUTPUT_ENABLE;
+    i2sx.Init.AudioFreq = I2S_AUDIOFREQ_44K;
+    i2sx.Init.CPOL = I2S_CPOL_LOW;
+    i2sx.Init.ClockSource = I2S_CLOCK_PLL;
+    i2sx.Init.FullDuplexMode = I2S_FULLDUPLEXMODE_DISABLE;
+    if (HAL_I2S_Init(&i2sx) != HAL_OK)
+    {
+        error_handler();
+    }
+
+}
 void i2s::init(uint32_t audioFreq)
 {
-    set_audiofreq(audioFreq);
+
 
     config_pll_clock(audioFreq);
+
+    set_audiofreq(audioFreq);
+
     if (HAL_I2S_Init(&i2sx) != HAL_OK)
     {
         error_handler();
@@ -53,6 +73,8 @@ uint8_t i2s::set_audiofreq(uint32_t audioFreq)
   {
     return true;
   }
+
+
 }
 
 void i2s::config_pll_clock(uint32_t audioFreq)
@@ -116,7 +138,6 @@ void i2s::stop()
 }
 void i2s::error_handler()
 {
-    
+    __NOP();
 }
-
 

@@ -40,6 +40,11 @@ typedef enum
 void set_handle(i2s_num i2sNum);
 
 /**
+ * @brief start i2s interface
+ * 
+ */
+void start();
+/**
  * @brief Set the audiofreq i2s parameter
  * 
  * @param audioFreq 

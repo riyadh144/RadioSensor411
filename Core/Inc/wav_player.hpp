@@ -77,6 +77,11 @@ class wav_player
      */
     wav_player(i2s::i2s_num i2snum);
     /**
+     * @brief initialize i2s interface
+     * 
+     */
+    void init();
+    /**
      * @brief Select WAV file to play
      * @retval 1: when file is found 0 when not
      */     
