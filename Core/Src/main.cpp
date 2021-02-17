@@ -66,6 +66,7 @@ DMA_HandleTypeDef hdma_usart1_rx;
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
+
 static void MX_TIM10_Init(void);
 static void MX_SDIO_SD_Init(void);
 static void MX_DMA_Init(void);
@@ -76,6 +77,7 @@ static void MX_DMA_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
 uart uart1(uart::uart1,115200);
 uart uart2(uart::uart2,9600);
 
@@ -126,12 +128,11 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM10_Init();
   MX_I2C1_Init();
-  MX_SDIO_SD_Init();
-  MX_FATFS_Init();
+
   led1.init();
   uart1.init();
   oled1.init();
-  sa818_.sa818_configure(1,"467.6375","467.6375","0000",0,"0000");
+  sa818_.sa818_configure(1,"462.6375","462.6375","0000",0,"0000");
   pd11.init();
   pd12.init();
   pd13.init();
@@ -142,30 +143,50 @@ int main(void)
   pd10.init();
   adc_bat.init();
   adc_bat.adc_setEquation(3.3/(2*4096),0);
-uart1.send_recive("START","START");
-  //Fatfs object
-	FATFS FatFs;
-	//File object
-	FIL fil;
-  //FRESULT res=f_mount(&FatFs, SDPath, 1);
-  //Mount drive
-  // char x[10];
-  // sprintf(x,"\n\rmounting %i\n\r",(uint)res);
-  // uart1.send_recive(x,x);
+  sa818_.sa818_power(sa818::on);
+  uart1.send_recive("\r\nSTART\r\n","START");
+  wav_player_.init();
+  MX_SDIO_SD_Init();
+  MX_FATFS_Init();
+  char x[10];
 
-	// if ( res == FR_OK) {
-	// 	//Mounted OK, turn on RED LED
+  sprintf(x,"\n\rFATFSMount %i\n\r",(uint)retSD);
+  uart1.send_recive(x,x);
+
+
+	//File object
+  FRESULT res=f_mount(&SDFatFS, SDPath, 1);
+	FIL fil;
+<<<<<<< HEAD
+  //FRESULT res=f_mount(&FatFs, SDPath, 1);
+=======
+>>>>>>> cab8126a6f350795559c8b82d5ce0c63168fa5eb
+  //Mount drive
+  sprintf(x,"\n\rmounting %i\n\r",(uint)res);
+  uart1.send_recive(x,x);
+  sa818_.sa818_txrx_mode(sa818::tx);
+  int file_er;
+	if ( res == FR_OK) {
+		//Mounted OK, turn on RED LED
+    uart1.send_recive("Play Laugh.wav","Laugh.wav");
 		
-	// 	wav_player_.file_select("Human.wav");
-  //   wav_player_.play();
-  //   uart1.send_recive("Play Human1.wav","human1.wav");
-  //   while(!wav_player_.isEndOfFile())
-  //   {
-  //   wav_player_.process();
-  //   }
-	// 	//Unmount drive, don't forget this!
-	// 	f_mount(0, "", 1);
-	// }
+		file_er=wav_player_.file_select("Laugh.wav");
+    sprintf(x,"File loaded = %i\n\r",file_er);
+    uart1.send_recive(x,"Laugh.wav");
+
+    wav_player_.play();
+
+    while(!wav_player_.isEndOfFile())
+    {
+    wav_player_.process();
+
+    }
+    uart1.send_recive("Done Playing","human1.wav");
+
+		//Unmount drive, don't forget this!
+		f_mount(0, "", 1);
+	}
+  sa818_.sa818_txrx_mode(sa818::rx);
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
@@ -205,6 +226,7 @@ void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInitStruct = {0};
 
   /** Configure the main internal regulator output voltage
   */
@@ -215,7 +237,12 @@ void SystemClock_Config(void)
   */
   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
   RCC_OscInitStruct.HSEState = RCC_HSE_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLN = 192;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV4;
+  RCC_OscInitStruct.PLL.PLLQ = 8;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
   {
     Error_Handler();
@@ -224,15 +251,25 @@ void SystemClock_Config(void)
   */
   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
                               |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSE;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_3) != HAL_OK)
   {
     Error_Handler();
   }
+  PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_I2S;
+  PeriphClkInitStruct.PLLI2S.PLLI2SN = 200;
+  PeriphClkInitStruct.PLLI2S.PLLI2SM = 8;
+  PeriphClkInitStruct.PLLI2S.PLLI2SR = 4;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  
 }
 
 
@@ -299,13 +336,25 @@ static void MX_SDIO_SD_Init(void)
   /* USER CODE BEGIN SDIO_Init 1 */
 
   /* USER CODE END SDIO_Init 1 */
+
   hsd.Instance = SDIO;
   hsd.Init.ClockEdge = SDIO_CLOCK_EDGE_RISING;
   hsd.Init.ClockBypass = SDIO_CLOCK_BYPASS_DISABLE;
   hsd.Init.ClockPowerSave = SDIO_CLOCK_POWER_SAVE_DISABLE;
   hsd.Init.BusWide = SDIO_BUS_WIDE_1B;
   hsd.Init.HardwareFlowControl = SDIO_HARDWARE_FLOW_CONTROL_DISABLE;
-  hsd.Init.ClockDiv = 0;
+  hsd.Init.ClockDiv = 4;
+  // char x[10];
+  // sprintf(x,"sdcard initialize error=%i\r\n",HAL_SD_Init(&hsd));
+  // uart1.send_recive(x,x);
+  // if (HAL_SD_Init(&hsd) != HAL_OK)
+  // {
+  //   Error_Handler();
+  // }
+  // if (HAL_SD_ConfigWideBusOperation(&hsd, SDIO_BUS_WIDE_4B) != HAL_OK)
+  // {
+  //   Error_Handler();
+  // }
   /* USER CODE BEGIN SDIO_Init 2 */
 
   /* USER CODE END SDIO_Init 2 */
@@ -327,7 +376,7 @@ static void MX_TIM10_Init(void)
 
   /* USER CODE END TIM10_Init 1 */
   htim10.Instance = TIM10;
-  htim10.Init.Prescaler = 24;
+  htim10.Init.Prescaler = 200;
   htim10.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim10.Init.Period = 65535;
   htim10.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -428,23 +477,23 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
  */
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-  //Fatfs object
-	FATFS FatFs;
-	//File object
-	FIL fil;
-  //Mount drive
-	if (f_mount(&FatFs, "", 1) == FR_OK) {
-		//Mounted OK, turn on RED LED
+  // //Fatfs object
+	// FATFS FatFs;
+	// //File object
+	// FIL fil;
+  // //Mount drive
+	// if (f_mount(&FatFs, "", 1) == FR_OK) {
+	// 	//Mounted OK, turn on RED LED
 		
-		wav_player_.file_select("human.wav");
-    wav_player_.play();
-    while(!wav_player_.isEndOfFile())
-    {
-    wav_player_.process();
-    }
-		//Unmount drive, don't forget this!
-		f_mount(0, "", 1);
-	}
+	// 	wav_player_.file_select("human.wav");
+  //   wav_player_.play();
+  //   while(!wav_player_.isEndOfFile())
+  //   {
+  //   wav_player_.process();
+  //   }
+	// 	//Unmount drive, don't forget this!
+	// 	f_mount(0, "", 1);
+	// }
 	
 
 }
