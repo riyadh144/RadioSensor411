@@ -147,7 +147,7 @@ uart1.send_recive("START","START");
 	FATFS FatFs;
 	//File object
 	FIL fil;
-  // FRESULT res=f_mount(&FatFs, SDPath, 1);
+  //FRESULT res=f_mount(&FatFs, SDPath, 1);
   //Mount drive
   // char x[10];
   // sprintf(x,"\n\rmounting %i\n\r",(uint)res);

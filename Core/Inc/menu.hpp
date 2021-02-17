@@ -39,7 +39,7 @@ uint8_t value;
  * @brief squash value in character form
  * 
  */
-char sq[3]="00"; //TODO: Check on the correct number of SQ channels 
+char sq[3]="00"; //There are from 0~8 squash channels 
 uint8_t sqVal;
 
 /**
@@ -47,7 +47,7 @@ uint8_t sqVal;
  * 
  */
 char ch[3]="00";
-uint8_t chVal;
+uint8_t chVal=0;
 
 /**
  * @brief volume value in character form

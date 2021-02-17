@@ -10,7 +10,6 @@ pin::pin(GPIO_TypeDef * gpiox_, PinNumber pinx_, InOut inout_, Pull pull_,Speed 
     GPIO_InitStruct.Speed=speed_;
     HAL_GPIO_Init(gpiox, &GPIO_InitStruct);
 
-    //TODO:figure out what is GPIO_InitStruct.Alternate
 }
 
 void pin::init()

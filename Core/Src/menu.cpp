@@ -8,7 +8,6 @@ menu::menu(oled* oled_, uart* uart_,wav_player* wav_player)
     wav_player_ = wav_player;
 }
 
-
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
     char temp [22];
@@ -83,7 +82,7 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             chVal=atoi(ch);
-            if(chVal >= 9)
+            if(chVal <= 9)
             {
                 chVal = 9;
             }
@@ -102,7 +101,7 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             sqVal=atoi(sq);
-            if(sqVal >= 22)
+            if(sqVal <= 22)
             {
                 sqVal = 22;
             }
@@ -115,7 +114,7 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             tmoVal=atoi(tmo); //OK is meant to set the value
-            if(tmoVal >= 8)
+            if(tmoVal <= 8)
             {
                 tmoVal = 8;
             }
@@ -281,26 +280,32 @@ void menu::menu_up()
     switch (menu_value)
     {
     case MENU_CH_IN:
+        chVal = atoi(ch);
         if(chVal < 22) // Current max for ch is 22
         {
             chVal++;
         }
+        sprintf(ch,"%d",chVal);
         break;
     case MENU_SQ_IN:
+        sqVal = atoi(sq);
         if(sqVal < 9) // Current max for Sq is 9
         {
             sqVal++;
         }
+        sprintf(sq,"%d",sqVal);
         break;
     case MENU_MIC_PLAY_IN:
         //switch to the previous track in the list using the cursor function
         break;
 
     default:
-        if(volVal < 8) // Current max for volume is 8
+        volVal = atoi(vol);
+        if(volVal <= 8) // Current max for volume is 8
         {
             volVal++;
         }
+        sprintf(vol,"%d",volVal);
         break;
     }
 }
@@ -314,25 +319,31 @@ void menu::menu_down()
     switch (menu_value)
     {
     case MENU_CH_IN:
+        chVal = atoi(ch);
         if(chVal > 0)
         {
         chVal--;
         }
+        sprintf(ch,"%d",chVal);
         break;
     case MENU_SQ_IN:
+        sqVal = atoi(sq);
         if(sqVal > 0)
         {
         sqVal--;
         }
+        sprintf(sq,"%d",sqVal);
         break;   
     case MENU_MIC_PLAY_IN:
         //switch to the next track in the list using the cursor function
         break;
     default:
+        volVal = atoi(vol);
         if(volVal > 0)
         {
             volVal--;
         }
+        sprintf(vol,"%d",volVal);
         break;
     }
 
