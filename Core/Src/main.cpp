@@ -157,10 +157,6 @@ int main(void)
 	//File object
   FRESULT res=f_mount(&SDFatFS, SDPath, 1);
 	FIL fil;
-<<<<<<< HEAD
-  //FRESULT res=f_mount(&FatFs, SDPath, 1);
-=======
->>>>>>> cab8126a6f350795559c8b82d5ce0c63168fa5eb
   //Mount drive
   sprintf(x,"\n\rmounting %i\n\r",(uint)res);
   uart1.send_recive(x,x);

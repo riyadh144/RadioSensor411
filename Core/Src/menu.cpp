@@ -1,11 +1,11 @@
 #include "menu.hpp"
 
 
-menu::menu(oled* oled_, uart* uart_,wav_player* wav_player)
+menu::menu(oled* oled_, uart* uart_,wav_player* wav_player_)
 {
     oled1=oled_;
     uart1=uart_;
-    wav_player_ = wav_player;
+    wav_player1 = wav_player_;
 }
 
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
@@ -128,16 +128,25 @@ void menu::menu_ok()
         //TODO : call record function to start recording
         break;
     case MENU_MIC_PLAY_IN:
-        char *Track;
-        oled1->oled_print("Click okay to play The track:", Font_7x10, 0,0);
-        oled1->Track_list();
-        //Track = SelectTrack();//TODO : implement a cursor function to select the track
-        if(wav_player_->file_select(Track) && Track != NULL)
-         {  
-            wav_player_->play(Track);
-         }
-        break;
-        
+    {
+        oled1->oled_print("Track Play: ",Font_11x18,0,15);
+        FILINFO fno;
+        FRESULT fr = f_mount(&SDFatFS, SDPath, 1);
+        //fr = f_findfirst(&SDFatFS,&fno,SDPath,"????????.wav"); //TODO:FINDOUT WHY THIS ISN'T WORKING!!
+        if( fr == FR_OK && fno.fname[0] ) /*if the file is valid*/
+        {
+            int file_er;
+            oled1->oled_print(fno.fname,Font_11x18,20,30);
+		    file_er=wav_player1->file_select(fno.fname);
+            wav_player1->play();
+            while(!wav_player1->isEndOfFile())
+            {
+            wav_player1->process();
+            }
+        }
+        wav_player1->stop();
+    }
+    break;     
     default:
         break;
     }
@@ -179,6 +188,22 @@ void menu::menu_next()
     case MENU_TMO_IN:
         cursorPos^=cursorOn;
         break;
+    case MENU_MIC_PLAY_IN:
+        wav_player1->stop();
+        oled1->oled_print("Track Play: ",Font_11x18,0,15);
+        fr = f_findnext(SDPath,&fno); // start searching for .wav files to play
+        if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
+        {
+            int file_er;
+            oled1->oled_print(fno.fname,Font_11x18,20,30);
+		    file_er=wav_player1->file_select(fno.fname);
+            wav_player1->play();
+            while(!wav_player1->isEndOfFile())
+            {
+            wav_player1->process();
+            }
+        }
+        break;
 
     default:
         break;
@@ -196,6 +221,8 @@ void menu::menu_menu()
 
 void menu::menu_back()
 {
+    wav_player1->stop();
+	f_mount(0, "", 1);
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
         oled1->oled_resetTimer();
@@ -205,6 +232,8 @@ void menu::menu_back()
 
 void menu::menu_prev()
 {
+    wav_player1->stop();
+	f_mount(0, "", 1);
     if(oled1->oled_isOledOn()) //If the oled is on reset the timer
     {
         oled1->oled_resetTimer();
@@ -335,7 +364,21 @@ void menu::menu_down()
         sprintf(sq,"%d",sqVal);
         break;   
     case MENU_MIC_PLAY_IN:
-        //switch to the next track in the list using the cursor function
+        wav_player1->stop(); // stop the previous track that was playing 
+        oled1->oled_print("Track Play: ",Font_11x18,0,15);
+        fr = f_findnext(SDPath,&fno); // start searching for .wav files to play
+        if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
+        {
+            int file_er;
+            oled1->oled_print(fno.fname,Font_11x18,20,30);
+		    file_er=wav_player1->file_select(fno.fname);
+            wav_player1->play();
+            while(!wav_player1->isEndOfFile())
+            {
+            wav_player1->process();
+            }
+        }
+        wav_player1->stop();
         break;
     default:
         volVal = atoi(vol);

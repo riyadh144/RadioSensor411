@@ -77,6 +77,7 @@ uint8_t cursorOn=0;
 
 oled* oled1;
 uart* uart1;
+wav_player* wav_player1;
 
 public:
 /**
@@ -84,7 +85,7 @@ public:
  * 
  * @param oled_ oled to be desplayed on
  */
-menu(oled *oled_, uart *uart_,wav_player* wav_player_);
+menu(oled *oled_, uart *uart_,wav_player *wav_player_);
 
 /**
  * @brief  Print the menu updates what is going on
