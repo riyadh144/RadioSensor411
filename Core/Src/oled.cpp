@@ -125,15 +125,6 @@ void oled::oled_print(const char* string, FontDef_t size, uint16_t x , uint16_t 
 	}
 }
 
-void oled::Track_list()
-{
-	uint8_t n = 20;
-	/* // print all tracks names
-    while(!IsEndofTheFile){
-		//oled_print(Track,Font_7x10,19,n+10)// prints the Current track name
-	}
-	*/
-}
 
 void oled::oled_update_battery(float voltage)
 {
