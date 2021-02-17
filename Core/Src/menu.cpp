@@ -132,7 +132,7 @@ void menu::menu_ok()
         oled1->oled_print("Track Play: ",Font_11x18,0,15);
         FILINFO fno;
         FRESULT fr = f_mount(&SDFatFS, SDPath, 1);
-        //fr = f_findfirst(&SDFatFS,&fno,SDPath,"????????.wav"); //TODO:FINDOUT WHY THIS ISN'T WORKING!!
+        //fr = f_findfirst(0,&fno,SDPath,"????????.wav"); //TODO:FINDOUT WHY THIS ISN'T WORKING!!
         if( fr == FR_OK && fno.fname[0] ) /*if the file is valid*/
         {
             int file_er;
