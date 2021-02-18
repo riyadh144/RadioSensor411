@@ -1,17 +1,17 @@
 #include "menu.hpp"
 
 
-menu::menu(oled* oled_, uart* uart_,wav_player* wav_player_)
+menu::menu(oled* oled_, uart* uart_,wav_player* wav_player_,sa818* sa818_)
 {
     oled1=oled_;
     uart1=uart_;
     wav_player1 = wav_player_;
+    sa818A = sa818_;
 }
 
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
     char temp [22];
-
     switch (menu_value)
     {
         case MENU_HOME:
@@ -82,8 +82,8 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             chVal=atoi(ch);
-            if(chVal <= 9)
-            {
+            if(chVal >= 9)
+            {   
                 chVal = 9;
             }
             cursorPos=0;
@@ -101,12 +101,13 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             sqVal=atoi(sq);
-            if(sqVal <= 22)
+            if(sqVal >= 8)
             {
-                sqVal = 22;
+                sqVal = 8;
             }
             cursorPos=0; //reset the cursor positon
-            //TODO:Call the Modules set squash function
+            sa818A->sa818_configure(1,"462.6375","462.6375","0000",sqVal,"0000");
+
         }
         break;
     case MENU_TMO_IN:
@@ -114,7 +115,7 @@ void menu::menu_ok()
         if(!cursorOn)
         {
             tmoVal=atoi(tmo); //OK is meant to set the value
-            if(tmoVal <= 8)
+            if(tmoVal >= 8)
             {
                 tmoVal = 8;
             }
@@ -130,9 +131,7 @@ void menu::menu_ok()
     case MENU_MIC_PLAY_IN:
     {
         oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        FILINFO fno;
-        FRESULT fr = f_mount(&SDFatFS, SDPath, 1);
-        //fr = f_findfirst(0,&fno,SDPath,"????????.wav"); //TODO:FINDOUT WHY THIS ISN'T WORKING!!
+        fr = f_findfirst(dp,&fno,SDPath,"????????.wav"); //TODO:FINDOUT WHY THIS ISN'T WORKING!!
         if( fr == FR_OK && fno.fname[0] ) /*if the file is valid*/
         {
             int file_er;
@@ -191,7 +190,7 @@ void menu::menu_next()
     case MENU_MIC_PLAY_IN:
         wav_player1->stop();
         oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        fr = f_findnext(SDPath,&fno); // start searching for .wav files to play
+        fr = f_findnext(dp,&fno); // start searching for .wav files to play
         if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
         {
             int file_er;
@@ -314,7 +313,7 @@ void menu::menu_up()
         {
             chVal++;
         }
-        sprintf(ch,"%d",chVal);
+        sprintf(ch,"%2d",chVal);
         break;
     case MENU_SQ_IN:
         sqVal = atoi(sq);
@@ -322,7 +321,8 @@ void menu::menu_up()
         {
             sqVal++;
         }
-        sprintf(sq,"%d",sqVal);
+        sprintf(sq,"%2d",sqVal);
+        sa818_->sa818_configure(1,"462.6375","462.6375","0000",sqVal,"0000");
         break;
     case MENU_MIC_PLAY_IN:
         //switch to the previous track in the list using the cursor function
@@ -330,11 +330,12 @@ void menu::menu_up()
 
     default:
         volVal = atoi(vol);
-        if(volVal <= 8) // Current max for volume is 8
+        if(volVal < 8) // Current max for volume is 8
         {
             volVal++;
         }
-        sprintf(vol,"%d",volVal);
+        sprintf(vol,"%2d",volVal);
+        sa818A->sa818_set_volume(volVal);
         break;
     }
 }
@@ -353,7 +354,7 @@ void menu::menu_down()
         {
         chVal--;
         }
-        sprintf(ch,"%d",chVal);
+        sprintf(ch,"%2d",chVal);
         break;
     case MENU_SQ_IN:
         sqVal = atoi(sq);
@@ -361,12 +362,14 @@ void menu::menu_down()
         {
         sqVal--;
         }
-        sprintf(sq,"%d",sqVal);
+        sprintf(sq,"%2d",sqVal);
+        sa818_->sa818_configure(1,"462.6375","462.6375","0000",sqVal,"0000");
+
         break;   
     case MENU_MIC_PLAY_IN:
         wav_player1->stop(); // stop the previous track that was playing 
         oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        fr = f_findnext(SDPath,&fno); // start searching for .wav files to play
+        fr = f_findnext(dp,&fno); // start searching for .wav files to play
         if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
         {
             int file_er;
@@ -386,7 +389,9 @@ void menu::menu_down()
         {
             volVal--;
         }
-        sprintf(vol,"%d",volVal);
+        sprintf(vol,"%2d",volVal);
+        sa818A->sa818_set_volume(volVal);
+
         break;
     }
 

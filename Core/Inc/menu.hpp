@@ -8,6 +8,8 @@
 #include "uart.hpp"
 #include "wav_player.hpp"
 #include "i2s.hpp"
+#include "sa818.h"
+#include "ff.h"
 
 class menu
 {
@@ -39,21 +41,21 @@ uint8_t value;
  * @brief squash value in character form
  * 
  */
-char sq[3]="00"; //There are from 0~8 squash channels 
+char sq[4]="00"; //There are from 0~8 squash channels 
 uint8_t sqVal;
 
 /**
  * @brief channel value in character form
  * 
  */
-char ch[3]="00";
+char ch[4]="00";
 uint8_t chVal=0;
 
 /**
  * @brief volume value in character form
  * 
  */
-char vol[3]="00";
+char vol[4]="00";//Volume varies between 0~8 levels
 uint8_t volVal=0;
 
 /**
@@ -78,6 +80,10 @@ uint8_t cursorOn=0;
 oled* oled1;
 uart* uart1;
 wav_player* wav_player1;
+sa818* sa818A;
+FILINFO fno;
+FRESULT fr;
+DIR* dp;
 
 public:
 /**
@@ -85,7 +91,7 @@ public:
  * 
  * @param oled_ oled to be desplayed on
  */
-menu(oled *oled_, uart *uart_,wav_player *wav_player_);
+menu(oled *oled_, uart *uart_,wav_player *wav_player_,sa818 *sa818A);
 
 /**
  * @brief  Print the menu updates what is going on

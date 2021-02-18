@@ -98,8 +98,8 @@ pin pd10(GPIOD,pin::PIN10,pin::in,pin::PullDown,pin::SPEED_HIGH);
 adc adc_bat(adc::ADC_1);
 oled oled1(&hi2c1,0x78,&htim10);
 wav_player wav_player_(i2s::I2S2);
-menu menu1(&oled1, &uart1,&wav_player_);
 sa818 sa818_(&uart2,&sa818_pd,&sa818_ptt);
+menu menu1(&oled1, &uart1,&wav_player_,&sa818_);
 
 /* USER CODE END 0 */
 
@@ -148,7 +148,7 @@ int main(void)
   wav_player_.init();
   MX_SDIO_SD_Init();
   MX_FATFS_Init();
-  char x[10];
+  char x[225];
 
   sprintf(x,"\n\rFATFSMount %i\n\r",(uint)retSD);
   uart1.send_recive(x,x);
