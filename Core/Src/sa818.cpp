@@ -18,6 +18,30 @@ uint8_t locked=0; //Look on sending the next command
 unsigned char tx_len;
 unsigned char rx_len;
 
+/*
+#define CH1 462.5625
+#define CH2 462.5875
+#define CH3 462.6125
+#define CH4 462.6375
+#define CH5 462.6625
+#define CH6 462.6875
+#define CH7 462.7125
+#define CH8 467.5625
+#define CH9 467.5875
+#define CH10 467.6125
+#define CH11 467.6375
+#define CH12 467.6625
+#define CH13 467.6875
+#define CH14 467.7125
+#define CH15 462.5500
+#define CH16 462.5750
+#define CH17 462.6000
+#define CH18 462.6250
+#define CH19 462.6500
+#define CH20 462.6750
+#define CH21 462.7000
+#define CH22 462.7250
+*/
 
 
 void sa818::sa818_power(OnOff on)
@@ -68,6 +92,7 @@ void sa818::sa818_configure(uint8_t bw, char* tx_f, char* rx_f, char* tx_subaudi
     rx_len=16;
     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
 }
+
 
 void sa818::sa818_set_volume(uint8_t vol)
 {
