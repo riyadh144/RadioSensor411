@@ -4,7 +4,12 @@
 #include "pin.hpp"
 #include "uart.hpp"
 
-char* CHANNEL[23] = {
+
+/**
+ * @brief The array below states the standered FCC frequencies for all 22 channels 
+ * 
+ */
+const char* CHANNEL[23] = {
     "0000",
     "462.5625","462.5875",
     "462.6125","462.6375", 
@@ -29,6 +34,17 @@ unsigned char rx_buf[30];
 uint8_t locked; //Look on sending the next command
 unsigned char tx_len;
 unsigned char rx_len;
+/*
+typedef struct sa_Config
+{
+    uint8_t bw;
+    char tx_f[15];
+    char rx_f[15];
+    char tx_subaudio[15];
+    uint8_t SQ;
+    char Rx_subaudio [15];
+} config;
+*/
 
 pin *pin_pd;
 pin *pin_ptt;
@@ -81,7 +97,7 @@ sa818 (uart* uartx_, pin* pin_pd_, pin* pin_ptt_);
  * @param  rx_subaudio: rx_ctcss or rx_cdss adds a base tone to the recive 0000 to disable
  * @retval None
  */
-void sa818_configure(uint8_t bw, char* tx_f, char* rx_f, char* tx_subaudio, uint8_t SQ, char* Rx_subaudio );
+void sa818_configure(uint8_t bw,const char* tx_f,const char* rx_f,uint8_t SQ);
 
 /**
  * @brief  Set Volume

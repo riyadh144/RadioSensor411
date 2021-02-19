@@ -18,31 +18,6 @@ uint8_t locked=0; //Look on sending the next command
 unsigned char tx_len;
 unsigned char rx_len;
 
-/*
-#define CH1 462.5625
-#define CH2 462.5875
-#define CH3 462.6125
-#define CH4 462.6375
-#define CH5 462.6625
-#define CH6 462.6875
-#define CH7 462.7125
-#define CH8 467.5625
-#define CH9 467.5875
-#define CH10 467.6125
-#define CH11 467.6375
-#define CH12 467.6625
-#define CH13 467.6875
-#define CH14 467.7125
-#define CH15 462.5500
-#define CH16 462.5750
-#define CH17 462.6000
-#define CH18 462.6250
-#define CH19 462.6500
-#define CH20 462.6750
-#define CH21 462.7000
-#define CH22 462.7250
-*/
-
 
 void sa818::sa818_power(OnOff on)
 {
@@ -73,16 +48,32 @@ sa818::sa818(uart* uartx_, pin* pin_pd_, pin* pin_ptt_)
     //HAL_Delay(400);//Delay here is important to give some time for the module to wake up
     //TODO: maybe use something more efficient in the future.
     sa818_txrx_mode(rx);//Force the module to transmit
-
     sprintf((char *)tx_buf,"AT+DMOCONNECT\r\n");
     tx_len=20;
     rx_len=16;
     uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
-
+    
 }
 
-void sa818::sa818_configure(uint8_t bw, char* tx_f, char* rx_f, char* tx_subaudio, uint8_t SQ, char* Rx_subaudio )
+void sa818::sa818_configure(uint8_t bw, const char* tx_f, const char* rx_f, uint8_t SQ)
 {
+
+     char Rx_subaudio[9];
+     char tx_subaudio[9];
+
+    if(SQ > 4)  // 5~8  squash channels
+    {
+        strcpy(tx_subaudio,"TX_CDCSS");
+        strcpy(Rx_subaudio,"RX_CDCSS");
+    }
+    else if( SQ > 0) // 1~4 squash channels
+    {
+        strcpy(tx_subaudio,"Tx_CTCSS");
+        strcpy(Rx_subaudio,"Rx_CTCSS");
+    }
+    else{ // ~0 sq (Listening mode)
+        strcpy(tx_subaudio,strcpy(Rx_subaudio,"0000"));
+    }
     // while(locked!=0);
     // locked=1;
     HAL_Delay(1000);
@@ -90,7 +81,7 @@ void sa818::sa818_configure(uint8_t bw, char* tx_f, char* rx_f, char* tx_subaudi
     sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_subaudio);
     tx_len=50;
     rx_len=16;
-    uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
+    uartx->((char*) tx_buf,"+DMOCONNECT:0\r\n");
 }
 
 

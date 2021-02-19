@@ -86,7 +86,7 @@ void menu::menu_ok()
                 chVal = 22;
             }
             cursorPos=0;
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],"0000",sqVal,"0000")
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
         }
         break;
     case MENU_MIC_REC:
@@ -105,7 +105,7 @@ void menu::menu_ok()
                 sqVal = 8;
             }
             cursorPos=0; //reset the cursor positon
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],"0000",sqVal,"0000")
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         }
         break;
@@ -124,7 +124,6 @@ void menu::menu_ok()
         }
         break;
     case MENU_MIC_REC_IN:
-        oled1->oled_print("Press Okay to start recording\n\tClick again to stop",Font_7x10,19,19);
         //TODO : call record function to start recording
         break;
     case MENU_MIC_PLAY_IN:
@@ -313,7 +312,7 @@ void menu::menu_up()
             chVal++;
         }
         sprintf(ch,"%2d",chVal);
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],"0000",sqVal,"0000")
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         break;
     case MENU_SQ_IN:
@@ -323,7 +322,7 @@ void menu::menu_up()
             sqVal++;
         }
         sprintf(sq,"%2d",sqVal);
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],"0000",sqVal,"0000")
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
         break;
     case MENU_MIC_PLAY_IN:
         //switch to the previous track in the list using the cursor function
@@ -356,7 +355,7 @@ void menu::menu_down()
         chVal--;
         }
         sprintf(ch,"%2d",chVal);
-        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],"0000",sqVal,"0000")
+        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         break;
     case MENU_SQ_IN:
@@ -366,7 +365,7 @@ void menu::menu_down()
         sqVal--;
         }
         sprintf(sq,"%2d",sqVal);
-        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],"0000",sqVal,"0000")
+        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         break;   
     case MENU_MIC_PLAY_IN:
