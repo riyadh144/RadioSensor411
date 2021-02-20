@@ -1,11 +1,11 @@
 #include "menu.hpp"
 
 
-menu::menu(oled* oled_, uart* uart_,wav_player* wav_player)
+menu::menu(oled* oled_, uart* uart_,wav_player* wav_player_)
 {
     oled1=oled_;
     uart1=uart_;
-    wav_player_ = wav_player;
+    wav_player1 = wav_player_;
 }
 
 
@@ -133,10 +133,10 @@ void menu::menu_ok()
         oled1->oled_print("Click okay to play The track:", Font_7x10, 0,0);
         oled1->Track_list();
         //Track = SelectTrack();//TODO : implement a cursor function to select the track
-        if(wav_player_->file_select(Track) && Track != NULL)
-         {  
-            wav_player_->play(Track);
-         }
+        // if(wav_player1->file_select(Track) && Track != NULL)
+        //  {  
+        //     wav_player1->play(Track);
+        //  }
         break;
         
     default:

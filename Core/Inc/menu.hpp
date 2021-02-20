@@ -77,6 +77,7 @@ uint8_t cursorOn=0;
 
 oled* oled1;
 uart* uart1;
+wav_player* wav_player1;
 
 public:
 /**
