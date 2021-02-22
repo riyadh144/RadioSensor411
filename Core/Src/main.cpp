@@ -29,6 +29,7 @@
 #include "i2s.hpp"
 #include "wav_player.hpp"
 #include "adc.hpp"
+#include "wav_Recorder.hpp"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -141,6 +142,11 @@ int main(void)
   pd8.init();
   pd9.init();
   pd10.init();
+  /* Configuration functions */
+  AUDIO_ADC_Config();
+  AUDIO_DAC_Config();
+  AUDIO_Timer_Config();
+
   adc_bat.init();
   adc_bat.adc_setEquation(3.3/(2*4096),0);
   sa818_.sa818_power(sa818::on);

@@ -124,12 +124,14 @@ void menu::menu_ok()
         }
         break;
     case MENU_MIC_REC_IN:
+        AUDIO_Main();
+
         //TODO : call record function to start recording
         break;
     case MENU_MIC_PLAY_IN:
     {
         oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        fr = f_findfirst(dp,&fno,SDPath,"????????.wav"); //TODO:FINDOUT WHY THIS ISN'T WORKING!!
+        fr = f_findfirst(dp,&fno,SDPath,"????????.wav");
         if( fr == FR_OK && fno.fname[0] ) /*if the file is valid*/
         {
             int file_er;
