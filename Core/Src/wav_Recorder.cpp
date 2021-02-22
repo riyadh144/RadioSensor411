@@ -1,7 +1,8 @@
 
 /* Includes */
-#include "audio.h"
+#include "wav_Recorder.hpp"
 #include "SysTick.h"
+#include "ff.h"
 
 /**
  * @brief   Timeout value in ms for the PB to remain pressed
@@ -44,7 +45,7 @@ static uint8_t playingFinished = 0;
  * @param
  * @retval
  */
-void AUDIO_ADC_Config(void)
+void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
 {
   /* GPIO Configuration for PC3 */
   /* ********************************** */
@@ -147,50 +148,9 @@ void AUDIO_ADC_Config(void)
  */
 void AUDIO_Main(void)
 {
-  /* Check current mode */
-  switch (currentMode)
+  switch (currentmode)
   {
-    case AUDIO_MODE_IDLE:
-      break;
-
-    case AUDIO_MODE_START_PLAYING:
-      /* Turn on green led */
-      GPIO_TurnON_LED(EVAL_GREEN_LED);
-
-      /* Enable DMA1_Stream6 */
-      DMA1_Stream6->CR |= DMA_SxCR_EN;
-
-      /* Enable external trigger */
-      DAC->CR |= DAC_CR_TEN2;
-
-      /* Change current mode */
-      currentMode = AUDIO_MODE_PLAYING;
-      break;
-
-    case AUDIO_MODE_PLAYING:
-      /* Check playing finished flag */
-      if(1 == playingFinished)
-      {
-        /* Disable external trigger */
-        DAC->CR &= ~DAC_CR_TEN2;
-
-        GPIO_TurnOFF_LED(EVAL_GREEN_LED);
-
-        /* Reset playing finished flag */
-        playingFinished = 0;
-
-        /* Change current mode */
-        currentMode = AUDIO_MODE_IDLE;
-      }
-      else
-      {
-        /* Do nothing, still playing */
-      }
-      break;
-
     case AUDIO_MODE_START_RECORDING:
-      /* Turn on red led */
-      GPIO_TurnON_LED(EVAL_RED_LED);
 
       /* Enable DMA2_Stream0 */
       DMA2_Stream0->CR |= DMA_SxCR_EN;
@@ -209,8 +169,6 @@ void AUDIO_Main(void)
         /* Disable external trigger */
         ADC1->CR2 &= ~ADC_CR2_EXTEN;
 
-        GPIO_TurnOFF_LED(EVAL_RED_LED);
-
         /* Reset recording finished flag */
         recordingFinished = 0;
 
@@ -225,45 +183,6 @@ void AUDIO_Main(void)
 
     default:
       break;
-  }
-}
-
-/**
- * @brief   PB Callback function
- * @note
- * @param
- * @retval
- */
-void AUDIO_PB_Callback(void)
-{
-  /* Current system tick */
-  uint32_t currentTick = 0;
-
-  /* Clear pending bit */
-  EXTI->PR |= EXTI_PR_PR0;
-
-  /* Get start tick */
-  uint32_t startTick = SysTick_GetCurrentTick();
-
-  /* Set current mode to playing */
-  currentMode = AUDIO_MODE_START_PLAYING;
-
-  /* Check if the button is still pressed for 5 seconds */
-  while(GPIO_IDR_IDR_0 == (GPIOA->IDR & GPIO_IDR_IDR_0))
-  {
-    /* Get current tick */
-    currentTick = SysTick_GetCurrentTick();
-
-    /* Check Timeout */
-    if((currentTick - startTick) >= PB_PRESSED_TIMEOUT)
-    {
-      /* Switch current mode to recording */
-      currentMode = AUDIO_MODE_START_RECORDING;
-    }
-    else
-    {
-      /* Do nothing */
-    }
   }
 }
 
@@ -314,12 +233,15 @@ void AUDIO_DMA1_Stream6_Callback(void)
     /* Do nothing, this interrupt is not handled */
   }
 }
-/**
- * @}
- */
-/**
- * @}
- */
-/**
- * @}
- */
+
+void Write_Record(static uint16_t recordedSound* Recorded_sound)
+{
+  //File object
+  FRESULT res=f_mount(&SDFatFS, SDPath, 1);
+	FIL fil;
+
+   int file_er;
+	if ( res == FR_OK) {
+  //TODO : COMPLETE TO WRITE TO A FILE INSIDE THE SD CARD 
+	}
+}

@@ -9,6 +9,8 @@ extern "C" {
 
 /* Includes */
 #include "stm32f4xx.h"
+#include "fatfs.h"
+
 
 void AUDIO_ADC_Config(void);
 void AUDIO_Timer_Config(void);
