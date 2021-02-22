@@ -7,6 +7,12 @@ adc::adc(adc_enum adc_)
         case ADC_1:
             hadc.Instance = ADC1;
             break;
+        case ADC_2:
+        break;
+        case ADC_3:
+        break;
+
+
 
     }
 }

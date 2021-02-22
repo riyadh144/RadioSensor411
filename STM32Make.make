@@ -36,6 +36,7 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Src/SysTick.c \
 Core/Src/fonts.c \
 Core/Src/stm32f4xx_hal_msp.c \
 Core/Src/stm32f4xx_it.c \
@@ -89,6 +90,7 @@ Core/Src/pin.cpp \
 Core/Src/sa818.cpp \
 Core/Src/trigger.cpp \
 Core/Src/uart.cpp \
+Core/Src/wav_Recorder.cpp \
 Core/Src/wav_player.cpp
 
 

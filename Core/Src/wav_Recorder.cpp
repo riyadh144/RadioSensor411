@@ -4,6 +4,12 @@
 #include "SysTick.h"
 #include "ff.h"
 
+typedef enum AUDIO_ModeType{
+  AUDIO_MODE_IDLE,
+  AUDIO_MODE_START_RECORDING,
+  AUDIO_MODE_RECORDING
+} currentMode;
+
 /**
  * @brief   Timeout value in ms for the PB to remain pressed
  *          for switch to recording mode
@@ -19,7 +25,7 @@
 /**
  * @brief   Current audio mode
  */
-static AUDIO_ModeType currentMode = AUDIO_MODE_IDLE;
+static AUDIO_ModeType currentMode = AUDIO_MODE_START_RECORDING;
 
 /**
  * @brief   Recorded sound data
@@ -148,7 +154,7 @@ void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
  */
 void AUDIO_Main(void)
 {
-  switch (currentmode)
+  switch (currentMode)
   {
     case AUDIO_MODE_START_RECORDING:
 
@@ -234,14 +240,20 @@ void AUDIO_DMA1_Stream6_Callback(void)
   }
 }
 
-void Write_Record(static uint16_t recordedSound* Recorded_sound)
+void Write_Record(static uint16_t recordedSound* Recorded_sound,FIL *fp)
 {
   //File object
   FRESULT res=f_mount(&SDFatFS, SDPath, 1);
 	FIL fil;
-
-   int file_er;
+  // CONTINUE BUILDING THIS FUNCTION TO INSURE IT WORKS
+  int file_er;
 	if ( res == FR_OK) {
-  //TODO : COMPLETE TO WRITE TO A FILE INSIDE THE SD CARD 
+    res = f_open(fp,&SDFatFS,0)
+    if(res != FR_OK)
+    {
+      return;
+    }
+    f_write(fp,&recordedSound,0xFFFFFFFF,0); /* write to the file created */
+
 	}
 }

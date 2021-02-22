@@ -124,9 +124,9 @@ void menu::menu_ok()
         }
         break;
     case MENU_MIC_REC_IN:
-        AUDIO_Main();
-
-        //TODO : call record function to start recording
+        oled1->oled_print("Recording!",Font_11x18,10,10);
+        AUDIO_Main(); /*  START RECORDING IMMEDIATLY */
+        // TODO : IMPLEMENT A FUNCTION TO RECORD IF WANTED        
         break;
     case MENU_MIC_PLAY_IN:
     {

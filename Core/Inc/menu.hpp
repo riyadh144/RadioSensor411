@@ -10,6 +10,7 @@
 #include "i2s.hpp"
 #include "sa818.h"
 #include "ff.h"
+#include "wav_Recorder.hpp"
 
 class menu
 {

@@ -142,9 +142,8 @@ int main(void)
   pd8.init();
   pd9.init();
   pd10.init();
-  /* Configuration functions */
+  /* Configuration functions for wav_record */
   AUDIO_ADC_Config();
-  AUDIO_DAC_Config();
   AUDIO_Timer_Config();
 
   adc_bat.init();
