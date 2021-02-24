@@ -10,14 +10,15 @@ extern "C" {
 /* Includes */
 #include "stm32f4xx.h"
 #include "fatfs.h"
-
+#include "adc.hpp"
+#include "pin.hpp"
 
 void AUDIO_ADC_Config(void);
 void AUDIO_Timer_Config(void);
 void AUDIO_Main(void);
 void AUDIO_DMA2_Stream0_Callback(void);
 void AUDIO_DMA1_Stream6_Callback(void);
-void Write_Record(static uint16_t recordedSound* Recorded_sound,FIL *fp)
+void Write_Record(uint16_t* recordedSound,FIL *fp);
 
 
 /* C++ detection */

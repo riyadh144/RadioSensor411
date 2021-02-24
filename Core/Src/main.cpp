@@ -86,8 +86,7 @@ pin led1(GPIOD, pin::PIN0, pin::out,pin::PullUp,pin::SPEED_LOW);
 pin sa818_ptt(GPIOE, pin::PIN1, pin::out,pin::PullUp,pin::SPEED_LOW);
 pin sa818_pd(GPIOE, pin::PIN3, pin::out,pin::PullUp,pin::SPEED_LOW);
 
-pin pd11(GPIOD,pin::PIN11,pin::out,pin::PullDown,pin::SPEED_HIGH
-);
+pin pd11(GPIOD,pin::PIN11,pin::out,pin::PullDown,pin::SPEED_HIGH);
 pin pd12(GPIOD,pin::PIN12,pin::out,pin::PullDown,pin::SPEED_HIGH);
 pin pd13(GPIOD,pin::PIN13,pin::out,pin::PullDown,pin::SPEED_HIGH);
 pin pd14(GPIOD,pin::PIN14,pin::out,pin::PullDown,pin::SPEED_HIGH);

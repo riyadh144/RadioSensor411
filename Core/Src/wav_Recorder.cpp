@@ -10,11 +10,15 @@ typedef enum AUDIO_ModeType{
   AUDIO_MODE_RECORDING
 } currentMode;
 
-/**
- * @brief   Timeout value in ms for the PB to remain pressed
- *          for switch to recording mode
- */
-#define PB_PRESSED_TIMEOUT                   ((uint32_t) 3000)
+/* Change the pint you want to use here*/
+pin pcx(GPIOC,pin::PIN0,pin::in,pin::NoPull,pin::SPEED_HIGH);
+pcx.init();
+
+
+/* Change the adc you want to use here */
+adc adcx(ADC_1);
+adcx.init();
+
 
 /**
  * @brief   Number of audio samples, recording length = 8.19s
@@ -46,7 +50,7 @@ static uint8_t playingFinished = 0;
 
 /**
  * @brief   Audio Configuration function
- * @note    Microphone input -> PC3 -> ADC1_IN13
+ * @note    Microphone input -> PC1 -> ADC1_IN13
  *          Speaker output   -> DAC_OUT2 -> PA5
  * @param
  * @retval
@@ -61,31 +65,28 @@ void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
   /* Select Analog mode */
   GPIOC->MODER |= GPIO_MODER_MODER3;
 
-  /* Select no pull-up, pull-down (reset state) */
-  GPIOC->PUPDR &= ~GPIO_PUPDR_PUPDR3;
-
-  /* ADC Configuration for PC3 -> ADC1_IN13 */
+  /* ADC Configuration for PCx -> ADC1_IN13 */
   /* ************************************** */
-  /* Enable ADC1 clock */
+  /* Enable ADCx clock */
   RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
 
   /* Enable ADC */
-  ADC1->CR2 |= ADC_CR2_ADON;
+  adcx->CR2 |= ADC_CR2_ADON;
 
   /* Select Timer 2 TRGO event as external event for regular group */
-  ADC1->CR2 &= ~ADC_CR2_EXTSEL;
-  ADC1->CR2 |= (ADC_CR2_EXTSEL_1 | ADC_CR2_EXTSEL_2);
+  adcx->CR2 &= ~ADC_CR2_EXTSEL;
+  adcx->CR2 |= (ADC_CR2_EXTSEL_1 | ADC_CR2_EXTSEL_2);
 
   /* Select ADC1_IN13 regular */
-  ADC1->SQR1 &= ~ADC_SQR1_L;
-  ADC1->SQR3 &= ~ADC_SQR3_SQ1;
-  ADC1->SQR3 |= (ADC_SQR3_SQ1_0 | ADC_SQR3_SQ1_2 | ADC_SQR3_SQ1_3);
+  adcx->SQR1 &= ~ADC_SQR1_L;
+  adcx->SQR3 &= ~ADC_SQR3_SQ1;
+  adcx->SQR3 |= (ADC_SQR3_SQ1_0 | ADC_SQR3_SQ1_2 | ADC_SQR3_SQ1_3);
 
   /* Continuous DMA requests */
-  ADC1->CR2 |= ADC_CR2_DDS;
+  adcx->CR2 |= ADC_CR2_DDS;
 
   /* Enable DMA mode in ADC */
-  ADC1->CR2 |= ADC_CR2_DMA;
+  adcx->CR2 |= ADC_CR2_DMA;
 
   /* DMA configuration ADC1 -> DMA2_Stream0 (Channel 0) */
   /* ************************************************** */
@@ -162,7 +163,7 @@ void AUDIO_Main(void)
       DMA2_Stream0->CR |= DMA_SxCR_EN;
 
       /* Enable external trigger */
-      ADC1->CR2 |= ADC_CR2_EXTEN_0;
+      adcx->CR2 |= ADC_CR2_EXTEN_0;
 
       /* Change current mode */
       currentMode = AUDIO_MODE_RECORDING;
@@ -173,7 +174,7 @@ void AUDIO_Main(void)
       if(1 == recordingFinished)
       {
         /* Disable external trigger */
-        ADC1->CR2 &= ~ADC_CR2_EXTEN;
+        adcx->CR2 &= ~ADC_CR2_EXTEN;
 
         /* Reset recording finished flag */
         recordingFinished = 0;
@@ -240,7 +241,7 @@ void AUDIO_DMA1_Stream6_Callback(void)
   }
 }
 
-void Write_Record(static uint16_t recordedSound* Recorded_sound,FIL *fp)
+void Write_Record(uint16_t* recordedSound,FIL *fp)
 {
   //File object
   FRESULT res=f_mount(&SDFatFS, SDPath, 1);
@@ -256,4 +257,5 @@ void Write_Record(static uint16_t recordedSound* Recorded_sound,FIL *fp)
     f_write(fp,&recordedSound,0xFFFFFFFF,0); /* write to the file created */
 
 	}
+  f_close(fp);
 }
