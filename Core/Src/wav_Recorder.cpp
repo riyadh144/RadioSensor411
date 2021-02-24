@@ -12,12 +12,9 @@ typedef enum AUDIO_ModeType{
 
 /* Change the pint you want to use here*/
 pin pcx(GPIOC,pin::PIN0,pin::in,pin::NoPull,pin::SPEED_HIGH);
-pcx.init();
-
 
 /* Change the adc you want to use here */
-adc adcx(ADC_1);
-adcx.init();
+adc adcx(adc::ADC_1);
 
 
 /**
@@ -29,7 +26,7 @@ adcx.init();
 /**
  * @brief   Current audio mode
  */
-static AUDIO_ModeType currentMode = AUDIO_MODE_START_RECORDING;
+static AUDIO_ModeType currentMode_ = AUDIO_MODE_START_RECORDING;
 
 /**
  * @brief   Recorded sound data
@@ -57,6 +54,11 @@ static uint8_t playingFinished = 0;
  */
 void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
 {
+  //initialize pins
+  pcx.init();
+  adcx.init();
+  
+
   /* GPIO Configuration for PC3 */
   /* ********************************** */
   /* Enable port C clock */
@@ -71,22 +73,22 @@ void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
   RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
 
   /* Enable ADC */
-  adcx->CR2 |= ADC_CR2_ADON;
+  adcx.hadc.Instance->CR2 |= ADC_CR2_ADON;
 
   /* Select Timer 2 TRGO event as external event for regular group */
-  adcx->CR2 &= ~ADC_CR2_EXTSEL;
-  adcx->CR2 |= (ADC_CR2_EXTSEL_1 | ADC_CR2_EXTSEL_2);
+  adcx.hadc.Instance->CR2 &= ~ADC_CR2_EXTSEL;
+  adcx.hadc.Instance->CR2 |= (ADC_CR2_EXTSEL_1 | ADC_CR2_EXTSEL_2);
 
   /* Select ADC1_IN13 regular */
-  adcx->SQR1 &= ~ADC_SQR1_L;
-  adcx->SQR3 &= ~ADC_SQR3_SQ1;
-  adcx->SQR3 |= (ADC_SQR3_SQ1_0 | ADC_SQR3_SQ1_2 | ADC_SQR3_SQ1_3);
+  adcx.hadc.Instance->SQR1 &= ~ADC_SQR1_L;
+  adcx.hadc.Instance->SQR3 &= ~ADC_SQR3_SQ1;
+  adcx.hadc.Instance->SQR3 |= (ADC_SQR3_SQ1_0 | ADC_SQR3_SQ1_2 | ADC_SQR3_SQ1_3);
 
   /* Continuous DMA requests */
-  adcx->CR2 |= ADC_CR2_DDS;
+  adcx.hadc.Instance->CR2 |= ADC_CR2_DDS;
 
   /* Enable DMA mode in ADC */
-  adcx->CR2 |= ADC_CR2_DMA;
+  adcx.hadc.Instance->CR2 |= ADC_CR2_DMA;
 
   /* DMA configuration ADC1 -> DMA2_Stream0 (Channel 0) */
   /* ************************************************** */
@@ -153,9 +155,9 @@ void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
  * @param
  * @retval
  */
-void AUDIO_Main(void)
+void AUDIO_Main(char* fileName_)
 {
-  switch (currentMode)
+  switch (currentMode_)
   {
     case AUDIO_MODE_START_RECORDING:
 
@@ -163,10 +165,10 @@ void AUDIO_Main(void)
       DMA2_Stream0->CR |= DMA_SxCR_EN;
 
       /* Enable external trigger */
-      adcx->CR2 |= ADC_CR2_EXTEN_0;
+      adcx.hadc.Instance->CR2 |= ADC_CR2_EXTEN_0;
 
       /* Change current mode */
-      currentMode = AUDIO_MODE_RECORDING;
+      currentMode_ = AUDIO_MODE_RECORDING;
       break;
 
     case AUDIO_MODE_RECORDING:
@@ -174,13 +176,13 @@ void AUDIO_Main(void)
       if(1 == recordingFinished)
       {
         /* Disable external trigger */
-        adcx->CR2 &= ~ADC_CR2_EXTEN;
+        adcx.hadc.Instance->CR2 &= ~ADC_CR2_EXTEN;
 
         /* Reset recording finished flag */
         recordingFinished = 0;
 
         /* Change current mode */
-        currentMode = AUDIO_MODE_IDLE;
+        currentMode_ = AUDIO_MODE_IDLE;
       }
       else
       {
@@ -241,7 +243,7 @@ void AUDIO_DMA1_Stream6_Callback(void)
   }
 }
 
-void Write_Record(uint16_t* recordedSound,FIL *fp)
+void Write_Record(uint16_t* recordedSound,FIL *fp, char* fileName)
 {
   //File object
   FRESULT res=f_mount(&SDFatFS, SDPath, 1);
@@ -249,7 +251,7 @@ void Write_Record(uint16_t* recordedSound,FIL *fp)
   // CONTINUE BUILDING THIS FUNCTION TO INSURE IT WORKS
   int file_er;
 	if ( res == FR_OK) {
-    res = f_open(fp,&SDFatFS,0)
+    res = f_open(fp,fileName,0);
     if(res != FR_OK)
     {
       return;

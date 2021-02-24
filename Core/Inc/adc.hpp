@@ -6,7 +6,6 @@
 class adc
 {
     private:
-    ADC_HandleTypeDef hadc;
     /**
      * @brief Slope of the ADC equation
      * 
@@ -17,7 +16,10 @@ class adc
      * 
      */
     float eq_b=0;
+
     public:
+    ADC_HandleTypeDef hadc;
+
     typedef enum 
     {
         ADC_1=1,

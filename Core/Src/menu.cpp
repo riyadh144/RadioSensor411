@@ -86,7 +86,7 @@ void menu::menu_ok()
                 chVal = 22;
             }
             cursorPos=0;
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
         }
         break;
     case MENU_MIC_REC:
@@ -105,7 +105,7 @@ void menu::menu_ok()
                 sqVal = 8;
             }
             cursorPos=0; //reset the cursor positon
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
 
         }
         break;
@@ -125,7 +125,7 @@ void menu::menu_ok()
         break;
     case MENU_MIC_REC_IN:
         oled1->oled_print("Recording!",Font_11x18,10,10);
-        AUDIO_Main(); /*  START RECORDING IMMEDIATLY */
+        AUDIO_Main("WAV1.wav"); /*  START RECORDING IMMEDIATLY */
         // TODO : IMPLEMENT A FUNCTION TO RECORD IF WANTED        
         break;
     case MENU_MIC_PLAY_IN:
@@ -314,7 +314,7 @@ void menu::menu_up()
             chVal++;
         }
         sprintf(ch,"%2d",chVal);
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
 
         break;
     case MENU_SQ_IN:
@@ -324,7 +324,7 @@ void menu::menu_up()
             sqVal++;
         }
         sprintf(sq,"%2d",sqVal);
-            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
         break;
     case MENU_MIC_PLAY_IN:
         //switch to the previous track in the list using the cursor function
@@ -357,7 +357,7 @@ void menu::menu_down()
         chVal--;
         }
         sprintf(ch,"%2d",chVal);
-        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
+        sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
 
         break;
     case MENU_SQ_IN:
@@ -367,7 +367,7 @@ void menu::menu_down()
         sqVal--;
         }
         sprintf(sq,"%2d",sqVal);
-        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
+        sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
 
         break;   
     case MENU_MIC_PLAY_IN:

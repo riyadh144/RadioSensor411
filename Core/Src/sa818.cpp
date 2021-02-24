@@ -78,10 +78,10 @@ void sa818::sa818_configure(uint8_t bw, const char* tx_f, const char* rx_f, uint
     // locked=1;
     HAL_Delay(1000);
 
-    sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_subaudio);
+    sprintf((char *)tx_buf,"AT+DMOSETGROUP=%i,%s,%s,%s,%i,%s\r\n",bw,tx_f,rx_f,tx_subaudio,SQ, Rx_subaudio); //TODO: Consesistant capitalization
     tx_len=50;
     rx_len=16;
-    uartx->((char*) tx_buf,"+DMOCONNECT:0\r\n");
+    uartx->send_recive((char*) tx_buf,"+DMOCONNECT:0\r\n");
 }
 
 

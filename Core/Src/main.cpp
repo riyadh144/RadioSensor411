@@ -132,7 +132,7 @@ int main(void)
   led1.init();
   uart1.init();
   oled1.init();
-  sa818_.sa818_configure(0,CHANNEL[4],CHANNEL[4],0);
+  sa818_.sa818_configure(0,"462.6375","462.6375",0);
   pd11.init();
   pd12.init();
   pd13.init();
