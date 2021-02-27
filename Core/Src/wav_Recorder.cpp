@@ -20,7 +20,7 @@ adc adcx(adc::ADC_1);
 /**
  * @brief   Number of audio samples, recording length = 8.19s
  */
-#define NUM_OF_AUDIO_SAMPLES                 ((uint32_t) 0xFFFF)
+#define NUM_OF_AUDIO_SAMPLES                 ((uint32_t) 0xFFFF)/2
 
 
 /**
@@ -260,4 +260,9 @@ void Write_Record(uint16_t* recordedSound,FIL *fp, char* fileName)
 
 	}
   f_close(fp);
+}
+
+void AUDIO_Timer_Config(void)
+{
+  __NOP();//TODO Implement
 }

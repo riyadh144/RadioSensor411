@@ -152,7 +152,7 @@ int main(void)
   wav_player_.init();
   MX_SDIO_SD_Init();
   MX_FATFS_Init();
-  char x[225];
+  char x[50];
 
   sprintf(x,"\n\rFATFSMount %i\n\r",(uint)retSD);
   uart1.send_recive(x,x);
@@ -163,29 +163,28 @@ int main(void)
 	FIL fil;
   //Mount drive
   sprintf(x,"\n\rmounting %i\n\r",(uint)res);
-  uart1.send_recive(x,x);
-  sa818_.sa818_txrx_mode(sa818::tx);
-  int file_er;
-	if ( res == FR_OK) {
-		//Mounted OK, turn on RED LED
-    uart1.send_recive("Play Laugh.wav","Laugh.wav");
+  // uart1.send_recive(x,x);
+  // sa818_.sa818_txrx_mode(sa818::tx);
+  // int file_er;
+	// if ( res == FR_OK) {
+  //   uart1.send_recive("Play Laugh.wav","Laugh.wav");
 		
-		file_er=wav_player_.file_select("Laugh.wav");
-    sprintf(x,"File loaded = %i\n\r",file_er);
-    uart1.send_recive(x,"Laugh.wav");
+	// 	file_er=wav_player_.file_select("Laugh.wav");
+  //   sprintf(x,"File loaded = %i\n\r",file_er);
+  //   uart1.send_recive(x,"Laugh.wav");
 
-    wav_player_.play();
+  //   wav_player_.play();
 
-    while(!wav_player_.isEndOfFile())
-    {
-    wav_player_.process();
+  //   while(!wav_player_.isEndOfFile())
+  //   {
+  //   wav_player_.process();
 
-    }
-    uart1.send_recive("Done Playing","human1.wav");
+  //   }
+  //   uart1.send_recive("Done Playing","human1.wav");
 
-		//Unmount drive, don't forget this!
-		f_mount(0, "", 1);
-	}
+	// 	//Unmount drive, don't forget this!
+	// 	//f_mount(0, "", 1);
+	// }
   sa818_.sa818_txrx_mode(sa818::rx);
   /* USER CODE BEGIN SysInit */
 

@@ -11,8 +11,11 @@ menu::menu(oled* oled_, uart* uart_,wav_player* wav_player_,sa818* sa818_)
 void menu::menu_print() //Menu Print will be called every time the screen is updated in main via timmer interrupt
 {
     char temp [22];
+        oled1->oled_fill(oled::OLED_BLACK);
+
     switch (menu_value)
     {
+        
         case MENU_HOME:
             sprintf(temp, "C%.2s S%.2s  ", ch,sq);
             oled1->oled_print(temp, Font_16x26, 0,16);
@@ -29,6 +32,14 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
             sprintf(temp, "Disp TMO"); 
             oled1->oled_print(temp, Font_16x26, 0,16);
             break;
+        case MENU_MIC_PLAY:
+            sprintf(temp, "PLAY"); 
+            oled1->oled_print(temp, Font_16x26, 0,16);
+            break;
+        case MENU_MIC_REC:
+            sprintf(temp, "REC"); 
+            oled1->oled_print(temp, Font_16x26, 0,16);
+            break;
         case MENU_CH_IN:
             sprintf(temp, "CH:%.2s    ",ch);
             cursorOn=1;
@@ -43,6 +54,15 @@ void menu::menu_print() //Menu Print will be called every time the screen is upd
             cursorOn=1;
             sprintf(temp, "DS:%.2s    ",tmo);
             oled1->oled_print(temp, Font_16x26, 0,16);
+            break;
+
+        case MENU_MIC_PLAY_IN:
+            //oled1->oled_print("Track Play: ",Font_11x18,0,15);
+            oled1->oled_print(fno.fname,Font_11x18,0,15);
+            //wav_player1->stop();
+            break;
+        case MENU_MIC_REC_IN:
+            oled1->oled_print("Recording!",Font_11x18,10,10);
             break;
         default:
             break;
@@ -86,7 +106,7 @@ void menu::menu_ok()
                 chVal = 22;
             }
             cursorPos=0;
-            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
         }
         break;
     case MENU_MIC_REC:
@@ -105,7 +125,7 @@ void menu::menu_ok()
                 sqVal = 8;
             }
             cursorPos=0; //reset the cursor positon
-            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         }
         break;
@@ -124,28 +144,27 @@ void menu::menu_ok()
         }
         break;
     case MENU_MIC_REC_IN:
-        oled1->oled_print("Recording!",Font_11x18,10,10);
         AUDIO_Main("WAV1.wav"); /*  START RECORDING IMMEDIATLY */
         // TODO : IMPLEMENT A FUNCTION TO RECORD IF WANTED        
         break;
     case MENU_MIC_PLAY_IN:
-    {
-        oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        fr = f_findfirst(dp,&fno,SDPath,"????????.wav");
-        if( fr == FR_OK && fno.fname[0] ) /*if the file is valid*/
-        {
-            int file_er;
-            oled1->oled_print(fno.fname,Font_11x18,20,30);
-		    file_er=wav_player1->file_select(fno.fname);
-            wav_player1->play();
-            while(!wav_player1->isEndOfFile())
-            {
-            wav_player1->process();
-            }
-        }
-        wav_player1->stop();
-    }
-    break;     
+        f_mount(&SDFatFS, SDPath, 1);
+        fr = f_findfirst(&dp,&fno,SDPath,"*.wav");
+
+        // if( fr == FR_OK) /*if the file is valid*/
+        // {
+        //     //uart1->send_recive("filefound\r\n","");
+
+
+        //     int file_er;
+        //     // file_er=wav_player1->file_select(fno.fname);
+        //     // wav_player1->play();
+        //     // while(!wav_player1->isEndOfFile())
+        //     // {
+        //     // wav_player1->process();
+        //     // }
+        // }
+        break;     
     default:
         break;
     }
@@ -188,20 +207,22 @@ void menu::menu_next()
         cursorPos^=cursorOn;
         break;
     case MENU_MIC_PLAY_IN:
-        wav_player1->stop();
-        oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        fr = f_findnext(dp,&fno); // start searching for .wav files to play
-        if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
-        {
-            int file_er;
-            oled1->oled_print(fno.fname,Font_11x18,20,30);
-		    file_er=wav_player1->file_select(fno.fname);
-            wav_player1->play();
-            while(!wav_player1->isEndOfFile())
-            {
-            wav_player1->process();
-            }
-        }
+        //wav_player1->stop();
+        //oled1->oled_print("Track Play: ",Font_11x18,0,15);
+
+        fr = f_findnext(&dp,&fno); // start searching for .wav files to play
+        // if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
+        // {
+        //     int file_er;
+        //     //oled1->oled_print(fno.fname,Font_11x18,20,30);
+		//     // file_er=wav_player1->file_select(fno.fname);
+        //     // wav_player1->play();
+        //     // while(!wav_player1->isEndOfFile())
+        //     // {
+        //     // wav_player1->process();
+        //     // }
+        // }
+
         break;
 
     default:
@@ -314,7 +335,7 @@ void menu::menu_up()
             chVal++;
         }
         sprintf(ch,"%2d",chVal);
-            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         break;
     case MENU_SQ_IN:
@@ -324,7 +345,7 @@ void menu::menu_up()
             sqVal++;
         }
         sprintf(sq,"%2d",sqVal);
-            sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
+            sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
         break;
     case MENU_MIC_PLAY_IN:
         //switch to the previous track in the list using the cursor function
@@ -357,7 +378,7 @@ void menu::menu_down()
         chVal--;
         }
         sprintf(ch,"%2d",chVal);
-        sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
+        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         break;
     case MENU_SQ_IN:
@@ -367,13 +388,13 @@ void menu::menu_down()
         sqVal--;
         }
         sprintf(sq,"%2d",sqVal);
-        sa818A->sa818_configure(0,sa818::CHANNEL[chVal],sa818::CHANNEL[chVal],sqVal);
+        sa818A->sa818_configure(0,CHANNEL[chVal],CHANNEL[chVal],sqVal);
 
         break;   
     case MENU_MIC_PLAY_IN:
         wav_player1->stop(); // stop the previous track that was playing 
         oled1->oled_print("Track Play: ",Font_11x18,0,15);
-        fr = f_findnext(dp,&fno); // start searching for .wav files to play
+        fr = f_findnext(&dp,&fno); // start searching for .wav files to play
         if( fr == FR_OK && fno.fname[0]  ) /*if the file is valid*/
         {
             int file_er;

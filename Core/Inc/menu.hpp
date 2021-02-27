@@ -84,7 +84,7 @@ wav_player* wav_player1;
 sa818* sa818A;
 FILINFO fno;
 FRESULT fr;
-DIR* dp;
+DIR dp;
 
 public:
 /**
