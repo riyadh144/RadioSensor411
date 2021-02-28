@@ -52,7 +52,7 @@ static uint8_t playingFinished = 0;
  * @param
  * @retval
  */
-void AUDIO_ADC_Config(void) //TODO : optimize for all gpio pins
+void AUDIO_ADC_Config(void) 
 {
   //initialize pins
   pcx.init();
@@ -264,5 +264,25 @@ void Write_Record(uint16_t* recordedSound,FIL *fp, char* fileName)
 
 void AUDIO_Timer_Config(void)
 {
-  __NOP();//TODO Implement
+  /* Timer 2 TRGO event Configuration */
+  /* ******************************** */
+  /* Enable TIM2 clock */
+  RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
+
+  /* Set counter direction as up-counter */
+  TIM2->CR1 &= ~TIM_CR1_DIR;
+  //TODO: CHECK PRESCALER VALUES
+  /* Set timer Prescaler, bus clock = 45 MHz, Tim_Clock = 90 MHz
+   * fCK_PSC / (PSC[15:0] + 1)
+   * CK_CNT = 90000000 / (89 + 1) -> 1000000 Hz -> time base = 1 us */
+  TIM2->PSC = 89;
+
+  /* Set timer reload value, update event each 125 us */
+  TIM2->ARR = 125;
+  /* Select update event as trigger output (TRGO) */
+  TIM2->CR2 &= ~TIM_CR2_MMS;
+  TIM2->CR2 |= TIM_CR2_MMS_1;
+
+  /* Enable TIM2 counter */
+  TIM2->CR1 |= TIM_CR1_CEN;
 }
